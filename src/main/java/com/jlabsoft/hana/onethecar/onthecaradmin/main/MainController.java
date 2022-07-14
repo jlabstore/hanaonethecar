@@ -3,9 +3,11 @@ package com.jlabsoft.hana.onethecar.onthecaradmin.main;
 import com.jlabsoft.hana.onethecar.onthecaradmin.model.Admin;
 
 import org.springframework.security.core.annotation.AuthenticationPrincipal;
+import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
 
+@Controller
 public class MainController {
 
     @RequestMapping("/")
