@@ -19,6 +19,9 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
     @Autowired
     CustomAuthenticationProvider customAuthenticationProvider;
 
+    @Autowired
+    CustomFailureHandler customFailureHandler;
+    
     @Override
     public void configure(WebSecurity web) throws Exception
     {
@@ -46,8 +49,8 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
         security.formLogin() 
             .loginPage("/login")                    //커스텀 로그인페이지 
             .defaultSuccessUrl("/main")
-            .loginProcessingUrl("/login/auth"); // have to: Content-Type: multipart/form-data
-            // .failureHandler(customFailureHandler);  
+            .loginProcessingUrl("/login/auth") // have to: Content-Type: multipart/form-data
+            .failureHandler(customFailureHandler);  
 
 
         //로그아웃

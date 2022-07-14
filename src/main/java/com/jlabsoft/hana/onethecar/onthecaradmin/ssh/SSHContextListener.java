@@ -21,8 +21,8 @@ public class SSHContextListener implements ServletContextListener{
 	@Override
 	public void contextInitialized(ServletContextEvent sce) {
 		try {
-            String env = environment.getProperty("intheseom.env");
-            if("LOCAL".equals(env)){
+            String env = environment.getProperty("active.env");
+            if("DEV".equals(env)){
                 sshConnector = new SSHConnector(environment.getProperty("ssh.url"), environment.getProperty("ssh.username"), environment.getProperty("ssh.password")); 
             }
 		} catch (Exception e) {

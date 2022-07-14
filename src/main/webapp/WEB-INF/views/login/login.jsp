@@ -87,20 +87,19 @@
     $(document).ready(function(){
         var errorType = '${param.errorType}';
         if(errorType != null && errorType != '') {
-          if("errorId" == errorType) {
-            alert("아이디 또는 패스워드를 확인하세요.");
-          }else if("errorPassword" == errorType) {
-            alert("아이디 또는 패스워드를 확인하세요.");
-          }else if("errorDenied" == errorType){
-            alert("권한이 필요한 페이지 입니다.");
-            history.back();
-          }
-        }
+            if("errorId" == errorType) {
+                alert("아이디 또는 패스워드를 확인하세요.");
+            }else if("errorPassword" == errorType) {
+                alert("아이디 또는 패스워드를 확인하세요.");
+                history.back();
+            }
+            
+            }
 
     });
 
     var goLogin = function(){
-      f.submit();
+        f.submit();
     }
 
 </script>
