@@ -1,5 +1,7 @@
 package com.jlabsoft.hana.onethecar.onthecaradmin.config.security;
 
+import com.jlabsoft.hana.onethecar.onthecaradmin.login.LoginService;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -21,6 +23,9 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 
     @Autowired
     CustomFailureHandler customFailureHandler;
+
+    // @Autowired
+    // LoginService loginService;
     
     @Override
     public void configure(WebSecurity web) throws Exception

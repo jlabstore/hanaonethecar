@@ -31,11 +31,8 @@
 
     <!-- Custom scripts for all pages-->
     <script src="/sbAdmin/js/sb-admin-2.min.js"></script>
-    <script src="/summernote/summernote-lite.js"></script>
-    <script src="/summernote/summernote-ko-KR.js"></script>
 
     <link href="/sbAdmin/css/sb-admin-2.min.css" rel="stylesheet">
-    <link href="/summernote/summernote-lite.css" rel="stylesheet">
 
 
     <%-- <script src="https://code.jquery.com/jquery-1.12.4.js"></script> --%>
@@ -46,7 +43,7 @@
 
 
     <%-- 공통 스크립트 --%>
-    <script src="/js/common.js"></script>
+    <%-- <script src="/js/common.js"></script> --%>
     
 </head>
 <style>

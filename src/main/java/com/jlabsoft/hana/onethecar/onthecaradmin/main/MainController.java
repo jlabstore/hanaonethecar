@@ -21,7 +21,7 @@ public class MainController {
         
         modelAndView.addObject("admin",admin);
         modelAndView.addObject("topMenuName","메인");
-        modelAndView.setViewName("onthecard.main/main");
+        modelAndView.setViewName("onethecar.main/main");
         return modelAndView;
     }
     

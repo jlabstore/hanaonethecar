@@ -18,8 +18,8 @@ public class CustomAuthenticationProvider implements AuthenticationProvider{
     @Autowired
     private LoginService loginService;
     
-    // @Autowired
-    // private PasswordEncoder passwordEncoder;
+    @Autowired
+    private PasswordEncoder passwordEncoder;
     
     @Override
     public Authentication authenticate(Authentication authentication) throws AuthenticationException {
@@ -28,9 +28,9 @@ public class CustomAuthenticationProvider implements AuthenticationProvider{
         
         Admin member = (Admin) loginService.loadUserByUsername(username);
         
-        // if(!passwordEncoder.matches(password, member.getPassword()) ) {
-        //     throw new BadCredentialsException(username);
-        // }
+        if(!passwordEncoder.matches(password, member.getPassword()) ) {
+            throw new BadCredentialsException(username);
+        }
         return new UsernamePasswordAuthenticationToken(member, password, member.getAuthorities());
     }
 

@@ -13,30 +13,36 @@
     <!-- Divider -->
     <hr class="sidebar-divider">
 
-
     <li class="nav-item" id="cardNav">
+        <a class="nav-link" href="/banner/regist" >
+            <i class="fa-image"></i>
+            <span>배너관리</span>
+        </a>
+    </li>
+    <li class="nav-item" id="cardNav">
+        <a class="nav-link" href="/goodRate/regist" >
+            <i class="fa fa-money-bill"></i>
+            <span>금리관리</span>
+        </a>
+    </li>
+    <%-- <li class="nav-item" id="cardNav">
         <a class="nav-link" href="/card/list" >
-            <i class="fas fa-fw fa-user-circle"></i>
+            <i class="fas fa-fw fa-credit-card"></i>
             <span>하나카드</span>
         </a>
-    </li>
+    </li> --%>
 
-    <li class="nav-item"  id="bankNav">
+    <%-- <li class="nav-item"  id="bankNav">
         <a class="nav-link" href="/bank/list" >
-            <i class="fas fa-calendar-week"></i>
+            <i class="fa fa-university"></i>
             <span> 하나은행</span>
         </a>
-    </li>
+    </li> --%>
 
-    <li class="nav-item"  id="capitalNav">
+    <%-- <li class="nav-item"  id="capitalNav">
         <a class="nav-link"  href="/capital/list">
-            <i class="fab fa-fw fa-product-hunt"></i>
+            <i class="fa fa-money-bill"></i>
             <span>하나캐피탈</span></a>
-    </li>
-    <%-- <li class="nav-item" id="businessNav">
-        <a class="nav-link" href="/business/list">
-        <i class="far fa-newspaper"></i>
-            <span>비지니스정보관리</span></a>
     </li> --%>
     <!-- Divider -->
     <hr class="sidebar-divider d-none d-md-block">

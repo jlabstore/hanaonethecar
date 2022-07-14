@@ -7,11 +7,11 @@ import lombok.Getter;
 @Getter
 public enum Role {
         
-    ADMIN("ADMIN"),
-    BANNER("BANNER"),
-    BANK("BANK"),
-    CAPITAL("CAPITAL"),
-    CARD("CARD");
+    ROLE_ADMIN("ROLE_ADMIN"),
+    ROLE_BANNER("ROLE_BANNER"),
+    ROLE_BANK("ROLE_BANK"),
+    ROLE_CAPITAL("ROLE_CAPITAL"),
+    ROLE_CARD("ROLE_CARD");
     
 
     private String value;
