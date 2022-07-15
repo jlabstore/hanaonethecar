@@ -21,9 +21,6 @@ public class ApiController {
     
     @Autowired
     private PasswordEncoder passwordEncoder;
-
-    // @Autowired
-    // private ApiService apiService;
     
     @GetMapping("/passwordEnc")
     @RequestMapping(value =  "/passwordEnc", method = RequestMethod.GET)
@@ -33,18 +30,5 @@ public class ApiController {
 
         return encPwd;
     }
-
-    // @GetMapping("/passwordEnc")
-    // @RequestMapping(value =  "/passwordEnc", method = RequestMethod.GET)
-    // @ResponseBody
-    // public ResponseEntity<Object> addMember(@RequestBody HashMap<String,Object> param ){
-
-    //     String encPwd = passwordEncoder.encode(param.get("password").toString());
-    //     // String role = param.get("role").toString();
-        
-    //     System.out.println(encPwd);
-        
-    //     return new ResponseEntity<>(ApiResponse.res(ApiStatus.OK.getValue(), ApiStatus.OK.name(), apiService.passwordEnc(encPwd)), HttpStatus.OK);
-    // }
 }   
 

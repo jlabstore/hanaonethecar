@@ -23,9 +23,6 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 
     @Autowired
     CustomFailureHandler customFailureHandler;
-
-    // @Autowired
-    // LoginService loginService;
     
     @Override
     public void configure(WebSecurity web) throws Exception
@@ -48,6 +45,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
         security.authorizeRequests()               //특정권한을 가진 사용자만 접근가능하도록 
                 .antMatchers("/login").permitAll()  
                 .antMatchers("/login/**").permitAll()
+                .antMatchers("/api/**").permitAll()
                 .anyRequest().authenticated();
 
         //로그인  
@@ -65,10 +63,6 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
             .logoutSuccessUrl("/login");            //로그아웃 후 보내질 페이지 
     }
 
-    @Bean
-    public PasswordEncoder passwordEncoder() {
-        return new BCryptPasswordEncoder();
-    }
     
 
     /**
@@ -76,9 +70,6 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
     */
     @Override
     public void configure(AuthenticationManagerBuilder auth) throws Exception {
-        // auth
-        //     .userDetailsService(loginService)
-        //     .passwordEncoder(passwordEncoder());
         auth.authenticationProvider(customAuthenticationProvider);
     }
     

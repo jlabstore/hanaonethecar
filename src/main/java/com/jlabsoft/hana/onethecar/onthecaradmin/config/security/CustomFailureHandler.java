@@ -15,9 +15,7 @@ public class CustomFailureHandler implements AuthenticationFailureHandler{
     
     @Override
     public void onAuthenticationFailure(HttpServletRequest request, HttpServletResponse response, AuthenticationException exception) throws IOException, ServletException {
-        // response.setContentType("application/json");
-        // response.setCharacterEncoding("UTF-8");
-        // response.getWriter().write("{\"result\": false, \"message\": \"" + exception.getMessage() + "\", \"type\": \"" + exception.getClass().getSimpleName() + "\"}");
+        
         String exceptionClas = exception.getClass().getSimpleName();
         String msg = "";
         if("UsernameNotFoundException".equals(exceptionClas)) {
