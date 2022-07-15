@@ -36,12 +36,7 @@
         justify-content: space-between;
         align-items: flex-end;
     ">
-    <c:if test ="${member == null}">
         <h4 style="margin-bottom: 0px;">금리 관리</h4>
-    </c:if>
-    <%-- <c:if test ="${member != null}">
-        <h4 style="margin-bottom: 0px;">회원 정보 수정</h4>
-    </c:if>   --%>
         <div>
             <c:if test ="${member == null}">    
                 <button type="button" class="btn btn-outline-primary " onclick="setEmptyCheck()">등록</button>
@@ -52,8 +47,18 @@
                 <%-- <button type="button" class="btn btn-outline-dark "onclick="javascript:location.href='/member/list'">취소</button> --%>
         </div>
     </div>
-    <br/>
-    <div class="card shadow mb-4">
+    <br>
+    <span>상품선택:</span>
+    <select id="sortType" onchange="onclickSubmit()" name="sortType" aria-controls="dataTable" class="custom-select" style="width:130px">
+        <option value="1QAutoLoan">1Q오토론</option>
+        <option value="EVAutoLoan">EV오토론</option>
+    </select>
+
+    <%-- <select name="dataTable_length" aria-controls="dataTable" class="custom-select custom-select-sm form-control form-control-sm">
+        <option value="">1Q오토론</option>
+        <option value="">EV오토론</option>
+    </select><br/> --%>
+    <%-- <div class="card shadow mb-4">
         <form id="registForm" name="registForm">
             <div class="card-body">
                 <div class="form-row">
@@ -87,36 +92,148 @@
                 </div>
             </div>
         </form>
-    </div>
+    </div> --%>
+    <table class="table" style="margin-top:10px">
+        <thead class="thead-dark">
+            <tr>
+                <th scope="row"></th>
+                <th scope="col" style="text-align:center" >신차구입/신차대환</th>
+                <th scope="col" style="text-align:center">중고차구입/중고차대환</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <th scope="row" style="text-align:center">금리기준일</th>
+                <td style="text-align:-webkit-center"> 
+                    <input class="form-control" id="datepicker" name="datepicker" type="text" name="text" style="width:20%; "> 
+                </td>
+                <td style="text-align:-webkit-center">
+                    <input class="form-control" id="datepicker2" name="datepicker2" type="text" name="text" style="width:20%;"> 
+                </td>
+            </tr>
+            <tr>
+                <th scope="row" style="text-align:center">기준금리</th>
+                <td style="text-align:-webkit-center">
+                    <input class="form-control" id="newCarBaseRate" type="text" name="text" style="width:20%;">
+                </td>
+                <td style="text-align:-webkit-center">
+                    <input class="form-control" id="oldCarBaseRate" type="text" name="text" style="width:20%;">
+                </td>
+            </tr>
+            <tr>
+                <th scope="row" style="text-align:center">가산금리</th>
+                <td style="text-align:-webkit-center">
+                    <input class="form-control" id="newAddRate" type="text" name="text" style="width:20%;">
+                </td>
+                <td style="text-align:-webkit-center">
+                    <input  class="form-control" id="oldAddRate" type="text" name="text" style="width:20%;">
+                </td>
+            </tr>
+                <th scope="row" style="text-align:center">부수거래 감면금리</th>
+                <td style="text-align:-webkit-center">
+                    <input  class="form-control" type="text" name="text" style="width:20%;" disabled>
+                </td>
+                <td style="text-align:-webkit-center">
+                    <input  class="form-control" type="text" name="text" style="width:20%;" disabled>
+                </td>
+            </tr>
+        </tbody>
+    </table><br>
+
+    <table class="table">
+        <thead class="thead-light">
+            <tr>
+                <th scope="row"></th>
+                <th scope="col" style="text-align:center">부수거래 감면금리</th>
+                <th scope="col"></th>
+            </tr>
+        </thead>
+    <tbody>
+        <tr>
+            <th scope="row" style="text-align:center">급여이체</th>
+            <td style="text-align:-webkit-center">
+                <input class="form-control" id="newRate1"  type="text" name="text" style="width:20%; margin-right:13%"> 
+            </td>
+            <td style="text-align:-webkit-center">
+                <input class="form-control"  id="oldRate1" type="text" name="text" style="width:20%; margin-right:4%"> 
+            </td>
+        </tr>
+        <tr>
+            <th scope="row" style="text-align:center">주택청약종합저축납입</th>
+            <td style="text-align:-webkit-center">
+                <input class="form-control" id="newRate2" type="text" name="text" style="width:20%; margin-right:13%"> 
+            </td>
+            <td style="text-align:-webkit-center">
+                <input class="form-control" id="oldRate2" type="text" name="text" style="width:20%; margin-right:4%"> 
+            </td>
+        </tr>
+        <tr>
+            <th scope="row" style="text-align:center">제휴카드결제</th>
+            <td style="text-align:-webkit-center">
+                <input class="form-control" id="newRate3" type="text" name="text" style="width:20%; margin-right:13%"> 
+            </td>
+            <td style="text-align:-webkit-center">
+                <input class="form-control" id="oldRate3" type="text" name="text" style="width:20%; margin-right:4%"> 
+            </td>
+        </tr>
+            <th scope="row" style="text-align:center">기타자동이체</th>
+            <td style="text-align:-webkit-center">
+                <input class="form-control" id="newRate4" type="text" name="text" style="width:20%; margin-right:13%"> 
+            </td>
+            <td style="text-align:-webkit-center">
+                <input class="form-control" id="oldRate4" type="text" name="text" style="width:20%; margin-right:4%"> 
+            </td>
+        </tr>
+            <th scope="row" style="text-align:center">하나원큐이체</th>
+            <td style="text-align:-webkit-center"> 
+                <input class="form-control" id="newRate5" type="text" name="text" style="width:20%; margin-right:13%"> 
+            </td>
+            <td style="text-align:-webkit-center">
+                <input class="form-control" id="oldRate5" type="text" name="text" style="width:20%; margin-right:4%"> 
+            </td>
+        </tr>
+            <th scope="row" style="text-align:center">적금상품납입</th>
+            <td style="text-align:-webkit-center">
+                <input class="form-control" id="newRate6" type="text" name="text" style="width:20%; margin-right:13%"> 
+            </td>
+            <td style="text-align:-webkit-center">
+                <input class="form-control" id="oldRate6" type="text" name="text" style="width:20%; margin-right:4%"> 
+            </td>
+        </tr>
+            <th scope="row" style="text-align:center">우대금리</th>
+            <td style="text-align:-webkit-center">
+                <input class="form-control" id="newRate7" type="text" name="text" style="width:20%; margin-right:13%"> 
+            </td>
+            <td style="text-align:-webkit-center">
+                <input class="form-control" id="oldRate7" type="text" name="text" style="width:20%; margin-right:4%"> 
+            </td>
+        </tr>
+    </tbody>
+    </table>
 </div>
 <script type='text/javascript'> 
     $(window).ready(function(){
-        $(document).on('click', 'input[type=radio]', function(e){
-            var exprDisabled = ($(this).val() == 'N');
-            $(this).closest('div').next('div').find('input[type=text]').val('');
-            $(this).closest('div').next('div').find('input[type=text]').attr("disabled",exprDisabled);
-        })
+
     });
     
     $(function() {
         //input을 datepicker로 선언
         $("#datepicker, #datepicker2").datepicker({
-            dateFormat: 'yy-mm-dd' //Input Display Format 변경
+            dateFormat: 'yy.mm.dd' //Input Display Format 변경
             ,buttonText: "선택" //버튼에 마우스 갖다 댔을 때 표시되는 텍스트                
             ,yearSuffix: "년" //달력의 년도 부분 뒤에 붙는 텍스트
             ,monthNamesShort: ['1','2','3','4','5','6','7','8','9','10','11','12'] //달력의 월 부분 텍스트
             ,monthNames: ['1월','2월','3월','4월','5월','6월','7월','8월','9월','10월','11월','12월'] //달력의 월 부분 Tooltip 텍스트
             ,dayNamesMin: ['일','월','화','수','목','금','토'] //달력의 요일 부분 텍스트
-            ,dayNames: ['일요일','월요일','화요일','수요일','목요일','금요일','토요일'] //달력의 요일 부분 Tooltip 텍스트    
-            ,minDate: -1        
+            ,dayNames: ['일요일','월요일','화요일','수요일','목요일','금요일','토요일'] //달력의 요일 부분 Tooltip 텍스트          
         });                                                
     });
 
     //회원 등록시 유효성 체크 후 저장 
     function setEmptyCheck() {
-        if($('#member_id').val() == ""){
+        if($('#datepicker').val() == ""){
             alert('회원 아이디를 입력해주세요');
-            $('#member_id').focus();
+            $('#datepicker').focus();
         }else if($('#memberCheck').val() != '1'){
             alert('회원 아이디 중복체크 해주세요');
         }else if($('#csmrid').val() == ""){
@@ -135,50 +252,15 @@
         }else if(!($('input:radio[name=expr_dt_check]').val()=='Y' || $('input:radio[name=expr_dt_check]').val()=='N')){
             alert('만료일사용여부를 체크 해주세요');
         }else{
-            addMember();
+            addGoodsRate();
         }
     }
 
     //회원 등록 전송
-    function addMember(){
-
-        var exprDate = $('#datepicker').val();
-        var exprDate2 = $('#datepicker2').val();
-        var exprDate3 = $('#datepicker3').val();
-        var exprDate4 = $('#datepicker4').val();
-
-        if($('input:radio[name=expr_dt_check]:checked').val()=='Y'){
-            if($('#datepicker').val() == ''){
-                alert('만료일을 입력해주세요');
-                return false;
-            }
-        }
-
-        if($('input:radio[name=expr_dt2_check]:checked').val()=='Y'){
-            if($('#datepicker2').val() == ''){
-                alert('만료일2을 입력해주세요');
-                return false;
-            }
-        }
-
-        if($('input:radio[name=expr_dt3_check]:checked').val()=='Y'){
-            if($('#datepicker3').val() == ''){
-                alert('만료일3을 입력해주세요');
-                return false;
-            }
-        }
-
-        if($('input:radio[name=expr_dt4_check]:checked').val()=='Y'){
-            if($('#datepicker4').val() == ''){
-                alert('만료일4을 입력해주세요');
-                return false;
-            }
-        }
+    function addGoodsRate(){
 
         exprDate = $('#datepicker').val();
         exprDate2 = $('#datepicker2').val();
-        exprDate3 = $('#datepicker3').val();
-        exprDate4 = $('#datepicker4').val();
 
         var formData = {
             "member_id" : $('#member_id').val(),
@@ -191,21 +273,19 @@
             "version" : $('#version').val(),
             "expr_dt" : exprDate,
             "expr_dt2" : exprDate2,
-            "expr_dt3" : exprDate3,
-            "expr_dt4" : exprDate4
         }
 
         $.ajax({
             type:"post",
-            url : "/member/setMember",
+            url : "/goodRate/setGoodsRate",
             contentType : "application/json",
             dataType: "text",
             data: JSON.stringify(formData),
             success : function(data){
                 var cnt = data;
                 if(cnt >= 1 ){
-                    alert('회원정보 저장 성공');
-                    location.href="/member/list"
+                    alert('금리 등록 성공');
+                    location.href="/goodRate/regist"
                 }else {
                     alert('저장에 실패했습니다.');
                     $(document).reset();
@@ -232,17 +312,9 @@
         if($('input:radio[name=expr_dt2_check]:checked').val() == 'N'){
             exprDate2 = $('#datepicker2').val('');
         }
-        if($('input:radio[name=expr_dt3_check]:checked').val() == 'N'){
-            exprDate3 = $('#datepicker3').val('');
-        }
-        if($('input:radio[name=expr_dt4_check]:checked').val() == 'N'){
-            exprDate4 = $('#datepicker4').val('');
-        }
 
         exprDate = $('#datepicker').val();
         exprDate2 = $('#datepicker2').val();
-        exprDate3 = $('#datepicker3').val();
-        exprDate4 = $('#datepicker4').val();
 
         var formData = {
             "member_id" : $('#member_id').val(),
@@ -255,21 +327,19 @@
             "version" : $('#version').val(),
             "expr_dt" : exprDate,
             "expr_dt2" : exprDate2,
-            "expr_dt3" : exprDate3,
-            "expr_dt4" : exprDate4
         }
 
         $.ajax({
             type:"post",
-            url : "/member/putMember",
+            url : "/goodRate/putGoodsRate",
             contentType : "application/json",
             dataType: "text",
             data: JSON.stringify(formData),
             success : function(data){
                 var cnt = data;
                 if(cnt >= 1 ){
-                    alert('회원정보 수정 성공');
-                    location.href="/member/list"
+                    alert('금리 등록 성공');
+                    location.href="/goodRate/regist"
                 }
             },error : function(date){
                 alert('서버오류 ');

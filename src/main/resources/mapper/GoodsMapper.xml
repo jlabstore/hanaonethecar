@@ -2,5 +2,45 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.jlabsoft.hana.onethecar.onthecaradmin.goodsRate.GoodsRateMapper">
 
+    <insert id="setGoodsRate" parameterType="Map">
+		INSERT INTO
+			goods_rate
+				(
+					csmrid,
+					hrmsid,
+					member_id,
+					password,
+					name,
+					prmt_num,
+					serial_number,
+					version,
+                    expr_dt,
+                    expr_dt,
+					status,
+					status2,
+					status3,
+					status4,
+					reg_member_id
+				)
+			VALUES
+				(
+					#{csmrid},
+					#{hrmsid},
+					#{member_id},
+					#{password},
+					#{name},
+					#{prmt_num},
+					#{serial_number},
+					#{version},
+					<if test="expr_dt4 != null and expr_dt4 != ''">
+						#{expr_dt4},
+					</if>
+					#{status},
+					#{status2},
+					#{status3},
+					#{status4},
+					#{reg_member_id}
+				)
+	</insert>
 	
 </mapper>
