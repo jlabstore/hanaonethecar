@@ -1,4 +1,8 @@
 <%@ page language="java" contentType="text/html; charset=utf-8" pageEncoding="utf-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="sec" uri="http://www.springframework.org/security/tags" %>
+<sec:authentication var="user" property="principal" />
+<sec:authentication var="auth" property="authorities"/>
 <!-- Sidebar -->
 <ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
 
@@ -13,37 +17,23 @@
     <!-- Divider -->
     <hr class="sidebar-divider">
 
+
+<c:if test="${user.role == 'BANNER' || user.role == 'CAPITAL'}">
     <li class="nav-item" id="cardNav">
         <a class="nav-link" href="/banner/regist" >
             <i class="fa-image"></i>
             <span>배너관리</span>
         </a>
     </li>
+</c:if>
+<c:if test="${user.role == 'BANK' || user.role == 'CARD' || user.role == 'CAPITAL'}">
     <li class="nav-item" id="cardNav">
         <a class="nav-link" href="/goodRate/regist" >
             <i class="fa fa-money-bill"></i>
             <span>금리관리</span>
         </a>
     </li>
-    <%-- <li class="nav-item" id="cardNav">
-        <a class="nav-link" href="/card/list" >
-            <i class="fas fa-fw fa-credit-card"></i>
-            <span>하나카드</span>
-        </a>
-    </li> --%>
-
-    <%-- <li class="nav-item"  id="bankNav">
-        <a class="nav-link" href="/bank/list" >
-            <i class="fa fa-university"></i>
-            <span> 하나은행</span>
-        </a>
-    </li> --%>
-
-    <%-- <li class="nav-item"  id="capitalNav">
-        <a class="nav-link"  href="/capital/list">
-            <i class="fa fa-money-bill"></i>
-            <span>하나캐피탈</span></a>
-    </li> --%>
+</c:if>
     <!-- Divider -->
     <hr class="sidebar-divider d-none d-md-block">
 

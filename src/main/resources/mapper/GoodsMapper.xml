@@ -2,45 +2,129 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.jlabsoft.hana.onethecar.onthecaradmin.goodsRate.GoodsRateMapper">
 
-    <insert id="setGoodsRate" parameterType="Map">
+	
+	<!-- 코드가져오기 -->
+	<select id="getSelectCodes" parameterType="HashMap" resultType="HashMap">
+        SELECT
+            goods_id,
+            goods_nm,
+			type
+        FROM
+            goods
+        WHERE
+            type = #{type}
+    </select>
+
+	<!-- 금리관리 DB유무 체크  -->
+	<select id="selectRateCheck" parameterType="HashMap" resultType="HashMap">
+		SELECT
+			*
+		FROM
+			goods_rate
+		WHERE
+			goods_id = #{goods_id} 
+	</select>
+
+	<!-- 등록 -->
+    <insert id="setGoodsRate" parameterType="HashMap">
 		INSERT INTO
 			goods_rate
-				(
-					csmrid,
-					hrmsid,
-					member_id,
-					password,
-					name,
-					prmt_num,
-					serial_number,
-					version,
-                    expr_dt,
-                    expr_dt,
-					status,
-					status2,
-					status3,
-					status4,
-					reg_member_id
+				(	
+					goods_id,
+					buy_type,
+					base_rate_dt,
+					base_rate,
+					add_rate,
+					rate1,
+					rate2,
+					rate3,
+					rate4,
+					rate5,
+                    rate6,
+                    rate7,
+					reg_id,
+					reg_dt
 				)
 			VALUES
-				(
-					#{csmrid},
-					#{hrmsid},
-					#{member_id},
-					#{password},
-					#{name},
-					#{prmt_num},
-					#{serial_number},
-					#{version},
-					<if test="expr_dt4 != null and expr_dt4 != ''">
-						#{expr_dt4},
-					</if>
-					#{status},
-					#{status2},
-					#{status3},
-					#{status4},
-					#{reg_member_id}
+				(	
+					#{goodsId},
+					#{type},
+					#{rateDt},
+					#{carBaseRate},
+					#{newAddRate},
+					#{newRate1},
+					#{newRate2},
+					#{newRate3},
+					#{newRate4},
+					#{newRate5},
+					#{newRate6},
+					#{newRate7},
+					#{userId},
+					now()
 				)
 	</insert>
+
+	<!-- 수정 -->
+    <!-- <insert id="setGoodsRate" parameterType="HashMap">
+		INSERT INTO
+			goods_rate
+				(	
+					goods_id,
+					buy_type,
+					base_rate_dt,
+					base_rate,
+					add_rate,
+					rate1,
+					rate2,
+					rate3,
+					rate4,
+					rate5,
+                    rate6,
+                    rate7,
+					reg_id,
+					reg_dt
+				)
+			VALUES
+				(	
+					#{goodsId},
+					#{type},
+					#{rateDt},
+					#{carBaseRate},
+					#{newAddRate},
+					#{newRate1},
+					#{newRate2},
+					#{newRate3},
+					#{newRate4},
+					#{newRate5},
+					#{newRate6},
+					#{newRate7},
+					#{userId},
+					now()
+				)
+	</insert> -->
+
+	<!--상세 -->
+    <select id="getGoodsRateDetail" resultType="HashMap" parameterType="HashMap">
+        SELECT
+            g.goods_id,
+			g.goods_name,
+			g.type,
+			gr.buy_type,
+			gr.base_rate_dt,
+			gr.base_rate,
+			gr.add_rate,
+			gr.rate1,
+			gr.rate2,
+			gr.rate3,
+			gr.rate4,
+			gr.rate5,
+			gr.rate6,
+			gr.rate6,
+        FROM
+            goods g
+            LEFT JOIN goods_rate gr ON g.goods_id = gr.goods_id
+        WHERE 
+            g.type = #{type}
+    </select>
 	
 </mapper>

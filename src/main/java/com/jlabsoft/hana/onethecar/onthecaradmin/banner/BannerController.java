@@ -1,7 +1,10 @@
 package com.jlabsoft.hana.onethecar.onthecaradmin.banner;
 
-
 import javax.servlet.http.HttpServletRequest;
+
+import com.jlabsoft.hana.onethecar.onthecaradmin.model.Admin;
+
+import org.springframework.security.core.annotation.AuthenticationPrincipal;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -14,21 +17,20 @@ public class BannerController {
 
 
     @RequestMapping(value = "/regist", method = RequestMethod.GET)
-    public ModelAndView insertBanner(HttpServletRequest request)throws Exception{
-        ModelAndView modelAndView = new ModelAndView("onethecar.banner/regist");
+    public ModelAndView insertBanner(HttpServletRequest request, @AuthenticationPrincipal Admin admin)throws Exception{
+        ModelAndView mav = new ModelAndView("onethecar.banner/regist");
 
-        // int idx = request.getParameter("idx") != null? Integer.parseInt(request.getParameter("idx").toString()) : 0;
-        // if(idx != 0) {
-        //     Map<String,Object> notice = noticeService.getNoticeByIdx(idx);
-        //     modelAndView.addObject("notice", notice);
-        //     modelAndView.addObject("topMenuName", "배너 수정");
-        //     modelAndView.addObject("images", imageService.getImageManage(idx, ImageTargetTable.NOTICE, null));
-        // }else{
-            modelAndView.addObject("topMenuName", "배너 등록");
-            // modelAndView.addObject("images", imageService.getImageManage(idx, ImageTargetTable.NOTICE, null));
-
-        // }
-        return modelAndView;
-
+        try{
+            String views = "";
+            if("BANNER".equals(admin.getRole())){
+                views = "배너 관리자";
+            }else if("CAPITAL".equals(admin.getRole())){
+                views = "하나캐피탈";
+            }
+            mav.addObject("topMenuName", views);
+        }catch(Exception e){
+            e.printStackTrace();
+        }
+        return mav;
     }
 }

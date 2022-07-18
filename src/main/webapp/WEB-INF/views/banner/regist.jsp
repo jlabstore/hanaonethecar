@@ -34,7 +34,7 @@
         align-items: flex-end;
     ">
     <c:if test ="${notice.idx == null}">
-        <h4 style="margin-bottom: 0px;">메인배너 관리</h4>
+        <h4 style="margin-bottom: 0px;">배너 관리</h4>
     </c:if>
     <%-- <c:if test ="${notice.idx != null}">
         <h4 style="margin-bottom: 0px;">자료실 정보 수정</h4>
@@ -55,7 +55,7 @@
             <div class="card-body">
                 <div class="form-row">
                     <div class="form-group col-md-12">
-                        <h5 style="margin-bottom: 0px;">메인배너 관리 - PC</h5></br>
+                        <h5 style="margin-bottom: 0px;">배너 관리 - PC</h5></br>
                         <label class="title-label">이미지 등록</label>
                         <input type="hidden" value="false" id="checkMainImageFile" name="checkMainImageFile">
                         <input type="file" id="noticeFiles" name="noticeFiles" class="input-file">
