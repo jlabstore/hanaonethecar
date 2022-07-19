@@ -55,13 +55,13 @@
     ">
         <h4 style="margin-bottom: 0px;">금리 관리</h4>
         <div>
-            <c:if test ="${detailGoodsRate.goods_id == null}">    
+            <c:if test ="${mav.type == null}">    
                 <button type="button" class="btn btn-outline-primary " onclick="setGoodsRate()">등록</button>
             </c:if>
-            <c:if test ="${detailGoodsRate.goods_id != null}">    
+            <c:if test ="${mav.type != null}">    
                 <button type="button" class="btn btn-outline-primary " onclick="putGoodsRate()">수정</button>
             </c:if>
-                <button type="button" class="btn btn-outline-dark "onclick="javascript:location.href='/goodRate/regist'">취소</button>
+                <%-- <button type="button" class="btn btn-outline-dark "onclick="javascript:location.href='/goodRate/regist'">취소</button> --%>
         </div>
     </div>
     <br>
@@ -377,7 +377,7 @@
     }
 
     //금리 수정 전송
-    function putMember(){
+    function putGoodsRate(){
 
         goodsId = $("#goodsName option:selected").val();
         rateDate = $('#rateDate').val();
