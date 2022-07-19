@@ -27,6 +27,23 @@
             padding: 1px 4px 1px 4px;
         }
     }
+    .custom-select{
+        display: inline-block;
+        width: 100%;
+        height: calc(1.5em + 0.75rem + 2px);
+        padding: 0.375rem 1.75rem 0.375rem 0.75rem;
+        font-size: 1rem;
+        font-weight: 400;
+        line-height: 1.5;
+        color: #6e707e;
+        vertical-align: middle;
+        background: #fff url(data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' width='4' height='5' viewBox='0 0 4 5'%3e%3cpath fill='%235a5c69' d='M2 0L0 2h4zm0 5L0 3h4z'/%3e%3c/svg%3e) no-repeat right 0.75rem center/8px 10px;
+        border: 1px solid #d1d3e2;
+        border-radius: 0.35rem;
+        -webkit-appearance: none;
+        -moz-appearance: none;
+        appearance: none;
+    }
 
 </style>
 <div class="container-fluid" style="margin-left: unset;">
@@ -38,28 +55,22 @@
     ">
         <h4 style="margin-bottom: 0px;">금리 관리</h4>
         <div>
-            <%-- <c:if test ="${member == null}">     --%>
-                <button type="button" class="btn btn-outline-primary " onclick="setEmptyCheck()">등록</button>
-            <%-- </c:if> --%>
-            <%-- <c:if test ="${member != null}">    
-                <button type="button" class="btn btn-outline-primary " onclick="putEmptyCheck()">수정</button>
-            </c:if> --%>
-                <%-- <button type="button" class="btn btn-outline-dark "onclick="javascript:location.href='/member/list'">취소</button> --%>
+            <c:if test ="${detailGoodsRate.goods_id == null}">    
+                <button type="button" class="btn btn-outline-primary " onclick="setGoodsRate()">등록</button>
+            </c:if>
+            <c:if test ="${detailGoodsRate.goods_id != null}">    
+                <button type="button" class="btn btn-outline-primary " onclick="putGoodsRate()">수정</button>
+            </c:if>
+                <button type="button" class="btn btn-outline-dark "onclick="javascript:location.href='/goodRate/regist'">취소</button>
         </div>
     </div>
     <br>
     <span>상품선택:</span>
-        <%-- getSelectCodes --%>
-    <select class="codeSelecter" id="goodsName" name="goodsName" aria-controls="dataTable" class="custom-select" style="width:130px"  onchange="onclickSubmit()">
+    <select class="custom-select" id="goodsName" name="goodsName" aria-controls="dataTable" style="width:130px"  onchange="detailGoodsRate()">
         <c:forEach var="item" items="${getSelectCodes}" varStatus="status">
             <option value="${item.goods_id}"><li>${item.goods_nm}</li></option>
         </c:forEach>
     </select>
-    <%-- <select id="goodsNam2e" onchange="onclickSubmit()" name="goodsName" aria-controls="dataTable" class="custom-select" style="width:130px">
-        <option value="CarLess">자동차리스</option>
-        <option value="LongLent">장기렌터카</option>
-        <option value="OldCarAutoLoan">중고차 오토론</option>
-    </select> --%>
     <table class="table" style="margin-top:10px">
         <thead class="thead-dark">
             <tr>
@@ -72,10 +83,10 @@
             <tr>
                 <th scope="row" style="text-align:center">금리기준일</th>
                 <td style="text-align:-webkit-center"> 
-                    <input class="form-control" id="rateDate" name="rateDate" type="text"style="width:20%;"> 
+                    <input class="form-control" id="rateDate" name="rateDate" type="text"style="width:20%;" readOnly> 
                 </td>
                 <td style="text-align:-webkit-center">
-                    <input class="form-control" id="rateDate2" name="rateDate2" type="text"style="width:20%;"> 
+                    <input class="form-control" id="rateDate2" name="rateDate2" type="text"style="width:20%;" readOnly> 
                 </td>
             </tr>
             <tr>
@@ -84,7 +95,7 @@
                     <input class="form-control" id="newCarBaseRate" type="text" style="width:20%;" onkeyup="imsi(this)">
                 </td>
                 <td style="text-align:-webkit-center">
-                    <input class="form-control" id="oldCarBaseRate" type="text" style="width:20%;" onkeyup="imsi(this)">
+                    <input class="form-control" id="usedCarBaseRate" type="text" style="width:20%;" onkeyup="imsi(this)" >
                 </td>
             </tr>
             <tr>
@@ -93,15 +104,15 @@
                     <input class="form-control" id="newAddRate" type="text"style="width:20%;" onkeyup="imsi(this)">
                 </td>
                 <td style="text-align:-webkit-center">
-                    <input  class="form-control" id="oldAddRate" type="text"style="width:20%;" onkeyup="imsi(this)">
+                    <input  class="form-control" id="usedAddRate" type="text"style="width:20%;" onkeyup="imsi(this)">
                 </td>
             </tr>
                 <th scope="row" style="text-align:center">부수거래 감면금리</th>
                 <td style="text-align:-webkit-center">
-                    <input  class="form-control" type="text" style="width:20%;" disabled >
+                    <input  class="form-control" type="text" style="width:20%;"  id="newRate"  disabled>
                 </td>
                 <td style="text-align:-webkit-center">
-                    <input  class="form-control" type="text" style="width:20%;" disabled>
+                    <input  class="form-control" type="text" style="width:20%;"  id="oldRate" disabled>
                 </td>
             </tr>
         </tbody>
@@ -119,10 +130,10 @@
         <tr>
             <th scope="row" style="text-align:center">급여이체</th>
             <td style="text-align:-webkit-center">
-                <input class="form-control" id="newRate1"  type="text" style="width:20%; margin-right:13%" onkeyup="imsi(this)"> 
+                <input class="form-control" id="newRate1"  type="text" style="width:20%; margin-right:13%" onkeyup="imsi(this)" value="${getGoodsRateDetail.new_rate1}"> 
             </td>
             <td style="text-align:-webkit-center">
-                <input class="form-control"  id="oldRate1" type="text" style="width:20%; margin-right:4%" onkeyup="imsi(this)"> 
+                <input class="form-control"  id="usedRate1" type="text" style="width:20%; margin-right:4%" onkeyup="imsi(this)" value="${data.new_rate1}"> 
             </td>
         </tr>
         <tr>
@@ -131,7 +142,7 @@
                 <input class="form-control" id="newRate2" type="text" style="width:20%; margin-right:13%" onkeyup="imsi(this)"> 
             </td>
             <td style="text-align:-webkit-center">
-                <input class="form-control" id="oldRate2" type="text"  style="width:20%; margin-right:4%" onkeyup="imsi(this)"> 
+                <input class="form-control" id="usedRate2" type="text"  style="width:20%; margin-right:4%" onkeyup="imsi(this)"> 
             </td>
         </tr>
         <tr>
@@ -140,7 +151,7 @@
                 <input class="form-control" id="newRate3" type="text" style="width:20%; margin-right:13%" onkeyup="imsi(this)"> 
             </td>
             <td style="text-align:-webkit-center">
-                <input class="form-control" id="oldRate3" type="text" style="width:20%; margin-right:4%" onkeyup="imsi(this)"> 
+                <input class="form-control" id="usedRate3" type="text" style="width:20%; margin-right:4%" onkeyup="imsi(this)"> 
             </td>
         </tr>
             <th scope="row" style="text-align:center">기타자동이체</th>
@@ -148,7 +159,7 @@
                 <input class="form-control" id="newRate4" type="text" style="width:20%; margin-right:13%" onkeyup="imsi(this)"> 
             </td>
             <td style="text-align:-webkit-center">
-                <input class="form-control" id="oldRate4" type="text" style="width:20%; margin-right:4%" onkeyup="imsi(this)"> 
+                <input class="form-control" id="usedRate4" type="text" style="width:20%; margin-right:4%" onkeyup="imsi(this)"> 
             </td>
         </tr>
             <th scope="row" style="text-align:center">하나원큐이체</th>
@@ -156,7 +167,7 @@
                 <input class="form-control" id="newRate5" type="text" style="width:20%; margin-right:13%" onkeyup="imsi(this)"> 
             </td>
             <td style="text-align:-webkit-center">
-                <input class="form-control" id="oldRate5" type="text"  style="width:20%; margin-right:4%" onkeyup="imsi(this)"> 
+                <input class="form-control" id="usedRate5" type="text"  style="width:20%; margin-right:4%" onkeyup="imsi(this)"> 
             </td>
         </tr>
             <th scope="row" style="text-align:center">적금상품납입</th>
@@ -164,7 +175,7 @@
                 <input class="form-control" id="newRate6" type="text"  style="width:20%; margin-right:13%" onkeyup="imsi(this)"> 
             </td>
             <td style="text-align:-webkit-center">
-                <input class="form-control" id="oldRate6" type="text"  style="width:20%; margin-right:4%" onkeyup="imsi(this)"> 
+                <input class="form-control" id="usedRate6" type="text"  style="width:20%; margin-right:4%" onkeyup="imsi(this)"> 
             </td>
         </tr>
             <th scope="row" style="text-align:center">우대금리</th>
@@ -172,7 +183,7 @@
                 <input class="form-control" id="newRate7" type="text" style="width:20%; margin-right:13%" onkeyup="imsi(this)"> 
             </td>
             <td style="text-align:-webkit-center">
-                <input class="form-control" id="oldRate7" type="text"style="width:20%; margin-right:4%" onkeyup="imsi(this)"> 
+                <input class="form-control" id="usedRate7" type="text"style="width:20%; margin-right:4%" onkeyup="imsi(this)"> 
             </td>
         </tr>
     </tbody>
@@ -180,9 +191,9 @@
 </div>
 <script type='text/javascript'> 
     $(window).ready(function(){
-    
+        detailGoodsRate();
     });
-
+    
     //소수점 작성
     var prev = "";
     var regexp = /^\d*(\.\d{0,4})?$/;
@@ -198,7 +209,7 @@
     $(function() {
         //input을 datepicker로 선언
         $("#rateDate, #rateDate2").datepicker({
-            dateFormat: 'yy.mm.dd' //Input Display Format 변경
+            dateFormat: 'yy-mm-dd' //Input Display Format 변경
             ,buttonText: "선택" //버튼에 마우스 갖다 댔을 때 표시되는 텍스트                
             ,yearSuffix: "년" //달력의 년도 부분 뒤에 붙는 텍스트
             ,monthNamesShort: ['1','2','3','4','5','6','7','8','9','10','11','12'] //달력의 월 부분 텍스트
@@ -208,73 +219,114 @@
         });                                                
     });
 
-     
-
     //금리 등록시 유효성 체크 후 저장 
-    function setEmptyCheck() {
-        // if($('#rateDate').val() == ""){
-        //     alert('신차구입 금리 기준일을 등록해주세요');
-        //     $('#rateDate').focus();
-        // }else if($('#rateDate2').val() == ""){
-        //     alert('중고차 구입 금리 기준일을 등록해주세요.');
-        //     $('#rateDate2').focus();
-        // }else if($('#newCarBaseRate').val() == ""){
-        //     alert('신차구입 기준금리를 등록해주세요');
-        //     $('#newCarBaseRate').focus();
-        // }else if($('#oldCarBaseRate').val() == ""){
-        //     alert('중고차구입 기준금리를 등록해주세요');
-        //     $('#oldCarBaseRate').focus();
-        // }else if($('#newAddRate').val() == ""){
-        //     alert('신차기준 가산금리를 등록해주세요');
-        //     $('#newAddRate').focus();
-        // }else if($('#oldAddRate').val() == ""){
-        //     alert('중고차기준 가산금리를 등록해주세요');
-        //     $('#oldAddRate').focus();
-        // }else if($('#newRate1').val() == ''){
-        //     alert('신차기준 급여이체를 등록해주세요');
-        //     $('#newRate1').focus();
-        // }else if($('#oldRate1').val() == ''){
-        //     alert('중고차기준 급여이체를 등록해주세요');
-        //     $('#oldRate1').focus();
-        // }else if($('#newRate2').val() == ''){
-        //     alert('신차기준 주택청약종합저축납입금을 등록해주세요');
-        //     $('#newRate2').focus();
-        // }else if($('#oldRate2').val() == ''){
-        //     alert('중고차기준 주택청약종합저축납입금을 등록해주세요');
-        //     $('#oldRate2').focus();
-        // }else if($('#newRate3').val() == ''){
-        //     alert('신차기준 제휴카드결제 금액을 등록해주세요');
-        //     $('#newRate3').focus();
-        // }else if($('#oldRate3').val() == ''){
-        //     alert('중고차기준 제휴카드결제 금액을 등록해주세요');
-        //     $('#oldRate3').focus();
-        // }else if($('#newRate4').val() == ''){
-        //     alert('신차기준 기타자동이체 금액을 등록해주세요');
-        //     $('#newRate4').focus();
-        // }else if($('#oldRate4').val() == ''){
-        //     alert('중고차기준 기타자동이체 금액을 등록해주세요');
-        //     $('#oldRate4').focus();
-        // }else if($('#newRate5').val() == ''){
-        //     alert('신차기준 하나원큐이체 금액을 등록해주세요');
-        //     $('#newRate5').focus();
-        // }else if($('#oldRate5').val() == ''){
-        //     alert('중고차기준 하나원큐이체 금액을 등록해주세요');
-        //     $('#oldRate5').focus();
-        // }else if($('#newRate6').val() == ''){
-        //     alert('신차기준 적금상품납입 금액을 등록해주세요');
-        //     $('#newRate6').focus();
-        // }else if($('#oldRate6').val() == ''){
-        //     alert('중고차기준 적금상품납입 금액을 등록해주세요');
-        //     $('#oldRate6').focus();
-        // }else if($('#newRate7').val() == ''){
-        //     alert('신차기준 우대금리를 등록해주세요');
-        //     $('#newRate7').focus();
-        // }else if($('#oldRate7').val() == ''){
-        //     alert('중고차기준 우대금리를 등록해주세요');
-        //     $('#oldRate7').focus();
-        // }else{
+    function setGoodsRate() {
+        if($('#rateDate').val() == ""){
+            alert('신차구입 금리 기준일을 등록해주세요');
+            $('#rateDate').focus();
+        }else if($('#rateDate2').val() == ""){
+            alert('중고차 구입 금리 기준일을 등록해주세요.');
+            $('#rateDate2').focus();
+        }else if($('#newCarBaseRate').val() == ""){
+            alert('신차구입 기준금리를 등록해주세요');
+            $('#newCarBaseRate').focus();
+        }else if($('#usedCarBaseRate').val() == ""){
+            alert('중고차구입 기준금리를 등록해주세요');
+            $('#usedCarBaseRate').focus();
+        }else if($('#newAddRate').val() == ""){
+            alert('신차기준 가산금리를 등록해주세요');
+            $('#newAddRate').focus();
+        }else if($('#usedAddRate').val() == ""){
+            alert('중고차기준 가산금리를 등록해주세요');
+            $('#usedAddRate').focus();
+        }else if($('#newRate1').val() == ''){
+            alert('신차기준 급여이체를 등록해주세요');
+            $('#newRate1').focus();
+        }else if($('#usedRate1').val() == ''){
+            alert('중고차기준 급여이체를 등록해주세요');
+            $('#usedRate1').focus();
+        }else if($('#newRate2').val() == ''){
+            alert('신차기준 주택청약종합저축납입금을 등록해주세요');
+            $('#newRate2').focus();
+        }else if($('#usedRate2').val() == ''){
+            alert('중고차기준 주택청약종합저축납입금을 등록해주세요');
+            $('#usedRate2').focus();
+        }else if($('#newRate3').val() == ''){
+            alert('신차기준 제휴카드결제 금액을 등록해주세요');
+            $('#newRate3').focus();
+        }else if($('#usedRate3').val() == ''){
+            alert('중고차기준 제휴카드결제 금액을 등록해주세요');
+            $('#usedRate3').focus();
+        }else if($('#newRate4').val() == ''){
+            alert('신차기준 기타자동이체 금액을 등록해주세요');
+            $('#newRate4').focus();
+        }else if($('#usedRate4').val() == ''){
+            alert('중고차기준 기타자동이체 금액을 등록해주세요');
+            $('#usedRate4').focus();
+        }else if($('#newRate5').val() == ''){
+            alert('신차기준 하나원큐이체 금액을 등록해주세요');
+            $('#newRate5').focus();
+        }else if($('#usedRate5').val() == ''){
+            alert('중고차기준 하나원큐이체 금액을 등록해주세요');
+            $('#usedRate5').focus();
+        }else if($('#newRate6').val() == ''){
+            alert('신차기준 적금상품납입 금액을 등록해주세요');
+            $('#newRate6').focus();
+        }else if($('#usedRate6').val() == ''){
+            alert('중고차기준 적금상품납입 금액을 등록해주세요');
+            $('#usedRate6').focus();
+        }else if($('#newRate7').val() == ''){
+            alert('신차기준 우대금리를 등록해주세요');
+            $('#newRate7').focus();
+        }else if($('#usedRate7').val() == ''){
+            alert('중고차기준 우대금리를 등록해주세요');
+            $('#usedRate7').focus();
+        }else{
             addGoodsRate();
-        // }
+        }
+    }
+
+    //상세 
+    function detailGoodsRate(){
+        var goodsId = $("#goodsName").val();
+        $.ajax({
+            type: "POST",
+            url : "/goodRate/detailGoodsRate",
+            data: {"goodsId":goodsId},
+            dataType: "json",
+            contentType: "application/x-www-form-urlencoded; charset=UTF-8",
+            async: false,
+            success : function(data){
+                dataFormatingFun(data)
+            },error : function(date){
+                alert('서버오류 ');
+            }
+        });
+    }
+
+    var dataFormatingFun = function(data) {
+        $('#goodsName').val(data.detailGoodsRate.goods_id)
+        $("#rateDate").val(data.detailGoodsRate.new_base_rate_dt);
+        $("#newCarBaseRate").val(data.detailGoodsRate.new_base_rate);
+        $("#newAddRate").val(data.detailGoodsRate.new_add_rate);
+        $("#newRate1").val(data.detailGoodsRate.new_rate1);
+        $("#newRate2").val(data.detailGoodsRate.new_rate2);
+        $("#newRate3").val(data.detailGoodsRate.new_rate3);
+        $("#newRate4").val(data.detailGoodsRate.new_rate4);
+        $("#newRate5").val(data.detailGoodsRate.new_rate5);
+        $("#newRate6").val(data.detailGoodsRate.new_rate6);
+        $("#newRate7").val(data.detailGoodsRate.new_rate7);
+
+        $("#rateDate2").val(data.detailGoodsRate.used_base_rate_dt);
+        $("#usedCarBaseRate").val(data.detailGoodsRate.used_base_rate);
+        $("#usedAddRate").val(data.detailGoodsRate.used_add_rate);
+        $("#usedRate1").val(data.detailGoodsRate.used_rate1);
+        $("#usedRate2").val(data.detailGoodsRate.used_rate2);
+        $("#usedRate3").val(data.detailGoodsRate.used_rate3);
+        $("#usedRate4").val(data.detailGoodsRate.used_rate4);
+        $("#usedRate5").val(data.detailGoodsRate.used_rate5);
+        $("#usedRate6").val(data.detailGoodsRate.used_rate6);
+        $("#usedRate7").val(data.detailGoodsRate.used_rate7);
     }
 
     //금리 등록 전송
@@ -298,74 +350,77 @@
             "newRate6" : $('#newRate6').val(),
             "newRate7" : $('#newRate7').val(),
 
-            "oldRateDt" : rateDate2,
-            "oldCarBaseRate" : $('#oldCarBaseRate').val(),
-            "oldAddRate" : $('#oldAddRate').val(),
-            "oldRate1" : $('#oldRate1').val(),
-            "oldRate2" : $('#oldRate2').val(),
-            "oldRate3" : $('#oldRate3').val(),
-            "oldRate4" : $('#oldRate4').val(),
-            "oldRate5" : $('#oldRate5').val(),
-            "oldRate6" : $('#oldRate6').val(),
-            "oldRate7" : $('#oldRate7').val()
+            "usedRateDt" : rateDate2,
+            "usedCarBaseRate" : $('#usedCarBaseRate').val(),
+            "usedAddRate" : $('#usedAddRate').val(),
+            "usedRate1" : $('#usedRate1').val(),
+            "usedRate2" : $('#usedRate2').val(),
+            "usedRate3" : $('#usedRate3').val(),
+            "usedRate4" : $('#usedRate4').val(),
+            "usedRate5" : $('#usedRate5').val(),
+            "usedRate6" : $('#usedRate6').val(),
+            "usedRate7" : $('#usedRate7').val()
         }
-        console.log(formData);
         $.ajax({
-            type:"POST",
+            type: "POST",
             url : "/goodRate/setGoodsRate",
             data: formData,
-            dataType    :"json",
-            contentType :"application/x-www-form-urlencoded; charset=UTF-8",
+            dataType: "json",
+            contentType: "application/x-www-form-urlencoded; charset=UTF-8",
             async: false,
-            success : function(data){
-                // var cnt = data;
-                // if(cnt >= 1 ){
-                    alert('금리 등록 성공');
-                    // location.href="/goodRate/regist"
-                // }else {
-                //     alert('저장에 실패했습니다.');
-                //     // $(document).reset();
-                // }
+            success : function(data){                    
+                alert('등록이 완료되었습니다.');
             },error : function(date){
                 alert('서버오류 ');
             }
         });
     }
 
-    //회원정보 수정 정보 전송
-    // function putMember(){
+    //금리 수정 전송
+    function putMember(){
 
-    //     exprDate = $('#datepicker').val();
-    //     exprDate2 = $('#datepicker2').val();
+        goodsId = $("#goodsName option:selected").val();
+        rateDate = $('#rateDate').val();
+        rateDate2 = $('#rateDate2').val();
 
-    //     var formData = {
-    //         "member_id" : $('#member_id').val(),
-    //         "password" : $('#password').val(),
-    //         "csmrid" : $('#csmrid').val(),
-    //         "hrmsid" : $('#hrmsid').val(),
-    //         "name" : $('#name').val(),
-    //         "prmt_num" :$('#prmt_num').val(),
-    //         "serial_number" : $('#serial_number').val(),
-    //         "version" : $('#version').val(),
-    //         "expr_dt" : exprDate,
-    //         "expr_dt2" : exprDate2,
-    //     }
+        var formData = {
+            "goodsId": goodsId,
+            "newRateDt" : rateDate,
+            "newCarBaseRate" : $('#newCarBaseRate').val(),
+            "newAddRate" : $('#newAddRate').val(),
+            "newRate1" : $('#newRate1').val(),
+            "newRate2" : $('#newRate2').val(),
+            "newRate3" :$('#newRate3').val(),
+            "newRate4" : $('#newRate4').val(),
+            "newRate5" : $('#newRate5').val(),
+            "newRate6" : $('#newRate6').val(),
+            "newRate7" : $('#newRate7').val(),
 
-    //     $.ajax({
-    //         type:"post",
-    //         url : "/goodRate/putGoodsRate",
-    //         contentType : "application/json",
-    //         dataType: "text",
-    //         data: JSON.stringify(formData),
-    //         success : function(data){
-    //             var cnt = data;
-    //             if(cnt >= 1 ){
-    //                 alert('금리 등록 성공');
-    //                 location.href="/goodRate/regist"
-    //             }
-    //         },error : function(date){
-    //             alert('서버오류 ');
-    //         }
-    //     }); 
-    // }
+            "usedRateDt" : rateDate2,
+            "usedCarBaseRate" : $('#usedCarBaseRate').val(),
+            "usedAddRate" : $('#usedAddRate').val(),
+            "usedRate1" : $('#usedRate1').val(),
+            "usedRate2" : $('#usedRate2').val(),
+            "usedRate3" : $('#usedRate3').val(),
+            "usedRate4" : $('#usedRate4').val(),
+            "usedRate5" : $('#usedRate5').val(),
+            "usedRate6" : $('#usedRate6').val(),
+            "usedRate7" : $('#usedRate7').val()
+        }
+
+        $.ajax({
+            type: "POST",
+            url : "/goodRate/putGoodsRate",
+            data: formData,
+            dataType: "json",
+            contentType: "application/x-www-form-urlencoded; charset=UTF-8",
+            async: false,
+            success : function(data){
+                alert('수정이 완료되었습니다.');
+            },error : function(date){
+                alert('서버오류 ');
+            }
+        });
+    }
+
 </script>

@@ -35,11 +35,9 @@ public class GoodRateController {
     
     @GetMapping(value="/regist")
     public ModelAndView regist(@AuthenticationPrincipal Admin admin,@RequestParam HashMap<String,Object> param) throws Exception {
-        // @RequestParam HashMap<String,Object> param,
         ModelAndView mav = new ModelAndView("onethecar.goodRate/regist");
 
         try{
-            // HashMap<String,Object> getGoodsRateDetail = goodRateService.getGoodsRateDetail(param);
             String views = "";
             if("BANK".equals(admin.getRole())) {
                 views = "하나은행";
@@ -51,14 +49,33 @@ public class GoodRateController {
             
             param.put("type", admin.getRole());
             mav.addObject("topMenuName",views); 
+
             mav.addObject("getSelectCodes", goodRateService.getSelectCodes(param));
-            // mav.addObject("getGoodsRateDetail",getGoodsRateDetail);
         }catch(Exception e){
             e.printStackTrace();            
         }
         return mav;
     }
 
+    //상세
+    @RequestMapping(value = "/detailGoodsRate", method = RequestMethod.POST)
+    @ResponseBody
+    public HashMap<String, Object> getGoodsRateDetail(@RequestParam HashMap<String,Object> param){
+
+            HashMap<String,Object> data = new HashMap<String,Object>();
+        try{
+            HashMap<String,Object> detailGoodsRate = goodRateService.getGoodsRateDetail(param);
+            if(detailGoodsRate != null){
+                data.put("detailGoodsRate", detailGoodsRate);
+            }
+        }catch(Exception e){
+            e.printStackTrace();
+        }
+        return data;
+    }
+    
+
+    //등록
     @RequestMapping(value = "/setGoodsRate", method = RequestMethod.POST)
     @ResponseBody
     public HashMap<String,Object> setGoodsRate(@RequestParam HashMap<String,Object> param, @AuthenticationPrincipal Admin admin) throws IOException{
@@ -67,6 +84,23 @@ public class GoodRateController {
         try{
             param.put("userId",admin.getId());
             goodRateService.setGoodsRate(param);
+            result = ApiStatus.OK;
+        }catch(Exception e){
+            e.printStackTrace();
+        }
+        resultHashMap.put(("result"), result);
+		return resultHashMap;
+    } 
+
+    //수정
+    @RequestMapping(value = "/putGoodsRate", method = RequestMethod.POST)
+    @ResponseBody
+    public HashMap<String,Object> putGoodsRate(@RequestParam HashMap<String,Object> param, @AuthenticationPrincipal Admin admin) throws IOException{
+        HashMap<String,Object> resultHashMap = new HashMap<String,Object>();
+        ApiStatus result = ApiStatus.BAD_REQUEST;
+        try{
+            param.put("userId",admin.getId());
+            goodRateService.putGoodsRate(param);
             result = ApiStatus.OK;
         }catch(Exception e){
             e.printStackTrace();
