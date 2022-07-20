@@ -55,12 +55,8 @@
     ">
         <h4 style="margin-bottom: 0px;">금리 관리</h4>
         <div>
-            <c:if test ="${mav.type == null}">    
-                <button type="button" class="btn btn-outline-primary " onclick="setGoodsRate()">등록</button>
-            </c:if>
-            <c:if test ="${mav.type != null}">    
-                <button type="button" class="btn btn-outline-primary " onclick="putGoodsRate()">수정</button>
-            </c:if>
+            <button type="button" id="setGoodsRateBtn" class="btn btn-outline-primary " onclick="setGoodsRate()">등록</button>
+            <button type="button" id="putGoodsRateBtn" class="btn btn-outline-primary " onclick="putGoodsRate()">수정</button>
                 <%-- <button type="button" class="btn btn-outline-dark "onclick="javascript:location.href='/goodRate/regist'">취소</button> --%>
         </div>
     </div>
@@ -112,7 +108,7 @@
                     <input  class="form-control" type="text" style="width:20%;"  id="newRate"  disabled>
                 </td>
                 <td style="text-align:-webkit-center">
-                    <input  class="form-control" type="text" style="width:20%;"  id="oldRate" disabled>
+                    <input  class="form-control" type="text" style="width:20%;"  id="usedRate" disabled>
                 </td>
             </tr>
         </tbody>
@@ -298,6 +294,16 @@
             async: false,
             success : function(data){
                 dataFormatingFun(data)
+                if(data.detailGoodsRate != null){
+                    //수정
+                    $("#putGoodsRateBtn").show();
+                    $("#setGoodsRateBtn").hide();
+                }else{
+                    //등록
+                    $("#setGoodsRateBtn").show();
+                    $("#putGoodsRateBtn").hide();
+                }
+            // detailGoodsRate();
             },error : function(date){
                 alert('서버오류 ');
             }
@@ -305,28 +311,52 @@
     }
 
     var dataFormatingFun = function(data) {
-        $('#goodsName').val(data.detailGoodsRate.goods_id)
-        $("#rateDate").val(data.detailGoodsRate.new_base_rate_dt);
-        $("#newCarBaseRate").val(data.detailGoodsRate.new_base_rate);
-        $("#newAddRate").val(data.detailGoodsRate.new_add_rate);
-        $("#newRate1").val(data.detailGoodsRate.new_rate1);
-        $("#newRate2").val(data.detailGoodsRate.new_rate2);
-        $("#newRate3").val(data.detailGoodsRate.new_rate3);
-        $("#newRate4").val(data.detailGoodsRate.new_rate4);
-        $("#newRate5").val(data.detailGoodsRate.new_rate5);
-        $("#newRate6").val(data.detailGoodsRate.new_rate6);
-        $("#newRate7").val(data.detailGoodsRate.new_rate7);
+        var temp = data.detailGoodsRate != null ? true : false;
 
-        $("#rateDate2").val(data.detailGoodsRate.used_base_rate_dt);
-        $("#usedCarBaseRate").val(data.detailGoodsRate.used_base_rate);
-        $("#usedAddRate").val(data.detailGoodsRate.used_add_rate);
-        $("#usedRate1").val(data.detailGoodsRate.used_rate1);
-        $("#usedRate2").val(data.detailGoodsRate.used_rate2);
-        $("#usedRate3").val(data.detailGoodsRate.used_rate3);
-        $("#usedRate4").val(data.detailGoodsRate.used_rate4);
-        $("#usedRate5").val(data.detailGoodsRate.used_rate5);
-        $("#usedRate6").val(data.detailGoodsRate.used_rate6);
-        $("#usedRate7").val(data.detailGoodsRate.used_rate7);
+
+
+        var new_rate1 = temp ? data.detailGoodsRate.new_rate1 : "";
+        var new_rate2 = temp ? data.detailGoodsRate.new_rate2 : "";
+        var new_rate3 = temp ? data.detailGoodsRate.new_rate3 : "";
+        var new_rate4 = temp ? data.detailGoodsRate.new_rate4 : "";
+        var new_rate5 = temp ? data.detailGoodsRate.new_rate5 : "";
+        var new_rate6 = temp ? data.detailGoodsRate.new_rate6 : "";
+        var new_rate7 = temp ? data.detailGoodsRate.new_rate7 : "";
+
+        var used_rate1 = temp ? data.detailGoodsRate.used_rate1 : "";
+        var used_rate2 = temp ? data.detailGoodsRate.used_rate2 : "";
+        var used_rate3 = temp ? data.detailGoodsRate.used_rate3 : "";
+        var used_rate4 = temp ? data.detailGoodsRate.used_rate4 : "";
+        var used_rate5 = temp ? data.detailGoodsRate.used_rate5 : "";
+        var used_rate6 = temp ? data.detailGoodsRate.used_rate6 : "";
+        var used_rate7 = temp ? data.detailGoodsRate.used_rate7 : "";
+        
+        $("#rateDate").val(temp ? data.detailGoodsRate.new_base_rate_dt : "");
+        $("#newCarBaseRate").val(temp ? data.detailGoodsRate.new_base_rate : "");
+        $("#newAddRate").val(temp ? data.detailGoodsRate.new_add_rate : "");
+        $("#newRate1").val(new_rate1);
+        $("#newRate2").val(new_rate2);
+        $("#newRate3").val(new_rate3);
+        $("#newRate4").val(new_rate4);
+        $("#newRate5").val(new_rate5);
+        $("#newRate6").val(new_rate6);
+        $("#newRate7").val(new_rate7);
+
+        $("#rateDate2").val(temp ? data.detailGoodsRate.used_base_rate_dt : "");
+        $("#usedCarBaseRate").val(temp ? data.detailGoodsRate.used_base_rate : "");
+        $("#usedAddRate").val(temp ? data.detailGoodsRate.used_add_rate : "");
+        $("#usedRate1").val(used_rate1);
+        $("#usedRate2").val(used_rate2);
+        $("#usedRate3").val(used_rate3);
+        $("#usedRate4").val(used_rate4);
+        $("#usedRate5").val(used_rate5);
+        $("#usedRate6").val(used_rate6);
+        $("#usedRate7").val(used_rate7);
+
+
+        //부수거래 감면금리 계산액
+        $("#newRate").val(new_rate1 + new_rate2 + new_rate3 + new_rate4 + new_rate5 +new_rate6 + new_rate7);
+        $("#usedRate").val(used_rate1 + used_rate2 + used_rate3 + used_rate4 + used_rate5+ used_rate6 + used_rate7);
     }
 
     //금리 등록 전송
@@ -370,6 +400,7 @@
             async: false,
             success : function(data){                    
                 alert('등록이 완료되었습니다.');
+
             },error : function(date){
                 alert('서버오류 ');
             }
@@ -417,6 +448,7 @@
             async: false,
             success : function(data){
                 alert('수정이 완료되었습니다.');
+                detailGoodsRate();
             },error : function(date){
                 alert('서버오류 ');
             }

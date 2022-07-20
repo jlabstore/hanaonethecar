@@ -2,6 +2,51 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.jlabsoft.hana.onethecar.onthecaradmin.banner.BannerMapper">
 
-	
+    <select id="getImageManage" resultType="ImageManage" parameterType="ImageManage">
+        SELECT 
+            idx
+            , type
+            , path
+            , original_nm
+            , making_nm
+            , sort
+            , del_yn
+            , reg_id
+            , reg_dt
+        FROM 
+            banner
+        WHERE
+            del_yn ='Y'
+        ORDER BY 
+            order ASC
+        Limit 5
+	</select>
     
+    <insert id="registImage" parameterType="ImageManage">
+		insert into 
+        banner
+            (
+                type
+                ,path
+                ,original_nm
+                ,making_nm
+                ,del_yn 
+                ,sort
+                ,reg_dt
+                ,reg_id
+            )
+		values
+			( 
+                #{type}
+                ,#{path}
+                ,#{originalFileName}
+                ,#{makingFileName}
+                ,'Y'
+                ,#{selectSort}
+                ,now()
+                ,#{regId}
+            )
+	</insert>
+
+
 </mapper>

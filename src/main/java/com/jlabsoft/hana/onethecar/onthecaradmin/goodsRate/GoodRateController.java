@@ -34,9 +34,8 @@ public class GoodRateController {
 
     
     @GetMapping(value="/regist")
-    public ModelAndView regist(@AuthenticationPrincipal Admin admin,@RequestParam HashMap<String,Object> param) throws Exception {
+    public ModelAndView regist(@AuthenticationPrincipal Admin admin,@RequestParam HashMap<String,Object> param, HttpServletRequest request) throws Exception {
         ModelAndView mav = new ModelAndView("onethecar.goodRate/regist");
-
         try{
             String views = "";
             if("BANK".equals(admin.getRole())) {
@@ -46,7 +45,6 @@ public class GoodRateController {
             }else if("CARD".equals(admin.getRole())){
                 views = "하나카드";
             }
-            
             param.put("type", admin.getRole());
             mav.addObject("topMenuName",views); 
 
@@ -108,7 +106,4 @@ public class GoodRateController {
         resultHashMap.put(("result"), result);
 		return resultHashMap;
     } 
-
-
-
 }
