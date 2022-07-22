@@ -3,6 +3,7 @@ package com.jlabsoft.hana.onethecar.onthecaradmin.banner;
 import java.io.IOException;
 import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 import com.jlabsoft.hana.onethecar.onthecaradmin.common.FileUtil;
 import com.jlabsoft.hana.onethecar.onthecaradmin.model.ImageManage;
@@ -11,6 +12,7 @@ import com.jlabsoft.hana.onethecar.onthecaradmin.model.enums.ImageType;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.multipart.MultipartFile;
 
 @Service
@@ -28,11 +30,10 @@ public class BannerService {
     @Value("${active.env}")
     private String activeEnv;
 
-    // public List<ImageManage> getImageManage(int Idx, ImageType imageType){
-    //     ImageManage imageManage = new ImageManage();
-    //     List<ImageManage> images = bannerMapper.getImageManage(imageManage);
-    //     return images;
-    // }
+
+    public List<HashMap<String, Object>> getGoodsBanner(HashMap<String, Object> param) {
+		return bannerMapper.getImageManage(param);
+	}
 
     /**
      * 이미지 업로드 및 이미지 정보 DB 저장
@@ -54,7 +55,7 @@ public class BannerService {
                     imageManage.setPath(filePath);
                     imageManage.setOriginalFileName(fileNames.get(0));
                     imageManage.setMakingFileName(fileNames.get(1));
-                    imageManage.setDelYn("Y");
+                    imageManage.setDelYn("N");
                     imageManage.setSelectSort(Integer.parseInt(param.get("selectSort").toString()));
                     imageManage.setRegId(param.get("userId").toString());
 
@@ -66,5 +67,9 @@ public class BannerService {
                 e.printStackTrace();
             }
         }
+    }
+
+    public int removeBanner(Map<String,Object> param){
+        return bannerMapper.removeBanner(param);
     }
 }

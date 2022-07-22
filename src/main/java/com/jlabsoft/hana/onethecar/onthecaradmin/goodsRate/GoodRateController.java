@@ -47,7 +47,6 @@ public class GoodRateController {
             }
             param.put("type", admin.getRole());
             mav.addObject("topMenuName",views); 
-
             mav.addObject("getSelectCodes", goodRateService.getSelectCodes(param));
         }catch(Exception e){
             e.printStackTrace();            

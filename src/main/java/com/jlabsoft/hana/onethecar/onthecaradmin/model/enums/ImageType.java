@@ -9,11 +9,10 @@ import lombok.Getter;
 public enum ImageType {
     
     MAINPC("mainPc"),
-    MAINMOBILE("mainMobile"),
-    CAPITALPC("capitalPc"),
-    CAPITALMOBILE("capitalMobile");
+    MAINMOBILE("mainMobile");
+    // CAPITALPC("capitalPc"),
+    // CAPITALMOBILE("capitalMobile");
     
-
     private String value;
 
 }

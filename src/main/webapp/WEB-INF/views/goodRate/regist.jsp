@@ -303,9 +303,8 @@
                     $("#setGoodsRateBtn").show();
                     $("#putGoodsRateBtn").hide();
                 }
-            // detailGoodsRate();
             },error : function(date){
-                alert('서버오류 ');
+                alert('문제가 발생했습니다. 관리자에게 문의하세요.');
             }
         });
     }
@@ -402,7 +401,7 @@
                 alert('등록이 완료되었습니다.');
 
             },error : function(date){
-                alert('서버오류 ');
+                alert('문제가 발생했습니다. 관리자에게 문의하세요.');
             }
         });
     }
@@ -450,7 +449,7 @@
                 alert('수정이 완료되었습니다.');
                 detailGoodsRate();
             },error : function(date){
-                alert('서버오류 ');
+                alert('문제가 발생했습니다. 관리자에게 문의하세요.');
             }
         });
     }

@@ -2,7 +2,7 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.jlabsoft.hana.onethecar.onthecaradmin.banner.BannerMapper">
 
-    <select id="getImageManage" resultType="ImageManage" parameterType="ImageManage">
+    <select id="getImageManage" resultType="HashMap" parameterType="HashMap">
         SELECT 
             idx
             , type
@@ -16,13 +16,11 @@
         FROM 
             banner
         WHERE
-            del_yn ='Y'
-        ORDER BY 
-            order ASC
-        Limit 5
+            del_yn ='N' and
+            reg_id = #{userId}
 	</select>
     
-    <insert id="registImage" parameterType="ImageManage">
+    <insert id="registImage" parameterType="ImageManage" useGeneratedKeys="true" keyProperty="idx">
 		insert into 
         banner
             (
@@ -41,12 +39,22 @@
                 ,#{path}
                 ,#{originalFileName}
                 ,#{makingFileName}
-                ,'Y'
+                ,'N'
                 ,#{selectSort}
                 ,now()
                 ,#{regId}
             )
 	</insert>
 
+    <update id="removeBanner" parameterType="map">
+        UPDATE
+            banner
+        SET
+            del_yn = #{delYn},
+            reg_id = #{userId},
+            reg_dt = now()
+        WHERE
+            idx = #{idx}
+    </update>
 
 </mapper>

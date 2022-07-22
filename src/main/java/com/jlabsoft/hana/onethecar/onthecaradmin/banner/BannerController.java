@@ -1,5 +1,6 @@
 package com.jlabsoft.hana.onethecar.onthecaradmin.banner;
 
+import java.io.IOException;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -31,52 +32,98 @@ public class BannerController {
     private BannerService bannerService;
 
     @RequestMapping(value = "/regist", method = RequestMethod.GET)
-    public ModelAndView insertBanner(HttpServletRequest request, @AuthenticationPrincipal Admin admin)throws Exception{
+    public ModelAndView insertBanner(HttpServletRequest request, @AuthenticationPrincipal Admin admin,@RequestParam HashMap<String,Object> param)throws Exception{
         ModelAndView mav = new ModelAndView("onethecar.banner/regist");
         int idx = request.getParameter("idx") != null ? Integer.parseInt(request.getParameter("idx").toString()):0;
         try{
             String views = "";
             if("BANNER".equals(admin.getRole())){
                 views = "메인배너 관리자";
+
             }else if("CAPITAL".equals(admin.getRole())){
                 views = "하나캐피탈";
             }
             mav.addObject("topMenuName", views);
-            // mav.addObject("image", bannerService.getImageManage(idx, ImageType.MAINPC));
+            mav.addObject("idx", idx);
         }catch(Exception e){
             e.printStackTrace();
         }
         return mav;
     }
 
-    @RequestMapping(value = "/setBanner", method = RequestMethod.POST)
+    @RequestMapping(value = "/saveBanner", method = RequestMethod.POST)
     @ResponseBody
     public Map<String,Object> registBanner(
                                             @RequestParam HashMap<String,Object> param, 
                                             MultipartHttpServletRequest multipartReq, 
                                             HttpServletRequest request, 
                                             HttpServletResponse response, 
+                                            String[] selectSort,
+                                            String[] selectSort_,
                                             @AuthenticationPrincipal Admin admin ){
         Map<String,Object> resultHashMap = new HashMap<String,Object>();
         ApiStatus result = ApiStatus.BAD_REQUEST;
         try{
-            param.put("userId", admin.getId());
-            List<MultipartFile> files = multipartReq.getFiles("MainPCFiles");
-            for(MultipartFile file : files){
-                bannerService.setImage(file, ImageType.MAINPC, param);
-            }
-            List<MultipartFile> Mfiles = multipartReq.getFiles("MainMobileFiles");
-            for(MultipartFile file : Mfiles){
-                bannerService.setImage(file, ImageType.MAINMOBILE, param);
-            }
             
+            //메인피시 배너
+            List<MultipartFile> files = multipartReq.getFiles("mainPCFiles");
+                param.put("userId", admin.getId());
+                for (int i = 0; i < selectSort.length; i++) {   
+                    param.replace("selectSort", selectSort[i]);
+                    bannerService.setImage(files.get(i), ImageType.MAINPC, param);
+                  
+                }
+                
+                // // 메인 모바일 배너
+                List<MultipartFile> mfiles = multipartReq.getFiles("mainMobileFiles");
+                for (int i = 0; i < selectSort_.length; i++) {   
+                    param.replace("selectSort", selectSort_[i]);
+                    bannerService.setImage(mfiles.get(i), ImageType.MAINMOBILE, param);
+                }
             result = ApiStatus.OK;
         }catch(Exception e){
             e.printStackTrace();
         }
+        
         resultHashMap.put(("result"), result);
         return resultHashMap;
     }
 
+      //상세
+    @RequestMapping(value = "/detailBanner", method = RequestMethod.POST)
+    @ResponseBody
+    public HashMap<String, Object> getGoodsRateDetail(@RequestParam HashMap<String,Object> param,@AuthenticationPrincipal Admin admin){
+
+            HashMap<String,Object> data = new HashMap<String,Object>();
+        try{
+            param.put("userId",admin.getId());
+            List<HashMap<String,Object>> getGoodsBanner = bannerService.getGoodsBanner(param);
+            if(getGoodsBanner != null){
+                data.put("getGoodsBanner", getGoodsBanner);
+            }
+        }catch(Exception e){
+            e.printStackTrace();
+        }
+        return data;
+    }
+
+    @RequestMapping(value = "/deleteByIdx", method=RequestMethod.POST)
+    @ResponseBody
+    public Map<String,Object>removeBanner(@RequestParam Map<String,Object> param,@AuthenticationPrincipal Admin admin, HttpServletResponse response) throws IOException{
+        Map<String,Object> resultMap = new HashMap<>();
+
+        ApiStatus result = ApiStatus.BAD_REQUEST;
+        try{
+            param.put("userId", admin.getId());
+            int cnt = bannerService.removeBanner(param);
+            if(cnt > 0){
+                result = ApiStatus.OK;
+            }
+        }catch(Exception e){
+            e.printStackTrace();
+        }
+        resultMap.put("result", result);
+        return resultMap;
+    }
 
 }
