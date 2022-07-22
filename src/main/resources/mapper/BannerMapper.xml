@@ -46,15 +46,26 @@
             )
 	</insert>
 
+    <update id="bannerSortChage" parameterType="map">
+        UPDATE
+            banner
+        SET
+            sort = #{sort}
+        WHERE
+            idx = #{idx}
+    </update>
+
     <update id="removeBanner" parameterType="map">
         UPDATE
             banner
         SET
-            del_yn = #{delYn},
-            reg_id = #{userId},
-            reg_dt = now()
+            del_yn = 'Y'
         WHERE
-            idx = #{idx}
+            idx IN  
+            <foreach item="item" index="index" collection="delIdxs"
+                open="(" separator="," close=")">
+                    #{item}
+            </foreach>
     </update>
 
 </mapper>

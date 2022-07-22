@@ -13,6 +13,8 @@ public interface BannerMapper {
     
     public List<HashMap<String, Object>> getImageManage(HashMap<String, Object> param);
     public void registImage(ImageManage imageManage);
+    public int bannerSortChage(Map<String,Object> param);
     public int removeBanner(Map<String,Object>param);
+    
 
 }

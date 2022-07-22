@@ -1,6 +1,7 @@
 package com.jlabsoft.hana.onethecar.onthecaradmin.banner;
 
 import java.io.IOException;
+import java.nio.file.Files;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -58,28 +59,46 @@ public class BannerController {
                                             MultipartHttpServletRequest multipartReq, 
                                             HttpServletRequest request, 
                                             HttpServletResponse response, 
-                                            String[] selectSort,
-                                            String[] selectSort_,
+                                            String[] pcFileSort,
+                                            String[] moFileSort,
+                                            String[] changeSort,
+                                            String[] delIdxs,
                                             @AuthenticationPrincipal Admin admin ){
         Map<String,Object> resultHashMap = new HashMap<String,Object>();
         ApiStatus result = ApiStatus.BAD_REQUEST;
         try{
-            
-            //메인피시 배너
-            List<MultipartFile> files = multipartReq.getFiles("mainPCFiles");
-                param.put("userId", admin.getId());
-                for (int i = 0; i < selectSort.length; i++) {   
-                    param.replace("selectSort", selectSort[i]);
-                    bannerService.setImage(files.get(i), ImageType.MAINPC, param);
-                  
+            //1. 새로운 이미지 등록 
+            //1-1. PC배너
+            List<MultipartFile> files = multipartReq.getFiles("pcFiles");
+            for (int i = 0; i < files.size() ; i++) {   
+                if(pcFileSort.length > i){
+                    bannerService.setImage(files.get(i), ImageType.MAINPC, pcFileSort[i],admin.getId());
                 }
-                
-                // // 메인 모바일 배너
-                List<MultipartFile> mfiles = multipartReq.getFiles("mainMobileFiles");
-                for (int i = 0; i < selectSort_.length; i++) {   
-                    param.replace("selectSort", selectSort_[i]);
-                    bannerService.setImage(mfiles.get(i), ImageType.MAINMOBILE, param);
+            }
+            //1-2. 모바일 배너
+            List<MultipartFile> mfiles = multipartReq.getFiles("moFiles");
+            for (int i = 0; i < mfiles.size() ; i++) {   
+                if(moFileSort.length > i){
+                    bannerService.setImage(mfiles.get(i), ImageType.MAINMOBILE, moFileSort[i], admin.getId());
                 }
+            }
+
+            //2. 기존 등록된 이미지에 대한 정렬 변경건 처리
+            for(String idxSort :changeSort){
+                String[] idxSorts = idxSort.split(":");
+                if(idxSorts.length > 1){
+                    param.put("idx",Integer.parseInt(idxSorts[0].toString()));
+                    param.put("sort",Integer.parseInt(idxSorts[1].toString()));
+                    bannerService.bannerSortChage(param);
+                }
+            }
+
+            //3. 기존 등록된 이미지에 대한 삭제건 처리
+            if(delIdxs.length > 0){
+                param.put("delIdxs", delIdxs);
+                bannerService.removeBanner(param);
+            }
+
             result = ApiStatus.OK;
         }catch(Exception e){
             e.printStackTrace();
@@ -106,24 +125,4 @@ public class BannerController {
         }
         return data;
     }
-
-    @RequestMapping(value = "/deleteByIdx", method=RequestMethod.POST)
-    @ResponseBody
-    public Map<String,Object>removeBanner(@RequestParam Map<String,Object> param,@AuthenticationPrincipal Admin admin, HttpServletResponse response) throws IOException{
-        Map<String,Object> resultMap = new HashMap<>();
-
-        ApiStatus result = ApiStatus.BAD_REQUEST;
-        try{
-            param.put("userId", admin.getId());
-            int cnt = bannerService.removeBanner(param);
-            if(cnt > 0){
-                result = ApiStatus.OK;
-            }
-        }catch(Exception e){
-            e.printStackTrace();
-        }
-        resultMap.put("result", result);
-        return resultMap;
-    }
-
 }

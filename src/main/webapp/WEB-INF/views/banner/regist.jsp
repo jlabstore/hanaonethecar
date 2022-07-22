@@ -51,7 +51,7 @@
                     <div class="form-group col-md-12">
                         <h5 style="margin-bottom: 0px;">배너 관리 - PC<span class="btn btn-outline-info" style="margin-left:10px" onclick="setImageFileItemHtml('pc', null)">추가</span></h5><br>
                         <label class="title-label">PC 이미지 등록</label>
-                        <div id="draw-list-pc">
+                        <div id="draw-list-pc" >
                         </div>
                     </div>
                     <br><br><br><br><br>
@@ -68,6 +68,7 @@
     </div>
 </div>
 <script type="text/javascript">
+    var delIdxs = [];
     $(document).ready(function(){
     
         // document.getElementById("mainPCFiles").addEventListener("change", e => {
@@ -146,41 +147,62 @@
 
         var html = '';
         html += '<div class="banner-item" name="banner-item-'+type+'">';
-        html += '   <select id="selectSort" name="selectSort" class="col-sm-1 custom-select selectSort" style="width:70px">';
-        html += '       <option value="1">1</option> ';
-        html += '       <option value="2">2</option> ';
-        html += '       <option value="3">3</option> ';
-        html += '       <option value="4">4</option> ';
-        html += '       <option value="5">5</option> ';
-        html += '   </select>';
-        if(itemData != null){
-            html += ' <input type="hidden" value="false" id="checkMainImageFile" name="checkMainImageFile">'
-            html += '<input type="file" id=mainPCFiles" name="mainPCFiles" class="input-file" style="margin-left:20px;" hidden>'
-            // if(type == 'pc')
-            //     html += '<input type="file" id=mainPCFiles" name="mainPCFiles" class="input-file" style="margin-left:20px;" hidden>'
-            // else{
-            //     html += '<input type="file" id=mainMobileFiles" name="mainMobileFiles" class="input-file" style="margin-left:20px;" hidden>'
-            // }
-            html += '<span>'+itemData.original_nm+'</span>'
-            html += '<span class="badge badge-red" id="xBtn" style="margin-left:10px;" onclick="bannerDelBtn(this)">x</span>'
-        }else{
-            html += '   <input type="hidden" value="false" id="checkMainImageFile" name="checkMainImageFile">';
-            html += '   <input type="file" name="'+type+'Files" class="input-file" style="margin-left:20px; " >';
-            html += '   <span class="badge badge-red" id="xBtn" style="margin-left:10px;" onclick="bannerDelBtn(this)">x</span>';
+
+        //sort
+        html += '   <select id="selectSort_'+type+'" name="selectSort_'+type+'" class="col-sm-1 custom-select selectSort"  '+(itemData != null ? ' bannerIdx="'+itemData.idx+'"': ''  )+' style="width:70px">';
+        for(var i=1 ; i<6; i++){
+            html += ' <option value="'+i+'" '+(itemData != null && itemData.sort == i ? 'selected': ''  )+'>'+i+'</option> ';
         }
+        html += '   </select>';
+
+        //image file
+        if(itemData != null){
+            html += '   <span style="padding-left: 20px;"> '+itemData.original_nm+'</span>'
+            html += '   <span class="badge badge-red" id="xBtn" style="margin-left:10px;" onclick="bannerDelBtn(this,'+itemData.idx+')">x</span>'
+        }else{
+            html += '   <input type="file" name="'+type+'Files" class="input-file" style="margin-left:20px;" >';
+            html += '   <span class="badge badge-red" id="xBtn" style="margin-left:10px;" onclick="bannerDelBtn(this, null)">x</span>';
+        }
+
         html += '</div>';
 
         $('#draw-list-' + type).append(html); 
-
-        // if(itemData != null){
-        // .val()
-        // }
     }
 
     //배너 저장
     var saveBanner = function(){
         var formdata = new FormData($("#registForm")[0]);
-        console.log(formdata);
+
+        //신규 이미지 등록건
+        var pcFileSort = [];
+        $('input[name=pcFiles]').each(function(i,e){
+            if($(e)[0].files[0] !== undefined && $(e)[0].files[0].size > 0){
+                $(e).closest('.banner-item').find('#selectSort_pc').val();
+                pcFileSort.push($(e).closest('.banner-item').find('#selectSort_pc').val());
+            }
+        });
+        var moFileSort = [];
+        $('input[name=moFiles]').each(function(i,e){
+            if($(e)[0].files[0] !== undefined && $(e)[0].files[0].size > 0){
+                $(e).closest('.banner-item').find('#selectSort_mo').val();
+                moFileSort.push($(e).closest('.banner-item').find('#selectSort_mo').val());
+            }
+        });
+        formdata.append('pcFileSort', pcFileSort);
+        formdata.append('moFileSort',moFileSort);
+
+        //기존 이미지 정렬 변경건 
+        var changeSort = [];
+        $('.selectSort').each(function(i,e){
+            if($(e).attr('bannerIdx') != undefined){
+                changeSort.push( $(e).attr('bannerIdx') + ':' + $(e).val())
+            }
+        })
+        formdata.append('changeSort', changeSort);
+
+        //기존 이미지 삭제건 
+        formdata.append('delIdxs',delIdxs);
+        
         $.ajax({
             type: 'POST',
             url: '/banner/saveBanner',
@@ -199,10 +221,12 @@
         });
     }
 
-
     //배너 삭제
-    var bannerDelBtn = function(e){
-        $(e).closest('.image-item').remove(); 
+    var bannerDelBtn = function(e,idx){
+        $(e).closest('.banner-item').remove();
+        if(idx != null){
+            delIdxs.push(idx);
+        }
     }
 
 

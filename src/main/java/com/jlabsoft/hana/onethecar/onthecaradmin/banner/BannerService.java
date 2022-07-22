@@ -41,7 +41,7 @@ public class BannerService {
      * @param imageType : 이미지 타입 (null 허용)
      * @param param
      */
-    public void setImage(MultipartFile file, ImageType imageType, HashMap<String, Object> param){
+    public void setImage(MultipartFile file, ImageType imageType, String sort, String userId){
         String filePath =  imageType != null ? "/" + imageType.getValue() : "" ;
 
         if(!"".equals(file.getOriginalFilename())){
@@ -56,8 +56,8 @@ public class BannerService {
                     imageManage.setOriginalFileName(fileNames.get(0));
                     imageManage.setMakingFileName(fileNames.get(1));
                     imageManage.setDelYn("N");
-                    imageManage.setSelectSort(Integer.parseInt(param.get("selectSort").toString()));
-                    imageManage.setRegId(param.get("userId").toString());
+                    imageManage.setSelectSort(Integer.parseInt(sort));
+                    imageManage.setRegId(userId);
 
                     bannerMapper.registImage(imageManage);
                 }  
@@ -67,6 +67,10 @@ public class BannerService {
                 e.printStackTrace();
             }
         }
+    }
+
+    public int bannerSortChage(Map<String,Object> param){
+        return bannerMapper.bannerSortChage(param);
     }
 
     public int removeBanner(Map<String,Object> param){
