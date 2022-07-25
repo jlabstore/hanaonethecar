@@ -12,16 +12,16 @@ public class MainController {
 
     @RequestMapping("/")
     public String root(@AuthenticationPrincipal Admin admin){
-        return "redirect:/main";
+        return "redirect:/admin/main";
     }
 
-    @RequestMapping("/main")
+    @RequestMapping("/admin/main")
     public ModelAndView main(@AuthenticationPrincipal Admin admin) {
         ModelAndView modelAndView = new ModelAndView();
         
         modelAndView.addObject("admin",admin);
         modelAndView.addObject("topMenuName","메인");
-        modelAndView.setViewName("onethecar.main/main");
+        modelAndView.setViewName("admin.main/main");
         return modelAndView;
     }
     
