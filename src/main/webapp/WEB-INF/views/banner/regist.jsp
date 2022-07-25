@@ -171,8 +171,9 @@
 
     //배너 저장
     var saveBanner = function(){
-        var formdata = new FormData($("#registForm")[0]);
 
+        var formdata = new FormData($("#registForm")[0]);
+        
         //신규 이미지 등록건
         var pcFileSort = [];
         $('input[name=pcFiles]').each(function(i,e){
@@ -203,22 +204,26 @@
         //기존 이미지 삭제건 
         formdata.append('delIdxs',delIdxs);
         
-        $.ajax({
-            type: 'POST',
-            url: '/banner/saveBanner',
-            enctype: 'multipart/form-data',  
-            processData: false,    
-            contentType: false,  
-            data: formdata,
-            async: false,
-            success: function(data) {
-                alert("저장되었습니다.");
-                location.reload();
-            },
-            error:function(data) {
-                alert('문제가 발생했습니다. 관리자에게 문의하세요.');
-            }
-        });
+        if(pcFileSort.length > 0  || moFileSort.length > 0){
+            $.ajax({
+                type: 'POST',
+                url: '/banner/saveBanner',
+                enctype: 'multipart/form-data',  
+                processData: false,    
+                contentType: false,  
+                data: formdata,
+                async: false,
+                success: function(data) {
+                    alert("저장되었습니다.");
+                    location.reload();
+                },
+                error:function(data) {
+                    alert('문제가 발생했습니다. 관리자에게 문의하세요.');
+                }
+            });
+        }else{
+            alert('배너는 최소 한장이상 필요합니다.');
+        }
     }
 
     //배너 삭제

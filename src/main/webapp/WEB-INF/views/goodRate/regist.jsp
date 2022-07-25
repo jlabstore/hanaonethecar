@@ -352,10 +352,14 @@
         $("#usedRate6").val(used_rate6);
         $("#usedRate7").val(used_rate7);
 
+        var new_rate = new_rate1 + new_rate2 + new_rate3 + new_rate4 + new_rate5 +new_rate6 + new_rate7
+        var user_rate =  used_rate1 + used_rate2 + used_rate3 + used_rate4 + used_rate5+ used_rate6 + used_rate7
+        var fnew_rate = (new_rate.toFixed(2));
+        var fuser_rate = (user_rate.toFixed(2));
 
         //부수거래 감면금리 계산액
-        $("#newRate").val(new_rate1 + new_rate2 + new_rate3 + new_rate4 + new_rate5 +new_rate6 + new_rate7);
-        $("#usedRate").val(used_rate1 + used_rate2 + used_rate3 + used_rate4 + used_rate5+ used_rate6 + used_rate7);
+        $("#newRate").val(fnew_rate);
+        $("#usedRate").val(fuser_rate);
     }
 
     //금리 등록 전송
@@ -390,20 +394,27 @@
             "usedRate6" : $('#usedRate6').val(),
             "usedRate7" : $('#usedRate7').val()
         }
-        $.ajax({
-            type: "POST",
-            url : "/goodRate/setGoodsRate",
-            data: formData,
-            dataType: "json",
-            contentType: "application/x-www-form-urlencoded; charset=UTF-8",
-            async: false,
-            success : function(data){                    
-                alert('등록이 완료되었습니다.');
 
-            },error : function(date){
-                alert('문제가 발생했습니다. 관리자에게 문의하세요.');
-            }
-        });
+        if(!confirm('등록을 완료하시겠습니까?')){
+            alert('취소하셨습니다.')
+        }else{
+            $.ajax({
+                type: "POST",
+                url : "/goodRate/setGoodsRate",
+                data: formData,
+                dataType: "json",
+                contentType: "application/x-www-form-urlencoded; charset=UTF-8",
+                async: false,
+                success : function(data){             
+                    alert('등록이 완료되었습니다.');
+                    detailGoodsRate();
+                    // location.reload();
+
+                },error : function(date){
+                    alert('문제가 발생했습니다. 관리자에게 문의하세요.');
+                }
+            });
+        }
     }
 
     //금리 수정 전송
@@ -438,7 +449,10 @@
             "usedRate7" : $('#usedRate7').val()
         }
 
-        $.ajax({
+        if(!confirm('수정을 완료하시겠습니까?')){
+            alert('취소하셨습니다.')
+        }else{
+            $.ajax({
             type: "POST",
             url : "/goodRate/putGoodsRate",
             data: formData,
@@ -452,6 +466,8 @@
                 alert('문제가 발생했습니다. 관리자에게 문의하세요.');
             }
         });
+        }
+        
     }
 
 </script>
