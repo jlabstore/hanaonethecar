@@ -1,3 +1,4 @@
+<%@ page language="java" contentType="text/html; charset=utf-8" pageEncoding="utf-8"%>
 <section id="footer">
 	<h1>하나원더카</h1>
 	<!-- info -->

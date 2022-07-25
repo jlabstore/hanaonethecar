@@ -12,7 +12,9 @@
 <meta http-equiv="imagetoolbar" content="no">
 <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
 <title>하나원더카</title>
-<link rel="stylesheet" type="text/css" href="/css/common.css" />
-<script src="/js/jquery-1.8.3.min.js"></script>
-<script src="/js/jquery.flexslider-min.js"></script>
-<script src="/js/style.js"></script>
+<link rel="stylesheet" type="text/css" href="/mobile/css/common.css" />
+<link rel="stylesheet" type="text/css" href="/mobile/css/board.css" />
+<link rel="stylesheet" type="text/css" href="/mobile/css/contents.css" />
+<script src="/mobile/js/jquery-1.8.3.min.js"></script>
+<script src="/mobile/js/jquery.flexslider-min.js"></script>
+<script src="/mobile/js/style.js"></script>

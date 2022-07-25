@@ -35,6 +35,14 @@ public class HanaBankController {
         return mv;
     }
 
+
+    //모바일 페이지 호출 예제 
+    @RequestMapping(value="/main",method = RequestMethod.GET)
+    public ModelAndView mobileMain(HttpServletRequest request, HttpServletResponse response){
+        ModelAndView mv = new ModelAndView("mobile.hanaBank/hanabank");
+        return mv;
+    }
+
     // @RequestMapping(value = "/contactBook/list", method = RequestMethod.POST)
     // @ResponseBody
     // public HashMap<String,Object> selectSentenceList(HttpServletRequest request, HttpServletResponse response, @AuthenticationPrincipal Admin admin){

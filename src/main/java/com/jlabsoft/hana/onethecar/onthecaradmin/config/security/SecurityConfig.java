@@ -28,7 +28,8 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
     public void configure(WebSecurity web) throws Exception
     {
         // static 디렉터리의 하위 파일 목록은 인증 무시 ( = 항상통과 )
-        web.ignoring().antMatchers("/sbAdmin/**", "/js/**", "/css/**", "/img/**", "/image/**", "/lib/**", "/error");
+        // moblie 디렉터리 추가 -wookyeong
+        web.ignoring().antMatchers("/sbAdmin/**", "/js/**", "/css/**", "/img/**", "/image/**", "/lib/**", "/error","/mobile/**");
     }
     
 
@@ -42,7 +43,8 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 
 
         //페이지에 대한 인증처리 설정
-        security.authorizeRequests()               //특정권한을 가진 사용자만 접근가능하도록 
+        security.authorizeRequests()               //특정권한을 가진 사용자만 접근가능하도록
+                .antMatchers("/m/**").permitAll()  // moblie 관련 페이지 누구나 진입가능 추가 추후 권한여부 체크 필요시 수정  -wookyeong
                 .antMatchers("/login").permitAll()  
                 .antMatchers("/login/**").permitAll()
                 .antMatchers("/api/**").permitAll()

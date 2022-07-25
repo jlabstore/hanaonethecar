@@ -1,81 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=utf-8" pageEncoding="utf-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
-<!doctype html>
-<html>
-<head>
-<%-- <?php include "../include/head.php" ?> --%>
-</head>
-<body class="main">
-
-<div id="wrap">
-
-<!-- header -->
-<%-- <?php include "../mobile/header.php" ?> --%>
-<!-- //header -->
-
-<!-- main -->
-<section id="main">
-
-	<!-- banner -->
-	<div class="topBanner">
-		<ul class="slides">
-			<li class="oneQ">
-				<a href="#">
-					<p class="subSlogan">신용 한도 차감 없는 1금융권 자동차 대출</p>
-					<p class="slogan">이제는 하나금융그룹 <br>
-					<strong>원더카</strong>에서 원큐에!</p>
-					<p class="link">바로 대출 확인</p>
-				</a>
-			</li>
-			<li class="oneQ">
-				<a href="#">
-					<p class="subSlogan">신용 한도 차감 없는 1금융권 자동차 대출</p>
-					<p class="slogan">이제는 하나금융그룹 <br>
-					<strong>원더카</strong>에서 원큐에!</p>
-					<p class="link">바로 대출 확인</p>
-				</a>
-			</li>
-			<li class="oneQ">
-				<a href="#">
-					<p class="subSlogan">신용 한도 차감 없는 1금융권 자동차 대출</p>
-					<p class="slogan">이제는 하나금융그룹 <br>
-					<strong>원더카</strong>에서 원큐에!</p>
-					<p class="link">바로 대출 확인</p>
-				</a>
-			</li>
-		</ul>
-	</div>
-<script type="text/javascript">
-    $(window).load(function() { 
-        $('.topBanner').flexslider({
-            animation: "slide",
-            slideshowSpeed: 3000,
-            animationSpeed: 600,
-            directionNav: false,
-            controlNav: true,
-            after: function(slider) {
-                /* auto-restart player if paused after action */
-                if (!slider.playing) {
-                    slider.play();
-                }
-            }
-        });
-    });
-</script>
-	<!-- //banner -->
-
-	<!-- tab -->
-	<div class="tab">
-		<ul>
-			<li class="active"><a href="#bank"><span>하나은행</span></a></li>
-			<li><a href="#card"><span>하나카드</span></a></li>
-			<li><a href="#capital"><span>하나캐피탈</span></a></li>
-		</ul>
-	</div>
-	<!-- //tab -->
-
-	<!-- contents -->
-	<div class="contents">
 		<!-- bank -->
 		<div id="bank" class="active">
 			<ul class="content">
@@ -196,26 +120,5 @@
 		</div>
 		<!-- //capital -->
 
-		<!-- comment -->
-		<ul class="comment">
-			<li>※ 본 홍보사이트는 법령 및 내부통제기준에 따른 절차를 거쳐 제공됩니다.</li>
-			<li>※ 본 홍보사이트는 2022년 12월 31일까지 유효합니다.</li>
-			<li>※ 하나은행 준법감시인 심의필 제2022-광고-1105호(2022.01.06)</li>
-			<li>※ CC브랜드 210806-0047</li>
-		</ul>
-		<!-- //comment -->
-
 	</div>
 	<!-- //contents -->
-
-</section>
-<!-- //main -->
-
-<!-- footer -->
-<%-- <?php include "../include/footer.php" ?> --%>
-<!-- //footer -->
-
-</div>
-
-</body>
-</html>

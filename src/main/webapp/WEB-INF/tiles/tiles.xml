@@ -21,16 +21,18 @@
 
 
     <!-- mobile -->
-    <!-- <definition name="mobile-tiles" template="/WEB-INF/tiles/layout/mobile/base-main.jsp">
+    <definition name="mobile-tiles" template="/WEB-INF/tiles/layout/mobile/base-main.jsp">
 		<put-attribute name="header" value="/WEB-INF/tiles/layout/mobile/header.jsp"/>
         <put-attribute name="head" value="/WEB-INF/tiles/layout/mobile/head.jsp"/>
         <put-attribute name="footer" value="/WEB-INF/tiles/layout/mobile/footer.jsp"/>
-        <put-attribute name="gnb" value="/WEB-INF/tiles/layout/mobile/gnb.jsp"/>
+        <!-- <put-attribute name="gnb" value="/WEB-INF/tiles/layout/mobile/gnb.jsp"/> -->
 	</definition>
 
     <definition name="mobile.*/*" extends="mobile-tiles">
         <put-attribute name="body" value="/WEB-INF/views/mobile/{1}/{2}.jsp"/>
     </definition>
-    -->
+    <definition name="mobile.*" extends="admin-layout">
+        <put-attribute name="body" value="/WEB-INF/views/admin/{2}.jsp" />
+    </definition>
 
 </tiles-definitions>
