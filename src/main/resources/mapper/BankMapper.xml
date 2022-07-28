@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.jlabsoft.hana.onethecar.onthecaradmin.mobile.bank.BankMapper">
+
+	<select id="getevAutoloan" resultType="map">
+        SELECT 
+            goods_id,
+            DATE_FORMAT(new_base_rate_dt, '%Y-%m-%d') new_base_rate_dt,
+            new_base_rate,
+			new_add_rate,
+            new_rate1,
+            new_rate2,
+            new_rate3,
+            new_rate4,
+            new_rate5,
+            new_rate6,
+            new_rate7,
+            DATE_FORMAT(used_base_rate_dt, '%Y-%m-%d') used_base_rate_dt,
+            used_base_rate,
+            used_add_rate,
+            used_rate1,
+            used_rate2,
+            used_rate3,
+            used_rate4,
+            used_rate5,
+            used_rate6,
+            used_rate7
+		FROM 
+			goods_rate
+		WHERE
+            goods_id = 'EV'
+	</select>
+    
+
+    <select id="getOneQAutoloan" resultType="map">
+        SELECT 
+            goods_id,
+            DATE_FORMAT(new_base_rate_dt, '%Y-%m-%d') new_base_rate_dt,
+            new_base_rate,
+			new_add_rate,
+            new_rate1,
+            new_rate2,
+            new_rate3,
+            new_rate4,
+            new_rate5,
+            new_rate6,
+            new_rate7,
+            DATE_FORMAT(used_base_rate_dt, '%Y-%m-%d') used_base_rate_dt,
+            used_base_rate,
+            used_add_rate,
+            used_rate1,
+            used_rate2,
+            used_rate3,
+            used_rate4,
+            used_rate5,
+            used_rate6,
+            used_rate7
+		FROM 
+			goods_rate
+		WHERE
+            goods_id = 'ONEQ'
+	</select>
+</mapper>

@@ -3,6 +3,56 @@
 @import url(board.css);
 @import url('https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard.css');
 
+@font-face {
+    font-family: 'HanaB';
+    src: url('/font/HanaB.woff2') format('woff2'),
+        url('/font/HanaB.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+@font-face {
+    font-family: 'HanaGothicPro';
+    src: url('/font/HanaGothicPro745.woff2') format('woff2'),
+        url('/font/HanaGothicPro745.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+@font-face {
+    font-family: 'HanaGothicPro';
+    src: url('/font/HanaGothicPro765.woff2') format('woff2'),
+        url('/font/HanaGothicPro765.woff') format('woff');
+    font-weight: 600;
+    font-style: normal;
+    font-display: swap;
+}
+@font-face {
+    font-family: 'HanaGothicPro';
+    src: url('/font/HanaGothicPro775.woff2') format('woff2'),
+        url('/font/HanaGothicPro775.woff') format('woff');
+    font-weight: 700;
+    font-style: normal;
+    font-display: swap;
+}
+@font-face {
+    font-family: 'HanaGothicPro';
+    src: url('/font/HanaGothicPro785.woff2') format('woff2'),
+        url('/font/HanaGothicPro785.woff') format('woff');
+    font-weight: 800;
+    font-style: normal;
+    font-display: swap;
+}
+@font-face {
+    font-family: 'HanaGothicPro';
+    src: url('/font/HanaGothicPro795.woff2') format('woff2'),
+        url('/font/HanaGothicPro795.woff') format('woff');
+    font-weight: 900;
+    font-style: normal;
+    font-display: swap;
+}
+
+
 
 /* ==============================================
    defaults
@@ -58,7 +108,7 @@ input,
 select,
 button,
 textarea,
-body { color:#000; font-size:13px; font-family: Pretendard, -apple-system, BlinkMacSystemFont, system-ui, Roboto, 'Helvetica Neue', 'Segoe UI', 'Apple SD Gothic Neo', 'Noto Sans KR', 'Malgun Gothic', sans-serif !important; }
+body { color:#000; font-size:13px; font-family: 'HanaGothicPro', -apple-system, BlinkMacSystemFont, system-ui, Roboto, 'Helvetica Neue', 'Segoe UI', 'Apple SD Gothic Neo', 'Noto Sans KR', 'Malgun Gothic', sans-serif !important; }
 html,
 body { height: 100%; }
 body.main {background-color: #f4f7f8;}
@@ -79,6 +129,7 @@ body.main {background-color: #f4f7f8;}
 
 #header p.menu {position: absolute;right: 10px;top: 10px;z-index: 9999;}
 #header p.menu button {display: block;width: 40px;height: 40px;text-indent: -9999px;border: 0;outline: none;background: url('../images/common/icon-menu@2x.png') center center no-repeat;background-size: 16px auto;}
+body.sideMenu #header p.menu {position: fixed;}
 body.sideMenu #header p.menu button {background-image: url('../images/common/icon-menu-close@2x.png');background-size: 15px auto;}
 
 /* side */
@@ -133,7 +184,7 @@ body.sideMenu #side .gnb {
 .gnb > ul {}
 .gnb > ul > li {margin-bottom: 15px;}
 .gnb > ul > li:last-child {margin-bottom: 0;}
-.gnb > ul > li > a {display: block;height: 46px;line-height: 45px;font-size: 14px;color: #009fa3;font-weight: bold;text-decoration: none;border-bottom: 1px solid #9b9d9d;padding: 0 2px;}
+.gnb > ul > li > a {display: block;height: 46px;line-height: 45px;font-size: 14px;color: #009fa3;font-weight: 800;text-decoration: none;border-bottom: 1px solid #9b9d9d;padding: 0 2px;}
 .gnb > ul > li > a span {}
 .gnb > ul > li > ul {}
 .gnb > ul > li > ul > li {}
@@ -190,8 +241,8 @@ body.sideMenu #side .gnb {
 #main .topBanner ul.slides li.oneQ a {background: url('../images/main/banner-img1@2x.png') right center no-repeat;background-size: auto 172px;}
 
 #main .topBanner ul.slides li p.subSlogan {line-height: 16px;font-size: 11px;color: #fff;}
-#main .topBanner ul.slides li p.slogan {line-height: 22px;font-size: 17px;color: #fff;font-weight: bold;margin-top: 4px;}
-#main .topBanner ul.slides li p.slogan strong {color: #e2ff00;}
+#main .topBanner ul.slides li p.slogan {line-height: 22px;font-size: 17px;color: #fff;font-weight: 800;margin-top: 4px;}
+#main .topBanner ul.slides li p.slogan strong {color: #e2ff00;font-weight: 800;}
 #main .topBanner ul.slides li p.link {display:inline-block; display: -moz-inline-stack; zoom:1; *display:inline;height: 20px;line-height: 19px;font-size: 11px;color: #fff;border-bottom: 1px solid #fff;margin-top: 10px;}
 
 #main .topBanner ol.flex-control-nav {position: absolute;left: 30px;bottom: 25px;z-index: 99;}
@@ -238,10 +289,10 @@ body.sideMenu #side .gnb {
 	box-shadow: 0px 0px 20px rgba(0,0,0,.06);
 }
 #main .contents > div ul.content li a {position: relative;display: block;height: 100%;text-decoration: none;padding: 28px 30px;}
-#main .contents > div ul.content li p.title {line-height: 22px;font-size: 16px;color: #009fa3;font-weight: bold;}
+#main .contents > div ul.content li p.title {line-height: 22px;font-size: 16px;color: #009fa3;font-weight: 800;}
 #main .contents > div ul.content li p.exp {line-height: 16px;font-size: 11px;color: #333;margin-top: 9px;}
 #main .contents > div ul.content li p.exp strong {font-weight: normal;background-color: #d9f1f1;}
-#main .contents > div ul.content li p.link {display:inline-block; display: -moz-inline-stack; zoom:1; *display:inline;line-height: 17px;font-size: 11px;color: #ee4467;font-weight: bold;border-bottom: 2px solid #ee4467;margin-top: 15px;}
+#main .contents > div ul.content li p.link {display:inline-block; display: -moz-inline-stack; zoom:1; *display:inline;line-height: 17px;font-size: 11px;color: #ee4467;font-weight: 800;border-bottom: 2px solid #ee4467;margin-top: 15px;}
 
 /* bank */
 

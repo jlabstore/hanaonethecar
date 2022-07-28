@@ -41,9 +41,23 @@ $(function() {
 
 	// accordion
 
-	$('.accordion > li .con').hide().first().parent('li').addClass('active');
+	$('.accordion > li .content').hide();
+	$('.accordion').children('li:first-child').addClass('active').children('.content').slideDown();
+
 	$('.accordion > li .bar p.title').click(function() {
-		$this.parent('.bar').parent('li').addClass('active').siblings('li').removeClass('active');
+		var $parent = $(this).parent('.bar').parent('li');
+		var $allParents = $parent.siblings('li');
+		var $allPanels = $parent.siblings('li').children('.content');
+		var $target = $(this).parent('.bar').parent('li').children('.content');
+		if($parent.hasClass('active')){
+			$parent.removeClass('active');
+			$target.slideUp('fast'); 
+		}else{
+			$allParents.removeClass('active');
+			$allPanels.slideUp('fast');
+			$parent.addClass('active');
+			$target.slideDown('fast');
+		}
 		return false;
 	});
 

@@ -353,11 +353,13 @@
         $("#usedRate7").val(used_rate7);
 
         var new_rate = new_rate1 + new_rate2 + new_rate3 + new_rate4 + new_rate5 +new_rate6 + new_rate7
-        var user_rate =  used_rate1 + used_rate2 + used_rate3 + used_rate4 + used_rate5+ used_rate6 + used_rate7
-        var fnew_rate = (new_rate.toFixed(2));
-        var fuser_rate = (user_rate.toFixed(2));
+        var user_rate =  used_rate1 + used_rate2 + used_rate3 + used_rate4 + used_rate5+ used_rate6 + used_rate7 
+        var fnew_rate = new_rate ? (new_rate.toFixed(2)) : "" ; 
+        var fuser_rate = user_rate ? (user_rate.toFixed(2)) : "";
 
         //부수거래 감면금리 계산액
+        // $("#newRate").val(new_rate);
+        // $("#usedRate").val(user_rate);
         $("#newRate").val(fnew_rate);
         $("#usedRate").val(fuser_rate);
     }

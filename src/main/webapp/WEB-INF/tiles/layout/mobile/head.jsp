@@ -1,4 +1,4 @@
-<meta charset="utf-8">
+<%@ page language="java" contentType="text/html; charset=utf-8" pageEncoding="utf-8"%>
 <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1">
 <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
 <meta name="author" content="jlab">

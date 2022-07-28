@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.jlabsoft.hana.onethecar.onthecaradmin.main.MainMapper">
+
+	<select id="getMobileImage" resultType="map">
+        SELECT 
+            idx,
+            type,
+            path,
+			making_nm,
+            original_nm,
+            del_yn,
+            sort
+		FROM 
+			banner
+		WHERE
+			type = 'MAINMOBILE'
+            and del_yn = 'N'
+            and reg_id = 'hanabanner'
+        ORDER BY
+            sort DESC 
+	</select>
+    
+</mapper>

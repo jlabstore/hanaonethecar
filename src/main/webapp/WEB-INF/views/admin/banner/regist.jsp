@@ -171,6 +171,8 @@
 
     //배너 저장
     var saveBanner = function(){
+    
+
 
         var formdata = new FormData($("#registForm")[0]);
         
@@ -233,6 +235,4 @@
             delIdxs.push(idx);
         }
     }
-
-
 </script>

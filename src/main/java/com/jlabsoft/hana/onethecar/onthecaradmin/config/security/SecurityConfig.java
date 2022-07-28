@@ -1,7 +1,5 @@
 package com.jlabsoft.hana.onethecar.onthecaradmin.config.security;
 
-import com.jlabsoft.hana.onethecar.onthecaradmin.login.LoginService;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -10,8 +8,9 @@ import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.builders.WebSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
-import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
-import org.springframework.security.crypto.password.PasswordEncoder;
+import org.springframework.web.cors.CorsConfiguration;
+import org.springframework.web.cors.reactive.CorsConfigurationSource;
+import org.springframework.web.cors.reactive.UrlBasedCorsConfigurationSource;
 
 
 @Configuration
@@ -28,7 +27,6 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
     public void configure(WebSecurity web) throws Exception
     {
         // static 디렉터리의 하위 파일 목록은 인증 무시 ( = 항상통과 )
-        // moblie 디렉터리 추가 -wookyeong
         web.ignoring().antMatchers("/sbAdmin/**", "/js/**", "/css/**", "/img/**", "/image/**", "/lib/**", "/error","/mobile/**");
     }
     
@@ -44,7 +42,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 
         //페이지에 대한 인증처리 설정
         security.authorizeRequests()               //특정권한을 가진 사용자만 접근가능하도록
-                .antMatchers("/m/**").permitAll()  // moblie 관련 페이지 누구나 진입가능 추가 추후 권한여부 체크 필요시 수정  -wookyeong
+                .antMatchers("/m/**").permitAll()  
                 .antMatchers("/login").permitAll()  
                 .antMatchers("/login/**").permitAll()
                 .antMatchers("/api/**").permitAll()
@@ -63,6 +61,24 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
             .invalidateHttpSession(true)            //로그아웃시 로그인정보 삭제
             .deleteCookies("JSESSIONID")            //쿠키 삭제 
             .logoutSuccessUrl("/login");            //로그아웃 후 보내질 페이지 
+
+        // security.HttpFirewall(defaulHttpFirewall());
+    }
+
+
+    // CORS 허용 적용
+    @Bean
+    public CorsConfigurationSource corsConfigurationSource() {
+        CorsConfiguration configuration = new CorsConfiguration();
+
+        configuration.addAllowedOrigin("*");
+        configuration.addAllowedHeader("*");
+        configuration.addAllowedMethod("*");
+        configuration.setAllowCredentials(true);
+
+        UrlBasedCorsConfigurationSource source = new UrlBasedCorsConfigurationSource();
+        source.registerCorsConfiguration("/**", configuration);
+        return source;
     }
 
     
@@ -74,6 +90,11 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
     public void configure(AuthenticationManagerBuilder auth) throws Exception {
         auth.authenticationProvider(customAuthenticationProvider);
     }
+
+    // @Bean
+    // public HttpFirewall defaulHttpFirewall(){
+    //     return new DefaultHttpFirewall();
+    // }
     
     
 }
