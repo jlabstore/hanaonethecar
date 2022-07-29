@@ -50,7 +50,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 
         //로그인  
         security.formLogin() 
-            .loginPage("/login")                    //커스텀 로그인페이지 
+            .loginPage("/m/main")                    //커스텀 로그인페이지 
             .defaultSuccessUrl("/admin/main")
             .loginProcessingUrl("/login/auth") // have to: Content-Type: multipart/form-data
             .failureHandler(customFailureHandler);  

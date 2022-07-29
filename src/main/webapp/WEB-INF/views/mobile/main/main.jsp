@@ -7,8 +7,38 @@
     <div id="wrap">
         <!-- main -->
 	<section id="main">
-		<div class="row topBanner" >
-			<ul id="bannerImg" class="slides">
+	<%-------------------------------------- 배포후 주석처리 ---------------------------------%>
+	<div class="topBanner">
+		<ul class="slides">
+			<li class="oneQ">
+				<a href="#">
+					<p class="subSlogan">신용 한도 차감 없는 1금융권 자동차 대출</p>
+					<p class="slogan">이제는 하나금융그룹 <br>
+					<strong>원더카</strong>에서 원큐에!</p>
+					<p class="link">바로 대출 확인</p>
+				</a>
+			</li>
+			<li class="oneQ">
+				<a href="#">
+					<p class="subSlogan">신용 한도 차감 없는 1금융권 자동차 대출</p>
+					<p class="slogan">이제는 하나금융그룹 <br>
+					<strong>원더카</strong>에서 원큐에!</p>
+					<p class="link">바로 대출 확인</p>
+				</a>
+			</li>
+			<li class="oneQ">
+				<a href="#">
+					<p class="subSlogan">신용 한도 차감 없는 1금융권 자동차 대출</p>
+					<p class="slogan">이제는 하나금융그룹 <br>
+					<strong>원더카</strong>에서 원큐에!</p>
+					<p class="link">바로 대출 확인</p>
+				</a>
+			</li>
+		</ul>
+	</div>
+		<%-------------------------------------- 배포후 주석처리 hidden 삭제---------------------------------%>
+		<div class="row topBanner" hidden>
+			<ul id="bannerImg" class="slides" >
 			</ul>
 		</div>
 		<div class="tab" id="randomTab">
