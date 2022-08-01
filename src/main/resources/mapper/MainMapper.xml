@@ -20,5 +20,24 @@
         ORDER BY
             sort DESC 
 	</select>
+
+    <select id="getMobileCapitalImage" resultType="map">
+        SELECT 
+            idx,
+            type,
+            path,
+			making_nm,
+            original_nm,
+            del_yn,
+            sort
+		FROM 
+			banner
+		WHERE
+			type = 'MAINMOBILE'
+            and del_yn = 'N'
+            and reg_id = 'hanacapital'
+        ORDER BY
+            sort DESC 
+	</select>
     
 </mapper>

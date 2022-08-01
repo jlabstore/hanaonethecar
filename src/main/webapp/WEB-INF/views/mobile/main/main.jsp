@@ -8,7 +8,7 @@
         <!-- main -->
 	<section id="main">
 	<%-------------------------------------- 배포후 주석처리 ---------------------------------%>
-	<div class="topBanner">
+	<%-- <div class="topBanner static">
 		<ul class="slides">
 			<li class="oneQ">
 				<a href="#">
@@ -35,10 +35,10 @@
 				</a>
 			</li>
 		</ul>
-	</div>
+	</div> --%>
 		<%-------------------------------------- 배포후 주석처리 hidden 삭제---------------------------------%>
-		<div class="row topBanner" hidden>
-			<ul id="bannerImg" class="slides" >
+		<div class="row topBanner">
+			<ul id="bannerImg" class="slides">
 			</ul>
 		</div>
 		<div class="tab" id="randomTab">
@@ -161,16 +161,28 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/mustache.js/4.0.1/mustache.min.js"></script>
 <script id="list-card" type="x-tmpl-mustache">
 	{{#list}}
-				<li class="">
-					<a href="#">
-						<p class=""></p>
-						<p class=""><strong></strong></p> 
-						<p class="link"></p>
-						<img style="height:160px;" src="${imagePath}{{path}}/{{making_nm}}">
-					</a>
-				</li>
+			<li class="">
+				<a href="#">
+					<p class=""></p>
+					<p class=""><strong></strong></p> 
+					<p class="link"></p>
+					<img style="height:160px;" src="${imagePath}{{path}}/{{making_nm}}">
+				</a>
+			</li>
 	{{/list}}
 </script>
+<%-- <script id="list-capital-card" type="x-tmpl-mustache">
+	{{#capitalList}}
+			<li class="">
+				<a href="#">
+					<p class=""></p>
+					<p class=""><strong></strong></p> 
+					<p class="link"></p>
+					<img style="height:160px;" src="${imagePath}{{path}}/{{making_nm}}">
+				</a>
+			</li>
+	{{/capitalList}}
+</script> --%>
 <script type="text/javascript">
 	$(document).ready(function(){
 		submitForm();
@@ -179,6 +191,7 @@
 
 	var submitForm = function() {
         var result = getMainBannerList();
+		// var capitalResult = getCapitalBannerList();
         if(result != null){
             var list = result.list;
             renderList(list);
@@ -197,6 +210,11 @@
 				}
 			});
         }
+
+		// if(capitalResult != null){
+		// 	var capitalList = capitalResult.capitalList;
+		// 	renderCapitalList(capitalList);
+		// }
     };
 
 	var renderList = function(list) {
@@ -204,6 +222,12 @@
         var rendered = Mustache.render(template, {list: list});
         document.getElementById('bannerImg').innerHTML = rendered;
     }
+
+	// var renderCapitalList = function(capitalList){
+	// 	var template = document.getElementById('list-capital-card').innerHTML;
+    //     var rendered = Mustache.render(template, {capitalList: capitalList});
+    //     document.getElementById('capitalBannerImg').innerHTML = rendered;
+	// }
 
     var getMainBannerList = function(){
 		var result = null; 
@@ -220,6 +244,22 @@
         });
 		return result;
     }
+
+	// var getCapitalBannerList = function(){
+	// 	var result = null; 
+    //     $.ajax({
+    //         type: 'POST',
+    //         url: '/mobile/capital',
+    //         async: false,
+    //         success: function(data) {
+	// 			result = data;
+    //         },
+    //         error: function(data) {
+    //             alert('문제가 발생했습니다. 관리자에게 문의하세요.');
+    //         }
+    //     });
+	// 	return result;
+    // }
 
 
 	var tabs = ['bank', 'card', 'capital'];

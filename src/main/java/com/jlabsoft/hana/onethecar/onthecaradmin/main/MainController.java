@@ -52,8 +52,8 @@ public class MainController {
         return mv;
     }
     
-    //mobile 이미지 가져오기
-     /**
+    //mobile 메인 배너 가져오기
+    /**
      * @param request
      * @param response
      * @return
@@ -70,5 +70,26 @@ public class MainController {
         result.put("result", ApiStatus.OK);
         return result; 
     }
+
+    //mobile 메인 배너 가져오기
+    /**
+     * @param request
+     * @param response
+     * @return
+     */
+    @RequestMapping(value = "/mobile/capital",method=RequestMethod.POST)
+    @ResponseBody
+    public Map<String,Object> getMobileCapitalBannerList(HttpServletRequest request, HttpServletResponse response) {
+        Map<String,Object> result = new HashMap<>();
+
+            List<Map<String,Object>> capitalList= mainService.getMobileCapitalImage();
+        
+            result.put("capitalList", capitalList);
+        
+        result.put("result", ApiStatus.OK);
+        return result; 
+    }
+
+    
 
 }

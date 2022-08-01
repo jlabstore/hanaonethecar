@@ -5,48 +5,48 @@
 
 @font-face {
     font-family: 'HanaB';
-    src: url('/font/HanaB.woff2') format('woff2'),
-        url('/font/HanaB.woff') format('woff');
+    src: url('/mobile/font/HanaB.woff2') format('woff2'),
+        url('/mobile/font/HanaB.woff') format('woff');
     font-weight: normal;
     font-style: normal;
     font-display: swap;
 }
 @font-face {
     font-family: 'HanaGothicPro';
-    src: url('/font/HanaGothicPro745.woff2') format('woff2'),
-        url('/font/HanaGothicPro745.woff') format('woff');
+    src: url('/mobile/font/HanaGothicPro745.woff2') format('woff2'),
+        url('/mobile/font/HanaGothicPro745.woff') format('woff');
     font-weight: normal;
     font-style: normal;
     font-display: swap;
 }
 @font-face {
     font-family: 'HanaGothicPro';
-    src: url('/font/HanaGothicPro765.woff2') format('woff2'),
-        url('/font/HanaGothicPro765.woff') format('woff');
+    src: url('/mobile/font/HanaGothicPro765.woff2') format('woff2'),
+        url('/mobile/font/HanaGothicPro765.woff') format('woff');
     font-weight: 600;
     font-style: normal;
     font-display: swap;
 }
 @font-face {
     font-family: 'HanaGothicPro';
-    src: url('/font/HanaGothicPro775.woff2') format('woff2'),
-        url('/font/HanaGothicPro775.woff') format('woff');
+    src: url('/mobile/font/HanaGothicPro775.woff2') format('woff2'),
+        url('/mobile/font/HanaGothicPro775.woff') format('woff');
     font-weight: 700;
     font-style: normal;
     font-display: swap;
 }
 @font-face {
     font-family: 'HanaGothicPro';
-    src: url('/font/HanaGothicPro785.woff2') format('woff2'),
-        url('/font/HanaGothicPro785.woff') format('woff');
+    src: url('/mobile/font/HanaGothicPro785.woff2') format('woff2'),
+        url('/mobile/font/HanaGothicPro785.woff') format('woff');
     font-weight: 800;
     font-style: normal;
     font-display: swap;
 }
 @font-face {
     font-family: 'HanaGothicPro';
-    src: url('/font/HanaGothicPro795.woff2') format('woff2'),
-        url('/font/HanaGothicPro795.woff') format('woff');
+    src: url('/mobile/font/HanaGothicPro795.woff2') format('woff2'),
+        url('/mobile/font/HanaGothicPro795.woff') format('woff');
     font-weight: 900;
     font-style: normal;
     font-display: swap;

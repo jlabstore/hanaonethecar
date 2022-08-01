@@ -9,4 +9,5 @@ import org.apache.ibatis.annotations.Mapper;
 public interface MainMapper {
     
     public List<Map<String, Object>> getMobileImage();
+    public List<Map<String, Object>> getMobileCapitalImage();
 }

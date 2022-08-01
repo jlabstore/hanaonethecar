@@ -110,7 +110,6 @@
             contentType: false,  
             async: false,
             success: function(data) {
-                console.log(data);
                 if(data.getGoodsBanner.length > 0){
                     $(data.getGoodsBanner).each(function(idx,item){
                         if(item.type == 'MAINPC'){
@@ -206,7 +205,7 @@
         //기존 이미지 삭제건 
         formdata.append('delIdxs',delIdxs);
         
-        // if(pcFileSort.length > 0  || moFileSort.length > 0){
+        // if(pcFileSort.length > 0  || moFileSort.length > 0 ){
             $.ajax({
                 type: 'POST',
                 url: '/admin/banner/saveBanner',
@@ -223,7 +222,8 @@
                     alert('문제가 발생했습니다. 관리자에게 문의하세요.');
                 }
             });
-        // }else{
+        // }
+        // else{
         //     alert('배너는 최소 한장이상 필요합니다.');
         // }
     }

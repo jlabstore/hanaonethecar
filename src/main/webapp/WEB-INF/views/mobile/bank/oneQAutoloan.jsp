@@ -401,7 +401,6 @@
             async: false,
             success: function(data) {
 				result = data;   
-				console.log(result) 
 				//////////////////////신차 기준 //////////////////////
 				//기준금리일
                 newBaseRateDt = result.list.new_base_rate_dt;
