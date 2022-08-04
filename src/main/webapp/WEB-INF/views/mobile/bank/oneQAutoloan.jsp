@@ -13,8 +13,8 @@
 		<!-- summary -->
 		<div class="summary">
 			<!-- top -->
-			<div class="top">
-				<h1><img src="/mobile/images/common/oneQ_logo@2x.png" alt="1Q 오토론"></h1>
+				<div class="top">
+				<h2><img src="/mobile/images/common/oneQ_logo@2x.png" alt="1Q 오토론"></h2>
 				<p class="exp">#제1금융권 낮은 금리 <br>
 				#높은 한도 <br>
 				#대출채무상환면제</p>

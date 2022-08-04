@@ -12,7 +12,6 @@ import com.jlabsoft.hana.onethecar.onthecaradmin.model.enums.ImageType;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
-import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.multipart.MultipartFile;
 
 @Service

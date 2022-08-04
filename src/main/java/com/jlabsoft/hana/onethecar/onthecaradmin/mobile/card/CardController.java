@@ -20,13 +20,13 @@ public class CardController {
     @Autowired
     private CardService cardService;
 
-    //오토할부 
+    //오토할부 View
     @RequestMapping(value="/card/autoInstallment",method = RequestMethod.GET)
     public ModelAndView autoInstallment(HttpServletRequest request, HttpServletResponse response){
         ModelAndView mv = new ModelAndView("mobile.card/autoInstallment");
         return mv;
     }
-
+     //오토할부 Post
     @RequestMapping(value = "/getAutoInstallment", method = RequestMethod.POST)
     @ResponseBody
     public Map<String,Object> getAutoInstallment(HttpServletRequest request, HttpServletResponse response){
@@ -37,13 +37,13 @@ public class CardController {
         return result;
     }
 
-    //오토론
+    //오토론 View
     @RequestMapping(value="/card/autoLoan",method = RequestMethod.GET)
     public ModelAndView autoLoan(HttpServletRequest request, HttpServletResponse response){
         ModelAndView mv = new ModelAndView("mobile.card/autoLoan");
         return mv;
     }
-
+    //오토론 Post
     @RequestMapping(value = "/getAutoLoan", method = RequestMethod.POST)
     @ResponseBody
     public Map<String,Object> getAutoLoan(HttpServletRequest request, HttpServletResponse response){
@@ -54,13 +54,13 @@ public class CardController {
         return result;
     }
 
-    //오토캐쉬백
+    //오토캐쉬백 View
     @RequestMapping(value="/card/autoCashback",method = RequestMethod.GET)
     public ModelAndView autoCashback(HttpServletRequest request, HttpServletResponse response){
         ModelAndView mv = new ModelAndView("mobile.card/autoCashback");
         return mv;
     }
-
+    //오토캐쉬백 Post
     @RequestMapping(value = "/getAutoCashback", method = RequestMethod.POST)
     @ResponseBody
     public Map<String,Object> getAutoCashback(HttpServletRequest request, HttpServletResponse response){

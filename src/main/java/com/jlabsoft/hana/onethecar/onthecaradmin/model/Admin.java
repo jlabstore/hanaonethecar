@@ -3,7 +3,6 @@ package com.jlabsoft.hana.onethecar.onthecaradmin.model;
 import java.util.ArrayList;
 import java.util.Collection;
 
-import com.jlabsoft.hana.onethecar.onthecaradmin.model.enums.Role;
 
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;

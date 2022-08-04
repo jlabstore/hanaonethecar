@@ -20,13 +20,13 @@ public class CapitalController {
     @Autowired
     private CapitalService capitalService;
 
-    //자동차리스 
+    //자동차리스 View 
     @RequestMapping(value="/capital/carLease",method = RequestMethod.GET)
     public ModelAndView carLease(HttpServletRequest request, HttpServletResponse response){
         ModelAndView mv = new ModelAndView("mobile.capital/carLease");
         return mv;
     }
-
+      //자동차리스 Post 
     @RequestMapping(value = "/getCarLease", method = RequestMethod.POST)
     @ResponseBody
     public Map<String,Object> getCarLease(HttpServletRequest request, HttpServletResponse response){
@@ -37,13 +37,13 @@ public class CapitalController {
         return result;
     }
 
-    //장기렌터카 
+    //장기렌터카 View
     @RequestMapping(value="/capital/longtermRental",method = RequestMethod.GET)
     public ModelAndView longtermRental(HttpServletRequest request, HttpServletResponse response){
         ModelAndView mv = new ModelAndView("mobile.capital/longtermRental");
         return mv;
     }
-
+    //장기렌터카 Post
     @RequestMapping(value = "/getLongtermRental", method = RequestMethod.POST)
     @ResponseBody
     public Map<String,Object> getLongtermRental(HttpServletRequest request, HttpServletResponse response){
@@ -54,13 +54,13 @@ public class CapitalController {
         return result;
     }
 
-    //중고차 오토론 
+    //중고차 오토론 View
     @RequestMapping(value="/capital/usedcarLoan",method = RequestMethod.GET)
     public ModelAndView usedcarLoan(HttpServletRequest request, HttpServletResponse response){
         ModelAndView mv = new ModelAndView("mobile.capital/usedcarLoan");
         return mv;
     }
-
+    //중고차 오토론 Post
     @RequestMapping(value = "/getUsedcarLoan", method = RequestMethod.POST)
     @ResponseBody
     public Map<String,Object> getUsedcarLoan(HttpServletRequest request, HttpServletResponse response){

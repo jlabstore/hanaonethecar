@@ -16,8 +16,6 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
-import org.springframework.web.multipart.MultipartFile;
-import org.springframework.web.multipart.MultipartHttpServletRequest;
 import org.springframework.web.servlet.ModelAndView;
 
 @Controller
@@ -71,7 +69,7 @@ public class MainController {
         return result; 
     }
 
-    //mobile 메인 배너 가져오기
+    //mobile capital 배너 가져오기
     /**
      * @param request
      * @param response
