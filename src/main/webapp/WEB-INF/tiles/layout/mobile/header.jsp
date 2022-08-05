@@ -1,7 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=utf-8" pageEncoding="utf-8"%>
-<%@ taglib uri="http://tiles.apache.org/tags-tiles" prefix="tiles" %>
 <section id="header">
-	<h1><a href="/m/main">하나원더카</a></h1>
+	<%-- <h1><a href="/">하나원더카</a></h1> --%>
 	<!-- menu -->
 	<p href="/m/main" class="menu"><button>menu</button></p>
 	<!-- //menu -->
@@ -20,6 +19,7 @@
 				<li>
 					<a href="#"><span>하나카드</span></a>
 					<ul>
+						<li><a href="/m/card/autoCardInstallment"><span>오토카드할부</span></a></li>
 						<li><a href="/m/card/autoInstallment"><span>오토할부</span></a></li>
 						<li><a href="/m/card/autoLoan"><span>오토론</span></a></li>
 						<li><a href="/m/card/autoCashback"><span>오토캐시백</span></a></li>

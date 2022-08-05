@@ -7,9 +7,12 @@
 <section id="body" class="cardCashback">
 
 	<h1>오토캐쉬백</h1>
+	<a href="/m/main" class="goBack">Back</a>
 
 	<!-- top content -->
 	<div class="topContent">
+
+		<p class="topLogo"><img src="/mobile/images/common/logo-hanacard@2x.png" alt="하나카드"></p>
 
 		<!-- summary -->
 		<div class="summary">
@@ -29,30 +32,27 @@
 			</div>
 			<!-- //info -->
 			<!-- category -->
-			<div class="feature">
-				<ul>
-					<li>
-						<p class="icon"><img src="/mobile/images/common/icon-duration@2x.png" alt="기간"></p>
-						<p class="title">기간</p>
-						<p class="con">2022.04.01~ <br>
-						2022.06.30</p>
-					</li>
-					<li>
-						<p class="icon"><img src="/mobile/images/common/icon-carcashback@2x.png" alt="캐쉬백 서비스"></p>
-						<p class="title">캐쉬백 서비스</p>
-						<p class="con">1.0%~1.5% <br>
-						<span>최대 500만원</span></p>
-					</li>
-				</ul>
-				<div class="info">
-					<ul class="dotList green">
-						<li>대상:하나 신용/체크카드 회원 <br>
-						(모바일카드 포함, 법인/선불/가족카드 제외)</li>
-						<li>국산/수입신차/중고차/오토바이 전 차종 신청 가능합니다.</li>
-						<li>캐쉬백은 자동차결제 정상매입 기준으로 지급됩니다. </li>
-						<li>신청채널 및 이용 상품(결재금액/유형)에 따라 별도 캐쉬백율로 운영됩니다.</li>
-					</ul>
+			<div class="category">
+				<!-- 캐쉬백 서비스 -->
+				<div class="cashback">
+					<div class="type">
+						<div class="top">
+							<p class="sub">캐쉬백 서비스</p>
+							<p class="title">1.0%~1.5% <br>
+							<span>최대 500만원</span></p>
+						</div>
+					</div>
+					<div class="info">
+						<ul class="dotList green">
+							<li>대상:하나 신용/체크카드 회원 <br>
+							(모바일카드 포함, 법인/선불/가족카드 제외)</li>
+							<li>국산/수입신차/중고차/오토바이 전 차종 신청 가능합니다.</li>
+							<li>캐쉬백은 자동차결제 정상매입 기준으로 지급됩니다. </li>
+							<li>신청채널 및 이용 상품(결재금액/유형)에 따라 별도 캐쉬백율로 운영됩니다.</li>
+						</ul>
+					</div>
 				</div>
+				<!-- //캐쉬백 서비스 -->
 			</div>
 			<!-- //category -->
 			<!-- method -->
@@ -107,46 +107,6 @@
 					</li>
 					<!-- //선입금 방식 -->
 
-					<!-- 신용방식 -->
-					<li>
-						<div class="bar">
-							<p class="title">신용방식(일시불)</p>
-						</div>
-						<div class="content">
-							<div class="con">
-								<p class="title">신청방법</p>
-								<div class="roundBox">
-									<ul class="stepList">
-										<li><span class="step">Step 1</span><span class="title">신청</span>오토캐쉬백(신용카드 방식)</li>
-										<li><span class="step">Step 2</span><span class="title">일시불 결제</span>특별한도</li>
-									</ul>
-								</div>
-							</div>
-							<div class="con">
-								<p class="title">캐쉬백 지급</p>
-								<div class="interest">
-									<ul class="divide">
-										<li>
-											<p class="rate">1.0%</p>
-											<p class="text">3,000만원 이상</p>
-										</li>
-									</ul>
-								</div>
-								<div class="roundBox marginTop">
-									<p class="text center"><strong>자동차 결제금액 정상 입금일(카드결제일) +2영업일 후</strong><br>
-									하나카드 결제계좌로 지급</p>
-								</div>
-							</div>
-							<div class="con">
-								<p class="title">이용안내</p>
-								<ul class="dotList">
-									<li>신용방식  신청 시 본인 신용도에 따라 오토캐쉬백 서비스 이용이 제한될 수 있습니다.</li>
-								</ul>
-							</div>
-						</div>
-					</li>
-					<!-- //신용방식 -->
-
 					<!-- 체크카드 방식 -->
 					<li>
 						<div class="bar">
@@ -174,7 +134,8 @@
 									</ul>
 								</div>
 								<div class="roundBox marginTop">
-									<p class="text"><strong>자동차 결제일 다음달 11일 경</strong> 하나카드 결제계좌로 지급</p>
+									<p class="text"><strong>자동차 결제일 +13영업일(휴일제외) 이내</strong> <br>
+									하나카드 결제계좌로 지급</p>
 								</div>
 							</div>
 							<div class="con">

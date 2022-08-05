@@ -62,7 +62,6 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
             .deleteCookies("JSESSIONID")            //쿠키 삭제 
             .logoutSuccessUrl("/login");            //로그아웃 후 보내질 페이지 
 
-        // security.HttpFirewall(defaulHttpFirewall());
     }
 
 
@@ -89,12 +88,6 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
     @Override
     public void configure(AuthenticationManagerBuilder auth) throws Exception {
         auth.authenticationProvider(customAuthenticationProvider);
-    }
-
-    // @Bean
-    // public HttpFirewall defaulHttpFirewall(){
-    //     return new DefaultHttpFirewall();
-    // }
-    
+    }    
     
 }

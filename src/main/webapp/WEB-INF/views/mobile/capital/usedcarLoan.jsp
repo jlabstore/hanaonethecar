@@ -4,9 +4,10 @@
 <body class="main">
     <div id="wrap">
     <!-- main -->
-	<section id="body" class="capitalUsedcarLoan">
+<section id="body" class="capitalUsedcarLoan">
 
 	<h1>중고차 오토론</h1>
+	<a href="/m/main" class="goBack">Back</a>
 
 	<!-- top content -->
 	<div class="topContent">

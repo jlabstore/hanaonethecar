@@ -4,12 +4,15 @@
 <body class="main">
     <div id="wrap">
     <!-- main -->
-	<section id="body" class="cardInstallment">
+<section id="body" class="cardInstallment">
 
 	<h1>오토할부</h1>
+	<a href="/m/main" class="goBack">Back</a>
 
 	<!-- top content -->
 	<div class="topContent">
+
+		<p class="topLogo"><img src="/mobile/images/common/logo-hanacard@2x.png" alt="하나카드"></p>
 
 		<!-- summary -->
 		<div class="summary">
@@ -43,26 +46,29 @@
 					</div>
 					<div class="rate">
 						<p class="title arrow">저금리형 할부 금리</p>
-						<table class="horizon simple">
-							<colgroup>
-								<col width="20%">
-								<col width="20%">
-								<col width="20%">
-								<col width="20%">
-								<col width="20%">
-							</colgroup>
+						<table class="horizon simple center">
 							<tr>
 								<td class="title">3개월</td>
 								<td class="title">6개월</td>
 								<td class="title">12개월</td>
 								<td class="title">24개월</td>
-								<td class="title">36~72개월</td>
 							</tr>
 							<tr>
 								<td class="rateEmp">1.0%</td>
 								<td class="rateEmp">1.5%</td>
 								<td class="rateEmp">1.9%</td>
 								<td class="rateEmp">2.6%</td>
+							</tr>
+							<tr>
+								<td class="title">36개월</td>
+								<td class="title">48개월</td>
+								<td class="title">60개월</td>
+								<td class="title">72개월</td>
+							</tr>
+							<tr>
+								<td class="rateEmp">2.9%</td>
+								<td class="rateEmp">2.9%</td>
+								<td class="rateEmp">2.9%</td>
 								<td class="rateEmp">2.9%</td>
 							</tr>
 						</table>
@@ -83,26 +89,29 @@
 					</div>
 					<div class="rate">
 						<p class="title arrow">캐쉬백형 할부 금리</p>
-						<table class="horizon simple">
-							<colgroup>
-								<col width="20%">
-								<col width="20%">
-								<col width="20%">
-								<col width="20%">
-								<col width="20%">
-							</colgroup>
+						<table class="horizon simple center">
 							<tr>
 								<td class="title">3개월</td>
 								<td class="title">6개월</td>
 								<td class="title">12개월</td>
 								<td class="title">24개월</td>
-								<td class="title">36~72개월</td>
 							</tr>
 							<tr>
 								<td class="rateEmp">1.5%</td>
 								<td class="rateEmp">2.0%</td>
 								<td class="rateEmp">2.43%</td>
 								<td class="rateEmp">2.9%</td>
+							</tr>
+							<tr>
+								<td class="title">36개월</td>
+								<td class="title">48개월</td>
+								<td class="title">60개월</td>
+								<td class="title">72개월</td>
+							</tr>
+							<tr>
+								<td class="rateEmp">3.2%</td>
+								<td class="rateEmp">3.2%</td>
+								<td class="rateEmp">3.2%</td>
 								<td class="rateEmp">3.2%</td>
 							</tr>
 						</table>
@@ -131,7 +140,7 @@
 			<!-- contact -->
 			<div class="contact">
 				<p class="title">자동차금융 상담센터</p>
-				<p class="exp">평일 09:00 ~ 18:00</p>
+				<p class="exp">평일 09:0 ~ 18:00</p>
 				<a href="tel://18001221">1800-1221</a>
 			</div>
 			<!-- //contact -->

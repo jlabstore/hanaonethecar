@@ -20,13 +20,21 @@ public class CardController {
     @Autowired
     private CardService cardService;
 
+    //오토카드할부 view
+    @RequestMapping(value="/card/autoCardInstallment",method = RequestMethod.GET)
+    public ModelAndView autoCardInstallment(HttpServletRequest request, HttpServletResponse response){
+        ModelAndView mv = new ModelAndView("mobile.card/autoCardInstallment");
+        return mv;
+    }
+
     //오토할부 View
     @RequestMapping(value="/card/autoInstallment",method = RequestMethod.GET)
     public ModelAndView autoInstallment(HttpServletRequest request, HttpServletResponse response){
         ModelAndView mv = new ModelAndView("mobile.card/autoInstallment");
         return mv;
     }
-     //오토할부 Post
+    
+    //오토할부 Post
     @RequestMapping(value = "/getAutoInstallment", method = RequestMethod.POST)
     @ResponseBody
     public Map<String,Object> getAutoInstallment(HttpServletRequest request, HttpServletResponse response){

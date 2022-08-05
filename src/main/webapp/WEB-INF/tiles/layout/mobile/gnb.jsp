@@ -9,6 +9,7 @@
 	<li>
 		<a href="#"><span>하나카드</span></a>
 		<ul>
+			<li><a href="card/autoCardInstallment"><span>오토카드할부</span></a></li>
 			<li><a href="card/autoInstallment"><span>오토할부</span></a></li>
 			<li><a href="card/autoLoan"><span>오토론</span></a></li>
 			<li><a href="card/autoCashback"><span>오토캐시백</span></a></li>

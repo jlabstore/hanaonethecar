@@ -5,48 +5,48 @@
 
 @font-face {
     font-family: 'HanaB';
-    src: url('/mobile/font/HanaB.woff2') format('woff2'),
-        url('/mobile/font/HanaB.woff') format('woff');
+    src: url('/font/HanaB.woff2') format('woff2'),
+        url('/font/HanaB.woff') format('woff');
     font-weight: normal;
     font-style: normal;
     font-display: swap;
 }
 @font-face {
     font-family: 'HanaGothicPro';
-    src: url('/mobile/font/HanaGothicPro745.woff2') format('woff2'),
-        url('/mobile/font/HanaGothicPro745.woff') format('woff');
+    src: url('/font/HanaGothicPro745.woff2') format('woff2'),
+        url('/font/HanaGothicPro745.woff') format('woff');
     font-weight: normal;
     font-style: normal;
     font-display: swap;
 }
 @font-face {
     font-family: 'HanaGothicPro';
-    src: url('/mobile/font/HanaGothicPro765.woff2') format('woff2'),
-        url('/mobile/font/HanaGothicPro765.woff') format('woff');
+    src: url('/font/HanaGothicPro765.woff2') format('woff2'),
+        url('/font/HanaGothicPro765.woff') format('woff');
     font-weight: 600;
     font-style: normal;
     font-display: swap;
 }
 @font-face {
     font-family: 'HanaGothicPro';
-    src: url('/mobile/font/HanaGothicPro775.woff2') format('woff2'),
-        url('/mobile/font/HanaGothicPro775.woff') format('woff');
+    src: url('/font/HanaGothicPro775.woff2') format('woff2'),
+        url('/font/HanaGothicPro775.woff') format('woff');
     font-weight: 700;
     font-style: normal;
     font-display: swap;
 }
 @font-face {
     font-family: 'HanaGothicPro';
-    src: url('/mobile/font/HanaGothicPro785.woff2') format('woff2'),
-        url('/mobile/font/HanaGothicPro785.woff') format('woff');
+    src: url('/font/HanaGothicPro785.woff2') format('woff2'),
+        url('/font/HanaGothicPro785.woff') format('woff');
     font-weight: 800;
     font-style: normal;
     font-display: swap;
 }
 @font-face {
     font-family: 'HanaGothicPro';
-    src: url('/mobile/font/HanaGothicPro795.woff2') format('woff2'),
-        url('/mobile/font/HanaGothicPro795.woff') format('woff');
+    src: url('/font/HanaGothicPro795.woff2') format('woff2'),
+        url('/font/HanaGothicPro795.woff') format('woff');
     font-weight: 900;
     font-style: normal;
     font-display: swap;
@@ -121,9 +121,10 @@ body.main {background-color: #f4f7f8;}
 
 /* layout */
 
-#header {}
-#header h1 {}
-#header h1 a {display: block;width: 98px;height: 60px;text-indent: -9999px;background: url('../images/common/logo@2x.png') left 20px center no-repeat;background-size: 58px auto;}
+#header {height: 60px;}
+#header h1 {display: none;}
+body.main #header h1 {display: block;}
+#header h1 a {position: relative;display: block;width: 130px;height: 60px;text-indent: -9999px;background: url('../images/common/logo@2x.png') left 20px center no-repeat;background-size: 89px auto;z-index: 100;}
 
 /* side menu */
 
@@ -199,20 +200,24 @@ body.sideMenu #side .gnb {
 
 /* layout */
 
-#footer {border-top: 1px solid #e7eaeb;padding: 17px 20px 30px;}
-#footer h1 {width: 61px;height: 36px;text-indent: -9999px;background: url('../images/common/logo-grayscale@2x.png') left center no-repeat;background-size: 61px auto;margin-bottom: 9px;}
+#footer {border-top: 1px solid #e7eaeb;padding: 30px 20px 30px;}
+#footer h1 {width: 118px;height: 24px;text-indent: -9999px;background: url('../images/common/logo_hanagroup_grayscale@2x.png') left center no-repeat;background-size: 118px auto;margin-bottom: 14px;}
 
 /* info */
 
 #footer .info {}
 #footer .info ul {}
-#footer .info ul li {line-height: 23px;font-size: 12px;color: #333;}
-#footer .info ul li span {}
+#footer .info ul li {line-height: 22px;font-size: 12px;color: #333;}
+#footer .info ul li span {position: relative;display: inline;padding-left: 9px;margin-left: 6px;}
+#footer .info ul li span:after {content: " ";position: absolute;left: 0;top: 3px;width: 1px;height: 10px;background-color: #bcbcbc;}
+#footer .info ul li span:first-child {padding-left: 0;margin-left: 0;}
+#footer .info ul li span:first-child:after {display: none;}
+
 
 /* copyright */
 
 #footer .copyright {}
-#footer .copyright p {line-height: 23px;font-size: 12px;color: #333;text-transform: uppercase;}
+#footer .copyright p {line-height: 22px;font-size: 12px;color: #333;text-transform: uppercase;}
 
 
 
@@ -265,7 +270,7 @@ body.sideMenu #side .gnb {
 	border-radius: 22.5px;
 }
 #main .tab ul li {flex: 1 1 auto;height: 100%;}
-#main .tab ul li a {display: block;height: 100%;line-height: 45px;font-size: 12px;color: #000;text-decoration: none;text-align: center;
+#main .tab ul li a {display: block;height: 100%;line-height: 45px;font-size: 12px;color: #000;font-weight: 600;text-decoration: none;text-align: center;
 	-moz-border-radius: 22.5px;
 	-webkit-border-radius: 22.5px;
 	border-radius: 22.5px;
@@ -292,7 +297,7 @@ body.sideMenu #side .gnb {
 #main .contents > div ul.content li p.title {line-height: 22px;font-size: 16px;color: #009fa3;font-weight: 800;}
 #main .contents > div ul.content li p.exp {line-height: 16px;font-size: 11px;color: #333;margin-top: 9px;}
 #main .contents > div ul.content li p.exp strong {font-weight: normal;background-color: #d9f1f1;}
-#main .contents > div ul.content li p.link {display:inline-block; display: -moz-inline-stack; zoom:1; *display:inline;line-height: 17px;font-size: 11px;color: #ee4467;font-weight: 800;border-bottom: 2px solid #ee4467;margin-top: 15px;}
+#main .contents > div ul.content li p.link {display:inline-block; display: -moz-inline-stack; zoom:1; *display:inline;line-height: 17px;font-size: 12px;color: #ee4467;font-weight: 800;border-bottom: 2px solid #ee4467;margin-top: 15px;}
 
 /* bank */
 
@@ -301,6 +306,7 @@ body.sideMenu #side .gnb {
 
 /* card */
 
+#main .contents > div ul.content li.auto_card_installment a {background: url('../images/main/card_icon_card_installment@2x.png') right 15px center no-repeat;background-size: 116px auto;}
 #main .contents > div ul.content li.auto_installment a {background: url('../images/main/card_icon_installment@2x.png') right 15px center no-repeat;background-size: 116px auto;}
 #main .contents > div ul.content li.auto_loan a {background: url('../images/main/card_icon_loan@2x.png') right 15px center no-repeat;background-size: 116px auto;}
 #main .contents > div ul.content li.auto_cashback a {background: url('../images/main/card_icon_cashback@2x.png') right 15px center no-repeat;background-size: 116px auto;}
@@ -313,16 +319,80 @@ body.sideMenu #side .gnb {
 
 /* banner */
 
-#main .contents > div .banner {display: none;}
+#main .contents > div .banner {margin: 20px -20px 30px;}
 #main .contents > div .banner ul {}
-#main .contents > div .banner ul li {}
-#main .contents > div .banner ul li a {}
-#main .contents > div .banner ul li p.subSlogan {}
-#main .contents > div .banner ul li p.slogan {}
-#main .contents > div .banner ul li p.exp {}
+#main .contents > div .banner ul li {height: 160px;margin-bottom: 5px;}
+#main .contents > div .banner ul li:last-child {margin-bottom: 0;}
+#main .contents > div .banner ul li.usedcar {background-image: linear-gradient(301deg, #9c67f0, #93c9ff 100%);}
+#main .contents > div .banner ul li.longterm_rental {background-image: linear-gradient(112deg, #ffdc8e, #f07558 100%);}
+#main .contents > div .banner ul li a {display: block;height: 100%;color: #fff;text-decoration: none;padding: 27px 34px 0;}
+#main .contents > div .banner ul li.usedcar a {background: url('../images/main/banner_usedcar_img@2x.png') right center no-repeat;background-size: auto 140px;}
+#main .contents > div .banner ul li.longterm_rental a {background: url('../images/main/banner_longterm_rental_img@2x.png') right center no-repeat;background-size: auto 140px;}
+#main .contents > div .banner ul li p.subSlogan {line-height: 16px;color: #fff;font-size: 11px;font-weight: 800;}
+#main .contents > div .banner ul li p.slogan {line-height: 20px;color: #fff;font-size: 15px;font-weight: 800;margin-top: 4px;}
+#main .contents > div .banner ul li p.exp {line-height: 16px;color: #fff;font-size: 11px;margin-top: 13px;}
 
 /* comment  */
 
-#main ul.comment {margin-top: 20px;}
-#main ul.comment li {line-height: 16px;font-size: 10px;color: #666;margin-bottom: 2px;}
-#main ul.comment li:last-child {margin-bottom: 0;}
+#main ul.dotList {margin-top: 20px;}
+#main ul.dotList li {line-height: 18px;color: #666;margin-bottom: 0;}
+#main ul.dotList li:after {line-height: 18px;}
+
+
+
+/* ==============================================
+   intro
+   ============================================== */
+
+/* layout */
+
+body.intro {height: 100%;background-color: #f4f7f8;}
+body.intro #wrap {display: flex;flex-direction: column;height: 100%;}
+
+#intro {flex: 1 1 0;display: flex;justify-content: center;margin-top: 146px;}
+#intro .mobile {flex: 0 0 auto;width: 366px;}
+
+#intro .contents {flex: 0 0 auto;width: 518px;padding-top: 22px;margin-left: 140px;}
+#intro .contents h1 {height: 116px;text-indent: -9999px;background: url('../images/intro/logo.png') left top no-repeat;background-size: auto 116px;}
+#intro .contents .slogan {line-height: 40px;font-size: 24px;color: #231815;font-weight: 800;margin-top: 32px;}
+#intro .contents .slogan p.main {color: #009fa3;}
+#intro .contents .slogan p.main strong {background-color: #d9f1f1;font-weight: 800;}
+#intro .contents .slogan p.sub {}
+#intro .contents .qr {margin-top: 75px;}
+#intro .contents .qr p.img {margin-left: -14px;}
+#intro .contents .qr a {display:inline-block; display: -moz-inline-stack; zoom:1; *display:inline;line-height: 19px;font-size: 14px;color: #ee4467;font-weight: 800;text-decoration: none;border-bottom: 2px solid #ee4467;}
+#intro .contents p.notify {line-height: 18px;font-size: 10px;color: #888;margin-top: 123px;}
+
+/* footer */
+
+#pcFooter {flex: 0 0 0;display: flex;justify-content: center;width: 100%;border-top: 1px solid #e7eaeb;padding: 26px 0 28px;margin-top: 136px;}
+#pcFooter h1 {flex: 0 0 auto;width: 131px;height: 26px;text-indent: -9999px;background: url('../images/intro/logo_hanagroup.png') left center no-repeat;background-size: 131px auto;}
+#pcFooter ul.info {flex: 0 0 auto;flex-wrap: wrap;margin-top: 2px;margin-left: 44px;}
+#pcFooter ul.info li {position: relative;display: inline;line-height: 22px;font-size: 12px;color: #333;padding-left: 9px;margin-left: 6px;}
+#pcFooter ul.info li:after {content: " ";position: absolute;left: 0;top: 3px;width: 1px;height: 10px;background-color: #bcbcbc;}
+#pcFooter ul.info li:first-child {padding-left: 0;margin-left: 0;}
+#pcFooter ul.info li:first-child:after {display: none;}
+
+
+/* mediaquery for tablet */
+
+@media only screen and (max-width: 1200px) {
+
+	/* layout */
+
+	#intro {margin-top: 78px;}
+	#intro .mobile {width: 313px;}
+	#intro .mobile p.img img { width: 100%; height: auto; }
+
+	#intro .contents {width: 487px;padding-top: 11px;margin-left: 100px;}
+	#intro .contents h1 {}
+	#intro .contents .slogan {margin-top: 34px;}
+	#intro .contents .qr {margin-top: 46px;}
+	#intro .contents p.notify {margin-top: 60px;}
+
+	/* footer */
+
+	#pcFooter {margin-top: 66px;}
+	#pcFooter ul.info {width: calc(900px - 131px - 44px); }
+
+}

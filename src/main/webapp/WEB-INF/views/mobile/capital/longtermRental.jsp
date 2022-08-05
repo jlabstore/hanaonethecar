@@ -4,9 +4,10 @@
 <body class="main">
     <div id="wrap">
     <!-- main -->
-	<section id="body" class="capitalLongtermRental">
+<section id="body" class="capitalLongtermRental">
 
 	<h1>장기렌터카</h1>
+	<a href="/m/main" class="goBack">Back</a>
 
 	<!-- top content -->
 	<div class="topContent">
@@ -55,7 +56,6 @@
 			<!-- //feature -->
 			<!-- link -->
 			<div class="link">
-				<a href="#" class="round green"><span>간편 견적내기</span></a>
 				<a href="#" class="round black"><span>상담 신청하기</span></a>
 			</div>
 			<!-- //link -->

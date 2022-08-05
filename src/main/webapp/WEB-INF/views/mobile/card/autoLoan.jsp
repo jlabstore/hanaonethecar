@@ -4,12 +4,15 @@
 <body class="main">
     <div id="wrap">
     <!-- main -->
-	<section id="body" class="cardLoan">
+<section id="body" class="cardLoan">
 
 	<h1>오토론</h1>
+	<a href="/m/main" class="goBack">Back</a>
 
 	<!-- top content -->
 	<div class="topContent">
+
+		<p class="topLogo"><img src="/mobile/images/common/logo-hanacard@2x.png" alt="하나카드"></p>
 
 		<!-- summary -->
 		<div class="summary">
@@ -30,8 +33,17 @@
 			<!-- //info -->
 			<!-- interest -->
 			<div class="interest topBar">
-				<p class="title">고정금리</p>
-				<p class="rate">연 4.6%</p>
+				<ul class="divide">
+					<li>
+						<p class="title">고정금리</p>
+						<p class="rate">연 4.6%</p>
+					</li>
+					<li>
+						<p class="title">상환개월수</p>
+						<p class="month">3/6/12/24/36/<br>
+						48/60/72</p>
+					</li>
+				</ul>
 			</div>
 			<!-- //interest -->
 			<!-- link -->
@@ -54,7 +66,7 @@
 			<!-- contact -->
 			<div class="contact">
 				<p class="title">자동차금융 상담센터</p>
-				<p class="exp">평일 09:00 ~ 18:00</p>
+				<p class="exp">평일 09:0 ~ 18:00</p>
 				<a href="tel://18001221">1800-1221</a>
 			</div>
 			<!-- //contact -->
@@ -76,7 +88,7 @@
 				</div>
 				<div class="content">
 					<div class="con">
-						<p class="text">·오토론 신청 후 매월 이자 납입일에 이자를 납부해야 합니다. <br>
+						<p class="text">· 오토론 신청 후 매월 이자 납입일에 이자를 납부해야 합니다. <br>
 						· 상품 신청 전 상품설명서 및 약관을 반드시 확인하시기 바랍니다. <br>
 						· 대출 시점에 신용도 변경에 따라 한도가 변경될 수 있으며 신청이 제한될 수 있습니다. <br>
 						· 대출취급일로부터 3년 이내 상한 시 잔여대출기간에 따라 상환원금의 2% 이내로 중도상환수수료가 발생합니다. <br>

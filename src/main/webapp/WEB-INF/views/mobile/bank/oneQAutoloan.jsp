@@ -7,14 +7,17 @@
         <!-- main -->
 	<section id="body" class="bankOneQ">
 
+	<h1>1Q오토론</h1>
+	<a href="/m/main" class="goBack">Back</a>
 	<!-- top content -->
 	<div class="topContent">
 
+		<p class="topLogo"><img src="/mobile/images/common/logo-hanabank@2x.png" alt="하나은행"></p>
 		<!-- summary -->
 		<div class="summary">
 			<!-- top -->
 				<div class="top">
-				<h2><img src="/mobile/images/common/oneQ_logo@2x.png" alt="1Q 오토론"></h2>
+				<h2>1Q오토론</h2>
 				<p class="exp">#제1금융권 낮은 금리 <br>
 				#높은 한도 <br>
 				#대출채무상환면제</p>
@@ -27,9 +30,22 @@
 			</div>
 			<!-- //info -->
 			<!-- interest -->
-			<div class="interest">
+			<%-- <div class="interest">
 				<p class="title">대출 금리</p>
 				<p class="rate">연<span id="lowRate"></span>%~연<span id="highRate"></span>% </p>
+			</div> --%>
+			<div class="interest">
+				<p class="title">대출 금리</p>
+				<ul>
+					<li>
+						<p class="range">최저</p>
+						<p class="rate">연<span id="lowRate"></span>%~</p>
+					</li>
+					<li>
+						<p class="range">최고</p>
+						<p class="rate">연<span id="highRate"></span>%</p>
+					</li>
+				</ul>
 			</div>
 			<!-- //interest -->
 			<!-- feature -->
@@ -65,10 +81,7 @@
 				제휴카드결제<span id="newRate3"></span>%, 
 				적금상품납입<span id="newRate6"></span>%, 
 				하나원큐이체<span id="newRate5"></span>%, 
-				기타자동이체<span id="newRate4"></span>%) <br>
-			**우대금리항목(
-				콜센터신청or딜러소개<span id="newRate7-1"></span>%
-				)</p>
+				기타자동이체<span id="newRate4"></span>%)
 		</div>
 		<!-- //additional -->
 
@@ -222,9 +235,19 @@
 				</div>
 				<div class="content">
 					<div class="con">
-						<p class="title">신차구입/신차대환</p>
+						<p class="title emp">신차/중고차 구입 및 대환</p>
 						<div class="interest">
-							<p class="rate">연 3.894%~연 4.894% </p>
+							<%-- <p class="rate">연 3.894%~연 4.894% </p> --%>
+							<ul>
+								<li>
+									<p class="range">최저</p>
+									<p class="rate">연 5.118%~</p>
+								</li>
+								<li>
+									<p class="range">최고</p>
+									<p class="rate">연 6.018% </p>
+								</li>
+							</ul>
 						</div>
 						<table class="horizon">
 							<tr>
@@ -243,61 +266,12 @@
 								<td class="title">부수거래 감면금리</td>
 								<td class="rate"> <span id="rateD"></span>%</td>
 							</tr>
-							<tr>
-								<td class="title">우대금리</td>
-								<td class="rate"><span id="newRate7D"></span>%</td>
-							</tr>
 						</table>
 						<ul class="dotList">
 							<li class="reference">최저금리 기준: <br>
-							2022.04.01 현재, 내부신용등급(ASS) 1등급, 대출기간 1년, 대출금액 6천만원, 부수거래 감면금리 및 우대금리</li>
+							2022.07.27 현재, 내부신용등급(ASS) 1등급, 대출기간 1년, 부수거래 감면금리 적용시</li>
 							<li class="reference">최고금리 기준: <br>
-							2022.04.01 현재, 내부신용등급(ASS) 11등급, 대출기간 10년, 대출금액 3백만원, 부수거래 감면금리 및 우대금리 미적용시</li>
-							<li class="reference">우대금리: 콜센터 신청 or 딜러 소개 신청 중 택 1</li>
-						</ul>
-					</div>
-					<div class="con">
-						<p class="title">중고차구입/중고차대환</p>
-						<div class="interest">
-							<ul>
-								<li>
-									<p class="range">최저</p>
-									<p class="rate">연<span id="usedLowRateD"></span>%~</p>
-								</li>
-								<li>
-									<p class="range">최고</p>
-									<p class="rate">연<span id="usedHighRateD"></span>%</p>
-								</li>
-							</ul>
-						</div>
-						<table class="horizon">
-							<tr>
-								<td class="title">금리구분</td>
-								<td class="right">금융채 6개월 변동</td>
-							</tr>
-							<tr>
-								<td class="title">기준금리</td>
-								<td class="rate"><span id="usedCarBaseRateD"></span>%</td>
-							</tr>
-							<tr>
-								<td class="title">가산금리</td>
-								<td class="rate"><span id="usedAddRateD"></span>%</td>
-							</tr>
-							<tr>
-								<td class="title">부수거래 감면금리</td>
-								<td class="rate"><span id="usedRateD"></span>%</td>
-							</tr>
-							<tr>
-								<td class="title">우대금리</td>
-								<td class="rate"><span id="usedRate7D"></span>%</td>
-							</tr>
-						</table>
-						<ul class="dotList">
-							<li class="reference">최저금리 기준: <br>
-							2022.04.01 현재, 내부신용등급(ASS) 1등급, 대출기간 1년, 대출금액 6천만원, 부수거래 감면금리 및 우대금리</li>
-							<li class="reference">최고금리 기준: <br>
-							2022.04.01 현재, 내부신용등급(ASS) 11등급, 대출기간 10년, 대출금액 3백만원, 부수거래 감면금리 및 우대금리 미적용시</li>
-							<li class="reference">우대금리: 콜센터 신청 or 딜러 소개 신청 중 택 1</li>
+							2022.07.27 현재, 내부신용등급(ASS) 12등급, 대출기간 10년, 부수거래 감면금리 미적용시</li>
 						</ul>
 					</div>
 					<div class="con">
@@ -320,7 +294,8 @@
 							<li class="reference">부수거래 항목별 감면금리: 대출 실행시 선택한 부수거래 항목의 감면금리가 적용되며, 이후에는 선택하지 않은 항목을 포함하여 모든 항목에 대해서 매월 감면조건을 충적하는 경우 1개월 단위로 금리가 감면되고, 매월 조건을 충족하지 않을 경우 감면 받은 금리가 자동으로 인상됩니다.</li>
 							<li class="reference">대부업 등의 등록 및 금융이용자 보호에 관한 법률에 따른 법정 최고 금리는 연 20%입니다.</li>
 							<li class="reference">연체이자율[대출이자율+연체가산이자율(연3%)]: <br>
-							최고 연 15%입니다. (상품에 따라 연체이자율이 일부 달라지는 경우가 있으므로 세부적인 사항은 대출거래약정서 등을 참고하시기 바랍니다.)</li>
+							최고 연 15%입니다. <br>
+							(상품에 따라 연체이자율이 일부 달라지는 경우가 있으므로 세부적인 사항은 대출거래약정서 등을 참고하시기 바랍니다.)</li>
 							<li class="reference">이자의 부과시기: <br>
 							후취방식 징구를 원칙으로 1개월 이내의 기간을 단위로 징수합니다. </li>
 						</ul>
@@ -363,9 +338,10 @@
 							<li>문의사항은 하나생명 손님케어센터 1899-8877로 연락하시기 바랍니다.</li>
 						</ul>
 						<ul class="dotList">
-							<li class="reference">본 홍보물은 2022년 12월 31일까지 유효합니다.</li>
-							<li class="reference">하나은행 준법감시인 심의필 제2022-광고-1106호(2022.01.06)</li>
-							<li class="reference">대부업 등의 등록 및 금융이용자 보호에 관한 법률에 따른 법정 최고 금리는 연 20%입니다.</li>
+							<li class="reference">본 홍보물은 법령 및 내부통제기준에 따른 절차를 거쳐 제공됩니다.</li>
+							<li class="reference">본 홍보물은 2023년 7월 31일까지 유효합니다.</li>
+							<li class="reference">하나은행 준법감시인 심의필 제2022-광고-0000호(2022.00.00)</li>
+							<li class="reference">CC브랜드220000-0000</li>
 						</ul>
 					</div>
 				</div>

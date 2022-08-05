@@ -6,13 +6,17 @@
     <div id="wrap">
         <!-- main -->
 	<section id="body" class="bankEV">
+
+	<h1>EV오토론</h1>
+	<a href="/m/main" class="goBack">Back</a>
 		<div class="topContent">
 
+		<p class="topLogo"><img src="/mobile/images/common/logo-hanabank@2x.png" alt="하나은행"></p>
 		<!-- summary -->
 		<div class="summary">
 			<!-- top -->
 			<div class="top">
-				<h1><strong>EV</strong>오토론</h1>
+				<h2>EV오토론</h2>
 				<p class="exp">#친환경차구매혜택 <br>
 				#연0.3%금리감면 <br>
 				#추가한도500만원</p>
@@ -25,7 +29,8 @@
 			<!-- //info -->
 			<!-- interest -->
 			<div class="interest">
-				<ul>
+				<p class="title">대출 금리</p>
+				<%-- <ul>
 					<li>
 						<p class="range">최저</p>
 						<p class="rate">연<span id="lowRate"></span>%~</p>
@@ -33,6 +38,16 @@
 					<li>
 						<p class="range">최고</p>
 						<p class="rate">연<span id="highRate"></span>%</p>
+					</li>
+				</ul> --%>
+				<ul>
+					<li>
+						<p class="range">최저</p>
+						<p class="rate">연 <span id="lowRate"></span>%~</p>
+					</li>
+					<li>
+						<p class="range">최고</p>
+						<p class="rate">연 <span id="highRate"></span>%</p>
 					</li>
 				</ul>
 			</div>
@@ -206,14 +221,15 @@
 							<li>부수거래는 매월 실적체크하여 미충족 할 경우 익월부터 해당 금리만큼 인상됩니다.</li>
 						</ul>
 					</div>
-					<div class="con">
+				<div class="con">
 						<ul class="dotList">
 							<li class="reference">이자 산정방법: 최저이율(기준금리 + 가산금리(ASS1등급) - 부수거래감면금리 ) / 최고이율(기준금리 + 가산금리(ASS11등급))</li>
 							<li class="reference">가산금리는 신용등급, 대출기간, 대출금액 등에 따라 차등 적용됩니다.</li>
 							<li class="reference">부수거래 항목별 감면금리: 대출 실행시 선택한 부수거래 항목의 감면금리가 적용되며, 이후에는 선택하지 않은 항목을 포함하여 모든 항목에 대해서 매월 감면조건을 충적하는 경우 1개월 단위로 금리가 감면되고, 매월 조건을 충족하지 않을 경우 감면 받은 금리가 자동으로 인상됩니다.</li>
 							<li class="reference">대부업 등의 등록 및 금융이용자 보호에 관한 법률에 따른 법정 최고 금리는 연 20%입니다.</li>
 							<li class="reference">연체이자율[대출이자율+연체가산이자율(연3%)]: <br>
-							최고 연 15%입니다. (상품에 따라 연체이자율이 일부 달라지는 경우가 있으므로 세부적인 사항은 대출거래약정서 등을 참고하시기 바랍니다.)</li>
+							최고 연 15%입니다. <br>
+							(상품에 따라 연체이자율이 일부 달라지는 경우가 있으므로 세부적인 사항은 대출거래약정서 등을 참고하시기 바랍니다.)</li>
 							<li class="reference">이자의 부과시기: <br>
 							후취방식 징구를 원칙으로 1개월 이내의 기간을 단위로 징수합니다. </li>
 						</ul>
