@@ -18,7 +18,6 @@
 			<div class="top">
 				<h2>EV오토론</h2>
 				<p class="exp">#친환경차구매혜택 <br>
-				#연0.3%금리감면 <br>
 				#추가한도500만원</p>
 			</div>
 			<!-- //top -->
@@ -30,16 +29,6 @@
 			<!-- interest -->
 			<div class="interest">
 				<p class="title">대출 금리</p>
-				<%-- <ul>
-					<li>
-						<p class="range">최저</p>
-						<p class="rate">연<span id="lowRate"></span>%~</p>
-					</li>
-					<li>
-						<p class="range">최고</p>
-						<p class="rate">연<span id="highRate"></span>%</p>
-					</li>
-				</ul> --%>
 				<ul>
 					<li>
 						<p class="range">최저</p>
@@ -58,13 +47,13 @@
 					<li>
 						<p class="icon"><img src="/mobile/images/common/icon-coin@2x.png" alt="대출 한도"></p>
 						<p class="title">대출 한도</p>
-						<p class="con">최대 6천만원</p>
+						<p class="con">최대<br> 6천 500만원</p>
 					</li>
 					<li>
 						<p class="icon"><img src="/mobile/images/common/icon-eco@2x.png" alt="친환경차 대상"></p>
-						<p class="title">친환경차 대상</p>
-						<p class="con">연 0.3% 금리 감면</p>
-						<p class="exp">대상차량 : 전기차, 전기수소차,하이브리드 차량</p>
+						<p class="title">무료 보험 혜택</p>
+						<p class="con">교통사고 재해보험<br>가입!</p>
+						<%-- <p class="exp">대상차량 : 전기차, 전기수소차,하이브리드 차량</p> --%>
 					</li>
 				</ul>
 			</div>
@@ -87,9 +76,10 @@
                     적금상품납입<span id="newRate6"></span>%,
                     하나원큐이체<span id="newRate5"></span>%,
                     기타자동이체<span id="newRate4"></span>%)<br>
-			**우대금리항목(
+			<%-- **우대금리항목(
                     콜센터신청or딜러소개<span id="newRate7-1"></span>%
-                    )</p>
+                    ) --%>
+					</p>
 		</div>
 		<!-- //additional -->
 
@@ -128,7 +118,7 @@
 						<p class="title">대출한도</p>
 						<ul class="limit">
 							<li>
-								<p class="range">최대 <strong>6천만원</strong></p>
+								<p class="range">최대 <strong>6천 500만원</strong></p>
 								<p class="title">신차구입/신차대환자금</p>
 							</li>
 						</ul>
@@ -184,16 +174,16 @@
 								<td class="right">금융채 6개월 변동</td>
 							</tr>
 							<tr>
-								<td class="title">기준금리</td>
-								<td class="rate" id="newCarBaseRateD">1.594%</td>
+								<td class="title">기준금리111</td>
+								<td class="rate" id="newCarBaseRateD"></td>%
 							</tr>
 							<tr>
 								<td class="title">가산금리</td>
-								<td class="rate" id="newAddRateD">3.000%</td>
+								<td class="rate" id="newAddRateD"></td>%
 							</tr>
 							<tr>
 								<td class="title">부수거래 감면금리</td>
-								<td class="rate" id="rateD">0.900%</td>
+								<td class="rate" id="rateD"></td>%
 							</tr>
 						</table>
 						<ul class="dotList">
@@ -201,7 +191,7 @@
 							2022.04.01 현재, 내부신용등급(ASS) 1등급, 대출기간 1년, 대출금액 6천만원, 부수거래 감면금리 및 우대금리</li>
 							<li class="reference">최고금리 기준: <br>
 							2022.04.01 현재, 내부신용등급(ASS) 11등급, 대출기간 10년, 대출금액 3백만원, 부수거래 감면금리 및 우대금리 미적용시</li>
-							<li class="reference">우대금리: 콜센터 신청 or 딜러 소개 신청 중 택 1</li>
+							<%-- <li class="reference">우대금리: 콜센터 신청 or 딜러 소개 신청 중 택 1</li> --%>
 						</ul>
 					</div>
 					<div class="con">
@@ -231,8 +221,13 @@
 							최고 연 15%입니다. <br>
 							(상품에 따라 연체이자율이 일부 달라지는 경우가 있으므로 세부적인 사항은 대출거래약정서 등을 참고하시기 바랍니다.)</li>
 							<li class="reference">이자의 부과시기: <br>
-							후취방식 징구를 원칙으로 1개월 이내의 기간을 단위로 징수합니다. </li>
+							후취방식 징구를 원칙으로 1개월 이내의 기간을 단위로 징수합니다. </li><br>
+							<li class="reference">본 홍보물은 법령 및 내부통제기준에 따른 절차를 거쳐 제공됩니다.</li>
+							<li class="reference"> 본 홍보물은 2023년 7월 31일까지 유효합니다.</li>
+							<li class="reference">하나은행 준법감시인 심의필 제2022-광고-0000호(2022.00.00)</li>
+							<li class="reference"> CC브랜드220000-0000</li>
 						</ul>
+						
 					</div>
 				</div>
 			</li>

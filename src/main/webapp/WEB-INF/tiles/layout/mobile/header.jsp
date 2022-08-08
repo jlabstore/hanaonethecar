@@ -1,6 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=utf-8" pageEncoding="utf-8"%>
 <section id="header">
-	<%-- <h1><a href="/">하나원더카</a></h1> --%>
+	<%-- <h1><a href="/m/main">하나원더카</a></h1> --%>
 	<!-- menu -->
 	<p href="/m/main" class="menu"><button>menu</button></p>
 	<!-- //menu -->
@@ -10,10 +10,11 @@
 		<div class="gnb">
 			<ul>
 				<li>
-					<a href="#"><span>하나은행</span></a>
+					<a href="#"><span>하나캐피탈</span></a>
 					<ul>
-						<li><a href="/m/bank/oneQAutoloan"><span>1Q오토론</span></a></li>
-						<li><a href="/m/bank/evAutoloan"><span>EV오토론</span></a></li>
+						<li><a href="/m/capital/carLease"><span>자동차리스</span></a></li>
+						<li><a href="/m/capital/longtermRental"><span>장기렌터카</span></a></li>
+						<li><a href="/m/capital/usedcarLoan"><span>중고차 오토론</span></a></li>
 					</ul>
 				</li>
 				<li>
@@ -26,13 +27,12 @@
 					</ul>
 				</li>
 				<li>
-					<a href="#"><span>하나캐피탈</span></a>
+					<a href="#"><span>하나은행</span></a>
 					<ul>
-						<li><a href="/m/capital/carLease"><span>자동차리스</span></a></li>
-						<li><a href="/m/capital/longtermRental"><span>장기렌터카</span></a></li>
-						<li><a href="/m/capital/usedcarLoan"><span>중고차 오토론</span></a></li>
+						<li><a href="/m/bank/oneQAutoloan"><span>1Q오토론</span></a></li>
+						<li><a href="/m/bank/evAutoloan"><span>EV오토론</span></a></li>
 					</ul>
-				</li>
+				</li>				
 			</ul>
 		</div>
 		<!-- //gnb -->

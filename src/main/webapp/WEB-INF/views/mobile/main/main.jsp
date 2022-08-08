@@ -31,7 +31,7 @@
 				</li>
 				<li class="ev_autoloan">
 					<a href="bank/evAutoloan">
-						<p class="title">EV오토론</p><p class="exp"><strong>하나카드 없이 빠르고 간편한 신차</strong> <br><strong>구입 방법!</strong> 새차 구입 계획은 저렴한 <br>금리 신차오토론으로 이용해보세요</p>
+						<p class="title">EV오토론</p><p class="exp"><strong>친환경차 구매 시 혜택받는</strong> <br>착한 자동차 대출!<br><strong>추가한도 500만원</strong>까지!</p>
 						<p class="link">상품 상세 보기</p>
 					</a>
 				</li>
