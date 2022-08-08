@@ -58,8 +58,8 @@
 					</li>
 					<li>
 						<p class="icon"><img src="/mobile/images/common/icon-sellcar@2x.png" alt="내차걱정 NoNo!"></p>
-						<p class="title">내차걱정 NoNo!</p>
-						<p class="con">내 차 팔기 서비스</p>
+						<p class="title">무료 보험 혜택</p>
+						<p class="con">교통사고 재해보험<br>가입!</p>
 					</li>
 				</ul>
 			</div>
