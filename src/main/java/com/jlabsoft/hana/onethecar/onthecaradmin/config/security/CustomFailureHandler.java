@@ -21,18 +21,9 @@ public class CustomFailureHandler implements AuthenticationFailureHandler{
         if("UsernameNotFoundException".equals(exceptionClas)) {
             // 아이디가 잘못되었을때
             msg = "errorId";
-        }else if("DisabledException".equals(exceptionClas)) {
-            // 이메일 권한 체크를 안했을때
-            msg = "errorEmailCheck";
-        }else if("CredentialsExpiredException".equals(exceptionClas)) {
-            // 소셜 아이디로 로그인 할때
-            msg = "erroAccount";
         }else if("BadCredentialsException".equals(exceptionClas)) {
             // 비밀번호가 틀렸을때
             msg = "errorPassword";
-        }else if ("AccountExpiredException".equals(exceptionClas)){
-            // 개발자 권한이 아닐때
-            msg = "errorRole";
         }
         
 		response.sendRedirect("/login?errorType="+msg);

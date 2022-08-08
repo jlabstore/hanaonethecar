@@ -57,14 +57,14 @@
 				<li class="auto_installment">
 					<a href="card/autoInstallment">
 						<p class="title">오토할부</p>
-						<p class="exp">빠르고 간편한 신차 구입 방법! <br>새차 구입 계획은 <strong>저렴한 할부금리</strong> <br><strong>신차오토할부</strong>로 이용해 보세요</p>
+						<p class="exp"><strong>하나카드로 빠르고 간편한</strong><br>새차 구입 계획은 저렴한 할부 금리 <br>신차 오토 할부!</p>
 						<p class="link">상품 상세 보기</p>
 					</a>
 				</li>
 				<li class="auto_loan">
 					<a href="card/autoLoan">
 						<p class="title">오토론</p>
-						<p class="exp">빠르고 간편한 신차 구입 방법! <br>새차 구입 계획은 <strong>저렴한 할부금리</strong> <br><strong>신차오토할부</strong>로 이용해 보세요</p>
+						<p class="exp"><strong>하나카드 없이도 빠르고 간편한</strong><br>새차 구입 계획은 저렴한 할부 금리 <br>신차 오토 할부!</p>
 						<p class="link">상품 상세 보기</p>
 					</a>
 				</li>

@@ -27,7 +27,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
     public void configure(WebSecurity web) throws Exception
     {
         // static 디렉터리의 하위 파일 목록은 인증 무시 ( = 항상통과 )
-        web.ignoring().antMatchers("/sbAdmin/**", "/js/**", "/css/**", "/img/**", "/image/**", "/lib/**", "/error","/mobile/**");
+        web.ignoring().antMatchers("/sbAdmin/**", "/js/**", "/css/**", "/img/**", "/image/**", "/lib/**", "/error","/mobile/**","/main/**");
     }
     
 
@@ -53,6 +53,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
         security.formLogin() 
             .loginPage("/m/main")                    //커스텀 로그인페이지 
             .defaultSuccessUrl("/admin/main")
+            // .successForwardUrl("/admin/main")
             .loginProcessingUrl("/login/auth") // have to: Content-Type: multipart/form-data
             .failureHandler(customFailureHandler);  
 
