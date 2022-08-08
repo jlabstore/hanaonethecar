@@ -35,15 +35,4 @@
         <put-attribute name="body" value="/WEB-INF/views/mobile/{2}.jsp" />
     </definition>
 
-
-    <!-- intro -->
-    <!-- <definition name="intro-layout" template="/WEB-INF/tiles/layout/mobile/base-mainIntro.jsp">
-        <put-attribute name="head" value="/WEB-INF/tiles/layout/mobile/head.jsp"/>
-	</definition>
-
-    <definition name="intro.*" extends="intro-layout">
-        <put-attribute name="body" value="/WEB-INF/views/intro/{2}.jsp" />
-    </definition> -->
-
-
 </tiles-definitions>
