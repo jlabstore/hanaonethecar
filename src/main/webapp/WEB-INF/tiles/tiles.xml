@@ -35,4 +35,19 @@
         <put-attribute name="body" value="/WEB-INF/views/mobile/{2}.jsp" />
     </definition>
 
+     <!-- main -->
+    <definition name="main-layout" template="/WEB-INF/tiles/layout/mobile/base-main.jsp">
+		<put-attribute name="header" value="/WEB-INF/tiles/layout/mobile/header.jsp"/>
+        <put-attribute name="head" value="/WEB-INF/tiles/layout/mobile/head.jsp"/>
+        <put-attribute name="footer" value="/WEB-INF/tiles/layout/mobile/footer.jsp"/>
+	</definition>
+
+    <definition name="main.*/*" extends="main-layout">
+        <put-attribute name="body" value="/WEB-INF/views/mobile/{1}/{2}.jsp"/>
+    </definition>
+    
+    <definition name="main.*" extends="main-layout">
+        <put-attribute name="body" value="/WEB-INF/views/mobile/{2}.jsp" />
+    </definition>
+
 </tiles-definitions>

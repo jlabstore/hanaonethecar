@@ -11,8 +11,7 @@ public class LoginController {
     
     @RequestMapping("/login")
     public ModelAndView lonin(HttpServletRequest request){
-        ModelAndView modelAndView = new ModelAndView("login/login");
-        return modelAndView;
+        ModelAndView mv = new ModelAndView("login/login");
+        return mv;
     }
-
 }

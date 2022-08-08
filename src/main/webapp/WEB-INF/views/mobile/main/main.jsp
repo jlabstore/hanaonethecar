@@ -104,24 +104,6 @@
 				</li>
 			</ul>
 			<!-- banner -->
-			<%-- <div class="banner">
-				<ul>
-					<li class="usedcar">
-						<a href="#">
-							<p class="subSlogan">하나캐피탈 진단 중고차</p>
-							<p class="slogan">믿을 수 있는 진단 차량, <br>안심 구매!</p>
-							<p class="exp">하나캐피탈이 엄선한 무사고 차량을 <br>합리적인 가격에! 품질 보증까지!</p>
-						</a>
-					</li>
-					<li class="longterm_rental">
-						<a href="#">
-							<p class="subSlogan">장기렌터카 특판 출고</p>
-							<p class="slogan">대기 없이 <br>신차를 만나는 방법!</p>
-							<p class="exp">특가는 기본, 대기 없이 차량을 이용하는 <br>장기렌터카 특판 출고!</p>
-						</a>
-					</li>
-				</ul>
-			</div> --%>
 			<div class="row Banner">
 			<ul id="capitalBannerImg" class="slides">
 			</ul>
@@ -173,6 +155,8 @@
 	$(document).ready(function(){
 		submitForm();
 		randomTab();
+		// checkPcAndMobile();
+		
 	});
 
 	var submitForm = function() {
@@ -288,4 +272,18 @@
 		});
 
 	}
+
+	
+	function checkPcAndMobile(){
+		//운영체제 종류 선언
+		var filterOs = "win16|win32|win64|mac|macintel";
+		
+		//PC 및 모바일 접속 체크
+		if(navigator.platform){
+			if(0 < filterOs.indexOf(navigator.platform.toLowerCase())){				
+					//PC 
+					location.href='http://hanaonethecar1.cafe24.com/intro' 		
+			}	  			    				    			
+		}	
+	};
 </script>

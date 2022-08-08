@@ -43,6 +43,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
         //페이지에 대한 인증처리 설정
         security.authorizeRequests()               //특정권한을 가진 사용자만 접근가능하도록
                 .antMatchers("/m/**").permitAll()  
+                .antMatchers("/intro/**").permitAll()  
                 .antMatchers("/login").permitAll()  
                 .antMatchers("/login/**").permitAll()
                 .antMatchers("/api/**").permitAll()
