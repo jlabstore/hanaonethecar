@@ -50,7 +50,7 @@
 						<p class="con">최대<br> 6천 500만원</p>
 					</li>
 					<li>
-						<p class="icon"><img src="/mobile/images/common/icon-eco@2x.png" alt="친환경차 대상"></p>
+						<p class="icon"><img src="/mobile/images/common/icon-sellcar@2x.png" alt="무료 보험 혜택"></p>
 						<p class="title">무료 보험 혜택</p>
 						<p class="con">교통사고 재해보험<br>가입!</p>
 						<%-- <p class="exp">대상차량 : 전기차, 전기수소차,하이브리드 차량</p> --%>

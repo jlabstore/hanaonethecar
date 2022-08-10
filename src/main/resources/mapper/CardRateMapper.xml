@@ -1,0 +1,346 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.jlabsoft.hana.onethecar.onthecaradmin.admin.cardRate.CardRateMapper">
+
+	<!-- 코드가져오기 -->
+	<select id="getSelectCodes" parameterType="HashMap" resultType="HashMap">
+        SELECT
+            goods_id,
+            goods_nm,
+			type
+        FROM
+            goods
+        WHERE
+            type = #{type}
+    </select>
+
+
+	<!-- 오토캐쉬백 -->
+    <select id="getCashBackDetail" resultType="HashMap" parameterType="HashMap">
+        SELECT
+			goods_id,
+			cashback1,
+			cashback2,
+			cashback3
+        FROM
+            card_auto_cashback_rate
+        WHERE 
+			goods_id = 'CASHBACK'
+    </select>
+
+	<insert id="setCashBack" parameterType="HashMap">
+		INSERT INTO
+			card_auto_cashback_rate
+				(	
+					goods_id,
+					cashback1,
+					cashback2,
+					cashback3,
+					reg_id,
+					reg_dt
+				)
+			VALUES
+				(	
+					#{goodsId},
+					#{cashback1},
+					#{cashback2},
+					#{cashback3},
+					#{userId},
+					now()
+				)
+	</insert>
+
+	<update id="putCashBack" parameterType="HashMap">
+		update
+			card_auto_cashback_rate
+		set
+			goods_id = #{goodsId}
+			,cashback1 = #{cashback1}
+			,cashback2 = #{cashback2}
+			,cashback3 = #{cashback3}
+			,upd_id = #{userId}
+			,upd_dt = now()
+		where
+			goods_id = #{goodsId} 
+	</update>
+
+	<!-- 오토카드할부 -->
+    <select id="getAutoCardInstallmentDetail" resultType="HashMap" parameterType="HashMap">
+        SELECT
+			goods_id
+			,month1
+			,month2
+			,month3
+			,month4
+			,month5
+			,month6
+			,month7
+			,month8
+			,rate1
+			,rate2
+			,rate3
+			,rate4
+			,rate5
+			,rate6
+			,rate7
+			,rate8
+        FROM
+            card_cardInstallment_rate
+        WHERE 
+			goods_id = 'CARDINSTALLMENT'
+    </select>
+
+	<insert id="setAutoCardInstallment" parameterType="HashMap">
+		INSERT INTO
+			card_cardInstallment_rate
+				(	
+				goods_id
+				,month1
+				,month2
+				,month3
+				,month4
+				,month5
+				,month6
+				,month7
+				,month8
+				,rate1
+				,rate2
+				,rate3
+				,rate4
+				,rate5
+				,rate6
+				,rate7
+				,rate8
+				,reg_id
+				,reg_dt
+				)
+			VALUES
+				(	
+				#{goodsId},
+				#{month1},
+				#{month2},
+				#{month3},
+				#{month4},
+				#{month5},
+				#{month6},
+				#{month7},
+				#{month8},
+				#{rate1},
+				#{rate2},
+				#{rate3},
+				#{rate4},
+				#{rate5},
+				#{rate6},
+				#{rate7},
+				#{rate8},
+				#{userId},
+				now()
+				)
+	</insert>
+
+	<update id="putAutoCardInstallment" parameterType="HashMap">
+		update
+			card_cardInstallment_rate
+		set
+			goods_id = #{goodsId}
+			,month1 = #{month1}
+			,month2 = #{month2}
+			,month3 = #{month3}
+			,month4 = #{month4}
+			,month5 = #{month5}
+			,month6 = #{month6}
+			,month7 = #{month7}
+			,month8 = #{month8}
+			,rate1 = #{rate1}
+			,rate2 = #{rate2}
+			,rate3 = #{rate3}
+			,rate4 = #{rate4}
+			,rate5 = #{rate5}
+			,rate6 = #{rate6}
+			,rate7 = #{rate7}
+			,rate8 = #{rate8}
+			,upd_id = #{userId}
+			,upd_dt = now()
+		where
+			goods_id = #{goodsId} 
+	</update>
+
+
+	<!-- 오토할부 -->
+    <select id="getAutoInstallmentDetail" resultType="HashMap" parameterType="HashMap">
+        SELECT
+			goods_id,
+			month1,
+			month2,
+			month3,
+			month4,
+			month5,
+			month6,
+			month7,
+			month8,
+			low_rate1,
+			low_rate2,
+			low_rate3,
+			low_rate4,
+			low_rate5,
+			low_rate6,
+			low_rate7,
+			low_rate8,
+			cashback_rate1,
+			cashback_rate2,
+			cashback_rate3,
+			cashback_rate4,
+			cashback_rate5,
+			cashback_rate6,
+			cashback_rate7,
+			cashback_rate8
+        FROM
+            card_installment_rate
+        WHERE 
+			goods_id = 'INSTALLMENT'
+    </select>
+
+	<insert id="setAutoInstallment" parameterType="HashMap">
+		INSERT INTO
+			card_installment_rate
+				(	
+				goods_id
+				,month1
+				,month2
+				,month3
+				,month4
+				,month5
+				,month6
+				,month7
+				,month8
+				,low_rate1
+				,low_rate2
+				,low_rate3
+				,low_rate4
+				,low_rate5
+				,low_rate6
+				,low_rate7
+				,low_rate8
+				,cashback_rate1
+				,cashback_rate2
+				,cashback_rate3
+				,cashback_rate4
+				,cashback_rate5
+				,cashback_rate6
+				,cashback_rate7
+				,cashback_rate8
+				,reg_id
+				,reg_dt
+				)
+			VALUES
+				(	
+				#{goodsId},
+				#{month1},
+				#{month2},
+				#{month3},
+				#{month4},
+				#{month5},
+				#{month6},
+				#{month7},
+				#{month8},
+				#{lowRate1},
+				#{lowRate2},
+				#{lowRate3},
+				#{lowRate4},
+				#{lowRate5},
+				#{lowRate6},
+				#{lowRate7},
+				#{lowRate8},
+				#{cashbackRate1},
+				#{cashbackRate2},
+				#{cashbackRate3},
+				#{cashbackRate4},
+				#{cashbackRate5},
+				#{cashbackRate6},
+				#{cashbackRate7},
+				#{cashbackRate8},
+				#{userId},
+				now()
+				)
+	</insert>
+
+	<update id="putAutoInstallment" parameterType="HashMap">
+		update
+			card_installment_rate
+		set
+			goods_id = #{goodsId}
+			,month1 = #{month1}
+			,month2 = #{month2}
+			,month3 = #{month3}
+			,month4 = #{month4}
+			,month5 = #{month5}
+			,month6 = #{month6}
+			,month7 = #{month7}
+			,month8 = #{month8}
+			,low_rate1 = #{lowRate1}
+			,low_rate2 = #{lowRate2}
+			,low_rate3 = #{lowRate3}
+			,low_rate4 = #{lowRate4}
+			,low_rate5 = #{lowRate5}
+			,low_rate6 = #{lowRate6}
+			,low_rate7 = #{lowRate7}
+			,low_rate8 = #{lowRate8}
+			,cashback_rate1 = #{cashbackRate1}
+			,cashback_rate2 = #{cashbackRate2}
+			,cashback_rate3 = #{cashbackRate3}
+			,cashback_rate4 = #{cashbackRate4}
+			,cashback_rate5 = #{cashbackRate5}
+			,cashback_rate6 = #{cashbackRate6}
+			,cashback_rate7 = #{cashbackRate7}
+			,cashback_rate8 = #{cashbackRate8}
+			,upd_id = #{userId}
+			,upd_dt = now()
+		where
+			goods_id = #{goodsId} 
+	</update>
+
+	<!-- 오토론 -->
+    <select id="getAutoLoanDetail" resultType="HashMap" parameterType="HashMap">
+        SELECT
+			goods_id,
+			fixed_rate
+        FROM
+            card_loan_rate
+        WHERE 
+			goods_id = 'LONA'
+    </select>
+
+	<insert id="setAutoLoan" parameterType="HashMap">
+		INSERT INTO
+			card_loan_rate
+				(	
+				goods_id
+				,fixed_rate
+				,reg_id
+				,reg_dt
+				)
+			VALUES
+				(	
+				#{goodsId},
+				#{fixedRate},
+				#{userId},
+				now()
+				)
+	</insert>
+
+	<update id="putAutoLoan" parameterType="HashMap">
+		update
+			card_loan_rate
+		set
+			goods_id = #{goodsId}
+			,fixed_rate = #{fixedRate}
+			,upd_id = #{userId}
+			,upd_dt = now()
+		where
+			goods_id = #{goodsId} 
+	</update>
+
+
+
+
+</mapper>

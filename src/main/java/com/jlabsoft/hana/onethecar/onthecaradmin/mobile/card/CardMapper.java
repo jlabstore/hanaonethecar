@@ -6,7 +6,8 @@ import org.apache.ibatis.annotations.Mapper;
 
 @Mapper
 public interface CardMapper {
-    
+
+    public Map<String, Object> getAutoCardInstallment();
     public Map<String, Object> getAutoInstallment();
     public Map<String, Object> getAutoLoan();
     public Map<String, Object> getAutoCashback();

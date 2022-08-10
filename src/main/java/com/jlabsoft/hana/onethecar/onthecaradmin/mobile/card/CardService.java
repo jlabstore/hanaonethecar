@@ -11,6 +11,10 @@ public class CardService {
     @Autowired
     private CardMapper cardMapper;
 
+    public Map<String,Object> getAutoCardInstallment(){
+        return cardMapper.getAutoCardInstallment();
+    }
+
     public Map<String,Object> getAutoInstallment(){
         return cardMapper.getAutoInstallment();
     }

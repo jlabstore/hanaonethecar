@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.jlabsoft.hana.onethecar.onthecaradmin.admin.capitalRate.CapitalRateMapper">
+
+	
+	<!-- 코드가져오기 -->
+	<select id="getSelectCodes" parameterType="HashMap" resultType="HashMap">
+        SELECT
+            goods_id,
+            goods_nm,
+			type
+        FROM
+            goods
+        WHERE
+            type = #{type}
+    </select>
+
+    <!--상세 -->
+    <select id="getCapitalRateDetail" resultType="HashMap" parameterType="HashMap">
+        SELECT
+			goods_id,
+			low_rate,
+			high_rate
+        FROM
+            capital_rate
+        WHERE 
+			goods_id = #{goodsId}
+    </select>
+
+    <!-- 등록 -->
+	<insert id="setCapitalRate" parameterType="HashMap">
+		INSERT INTO
+			capital_rate
+				(	
+					goods_id,
+					low_rate,
+					high_rate,
+					reg_id,
+					reg_dt
+				)
+			VALUES
+				(	
+					#{goodsId},
+                    #{lowRate},
+					#{highRate},
+					#{userId},
+					now()
+				)
+	</insert>
+
+    <!-- 수정 -->
+    <update id="putCapitalRate" parameterType="HashMap">
+		update
+			capital_rate
+		set
+			goods_id = #{goodsId}
+			,low_rate = #{lowRate}
+			,high_rate = #{highRate}
+			,upd_id = #{userId}
+			,upd_dt = now()
+		where
+			goods_id = #{goodsId} 
+	</update>
+</mapper>

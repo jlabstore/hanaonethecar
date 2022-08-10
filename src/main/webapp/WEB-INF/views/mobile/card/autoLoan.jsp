@@ -36,7 +36,7 @@
 				<ul class="divide">
 					<li>
 						<p class="title">고정금리</p>
-						<p class="rate">연 4.6%</p>
+						<p class="rate">연${autoLoan.fixed_rate}%</p>
 					</li>
 					<li>
 						<p class="title">상환개월수</p>
@@ -121,23 +121,5 @@
 </body>
 <script type="text/javascript">
 	$(document).ready(function(){
-        getAutoLoan();
 	});
-
-
-    var getAutoLoan = function(){
-		var result = null; 
-        $.ajax({
-            type: 'POST',
-            url: '/m/getAutoLoan',
-            async: false,
-            success: function(data) {
-				result = data;        
-            },
-            error: function(data) {
-                alert('문제가 발생했습니다. 관리자에게 문의하세요.');
-            }
-        });
-		return result;
-    }
 </script>

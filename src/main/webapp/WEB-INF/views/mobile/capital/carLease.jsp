@@ -87,7 +87,7 @@
 						<p class="title">금리</p>
 						<ul class="dotList">
 							<li>금융리스 : <br>
-							최저 연 0.0% ~ 최고 연 8.6% <br>
+							최저 연 <span id="lowRate"></span>% ~ 최고 연<span id="highRate"></span>% <br>
 							(금융 소비자의 개인신용평점에 따라 차등 적용)</li>
 							<li>연체 이자율 : <br>
 								<ul class="numList">
@@ -288,10 +288,6 @@
 	<!-- //button -->
 
 </section>
-
-
-
-
     <!-- //main -->
     </div>
 </body>
@@ -308,7 +304,12 @@
             url: '/m/getCarLease',
             async: false,
             success: function(data) {
-				result = data;        
+				var temp = data.list != null ? true : false;
+				var lowRate = temp ? data.list.low_rate : "";
+				var highRate = temp ? data.list.high_rate : "";
+
+				$('#lowRate').text(lowRate);
+				$('#highRate').text(highRate);
             },
             error: function(data) {
                 alert('문제가 발생했습니다. 관리자에게 문의하세요.');

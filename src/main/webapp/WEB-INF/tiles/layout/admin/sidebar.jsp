@@ -26,7 +26,7 @@
         </a>
     </li>
 </c:if>
-<c:if test="${user.role == 'BANK' || user.role == 'CARD' || user.role == 'CAPITAL'}">
+<c:if test="${user.role == 'BANK'}">
     <li class="nav-item" id="cardNav">
         <a class="nav-link" href="/admin/goodRate/regist" >
             <i class="fa fa-money-bill"></i>
@@ -34,6 +34,23 @@
         </a>
     </li>
 </c:if>
+<c:if test="${user.role == 'CARD'}">
+    <li class="nav-item" id="cardNav">
+        <a class="nav-link" href="/admin/cardRate/autoCardInstallment" >
+            <i class="fa fa-money-bill"></i>
+            <span>금리관리</span>
+        </a>
+    </li>
+</c:if>
+<c:if test="${user.role == 'CAPITAL'}">
+    <li class="nav-item" id="cardNav">
+        <a class="nav-link" href="/admin/capitalRate/regist" >
+            <i class="fa fa-money-bill"></i>
+            <span>금리관리</span>
+        </a>
+    </li>
+</c:if>
+
     <!-- Divider -->
     <hr class="sidebar-divider d-none d-md-block">
 

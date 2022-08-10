@@ -21,13 +21,13 @@
 				<h2>오토캐쉬백</h2>
 				<p class="exp">자동차 일시불 결제 시 <br>
 				결재금액의 <br>
-				1.0%~1.5% 캐쉬백!</p>
+				${autoCashback.cashback3}%~${autoCashback.cashback1}% 캐쉬백!</p>
 			</div>
 			<!-- //top -->
 			<!-- info -->
 			<div class="info">
 				<p class="emp"><strong>하나카드로 자동차 일시불 결제 시 </strong><br>
-				<strong class="red">결제 금액의 1.0%~1.5% 캐쉬백!</strong></p>
+				<strong class="red">결제 금액의 ${autoCashback.cashback3}%~${autoCashback.cashback1}% 캐쉬백!</strong></p>
 				<p class="text">(단, 결제 건 별 300만원 이상 결제 시에 적용)</p>
 			</div>
 			<!-- //info -->
@@ -38,7 +38,7 @@
 					<div class="type">
 						<div class="top">
 							<p class="sub">캐쉬백 서비스</p>
-							<p class="title">1.0%~1.5% <br>
+							<p class="title">${autoCashback.cashback3}%~${autoCashback.cashback1}% <br>
 							<span>최대 500만원</span></p>
 						</div>
 					</div>
@@ -81,11 +81,11 @@
 								<div class="interest">
 									<ul class="divide">
 										<li>
-											<p class="rate green">1.4%</p>
+											<p class="rate green">${autoCashback.cashback1}%</p>
 											<p class="text">300 ~3,000만원 미만 </p>
 										</li>
 										<li>
-											<p class="rate">1.5%</p>
+											<p class="rate">${autoCashback.cashback2}%</p>
 											<p class="text">3,000만원 이상</p>
 										</li>
 									</ul>
@@ -128,7 +128,7 @@
 								<div class="interest">
 									<ul class="divide">
 										<li>
-											<p class="rate">1.0%</p>
+											<p class="rate">${autoCashback.cashback3}%</p>
 											<p class="text">3,000만원 이상</p>
 										</li>
 									</ul>
@@ -222,23 +222,5 @@
 </body>
 <script type="text/javascript">
 	$(document).ready(function(){
-        getAutoCashback();
 	});
-
-
-    var getAutoCashback = function(){
-		var result = null; 
-        $.ajax({
-            type: 'POST',
-            url: '/m/getAutoCashback',
-            async: false,
-            success: function(data) {
-				result = data;        
-            },
-            error: function(data) {
-                alert('문제가 발생했습니다. 관리자에게 문의하세요.');
-            }
-        });
-		return result;
-    }
 </script>

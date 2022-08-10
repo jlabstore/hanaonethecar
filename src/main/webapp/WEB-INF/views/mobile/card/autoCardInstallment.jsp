@@ -1,6 +1,14 @@
 <%@ page language="java" contentType="text/html; charset=utf-8" pageEncoding="utf-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ taglib uri="http://www.springframework.org/tags" prefix="spring" %>
+<style>
+	.table.horizon tr span{
+		line-height: 16px;
+		font-size: 10px;
+		border-bottom: 1px solid #dbdbdb;
+		padding: 10px 0;
+	}
+</style>
 <body class="main">
     <div id="wrap">
     <!-- main -->
@@ -45,28 +53,28 @@
 						<p class="title arrow">저렴한 할부 수수료</p>
 						<table class="horizon simple center">
 							<tr>
-								<td class="title">3개월</td>
-								<td class="title">6개월</td>
-								<td class="title">12개월</td>
-								<td class="title">24개월</td>
+								<td class="title">${autocardInstallment.month1}개월</td>
+								<td class="title">${autocardInstallment.month2}개월</td>
+								<td class="title">${autocardInstallment.month3}개월</td>
+								<td class="title">${autocardInstallment.month4}개월</td>
 							</tr>
 							<tr>
-								<td class="rateEmp">1.0%</td>
-								<td class="rateEmp">1.5%</td>
-								<td class="rateEmp">1.9%</td>
-								<td class="rateEmp">2.6%</td>
+								<td class="rateEmp" id="rate1">${autocardInstallment.rate1}%</td>
+								<td class="rateEmp" id="rate2">${autocardInstallment.rate2}%</td>
+								<td class="rateEmp" id="rate3">${autocardInstallment.rate3}%</td>
+								<td class="rateEmp" id="rate4">${autocardInstallment.rate4}%</td>
 							</tr>
 							<tr>
-								<td class="title">36개월</td>
-								<td class="title">48개월</td>
-								<td class="title">60개월</td>
-								<td class="title">-</td>
+								<td class="title" id="month5">${autocardInstallment.month5}개월</td>
+								<td class="title" id="month6">${autocardInstallment.month6}개월</td>
+								<td class="title" id="month7">${autocardInstallment.month7}개월</td>
+								<td class="title" id="month8">${autocardInstallment.month8}개월</td>
 							</tr>
 							<tr>
-								<td class="rateEmp">2.9%</td>
-								<td class="rateEmp">2.9%</td>
-								<td class="rateEmp">2.9%</td>
-								<td class="rateEmp">-</td>
+								<td class="rateEmp" id="rate5">${autocardInstallment.rate5}%</td>
+								<td class="rateEmp" id="rate6">${autocardInstallment.rate6}%</td>
+								<td class="rateEmp" id="rate7">${autocardInstallment.rate7}%</td>
+								<td class="rateEmp" id="rate8">${autocardInstallment.rate8}%</td>
 							</tr>
 						</table>
 					</div>
@@ -144,23 +152,5 @@
 </body>
 <script type="text/javascript">
 	$(document).ready(function(){
-        getAutoCashback();
 	});
-
-
-    var getAutoCashback = function(){
-		var result = null; 
-        $.ajax({
-            type: 'POST',
-            url: '/m/getAutoCashback',
-            async: false,
-            success: function(data) {
-				result = data;        
-            },
-            error: function(data) {
-                alert('문제가 발생했습니다. 관리자에게 문의하세요.');
-            }
-        });
-		return result;
-    }
 </script>

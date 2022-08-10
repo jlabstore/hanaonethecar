@@ -43,7 +43,7 @@
 		<h1>하나 원더카</h1>
 		<!-- slogan -->
 		<div class="slogan">
-			<p class="main"><strong>하나캐피탈, 하나카드, 하나은행 </strong></p>
+			<p class="main"><strong><span id="">하나캐피탈</span>,<span>하나카드</span>,<span>하나은행</span></strong></p>
 			<p class="sub">자동차와 관련된 모든 금융을 한번에! 편하게! <br>
 			지금 모바일에서 경험하세요.</p>
 		</div>

@@ -1,6 +1,15 @@
 <%@ page language="java" contentType="text/html; charset=utf-8" pageEncoding="utf-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ taglib uri="http://www.springframework.org/tags" prefix="spring" %>
+<style>
+	.topContent > .summary > .feature > ul > li span.con {
+    line-height: 26px;
+    font-size: 16px;
+    color: #00b2a4;
+    font-weight: 800;
+    padding: 2px 0;
+	}
+</style>
 <body class="main">
     <div id="wrap">
     <!-- main -->
@@ -35,7 +44,7 @@
 					<li>
 						<p class="icon"><img src="/mobile/images/common/icon-coin@2x.png" alt="최저 금리"></p>
 						<p class="title">최저 금리</p>
-						<p class="con">연 6.8%</p>
+						<span class="con">연</span><span class="con" id="lowRateb">연2.2</span><span class="con">%</span>
 					</li>
 					<li>
 						<p class="icon"><img src="/mobile/images/common/icon-duration@2x.png" alt="상환기간"></p>
@@ -82,7 +91,7 @@
 					<div class="con">
 						<p class="title">금리</p>
 						<ul class="dotList">
-							<li>고정금리 : 연 6.8% ~ 19.0%</li>
+							<li>고정금리 : 연<span id="lowRate">6.8</span>% ~ <span id="highRate">19.0</span>%</li>
 							<li>연체이율 : 약정이율 + 3%(법정 최고금리 20% 이내)</li>
 							<li class="reference">금융소비자의 개인신용평점에 따라 대출 한도 및 금리가 차등 적용 됩니다.</li>
 							<li class="reference">대출 취급이 부적정한 경우(연체금 보유, 개인신용평점 낮음) 대출이 제한될 수 있습니다.</li>
@@ -232,11 +241,6 @@
 	<!-- //button -->
 
 </section>
-
-
-
-
-
     <!-- //main -->
     </div>
 </body>
@@ -253,7 +257,13 @@
             url: '/m/getUsedcarLoan',
             async: false,
             success: function(data) {
-				result = data;        
+				var temp = data.list != null ? true : false;
+				var lowRate = temp ? data.list.low_rate : "";
+				var highRate = temp ? data.list.high_rate : "";
+
+				$('#lowRateb').text(lowRate);
+				$('#lowRate').text(lowRate);
+				$('#highRate').text(highRate); 
             },
             error: function(data) {
                 alert('문제가 발생했습니다. 관리자에게 문의하세요.');

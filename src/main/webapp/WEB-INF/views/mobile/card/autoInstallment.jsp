@@ -48,28 +48,28 @@
 						<p class="title arrow">저금리형 할부 금리</p>
 						<table class="horizon simple center">
 							<tr>
-								<td class="title">3개월</td>
-								<td class="title">6개월</td>
-								<td class="title">12개월</td>
-								<td class="title">24개월</td>
+								<td class="title">${autoInstallment.month1}개월</td>
+								<td class="title">${autoInstallment.month2}개월</td>
+								<td class="title">${autoInstallment.month3}개월</td>
+								<td class="title">${autoInstallment.month4}개월</td>
 							</tr>
 							<tr>
-								<td class="rateEmp">1.0%</td>
-								<td class="rateEmp">1.5%</td>
-								<td class="rateEmp">1.9%</td>
-								<td class="rateEmp">2.6%</td>
+								<td class="rateEmp">${autoInstallment.low_rate1}%</td>
+								<td class="rateEmp">${autoInstallment.low_rate2}%</td>
+								<td class="rateEmp">${autoInstallment.low_rate3}%</td>
+								<td class="rateEmp">${autoInstallment.low_rate4}%</td>
 							</tr>
 							<tr>
-								<td class="title">36개월</td>
-								<td class="title">48개월</td>
-								<td class="title">60개월</td>
-								<td class="title">72개월</td>
+								<td class="title">${autoInstallment.month5}개월</td>
+								<td class="title">${autoInstallment.month6}개월</td>
+								<td class="title">${autoInstallment.month7}개월</td>
+								<td class="title">${autoInstallment.month8}개월</td>
 							</tr>
 							<tr>
-								<td class="rateEmp">2.9%</td>
-								<td class="rateEmp">2.9%</td>
-								<td class="rateEmp">2.9%</td>
-								<td class="rateEmp">2.9%</td>
+								<td class="rateEmp">${autoInstallment.low_rate5}%</td>
+								<td class="rateEmp">${autoInstallment.low_rate6}%</td>
+								<td class="rateEmp">${autoInstallment.low_rate7}%</td>
+								<td class="rateEmp">${autoInstallment.low_rate8}%</td>
 							</tr>
 						</table>
 					</div>
@@ -91,28 +91,28 @@
 						<p class="title arrow">캐쉬백형 할부 금리</p>
 						<table class="horizon simple center">
 							<tr>
-								<td class="title">3개월</td>
-								<td class="title">6개월</td>
-								<td class="title">12개월</td>
-								<td class="title">24개월</td>
+								<td class="title">${autoInstallment.month1}개월</td>
+								<td class="title">${autoInstallment.month2}개월</td>
+								<td class="title">${autoInstallment.month3}개월</td>
+								<td class="title">${autoInstallment.month4}개월</td>
 							</tr>
 							<tr>
-								<td class="rateEmp">1.5%</td>
-								<td class="rateEmp">2.0%</td>
-								<td class="rateEmp">2.43%</td>
-								<td class="rateEmp">2.9%</td>
+								<td class="rateEmp">${autoInstallment.cashback_rate1}%</td>
+								<td class="rateEmp">${autoInstallment.cashback_rate2}%</td>
+								<td class="rateEmp">${autoInstallment.cashback_rate3}%</td>
+								<td class="rateEmp">${autoInstallment.cashback_rate4}%</td>
 							</tr>
 							<tr>
-								<td class="title">36개월</td>
-								<td class="title">48개월</td>
-								<td class="title">60개월</td>
-								<td class="title">72개월</td>
+								<td class="title">${autoInstallment.month5}개월</td>
+								<td class="title">${autoInstallment.month6}개월</td>
+								<td class="title">${autoInstallment.month7}개월</td>
+								<td class="title">${autoInstallment.month8}개월</td>
 							</tr>
 							<tr>
-								<td class="rateEmp">3.2%</td>
-								<td class="rateEmp">3.2%</td>
-								<td class="rateEmp">3.2%</td>
-								<td class="rateEmp">3.2%</td>
+								<td class="rateEmp">${autoInstallment.cashback_rate5}%</td>
+								<td class="rateEmp">${autoInstallment.cashback_rate6}%</td>
+								<td class="rateEmp">${autoInstallment.cashback_rate7}%</td>
+								<td class="rateEmp">${autoInstallment.cashback_rate8}%</td>
 							</tr>
 						</table>
 					</div>
@@ -196,23 +196,6 @@
 </body>
 <script type="text/javascript">
 	$(document).ready(function(){
-        // getAutoInstallment();
 	});
 
-
-    var getAutoInstallment = function(){
-		var result = null; 
-        $.ajax({
-            type: 'POST',
-            url: '/m/getAutoInstallment',
-            async: false,
-            success: function(data) {
-				result = data;        
-            },
-            error: function(data) {
-                alert('문제가 발생했습니다. 관리자에게 문의하세요.');
-            }
-        });
-		return result;
-    }
 </script>

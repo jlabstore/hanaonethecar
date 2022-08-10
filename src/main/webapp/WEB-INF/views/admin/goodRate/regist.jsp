@@ -44,6 +44,9 @@
         -moz-appearance: none;
         appearance: none;
     }
+    .spacing{
+        margin-left: 10px;
+    }
 
 </style>
 <div class="container-fluid" style="margin-left: unset;">
@@ -57,7 +60,6 @@
         <div>
             <button type="button" id="setGoodsRateBtn" class="btn btn-outline-primary " onclick="setGoodsRate()">등록</button>
             <button type="button" id="putGoodsRateBtn" class="btn btn-outline-primary " onclick="putGoodsRate()">수정</button>
-                <%-- <button type="button" class="btn btn-outline-dark "onclick="javascript:location.href='/goodRate/regist'">취소</button> --%>
         </div>
     </div>
     <br>
@@ -88,27 +90,27 @@
             <tr>
                 <th scope="row" style="text-align:center">기준금리</th>
                 <td style="text-align:-webkit-center">
-                    <input class="form-control" id="newCarBaseRate" type="text" style="width:20%; display:inline-block" onkeyup="imsi(this)"><span>%</span>
+                    <input class="form-control" id="newCarBaseRate" type="text" style="width:20%; display:inline-block" onkeyup="imsi(this)"><span class="spacing">%</span>
                 </td>
                 <td style="text-align:-webkit-center">
-                    <input class="form-control" id="usedCarBaseRate" type="text" style="width:20%; display:inline-block" onkeyup="imsi(this)" ><span>%</span>
+                    <input class="form-control" id="usedCarBaseRate" type="text" style="width:20%; display:inline-block" onkeyup="imsi(this)" ><span class="spacing">%</span>
                 </td>
             </tr>
             <tr>
                 <th scope="row" style="text-align:center">가산금리</th>
                 <td style="text-align:-webkit-center">
-                    <input class="form-control" id="newAddRate" type="text"style="width:20%; display:inline-block" onkeyup="imsi(this)"><span>%</span>
+                    <input class="form-control" id="newAddRate" type="text"style="width:20%; display:inline-block" onkeyup="imsi(this)"><span class="spacing">%</span>
                 </td>
                 <td style="text-align:-webkit-center">
-                    <input  class="form-control" id="usedAddRate" type="text"style="width:20%; display:inline-block" onkeyup="imsi(this)"><span>%</span>
+                    <input  class="form-control" id="usedAddRate" type="text"style="width:20%; display:inline-block" onkeyup="imsi(this)"><span class="spacing">%</span>
                 </td>
             </tr>
                 <th scope="row" style="text-align:center">부수거래 감면금리</th>
                 <td style="text-align:-webkit-center">
-                    <input  class="form-control" type="text" style="width:20%; display:inline-block"  id="newRate"  disabled><span>%</span>
+                    <input  class="form-control" type="text" style="width:20%; display:inline-block"  id="newRate"  disabled><span class="spacing">%</span>
                 </td>
                 <td style="text-align:-webkit-center">
-                    <input  class="form-control" type="text" style="width:20%; display:inline-block"  id="usedRate" disabled><span>%</span>
+                    <input  class="form-control" type="text" style="width:20%; display:inline-block"  id="usedRate" disabled><span class="spacing">%</span>
                 </td>
             </tr>
         </tbody>
@@ -122,71 +124,71 @@
                 <th scope="col"></th>
             </tr>
         </thead>
-    <tbody style="background-color:#eaecf4;">
-        <tr>
-            <th scope="row" style="text-align:center">급여이체</th>
-            <td style="text-align:-webkit-center">
-                <input class="form-control" id="newRate1"  type="text" style="width:20%; display:inline-block;" onkeyup="imsi(this)" value="${getGoodsRateDetail.new_rate1}"><span style="">%</span>
-            </td>
-            <td style="text-align:-webkit-center">
-                <input class="form-control"  id="usedRate1" type="text" style="width:20%; display:inline-block;" onkeyup="imsi(this)" value="${data.new_rate1}"><span>%</span>
-            </td>
-        </tr>
-        <tr>
-            <th scope="row" style="text-align:center">주택청약종합저축납입</th>
-            <td style="text-align:-webkit-center">
-                <input class="form-control" id="newRate2" type="text" style="width:20%; display:inline-block;" onkeyup="imsi(this)"><span>%</span>
-            </td>
-            <td style="text-align:-webkit-center">
-                <input class="form-control" id="usedRate2" type="text"  style="width:20%; display:inline-block;" onkeyup="imsi(this)"><span>%</span>
-            </td>
-        </tr>
-        <tr>
-            <th scope="row" style="text-align:center">제휴카드결제</th>
-            <td style="text-align:-webkit-center">
-                <input class="form-control" id="newRate3" type="text" style="width:20%; display:inline-block;" onkeyup="imsi(this)"><span>%</span>
-            </td>
-            <td style="text-align:-webkit-center">
-                <input class="form-control" id="usedRate3" type="text" style="width:20%; display:inline-block;" onkeyup="imsi(this)"><span>%</span>
-            </td>
-        </tr>
-        <tr>
-            <th scope="row" style="text-align:center">기타자동이체</th>
-            <td style="text-align:-webkit-center">
-                <input class="form-control" id="newRate4" type="text" style="width:20%; display:inline-block;" onkeyup="imsi(this)"><span>%</span>
-            </td>
-            <td style="text-align:-webkit-center">
-                <input class="form-control" id="usedRate4" type="text" style="width:20%; display:inline-block;" onkeyup="imsi(this)"><span>%</span>
-            </td>
-        </tr>
-        <tr>
-            <th scope="row" style="text-align:center">하나원큐이체</th>
-            <td style="text-align:-webkit-center"> 
-                <input class="form-control" id="newRate5" type="text" style="width:20%; display:inline-block;" onkeyup="imsi(this)"><span>%</span>
-            </td>
-            <td style="text-align:-webkit-center">
-                <input class="form-control" id="usedRate5" type="text"  style="width:20%; display:inline-block;" onkeyup="imsi(this)"><span>%</span>
-            </td>
-        </tr>
-        <tr>
-            <th scope="row" style="text-align:center">적금상품납입</th>
-            <td style="text-align:-webkit-center">
-                <input class="form-control" id="newRate6" type="text"  style="width:20%; display:inline-block;" onkeyup="imsi(this)"><span>%</span>
-            </td>
-            <td style="text-align:-webkit-center">
-                <input class="form-control" id="usedRate6" type="text"  style="width:20%; display:inline-block;" onkeyup="imsi(this)"><span>%</span> 
-            </td>
-        </tr>
-        <tr style="background-color:#f8f9fc;">
-            <th scope="row" style="text-align:center">우대금리</th>
-            <td style="text-align:-webkit-center">
-                <input class="form-control" id="newRate7" type="text" style="width:20%; display:inline-block;" onkeyup="imsi(this)"><span>%</span>
-            </td>
-            <td style="text-align:-webkit-center">
-                <input class="form-control" id="usedRate7" type="text"style="width:20%; display:inline-block;" onkeyup="imsi(this)"><span>%</span>
-            </td>
-        </tr>
-    </tbody>
+        <tbody style="background-color:#eaecf4;">
+            <tr>
+                <th scope="row" style="text-align:center">급여이체</th>
+                <td style="text-align:-webkit-center">
+                    <input class="form-control" id="newRate1"  type="text" style="width:20%; display:inline-block;" onkeyup="imsi(this)" value="${getGoodsRateDetail.new_rate1}"><span class="spacing">%</span>
+                </td>
+                <td style="text-align:-webkit-center">
+                    <input class="form-control"  id="usedRate1" type="text" style="width:20%; display:inline-block;" onkeyup="imsi(this)" value="${data.new_rate1}"><span class="spacing">%</span>
+                </td>
+            </tr>
+            <tr>
+                <th scope="row" style="text-align:center">주택청약종합저축납입</th>
+                <td style="text-align:-webkit-center">
+                    <input class="form-control" id="newRate2" type="text" style="width:20%; display:inline-block;" onkeyup="imsi(this)"><span class="spacing">%</span>
+                </td>
+                <td style="text-align:-webkit-center">
+                    <input class="form-control" id="usedRate2" type="text"  style="width:20%; display:inline-block;" onkeyup="imsi(this)"><span class="spacing">%</span>
+                </td>
+            </tr>
+            <tr>
+                <th scope="row" style="text-align:center">제휴카드결제</th>
+                <td style="text-align:-webkit-center">
+                    <input class="form-control" id="newRate3" type="text" style="width:20%; display:inline-block;" onkeyup="imsi(this)"><span class="spacing">%</span>
+                </td>
+                <td style="text-align:-webkit-center">
+                    <input class="form-control" id="usedRate3" type="text" style="width:20%; display:inline-block;" onkeyup="imsi(this)"><span class="spacing">%</span>
+                </td>
+            </tr>
+            <tr>
+                <th scope="row" style="text-align:center">기타자동이체</th>
+                <td style="text-align:-webkit-center">
+                    <input class="form-control" id="newRate4" type="text" style="width:20%; display:inline-block;" onkeyup="imsi(this)"><span class="spacing">%</span>
+                </td>
+                <td style="text-align:-webkit-center">
+                    <input class="form-control" id="usedRate4" type="text" style="width:20%; display:inline-block;" onkeyup="imsi(this)"><span class="spacing">%</span>
+                </td>
+            </tr>
+            <tr>
+                <th scope="row" style="text-align:center">하나원큐이체</th>
+                <td style="text-align:-webkit-center"> 
+                    <input class="form-control" id="newRate5" type="text" style="width:20%; display:inline-block;" onkeyup="imsi(this)"><span class="spacing">%</span>
+                </td>
+                <td style="text-align:-webkit-center">
+                    <input class="form-control" id="usedRate5" type="text"  style="width:20%; display:inline-block;" onkeyup="imsi(this)"><span class="spacing">%</span>
+                </td>
+            </tr>
+            <tr>
+                <th scope="row" style="text-align:center">적금상품납입</th>
+                <td style="text-align:-webkit-center">
+                    <input class="form-control" id="newRate6" type="text"  style="width:20%; display:inline-block;" onkeyup="imsi(this)"><span class="spacing">%</span>
+                </td>
+                <td style="text-align:-webkit-center">
+                    <input class="form-control" id="usedRate6" type="text"  style="width:20%; display:inline-block;" onkeyup="imsi(this)"><span class="spacing">%</span>
+                </td>
+            </tr>
+            <tr style="background-color:#f8f9fc;">
+                <th scope="row" style="text-align:center">우대금리</th>
+                <td style="text-align:-webkit-center">
+                    <input class="form-control" id="newRate7" type="text" style="width:20%; display:inline-block;" onkeyup="imsi(this)"><span class="spacing">%</span>
+                </td>
+                <td style="text-align:-webkit-center">
+                    <input class="form-control" id="usedRate7" type="text"style="width:20%; display:inline-block;" onkeyup="imsi(this)"><span class="spacing">%</span>
+                </td>
+            </tr>
+        </tbody>
     </table>
 </div>
 <script type='text/javascript'> 
@@ -414,8 +416,6 @@
                 success : function(data){             
                     alert('등록이 완료되었습니다.');
                     detailGoodsRate();
-                    // location.reload();
-
                 },error : function(date){
                     alert('문제가 발생했습니다. 관리자에게 문의하세요.');
                 }

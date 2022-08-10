@@ -2,31 +2,60 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.jlabsoft.hana.onethecar.onthecaradmin.mobile.card.CardMapper">
 
+    <select id="getAutoCardInstallment" resultType="map">
+        SELECT 
+            goods_id,
+            month1,
+            month2,
+            month3,
+            month4,
+            month5,
+            month6,
+            month7,
+            month8,
+            rate1,
+            rate2,
+            rate3,
+            rate4,
+            rate5,
+            rate6,
+            rate7,
+            rate8
+		FROM 
+			card_cardInstallment_rate
+		WHERE
+            goods_id = 'CARDINSTALLMENT'
+	</select>
+
 	<select id="getAutoInstallment" resultType="map">
         SELECT 
             goods_id,
-            DATE_FORMAT(new_base_rate_dt, '%Y-%m-%d') new_base_rate_dt,
-            new_base_rate,
-			new_add_rate,
-            new_rate1,
-            new_rate2,
-            new_rate3,
-            new_rate4,
-            new_rate5,
-            new_rate6,
-            new_rate7,
-            DATE_FORMAT(used_base_rate_dt, '%Y-%m-%d') used_base_rate_dt,
-            used_base_rate,
-            used_add_rate,
-            used_rate1,
-            used_rate2,
-            used_rate3,
-            used_rate4,
-            used_rate5,
-            used_rate6,
-            used_rate7
+            month1,
+            month2,
+            month3,
+            month4,
+            month5,
+            month6,
+            month7,
+            month8,
+            low_rate1,
+            low_rate2,
+            low_rate3,
+            low_rate4,
+            low_rate5,
+            low_rate6,
+            low_rate7,
+            low_rate8,
+            cashback_rate1,
+            cashback_rate2,
+            cashback_rate3,
+            cashback_rate4,
+            cashback_rate5,
+            cashback_rate6,
+            cashback_rate7,
+            cashback_rate8
 		FROM 
-			goods_rate
+			card_installment_rate
 		WHERE
             goods_id = 'INSTALLMENT'
 	</select>
@@ -35,28 +64,9 @@
     <select id="getAutoLoan" resultType="map">
         SELECT 
             goods_id,
-            DATE_FORMAT(new_base_rate_dt, '%Y-%m-%d') new_base_rate_dt,
-            new_base_rate,
-			new_add_rate,
-            new_rate1,
-            new_rate2,
-            new_rate3,
-            new_rate4,
-            new_rate5,
-            new_rate6,
-            new_rate7,
-            DATE_FORMAT(used_base_rate_dt, '%Y-%m-%d') used_base_rate_dt,
-            used_base_rate,
-            used_add_rate,
-            used_rate1,
-            used_rate2,
-            used_rate3,
-            used_rate4,
-            used_rate5,
-            used_rate6,
-            used_rate7
+            fixed_rate
 		FROM 
-			goods_rate
+			card_loan_rate
 		WHERE
             goods_id = 'LONA'
 	</select>
@@ -64,29 +74,12 @@
     <select id="getAutoCashback" resultType="map">
         SELECT 
             goods_id,
-            DATE_FORMAT(new_base_rate_dt, '%Y-%m-%d') new_base_rate_dt,
-            new_base_rate,
-			new_add_rate,
-            new_rate1,
-            new_rate2,
-            new_rate3,
-            new_rate4,
-            new_rate5,
-            new_rate6,
-            new_rate7,
-            DATE_FORMAT(used_base_rate_dt, '%Y-%m-%d') used_base_rate_dt,
-            used_base_rate,
-            used_add_rate,
-            used_rate1,
-            used_rate2,
-            used_rate3,
-            used_rate4,
-            used_rate5,
-            used_rate6,
-            used_rate7
+            cashback1,
+            cashback2,
+            cashback3
 		FROM 
-			goods_rate
+			card_auto_cashback_rate
 		WHERE
-            goods_id = 'CAHSBACK'
+            goods_id = 'CASHBACK'
 	</select>
 </mapper>
