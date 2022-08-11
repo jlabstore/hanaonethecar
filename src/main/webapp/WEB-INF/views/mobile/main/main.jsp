@@ -57,7 +57,7 @@
 				<li class="auto_installment">
 					<a href="card/autoInstallment">
 						<p class="title">오토할부</p>
-						<p class="exp"><strong>하나카드로 빠르고 간편한</strong><br>새차 구입 계획은 저렴한 할부 금리 <br>신차 오토 할부!</p>
+						<p class="exp"><strong>하나카드로 빠르고 간편하게</strong><br>새차 구입 계획은 저렴한 할부 금리 <br>신차 오토 할부로 이용해보세요</p>
 						<p class="link">상품 상세 보기</p>
 					</a>
 				</li>
@@ -115,7 +115,7 @@
 			<ul class="dotList">
 				<li class="reference">본 홍보물은 법령 및 내부통제기준에 따른 절차를 거쳐 제공됩니다.</li>
 				<li class="reference">본 홍보물은 2023년 7월 31일까지 유효합니다.</li>
-				<li class="reference">하나캐피탈 준법심의필 000000-000000</li>
+				<li class="reference">하나캐피탈 준법심의필 22-1478(2022.07.22~2023.07.21)</li>
 				<li class="reference">하나카드 준법 심의필 000000-000000</li>
 				<li class="reference">하나은행 준법감시인 심의필 제2022-광고-0000호(2022.00.00) <br>
 				CC브랜드220000-0000</li>
@@ -146,7 +146,7 @@
 					<p class=""></p>
 					<p class=""><strong></strong></p> 
 					<p class="link"></p>
-					<img style="height:160px;" src="${imagePath}{{path}}/{{making_nm}}">
+					<img style="height:160px; width:334px;" src="${imagePath}{{path}}/{{making_nm}}">
 				</a>
 			</li>
 	{{/capitalList}}
@@ -155,8 +155,7 @@
 	$(document).ready(function(){
 		submitForm();
 		randomTab();
-		// checkPcAndMobile();
-		
+		$('#header').append("<h1><a href='/m/main'>하나원더카</a></h1>");
 	});
 
 	var submitForm = function() {
@@ -282,8 +281,9 @@
 		if(navigator.platform){
 			if(0 < filterOs.indexOf(navigator.platform.toLowerCase())){				
 					//PC 
-					location.href='http://hanaonethecar1.cafe24.com/intro' 		
+					location.href ="/intro";
 			}	  			    				    			
 		}	
 	};
+
 </script>

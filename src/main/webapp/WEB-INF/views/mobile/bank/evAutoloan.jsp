@@ -174,16 +174,16 @@
 								<td class="right">금융채 6개월 변동</td>
 							</tr>
 							<tr>
-								<td class="title">기준금리111</td>
-								<td class="rate" id="newCarBaseRateD"></td>%
+								<td class="title">기준금리</td>
+								<td class="rate"><span id="newCarBaseRateD"></span>%</td>
 							</tr>
 							<tr>
 								<td class="title">가산금리</td>
-								<td class="rate" id="newAddRateD"></td>%
+								<td class="rate"><span id="newAddRateD"></span>%</td>
 							</tr>
 							<tr>
 								<td class="title">부수거래 감면금리</td>
-								<td class="rate" id="rateD"></td>%
+								<td class="rate"><span id="rateD"></span>%</td>
 							</tr>
 						</table>
 						<ul class="dotList">
@@ -191,7 +191,6 @@
 							2022.07.27 현재, 내부신용등급(ASS) 1등급, 대출기간 1년 부수거래 감면금리 적용시</li>
 							<li class="reference">최고금리 기준: <br>
 							2022.07.27 현재, 내부신용등급(ASS) 12등급, 대출기간 10년, 부수거래 감면금리 미적용시</li>
-							<%-- <li class="reference">우대금리: 콜센터 신청 or 딜러 소개 신청 중 택 1</li> --%>
 						</ul>
 					</div>
 					<div class="con">

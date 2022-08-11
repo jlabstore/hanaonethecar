@@ -240,7 +240,8 @@ body.sideMenu #side .gnb {
 	-webkit-border-radius: 20px;
 	border-radius: 20px;
 }
-#main .topBanner ul.slides li a {display: block;height: 100%;text-decoration: none;padding: 28px 0 0 30px;}
+/* #main .topBanner ul.slides li a {display: block;height: 100%;text-decoration: none;padding: 28px 0 0 30px;} */
+#main .topBanner ul.slides li a {height: 100%;text-decoration: none;padding: 28px 0 0 30px;}
 
 #main .topBanner ul.slides li.oneQ {background-image: linear-gradient(116deg, #72e5de, #12bbbd 99%);}
 #main .topBanner ul.slides li.oneQ a {background: url('../images/main/banner-img1@2x.png') right center no-repeat;background-size: auto 172px;}

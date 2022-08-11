@@ -29,11 +29,6 @@
 				<strong>대출 가능여부 바로 확인</strong></p>
 			</div>
 			<!-- //info -->
-			<!-- interest -->
-			<%-- <div class="interest">
-				<p class="title">대출 금리</p>
-				<p class="rate">연<span id="lowRate"></span>%~연<span id="highRate"></span>% </p>
-			</div> --%>
 			<div class="interest">
 				<p class="title">대출 금리</p>
 				<ul>
@@ -240,11 +235,11 @@
 							<ul>
 								<li>
 									<p class="range">최저</p>
-									<p class="rate">연 5.118%~</p>
+									<p class="rate">연<span id="lowRate2"></span>%~</p>
 								</li>
 								<li>
 									<p class="range">최고</p>
-									<p class="rate">연 6.018% </p>
+									<p class="rate">연<span id="highRate2"></span>%</p>
 								</li>
 							</ul>
 						</div>
@@ -259,7 +254,7 @@
 							</tr>
 							<tr>
 								<td class="title">가산금리</td>
-								<td class="rate"><span id="newAddRateD"></span>%</td>
+								<td class="rate"><span id="newAddRateD"></span>% ~<span id="newAddRateD2"></span>%</td>
 							</tr>
 							<tr>
 								<td class="title">부수거래 감면금리</td>
@@ -268,9 +263,9 @@
 						</table>
 						<ul class="dotList">
 							<li class="reference">최저금리 기준: <br>
-							2022.07.27 현재, 내부신용등급(ASS) 1등급, 대출기간 1년, 부수거래 감면금리 적용시</li>
+							2022.08.10 현재, 내부신용등급(ASS) 1등급, 대출기간 1년, 부수거래 감면금리 적용시</li>
 							<li class="reference">최고금리 기준: <br>
-							2022.07.27 현재, 내부신용등급(ASS) 12등급, 대출기간 10년, 부수거래 감면금리 미적용시</li>
+							2022.08.10 현재, 내부신용등급(ASS) 11등급, 대출기간 3년 초과, 부수거래 감면금리 미적용시</li>
 						</ul>
 					</div>
 					<div class="con">
@@ -381,8 +376,10 @@
                 newBaseRateDt = result.list.new_base_rate_dt;
 				//기준금리
                 newCarBaseRate = result.list.new_base_rate;
-				//가산금리
+				//최저 가산금리
                 newAddRate = result.list.new_add_rate;
+				//최고 가산금리
+				newAddRate2 = result.list.new_add_rate2;
 
 				//부수거래 감면 금리 
                 newRate1 = result.list.new_rate1;
@@ -404,9 +401,9 @@
                 var lowRate = lowRateDF ? (lowRateDF.toFixed(3)) : "";
 				
 				//최고금리
-                var highRateDF = newCarBaseRate + newAddRate;
+                var highRateDF = newCarBaseRate + newAddRate2;
                 var highRate = highRateDF ? (highRateDF.toFixed(3)) : "";
-				
+
 				//////////////////////중고차 기준 //////////////////////
 				//기준금리일
 				usedBaseRateDt = result.list.used_base_rate_dt;
@@ -414,6 +411,7 @@
                 usedCarBaseRate = result.list.used_base_rate;
 				//가산금리
                 usedAddRate = result.list.used_add_rate;
+				usedAddRate2 = result.list.used_add_rate2;
 
 				//부수거래 감면금리 
 				usedRate1 = result.list.used_rate1;
@@ -438,7 +436,9 @@
                 var usedHighRate = usedHighRateDF ? (usedHighRateDF.toFixed(3)) : "";
 
 				$('#lowRate').text(lowRate);
+				$('#lowRate2').text(lowRate);
                 $('#highRate').text(highRate);
+				$('#highRate2').text(highRate);
 				$('#newBaseRateDt').text(newBaseRateDt);
                 $('#newCarBaseRate').text(newCarBaseRate);
 				$('#newAddRate').text(newAddRate);
@@ -457,6 +457,7 @@
                 $('#highRateD').text(highRate);
                 $('#newCarBaseRateD').text(newCarBaseRate);
                 $('#newAddRateD').text(newAddRate);
+				$('#newAddRateD2').text(newAddRate2);
                 $('#rateD').text(newRate);
                 $('#newRate1D').text(newRate1);
                 $('#newRate2D').text(newRate2);
@@ -471,6 +472,7 @@
 				$('#usedHighRateD').text(usedHighRate);
 				$('#usedCarBaseRateD').text(usedCarBaseRate);
 				$('#usedAddRateD').text(usedAddRate);
+				$('#usedAddRateD2').text(usedAddRate2);
 				$('#usedRateD').text(usedRate);
 				$('#usedRate7D').text(usedRate7);
 				$('#usedRate1D').text(usedRate1);

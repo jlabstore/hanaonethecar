@@ -19,6 +19,8 @@
     <select id="getCashBackDetail" resultType="HashMap" parameterType="HashMap">
         SELECT
 			goods_id,
+			DATE_FORMAT(start_dt, '%Y-%m-%d') start_dt,
+			DATE_FORMAT(end_dt, '%Y-%m-%d') end_dt,
 			cashback1,
 			cashback2,
 			cashback3
@@ -33,6 +35,8 @@
 			card_auto_cashback_rate
 				(	
 					goods_id,
+					start_dt,
+					end_dt,
 					cashback1,
 					cashback2,
 					cashback3,
@@ -42,6 +46,8 @@
 			VALUES
 				(	
 					#{goodsId},
+					#{startDt},
+					#{endDt},
 					#{cashback1},
 					#{cashback2},
 					#{cashback3},
@@ -55,6 +61,8 @@
 			card_auto_cashback_rate
 		set
 			goods_id = #{goodsId}
+			,start_dt = #{startDt}
+			,end_dt = #{endDt}
 			,cashback1 = #{cashback1}
 			,cashback2 = #{cashback2}
 			,cashback3 = #{cashback3}

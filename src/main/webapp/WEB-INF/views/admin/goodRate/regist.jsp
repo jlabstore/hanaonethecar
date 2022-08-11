@@ -96,13 +96,26 @@
                     <input class="form-control" id="usedCarBaseRate" type="text" style="width:20%; display:inline-block" onkeyup="imsi(this)" ><span class="spacing">%</span>
                 </td>
             </tr>
-            <tr>
-                <th scope="row" style="text-align:center">가산금리</th>
+            <%-- <tr>
+                <th scope="row" style="text-align:center">기준금리</th>
                 <td style="text-align:-webkit-center">
-                    <input class="form-control" id="newAddRate" type="text"style="width:20%; display:inline-block" onkeyup="imsi(this)"><span class="spacing">%</span>
+                    <input class="form-control" id="newCarBaseRate" type="text" style="width:20%; display:inline-block" onkeyup="imsi(this)"><span class="spacing">%</span>
                 </td>
                 <td style="text-align:-webkit-center">
-                    <input  class="form-control" id="usedAddRate" type="text"style="width:20%; display:inline-block" onkeyup="imsi(this)"><span class="spacing">%</span>
+                    <input class="form-control" id="usedCarBaseRate" type="text" style="width:20%; display:inline-block" onkeyup="imsi(this)" ><span class="spacing">%</span>
+                </td>
+            </tr> --%>
+            <tr>
+                <th scope="row" style="text-align:center">가산금리</th>
+                <td style="text-align:center">
+                    <input class="form-control" id="newAddRate" placeholder="최저금리" type="text"style="width:20%; display:inline-block" onkeyup="imsi(this)"><span class="spacing">%</span>
+                    <span> ~ </span>
+                    <input class="form-control" id="newAddRate2" placeholder="최고금리" type="text"style="width:20%; display:inline-block" onkeyup="imsi(this)"><span class="spacing">%</span>
+                </td>
+                <td style="text-align:center">
+                    <input  class="form-control" id="usedAddRate"  placeholder="최저금리" type="text"style="width:20%; display:inline-block" onkeyup="imsi(this)"><span class="spacing">%</span>
+                    <span> ~ </span>
+                    <input  class="form-control" id="usedAddRate2" placeholder="최고금리" type="text"style="width:20%; display:inline-block" onkeyup="imsi(this)"><span class="spacing">%</span>
                 </td>
             </tr>
                 <th scope="row" style="text-align:center">부수거래 감면금리</th>
@@ -236,11 +249,17 @@
             alert('중고차구입 기준금리를 등록해주세요');
             $('#usedCarBaseRate').focus();
         }else if($('#newAddRate').val() == ""){
-            alert('신차기준 가산금리를 등록해주세요');
+            alert('신차기준 최저가산금리를 등록해주세요');
             $('#newAddRate').focus();
+        }else if($('#newAddRate2').val() == ""){
+            alert('신차기준 최고가산금리를 등록해주세요');
+            $('#newAddRate2').focus();
         }else if($('#usedAddRate').val() == ""){
             alert('중고차기준 가산금리를 등록해주세요');
             $('#usedAddRate').focus();
+        }else if($('#usedAddRate2').val() == ""){
+            alert('중고차기준 가산금리를 등록해주세요');
+            $('#usedAddRate2').focus();
         }else if($('#newRate1').val() == ''){
             alert('신차기준 급여이체를 등록해주세요');
             $('#newRate1').focus();
@@ -339,6 +358,7 @@
         $("#rateDate").val(temp ? data.detailGoodsRate.new_base_rate_dt : "");
         $("#newCarBaseRate").val(temp ? data.detailGoodsRate.new_base_rate : "");
         $("#newAddRate").val(temp ? data.detailGoodsRate.new_add_rate : "");
+        $("#newAddRate2").val(temp ? data.detailGoodsRate.new_add_rate2 : "");
         $("#newRate1").val(new_rate1);
         $("#newRate2").val(new_rate2);
         $("#newRate3").val(new_rate3);
@@ -350,6 +370,7 @@
         $("#rateDate2").val(temp ? data.detailGoodsRate.used_base_rate_dt : "");
         $("#usedCarBaseRate").val(temp ? data.detailGoodsRate.used_base_rate : "");
         $("#usedAddRate").val(temp ? data.detailGoodsRate.used_add_rate : "");
+        $("#usedAddRate2").val(temp ? data.detailGoodsRate.used_add_rate2 : "");
         $("#usedRate1").val(used_rate1);
         $("#usedRate2").val(used_rate2);
         $("#usedRate3").val(used_rate3);
@@ -383,6 +404,7 @@
             "newRateDt" : rateDate,
             "newCarBaseRate" : $('#newCarBaseRate').val(),
             "newAddRate" : $('#newAddRate').val(),
+            "newAddRate2" : $('#newAddRate2').val(),
             "newRate1" : $('#newRate1').val(),
             "newRate2" : $('#newRate2').val(),
             "newRate3" :$('#newRate3').val(),
@@ -394,6 +416,7 @@
             "usedRateDt" : rateDate2,
             "usedCarBaseRate" : $('#usedCarBaseRate').val(),
             "usedAddRate" : $('#usedAddRate').val(),
+            "usedAddRate2" : $('#usedAddRate2').val(),
             "usedRate1" : $('#usedRate1').val(),
             "usedRate2" : $('#usedRate2').val(),
             "usedRate3" : $('#usedRate3').val(),
@@ -435,6 +458,7 @@
             "newRateDt" : rateDate,
             "newCarBaseRate" : $('#newCarBaseRate').val(),
             "newAddRate" : $('#newAddRate').val(),
+            "newAddRate2" : $('#newAddRate2').val(),
             "newRate1" : $('#newRate1').val(),
             "newRate2" : $('#newRate2').val(),
             "newRate3" :$('#newRate3').val(),
@@ -446,6 +470,7 @@
             "usedRateDt" : rateDate2,
             "usedCarBaseRate" : $('#usedCarBaseRate').val(),
             "usedAddRate" : $('#usedAddRate').val(),
+            "usedAddRate2" : $('#usedAddRate2').val(),
             "usedRate1" : $('#usedRate1').val(),
             "usedRate2" : $('#usedRate2').val(),
             "usedRate3" : $('#usedRate3').val(),

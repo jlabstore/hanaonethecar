@@ -32,6 +32,7 @@
 			DATE_FORMAT(new_base_rate_dt, '%Y-%m-%d') new_base_rate_dt,
 			new_base_rate,
 			new_add_rate,
+			new_add_rate2,
 			new_rate1,
 			new_rate2,
 			new_rate3,
@@ -42,6 +43,7 @@
 			DATE_FORMAT(used_base_rate_dt, '%Y-%m-%d') used_base_rate_dt,
 			used_base_rate,
 			used_add_rate,
+			used_add_rate2,
 			used_rate1,
 			used_rate2,
 			used_rate3,
@@ -65,6 +67,7 @@
 					new_base_rate_dt,
 					new_base_rate,
 					new_add_rate,
+					new_add_rate2,
 					new_rate1,
 					new_rate2,
 					new_rate3,
@@ -75,6 +78,7 @@
 					used_base_rate_dt,
 					used_base_rate,
 					used_add_rate,
+					used_add_rate2,
 					used_rate1,
 					used_rate2,
 					used_rate3,
@@ -91,6 +95,7 @@
 					#{newRateDt},
 					#{newCarBaseRate},
 					#{newAddRate},
+					#{newAddRate2},
 					#{newRate1},
 					#{newRate2},
 					#{newRate3},
@@ -101,6 +106,7 @@
 					#{usedRateDt},
 					#{usedCarBaseRate},
 					#{usedAddRate},
+					#{usedAddRate2},
 					#{usedRate1},
 					#{usedRate2},
 					#{usedRate3},
@@ -122,6 +128,7 @@
 			,new_base_rate_dt = #{newRateDt}
 			,new_base_rate = #{newCarBaseRate}
 			,new_add_rate = #{newAddRate}
+			,new_add_rate2 = #{newAddRate2}
 			,new_rate1 = #{newRate1}
 			,new_rate2 = #{newRate2}
 			,new_rate3 = #{newRate3}
@@ -132,6 +139,7 @@
 			,used_base_rate_dt = #{usedRateDt}
 			,used_base_rate = #{usedCarBaseRate}
 			,used_add_rate = #{usedAddRate}
+			,used_add_rate2 = #{usedAddRate2}
 			,used_rate1 = #{usedRate1}
 			,used_rate2 = #{usedRate2}
 			,used_rate3 = #{usedRate3}

@@ -19,7 +19,7 @@
 			<!-- top -->
 			<div class="top">
 				<h2>오토할부</h2>
-				<p class="exp">내가 사고 싶은 자동차 <br>
+				<p class="exp">
 				초저금리 조건 비교하고 <br>
 				추가 캐쉬백 혜택 받자!</p>
 			</div>
@@ -121,9 +121,6 @@
 			</div>
 			<!-- //category -->
 			<!-- link -->
-			<div class="link">
-				<a href="#" class="round green"><span>한도 조회 하기</span></a>
-			</div>
 			<!-- //link -->
 			<!-- process -->
 			<div class="process">
@@ -181,7 +178,10 @@
 			</li>
 			<!-- //유의사항 -->
 
-		</ul>
+		</ul><br>
+			<div class="link" style="text-align: center">
+				<a href="#" class="round green"><span>상품안내 및 한도 조회</span></a>
+			</div>
 
 	</div>
 	<!-- //detail -->

@@ -33,8 +33,11 @@
 <section id="intro">
 
 	<!-- mobile img -->
-	<div class="mobile">
+	<%-- <div class="mobile">
 		<p class="img"><img src="/mobile/images/intro/mobile_img.png" alt="하나원더카 모바일"></p>
+	</div> --%>
+	<div class="mobile" id="radomDivImg">
+		<p class="img"  id="randomImg" ><img  src="/mobile/images/intro/mobile_img.png" alt="하나원더카 모바일"></p>
 	</div>
 	<!-- //mobile img -->
 
@@ -42,15 +45,15 @@
 	<div class="contents">
 		<h1>하나 원더카</h1>
 		<!-- slogan -->
-		<div class="slogan">
-			<p class="main"><strong><span id="">하나캐피탈</span>,<span>하나카드</span>,<span>하나은행</span></strong></p>
+		<div class="slogan" >
+			<p class="main" id="randomHana"><strong >하나캐피탈,하나카드,하나은행</strong></p>
 			<p class="sub">자동차와 관련된 모든 금융을 한번에! 편하게! <br>
 			지금 모바일에서 경험하세요.</p>
 		</div>
 		<!-- //slogan -->
 		<!-- qr code -->
 		<div class="qr">
-			<p class="img"><img src="/mobile/images/intro/qr_code.png" alt="하나 원더카 QR코드"></p>
+			<p class="img" ><img src="/mobile/images/intro/qr_code.png" alt="하나 원더카 QR코드"></p>
 			<a href="#">모바일 웹 QR코드</a>
 		</div>
 		<!-- //qr code -->
@@ -86,6 +89,41 @@
 </body>
 <script type="text/javascript">
 	$(document).ready(function(){
+		radomDivImg();
 	});	
+
+
+	var tabs = ['하나캐피탈','하나카드','하나은행'];
+	var tabsName = {'bank':'하나은행', 'card':'하나카드', 'capital':'하나캐피탈'}
+	var radomDivImg = function(){
+		// 하나카드, 하나은행, 하나캐피탈 랜덤 배열 
+		var randomNm = [];
+		do{
+			var randomNum = Math.floor(Math.random() * (3));
+			if(randomNm.indexOf(tabs[randomNum]) === -1){
+				randomNm.push(tabs[randomNum]);
+			} 
+		}while (randomNm.length < 3); 
+
+		// 하나카드, 하나은행, 하나캐피탈 랜덤 텍스트
+		var hanaHtml = "<strong>";
+		for(var i=0 ; i< randomNm.length; i ++){
+			if(i > 0)hanaHtml += ", "
+			hanaHtml += randomNm[i];
+		}
+		hanaHtml += "</strong>";
+		$('#randomHana').html(hanaHtml);
+		
+		// 하나카드, 하나은행, 하나캐피탈 랜덤 이미지
+		var hanaImg = "";
+		if(randomNm[0] == '하나은행'){
+			hanaImg ="<img src ='/mobile/images/intro/intro_bank_img.png'>"
+		}else if(randomNm[0] == '하나캐피탈'){
+			hanaImg ="<img src ='/mobile/images/intro/intro_capital_img.png'>"	
+		}else if(randomNm[0] == '하나카드'){
+			hanaImg ="<img src ='/mobile/images/intro/intro_card_img.png'>"
+		}
+		$('#randomImg').html(hanaImg);
+	}
 </script>
 </html>

@@ -22,6 +22,9 @@
 				<p class="exp">자동차 일시불 결제 시 <br>
 				결재금액의 <br>
 				${autoCashback.cashback3}%~${autoCashback.cashback1}% 캐쉬백!</p>
+				<p class="exp">기간 <br>
+				${autoCashback.start_dt}~${autoCashback.end_dt}
+				</p>
 			</div>
 			<!-- //top -->
 			<!-- info -->
@@ -38,7 +41,7 @@
 					<div class="type">
 						<div class="top">
 							<p class="sub">캐쉬백 서비스</p>
-							<p class="title">${autoCashback.cashback3}%~${autoCashback.cashback1}% <br>
+							<p class="title">${autoCashback.cashback3}%~${autoCashback.cashback2}% <br>
 							<span>최대 500만원</span></p>
 						</div>
 					</div>
@@ -134,7 +137,7 @@
 									</ul>
 								</div>
 								<div class="roundBox marginTop">
-									<p class="text"><strong>자동차 결제일 +13영업일(휴일제외) 이내</strong> <br>
+									<p class="text"><strong>자동차 결제일 다음달 11일경</strong> <br>
 									하나카드 결제계좌로 지급</p>
 								</div>
 							</div>
@@ -153,9 +156,6 @@
 			</div>
 			<!-- //method -->
 			<!-- link -->
-			<div class="link">
-				<a href="#" class="round green"><span>오토캐쉬백 신청하기</span></a>
-			</div>
 			<!-- //link -->
 		</div>
 		<!-- //summary -->
@@ -189,25 +189,28 @@
 						·캐쉬백은 최대 500만원까지 입니다. <br>
 						·캐쉬백은 자동차 결제 정상매입 기준으로 지급됩니다. <br>
 						·신청채널 및 이용상품(결제금액/유형)에 따라 별도 캐쉬백율로 운영 됩니다. <br>
-						·연체료율(약정이율+3%)은 회원별 ·이용상품별 차등 적용되며, 법정 최고금리(20%)를 초과하지 않습니다. <br>
+						<strong>·연체료율(약정이율+3%)은 회원별 ·이용상품별 차등 적용되며, 법정 최고금리(20%)를 초과하지 않습니다.</strong> <br>
 						<span class="indent">
-						※ 단, 연체 발생 시점에 약정이율이 없는 경우 아래와 같이 적용함 <br>
-						-일시불거래 연체시 : 거래 발생 시점의 최소기간(2개월) 유이자 할부 금리 <br>
-						-무이자 할부거래 연체시 : 거래 발생 시점의 동일한 할부계약 기간의 유이자 할부 금리 <br>
+						<strong>※ 단, 연체 발생 시점에 약정이율이 없는 경우 아래와 같이 적용함 </strong><br>
+						<strong>-일시불거래 연체시 : 거래 발생 시점의 최소기간(2개월) 유이자 할부 금리 </strong><br>
+						<strong>-무이자 할부거래 연체시 : 거래 발생 시점의 동일한 할부계약 기간의 유이자 할부 금리 </strong><br>
 						</span>
 						·계약체결 전 상품설명서 및 상품약관을 반드시 확인하시기 바랍니다. <br>
 						·신용카드 발급이 부적정한 경우(개인신용평점 낮음 등) 카드발급이 제한 될 수 있습니다. <br>
 						·카드이용대금과 이에 수반되는 모든 수수료를 지정된 대금 결제일에 상환하여야 합니다. <br>
 						·금융소비자는 해당 상품 또는 서비스에 대하여 설명을 받을 권리가 있습니다. <br>
-						·상환능력에 비해 신용카드 사용액이 과도할 경우, 귀하의 신용등급 또는 개인신용평점이 하락 할 수 있습니다. <br>
-						·신용등급 또는 개인신용평점 하락 시 금융거래와 관련된 불이익이 발생할 수 있습니다. <br>
-						·일정기간 원리금을 연체할 경우, 모든 원리금을 변제할 의무가 발생할 수 있습니다.</p>
+						<strong>·상환능력에 비해 신용카드 사용액이 과도할 경우, 귀하의 신용등급 또는 개인신용평점이 하락 할 수 있습니다. </strong><br>
+						<strong>·신용등급 또는 개인신용평점 하락 시 금융거래와 관련된 불이익이 발생할 수 있습니다. </strong><br>
+						<strong>·일정기간 원리금을 연체할 경우, 모든 원리금을 변제할 의무가 발생할 수 있습니다.</strong></p>
 					</div>
 				</div>
 			</li>
 			<!-- //유의사항 -->
 
-		</ul>
+		</ul><br>
+			<div class="link" style="text-align: center">
+				<a href="#" class="round green"><span>오토캐쉬백 신청하기</span></a>
+			</div>
 
 	</div>
 	<!-- //detail -->

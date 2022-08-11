@@ -83,9 +83,9 @@
 							<li>개인(사업자) 및 법인 사업자</li>
 						</ul>
 					</div>
-					<div class="con">
+					<div class="con" >
 						<p class="title">금리</p>
-						<ul class="dotList">
+						<ul class="dotList" style= "font-weight :bold">
 							<li>금융리스 : <br>
 							최저 연 <span id="lowRate"></span>% ~ 최고 연<span id="highRate"></span>% <br>
 							(금융 소비자의 개인신용평점에 따라 차등 적용)</li>
@@ -268,7 +268,7 @@
 							<li class="reference">금융소비자의 개인신용평점에 따라 대출한도 및 금리가 차등 적용됩니다.</li>
 							<li class="reference">금융소비자는 해당상품에 대하여 설명을 받을 권리가 있으며, 그 설명을 듣고 내용을 충분히 이해한 후 거래하시기 바랍니다.</li>
 							<li class="reference">금리인하요구권 및 대출계약 철회권에 대한 자세한 사항은 하나캐피탈 홈페이지에서 확인하시기 바랍니다.</li>
-							<li class="reference">준법심의필 22-000(2022.00.00 ~ 2023.00.00)</li>
+							<li class="reference">하나캐피탈 준법심의필 22-1479(2022.07.22 ~ 2023.07.21)</li>
 							<li class="reference">여신금융협회 심의필 제 2022-C1h-00000호 (2022.00.00~2023.00.00)</li>
 						</ul>
 					</div>
@@ -283,7 +283,7 @@
 
 	<!-- button -->
 	<div class="bottomLink">
-		<a href="#" class="box red"><span>대출 신청 및 약정안내</span></a>
+		<a href="#" class="box red"><span>신청 및 약정안내</span></a>
 	</div>
 	<!-- //button -->
 

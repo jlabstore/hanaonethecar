@@ -200,7 +200,7 @@
 							<li class="reference">렌터카 계약을 체결하기 전에 상품 설명서와 약관을 확인하시기 바랍니다.</li>
 							<li class="reference">일정기간 렌탈료를 연체할 경우, 모든 렌탈료(원리금)를 변제할 의무가 발생할 수 있습니다. (연체이자 : 년 20%)</li>
 							<li class="reference">렌터카 취급이 부적정한 경우(연체금 보유, 개인신용평점 낮음) 취급이 제한될 수 있습니다.</li>
-							<li class="reference">준법심의필 21-0000 (2021.00.00 ~ 2022.00.00)</li>
+							<li class="reference">하나캐피탈 준법심의필 22-1480(2022.07.22 ~ 2023.07.21)</li>
 							<li class="reference">준법심의필 22-000(2022.00.00 ~ 2023.00.00)</li>
 						</ul>
 					</div>
@@ -215,7 +215,7 @@
 
 	<!-- button -->
 	<div class="bottomLink">
-		<a href="#" class="box red"><span>대출 신청 및 약정안내</span></a>
+		<a href="#" class="box red"><span>신청 및 약정안내</span></a>
 	</div>
 	<!-- //button -->
 
