@@ -96,16 +96,18 @@
                     <input class="form-control" id="usedCarBaseRate" type="text" style="width:20%; display:inline-block" onkeyup="imsi(this)" ><span class="spacing">%</span>
                 </td>
             </tr>
-            <%-- <tr>
-                <th scope="row" style="text-align:center">기준금리</th>
+            <%-- ev오토론일때 활성화 --%>
+            <%-- <tr id="evView">
+                <th scope="row" style="text-align:center">가산금리</th>
                 <td style="text-align:-webkit-center">
-                    <input class="form-control" id="newCarBaseRate" type="text" style="width:20%; display:inline-block" onkeyup="imsi(this)"><span class="spacing">%</span>
+                    <input class="form-control" id="newAddRate" type="text" style="width:20%; display:inline-block" onkeyup="imsi(this)"><span class="spacing">%</span>
                 </td>
                 <td style="text-align:-webkit-center">
-                    <input class="form-control" id="usedCarBaseRate" type="text" style="width:20%; display:inline-block" onkeyup="imsi(this)" ><span class="spacing">%</span>
+                    <input class="form-control" id="usedAddRate" type="text" style="width:20%; display:inline-block" onkeyup="imsi(this)" ><span class="spacing">%</span>
                 </td>
             </tr> --%>
-            <tr>
+            <%-- 1Q오토론일때 활성화 --%>
+            <tr id="oneQView">
                 <th scope="row" style="text-align:center">가산금리</th>
                 <td style="text-align:center">
                     <input class="form-control" id="newAddRate" placeholder="최저금리" type="text"style="width:20%; display:inline-block" onkeyup="imsi(this)"><span class="spacing">%</span>
@@ -234,6 +236,7 @@
         });                                                
     });
 
+
     //금리 등록시 유효성 체크 후 저장 
     function setGoodsRate() {
         if($('#rateDate').val() == ""){
@@ -309,6 +312,7 @@
 
     //상세 
     function detailGoodsRate(){
+
         var goodsId = $("#goodsName").val();
         $.ajax({
             type: "POST",
