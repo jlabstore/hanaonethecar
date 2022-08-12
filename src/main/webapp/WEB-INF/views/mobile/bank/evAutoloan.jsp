@@ -2,7 +2,7 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ taglib uri="http://www.springframework.org/tags" prefix="spring" %>
 <!DOCTYPE html>
-<body class="main">
+<body>
     <div id="wrap">
         <!-- main -->
 	<section id="body" class="bankEV">
@@ -68,7 +68,7 @@
 
 		<!-- additional -->
 		<div class="additional">
-			<p class="comment">[<span id="newBaseRateDt"></span>(현재)] 기준금리(금융채 6개월)<span id="newCarBaseRate"></span>% + 가산금리 <span id="newAddRate"></span>% - 부수거래 감면금리 <span id="newRate"></span>%* - 우대금리 <span id="newRate7"></span>%** <br>
+			<p class="comment">[<span id="newBaseRateDt"></span>(현재)] 기준금리(금융채 6개월)<span id="newCarBaseRate"></span>% + 가산금리 <span id="newAddRate"></span>% - 부수거래 감면금리 <span id="newRate"></span>%* <br>
 			*부수거래항목(
                     급여이체<span id="newRate1"></span>%,
                     주택청약종합저축납입<span id="newRate2"></span>%,
@@ -76,9 +76,6 @@
                     적금상품납입<span id="newRate6"></span>%,
                     하나원큐이체<span id="newRate5"></span>%,
                     기타자동이체<span id="newRate4"></span>%)<br>
-			<%-- **우대금리항목(
-                    콜센터신청or딜러소개<span id="newRate7-1"></span>%
-                    ) --%>
 					</p>
 		</div>
 		<!-- //additional -->
@@ -188,9 +185,9 @@
 						</table>
 						<ul class="dotList">
 							<li class="reference">최저금리 기준: <br>
-							2022.07.27 현재, 내부신용등급(ASS) 1등급, 대출기간 1년 부수거래 감면금리 적용시</li>
+							2022.08.10 현재, 내부신용등급(ASS) 1등급, 대출기간 1년 부수거래 감면금리 적용시</li>
 							<li class="reference">최고금리 기준: <br>
-							2022.07.27 현재, 내부신용등급(ASS) 12등급, 대출기간 10년, 부수거래 감면금리 미적용시</li>
+							2022.08.10 현재, 내부신용등급(ASS) 12등급, 대출기간 10년, 부수거래 감면금리 미적용시</li>
 						</ul>
 					</div>
 					<div class="con">
@@ -239,7 +236,7 @@
 
 	<!-- button -->
 	<div class="bottomLink">
-		<a href="#" class="box red"><span>대출 신청 및 약정안내</span></a>
+		<a href="#" class="box red"><span>신청 및 약정안내</span></a>
 	</div>
 	<!-- //button -->
 	</section>
@@ -260,13 +257,16 @@
             async: false,
             success: function(data) {
 				result = data;        
-
+				console.log(result);
                 //기준금리일
                 newBaseRateDt = result.list.new_base_rate_dt;
                 //기준금리
                 newCarBaseRate = result.list.new_base_rate;
-                //가산금리
+                //최저 가산금리
                 newAddRate = result.list.new_add_rate;
+				//최고 가산금리
+                // newAddRate2 = result.list.new_add_rate2;
+
                 //부수거래 감면 금리 
                 newRate1 = result.list.new_rate1;
                 newRate2 = result.list.new_rate2;
@@ -294,6 +294,8 @@
                 $('#newBaseRateDt').text(newBaseRateDt);
                 $('#newCarBaseRate').text(newCarBaseRate);
                 $('#newAddRate').text(newAddRate);
+				// $('#newAddRate2').text(newAddRate2);
+				$('#newAddRateD2').text(newAddRate);
                 $('#newRate1').text(newRate1);
                 $('#newRate2').text(newRate2);
                 $('#newRate3').text(newRate3);

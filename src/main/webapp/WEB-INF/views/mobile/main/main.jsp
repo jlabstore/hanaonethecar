@@ -5,7 +5,9 @@
 <!DOCTYPE html>
 <body class="main">
     <div id="wrap">
-
+	<%-- <section id="header">
+		
+	</section> --%>
         <!-- main -->
 	<section id="main">
 		<div class="row topBanner">
@@ -70,7 +72,7 @@
 				</li>
 				<li class="auto_cashback">
 					<a href="card/autoCashback">
-						<p class="title">오토캐시백</p>
+						<p class="title">오토캐쉬백</p>
 						<p class="exp">자동차 일시불 결제 시 결제 금액의 <br><strong>1.0%~1.5% 캐쉬백</strong> 받는 서비스! <br>(단, 결제 건 별 300만원 이상 결제 시)</p>
 						<p class="link">상품 상세 보기</p>
 					</a>
@@ -104,8 +106,8 @@
 				</li>
 			</ul>
 			<!-- banner -->
-			<div class="row Banner">
-			<ul id="capitalBannerImg" class="slides">
+			<div class="row banner">
+			<ul id="capitalBannerImg">
 			</ul>
 		</div>
 			<!-- //banner -->
@@ -129,24 +131,18 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/mustache.js/4.0.1/mustache.min.js"></script>
 <script id="list-card" type="x-tmpl-mustache">
 	{{#list}}
-			<li class="">
+			<li>
 				<a href="#">
-					<p class=""></p>
-					<p class=""><strong></strong></p> 
-					<p class="link"></p>
-					<img style="height:160px;" src="${imagePath}{{path}}/{{making_nm}}">
+					<img src="${imagePath}{{path}}/{{making_nm}}">
 				</a>
 			</li>
 	{{/list}}
 </script>
 <script id="list-capital-card" type="x-tmpl-mustache">
 	{{#capitalList}}
-			<li class="">
+			<li>
 				<a href="#">
-					<p class=""></p>
-					<p class=""><strong></strong></p> 
-					<p class="link"></p>
-					<img style="height:160px; width:334px;" src="${imagePath}{{path}}/{{making_nm}}">
+					<img src="${imagePath}{{path}}/{{making_nm}}">
 				</a>
 			</li>
 	{{/capitalList}}
@@ -155,7 +151,7 @@
 	$(document).ready(function(){
 		submitForm();
 		randomTab();
-		$('#header').append("<h1><a href='/m/main'>하나원더카</a></h1>");
+		$('#header').append("<h2><a href='/m/main'>하나원더카</a></h2>");
 	});
 
 	var submitForm = function() {

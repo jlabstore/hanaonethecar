@@ -4,16 +4,16 @@
 <!DOCTYPE html>
 <html lang="ko">
         <tiles:insertAttribute name="head"/>
-    <body class="main">
-    <div id="wrap">
-        <tiles:insertAttribute name="header"/>
-    <!-- main -->
-    <section id="main">
-        <tiles:insertAttribute name="body"/>
-    </section>
-    <!-- //main -->
-        <tiles:insertAttribute name="footer"/>
-    </div>
-</body>
+    <body class="">
+        <div id="">
+            <tiles:insertAttribute name="header"/>
+        <!-- main -->
+        <section id="">
+            <tiles:insertAttribute name="body"/>
+        </section>
+        <!-- //main -->
+            <tiles:insertAttribute name="footer"/>
+        </div>
+    </body>
 </html>
 

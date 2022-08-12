@@ -96,8 +96,7 @@
                     <input class="form-control" id="usedCarBaseRate" type="text" style="width:20%; display:inline-block" onkeyup="imsi(this)" ><span class="spacing">%</span>
                 </td>
             </tr>
-            <%-- ev오토론일때 활성화 --%>
-            <%-- <tr id="evView">
+            <tr id="evBaseRate">
                 <th scope="row" style="text-align:center">가산금리</th>
                 <td style="text-align:-webkit-center">
                     <input class="form-control" id="newAddRate" type="text" style="width:20%; display:inline-block" onkeyup="imsi(this)"><span class="spacing">%</span>
@@ -105,21 +104,21 @@
                 <td style="text-align:-webkit-center">
                     <input class="form-control" id="usedAddRate" type="text" style="width:20%; display:inline-block" onkeyup="imsi(this)" ><span class="spacing">%</span>
                 </td>
-            </tr> --%>
-            <%-- 1Q오토론일때 활성화 --%>
-            <tr id="oneQView">
+            </tr>
+            <tr id="oneqBaseRate">
                 <th scope="row" style="text-align:center">가산금리</th>
                 <td style="text-align:center">
-                    <input class="form-control" id="newAddRate" placeholder="최저금리" type="text"style="width:20%; display:inline-block" onkeyup="imsi(this)"><span class="spacing">%</span>
+                    <input class="form-control" id="newAddRate3" placeholder="최저금리" type="text"style="width:20%; display:inline-block" onkeyup="imsi(this)"><span class="spacing">%</span>
                     <span> ~ </span>
                     <input class="form-control" id="newAddRate2" placeholder="최고금리" type="text"style="width:20%; display:inline-block" onkeyup="imsi(this)"><span class="spacing">%</span>
                 </td>
                 <td style="text-align:center">
-                    <input  class="form-control" id="usedAddRate"  placeholder="최저금리" type="text"style="width:20%; display:inline-block" onkeyup="imsi(this)"><span class="spacing">%</span>
+                    <input  class="form-control" id="usedAddRate3"  placeholder="최저금리" type="text"style="width:20%; display:inline-block" onkeyup="imsi(this)"><span class="spacing">%</span>
                     <span> ~ </span>
                     <input  class="form-control" id="usedAddRate2" placeholder="최고금리" type="text"style="width:20%; display:inline-block" onkeyup="imsi(this)"><span class="spacing">%</span>
                 </td>
             </tr>
+
                 <th scope="row" style="text-align:center">부수거래 감면금리</th>
                 <td style="text-align:-webkit-center">
                     <input  class="form-control" type="text" style="width:20%; display:inline-block"  id="newRate"  disabled><span class="spacing">%</span>
@@ -239,79 +238,89 @@
 
     //금리 등록시 유효성 체크 후 저장 
     function setGoodsRate() {
-        if($('#rateDate').val() == ""){
-            alert('신차구입 금리 기준일을 등록해주세요');
-            $('#rateDate').focus();
-        }else if($('#rateDate2').val() == ""){
-            alert('중고차 구입 금리 기준일을 등록해주세요.');
-            $('#rateDate2').focus();
-        }else if($('#newCarBaseRate').val() == ""){
-            alert('신차구입 기준금리를 등록해주세요');
-            $('#newCarBaseRate').focus();
-        }else if($('#usedCarBaseRate').val() == ""){
-            alert('중고차구입 기준금리를 등록해주세요');
-            $('#usedCarBaseRate').focus();
-        }else if($('#newAddRate').val() == ""){
-            alert('신차기준 최저가산금리를 등록해주세요');
-            $('#newAddRate').focus();
-        }else if($('#newAddRate2').val() == ""){
-            alert('신차기준 최고가산금리를 등록해주세요');
-            $('#newAddRate2').focus();
-        }else if($('#usedAddRate').val() == ""){
-            alert('중고차기준 가산금리를 등록해주세요');
-            $('#usedAddRate').focus();
-        }else if($('#usedAddRate2').val() == ""){
-            alert('중고차기준 가산금리를 등록해주세요');
-            $('#usedAddRate2').focus();
-        }else if($('#newRate1').val() == ''){
-            alert('신차기준 급여이체를 등록해주세요');
-            $('#newRate1').focus();
-        }else if($('#usedRate1').val() == ''){
-            alert('중고차기준 급여이체를 등록해주세요');
-            $('#usedRate1').focus();
-        }else if($('#newRate2').val() == ''){
-            alert('신차기준 주택청약종합저축납입금을 등록해주세요');
-            $('#newRate2').focus();
-        }else if($('#usedRate2').val() == ''){
-            alert('중고차기준 주택청약종합저축납입금을 등록해주세요');
-            $('#usedRate2').focus();
-        }else if($('#newRate3').val() == ''){
-            alert('신차기준 제휴카드결제 금액을 등록해주세요');
-            $('#newRate3').focus();
-        }else if($('#usedRate3').val() == ''){
-            alert('중고차기준 제휴카드결제 금액을 등록해주세요');
-            $('#usedRate3').focus();
-        }else if($('#newRate4').val() == ''){
-            alert('신차기준 기타자동이체 금액을 등록해주세요');
-            $('#newRate4').focus();
-        }else if($('#usedRate4').val() == ''){
-            alert('중고차기준 기타자동이체 금액을 등록해주세요');
-            $('#usedRate4').focus();
-        }else if($('#newRate5').val() == ''){
-            alert('신차기준 하나원큐이체 금액을 등록해주세요');
-            $('#newRate5').focus();
-        }else if($('#usedRate5').val() == ''){
-            alert('중고차기준 하나원큐이체 금액을 등록해주세요');
-            $('#usedRate5').focus();
-        }else if($('#newRate6').val() == ''){
-            alert('신차기준 적금상품납입 금액을 등록해주세요');
-            $('#newRate6').focus();
-        }else if($('#usedRate6').val() == ''){
-            alert('중고차기준 적금상품납입 금액을 등록해주세요');
-            $('#usedRate6').focus();
-        }else if($('#newRate7').val() == ''){
-            alert('신차기준 우대금리를 등록해주세요');
-            $('#newRate7').focus();
-        }else if($('#usedRate7').val() == ''){
-            alert('중고차기준 우대금리를 등록해주세요');
-            $('#usedRate7').focus();
-        }else{
-            addGoodsRate();
-        }
+        // if($('#rateDate').val() == ""){
+        //     alert('신차구입 금리 기준일을 등록해주세요');
+        //     $('#rateDate').focus();
+        // }else if($('#rateDate2').val() == ""){
+        //     alert('중고차 구입 금리 기준일을 등록해주세요.');
+        //     $('#rateDate2').focus();
+        // }else if($('#newCarBaseRate').val() == ""){
+        //     alert('신차구입 기준금리를 등록해주세요');
+        //     $('#newCarBaseRate').focus();
+        // }else if($('#usedCarBaseRate').val() == ""){
+        //     alert('중고차구입 기준금리를 등록해주세요');
+        //     $('#usedCarBaseRate').focus();
+        // }else if($('#newAddRate').val() == ""){
+        //     alert('신차기준 최저가산금리를 등록해주세요');
+        //     $('#newAddRate').focus();
+        // }else if($('#newAddRate2').val() == ""){
+        //     alert('신차기준 최고가산금리를 등록해주세요');
+        //     $('#newAddRate2').focus();
+        // }else if($('#usedAddRate').val() == ""){
+        //     alert('중고차기준 가산금리를 등록해주세요');
+        //     $('#usedAddRate').focus();
+        // }else if($('#usedAddRate2').val() == ""){
+        //     alert('중고차기준 가산금리를 등록해주세요');
+        //     $('#usedAddRate2').focus();
+        // }else if($('#newRate1').val() == ''){
+        //     alert('신차기준 급여이체를 등록해주세요');
+        //     $('#newRate1').focus();
+        // }else if($('#usedRate1').val() == ''){
+        //     alert('중고차기준 급여이체를 등록해주세요');
+        //     $('#usedRate1').focus();
+        // }else if($('#newRate2').val() == ''){
+        //     alert('신차기준 주택청약종합저축납입금을 등록해주세요');
+        //     $('#newRate2').focus();
+        // }else if($('#usedRate2').val() == ''){
+        //     alert('중고차기준 주택청약종합저축납입금을 등록해주세요');
+        //     $('#usedRate2').focus();
+        // }else if($('#newRate3').val() == ''){
+        //     alert('신차기준 제휴카드결제 금액을 등록해주세요');
+        //     $('#newRate3').focus();
+        // }else if($('#usedRate3').val() == ''){
+        //     alert('중고차기준 제휴카드결제 금액을 등록해주세요');
+        //     $('#usedRate3').focus();
+        // }else if($('#newRate4').val() == ''){
+        //     alert('신차기준 기타자동이체 금액을 등록해주세요');
+        //     $('#newRate4').focus();
+        // }else if($('#usedRate4').val() == ''){
+        //     alert('중고차기준 기타자동이체 금액을 등록해주세요');
+        //     $('#usedRate4').focus();
+        // }else if($('#newRate5').val() == ''){
+        //     alert('신차기준 하나원큐이체 금액을 등록해주세요');
+        //     $('#newRate5').focus();
+        // }else if($('#usedRate5').val() == ''){
+        //     alert('중고차기준 하나원큐이체 금액을 등록해주세요');
+        //     $('#usedRate5').focus();
+        // }else if($('#newRate6').val() == ''){
+        //     alert('신차기준 적금상품납입 금액을 등록해주세요');
+        //     $('#newRate6').focus();
+        // }else if($('#usedRate6').val() == ''){
+        //     alert('중고차기준 적금상품납입 금액을 등록해주세요');
+        //     $('#usedRate6').focus();
+        // }else if($('#newRate7').val() == ''){
+        //     alert('신차기준 우대금리를 등록해주세요');
+        //     $('#newRate7').focus();
+        // }else if($('#usedRate7').val() == ''){
+        //     alert('중고차기준 우대금리를 등록해주세요');
+        //     $('#usedRate7').focus();
+        // }else{
+        //     addGoodsRate();
+        // }
+        addGoodsRate();
     }
 
     //상세 
     function detailGoodsRate(){
+
+        if($('#goodsName').val() == 'EV'){
+            $('#evBaseRate').css('display','');
+            $('#oneqBaseRate').css('display','none');
+
+        }else if($('#goodsName').val() == 'ONEQ'){
+            $('#evBaseRate').css('display','none');
+            $('#oneqBaseRate').css('display','');
+        }
 
         var goodsId = $("#goodsName").val();
         $.ajax({
@@ -363,6 +372,7 @@
         $("#newCarBaseRate").val(temp ? data.detailGoodsRate.new_base_rate : "");
         $("#newAddRate").val(temp ? data.detailGoodsRate.new_add_rate : "");
         $("#newAddRate2").val(temp ? data.detailGoodsRate.new_add_rate2 : "");
+        $("#newAddRate3").val(temp ? data.detailGoodsRate.new_add_rate : "");
         $("#newRate1").val(new_rate1);
         $("#newRate2").val(new_rate2);
         $("#newRate3").val(new_rate3);
@@ -375,6 +385,7 @@
         $("#usedCarBaseRate").val(temp ? data.detailGoodsRate.used_base_rate : "");
         $("#usedAddRate").val(temp ? data.detailGoodsRate.used_add_rate : "");
         $("#usedAddRate2").val(temp ? data.detailGoodsRate.used_add_rate2 : "");
+        $("#usedAddRate3").val(temp ? data.detailGoodsRate.used_add_rate : "");
         $("#usedRate1").val(used_rate1);
         $("#usedRate2").val(used_rate2);
         $("#usedRate3").val(used_rate3);
@@ -409,6 +420,7 @@
             "newCarBaseRate" : $('#newCarBaseRate').val(),
             "newAddRate" : $('#newAddRate').val(),
             "newAddRate2" : $('#newAddRate2').val(),
+            "newAddRate3" : $('#newAddRate3').val(),
             "newRate1" : $('#newRate1').val(),
             "newRate2" : $('#newRate2').val(),
             "newRate3" :$('#newRate3').val(),
@@ -421,6 +433,7 @@
             "usedCarBaseRate" : $('#usedCarBaseRate').val(),
             "usedAddRate" : $('#usedAddRate').val(),
             "usedAddRate2" : $('#usedAddRate2').val(),
+            "usedAddRate3" : $('#usedAddRate3').val(),
             "usedRate1" : $('#usedRate1').val(),
             "usedRate2" : $('#usedRate2').val(),
             "usedRate3" : $('#usedRate3').val(),
@@ -429,6 +442,7 @@
             "usedRate6" : $('#usedRate6').val(),
             "usedRate7" : $('#usedRate7').val()
         }
+        console.log(formData);
 
         if(!confirm('등록을 완료하시겠습니까?')){
             alert('취소하셨습니다.')
@@ -463,6 +477,7 @@
             "newCarBaseRate" : $('#newCarBaseRate').val(),
             "newAddRate" : $('#newAddRate').val(),
             "newAddRate2" : $('#newAddRate2').val(),
+            "newAddRate3" : $('#newAddRate3').val(),
             "newRate1" : $('#newRate1').val(),
             "newRate2" : $('#newRate2').val(),
             "newRate3" :$('#newRate3').val(),
@@ -475,6 +490,7 @@
             "usedCarBaseRate" : $('#usedCarBaseRate').val(),
             "usedAddRate" : $('#usedAddRate').val(),
             "usedAddRate2" : $('#usedAddRate2').val(),
+            "usedAddRate3" : $('#usedAddRate3').val(),
             "usedRate1" : $('#usedRate1').val(),
             "usedRate2" : $('#usedRate2').val(),
             "usedRate3" : $('#usedRate3').val(),

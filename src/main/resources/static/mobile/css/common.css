@@ -123,8 +123,8 @@ body.main {background-color: #f4f7f8;}
 
 #header {height: 60px;}
 #header h1 {display: none;}
-body.main #header h1 {display: block;}
-#header h1 a {position: relative;display: block;width: 130px;height: 60px;text-indent: -9999px;background: url('../images/common/logo@2x.png') left 20px center no-repeat;background-size: 89px auto;z-index: 100;}
+body.main #header h2 {display: block;}
+#header h2 a {position: relative;display: block;width: 130px;height: 60px;text-indent: -9999px;background: url('../images/common/logo@2x.png') left 20px center no-repeat;background-size: 89px auto;z-index: 100;}
 
 /* side menu */
 
@@ -231,7 +231,7 @@ body.sideMenu #side .gnb {
 
 /* top banner */
 
-#main .topBanner {position: relative;height: 172px;margin-bottom: 20px;}
+#main .topBanner {position: relative;margin-bottom: 20px;}
 #main .topBanner ul.slides {}
 #main .topBanner ul.slides,
 #main .topBanner .flex-viewport { height: 100%; }
@@ -240,16 +240,8 @@ body.sideMenu #side .gnb {
 	-webkit-border-radius: 20px;
 	border-radius: 20px;
 }
-/* #main .topBanner ul.slides li a {display: block;height: 100%;text-decoration: none;padding: 28px 0 0 30px;} */
-#main .topBanner ul.slides li a {height: 100%;text-decoration: none;padding: 28px 0 0 30px;}
-
-#main .topBanner ul.slides li.oneQ {background-image: linear-gradient(116deg, #72e5de, #12bbbd 99%);}
-#main .topBanner ul.slides li.oneQ a {background: url('../images/main/banner-img1@2x.png') right center no-repeat;background-size: auto 172px;}
-
-#main .topBanner ul.slides li p.subSlogan {line-height: 16px;font-size: 11px;color: #fff;}
-#main .topBanner ul.slides li p.slogan {line-height: 22px;font-size: 17px;color: #fff;font-weight: 800;margin-top: 4px;}
-#main .topBanner ul.slides li p.slogan strong {color: #e2ff00;font-weight: 800;}
-#main .topBanner ul.slides li p.link {display:inline-block; display: -moz-inline-stack; zoom:1; *display:inline;height: 20px;line-height: 19px;font-size: 11px;color: #fff;border-bottom: 1px solid #fff;margin-top: 10px;}
+#main .topBanner ul.slides li a {display: block;height: 100%;text-decoration: none;}
+#main .topBanner ul.slides li a img {width: 100%;height: auto;}
 
 #main .topBanner ol.flex-control-nav {position: absolute;left: 30px;bottom: 25px;z-index: 99;}
 #main .topBanner ol.flex-control-nav {*zoom:1;} /* Hack for browser IE5.5~7 */
@@ -322,16 +314,10 @@ body.sideMenu #side .gnb {
 
 #main .contents > div .banner {margin: 20px -20px 30px;}
 #main .contents > div .banner ul {}
-#main .contents > div .banner ul li {height: 160px;margin-bottom: 5px;}
+#main .contents > div .banner ul li {height: auto;margin-bottom: 5px;}
 #main .contents > div .banner ul li:last-child {margin-bottom: 0;}
-#main .contents > div .banner ul li.usedcar {background-image: linear-gradient(301deg, #9c67f0, #93c9ff 100%);}
-#main .contents > div .banner ul li.longterm_rental {background-image: linear-gradient(112deg, #ffdc8e, #f07558 100%);}
-#main .contents > div .banner ul li a {display: block;height: 100%;color: #fff;text-decoration: none;padding: 27px 34px 0;}
-#main .contents > div .banner ul li.usedcar a {background: url('../images/main/banner_usedcar_img@2x.png') right center no-repeat;background-size: auto 140px;}
-#main .contents > div .banner ul li.longterm_rental a {background: url('../images/main/banner_longterm_rental_img@2x.png') right center no-repeat;background-size: auto 140px;}
-#main .contents > div .banner ul li p.subSlogan {line-height: 16px;color: #fff;font-size: 11px;font-weight: 800;}
-#main .contents > div .banner ul li p.slogan {line-height: 20px;color: #fff;font-size: 15px;font-weight: 800;margin-top: 4px;}
-#main .contents > div .banner ul li p.exp {line-height: 16px;color: #fff;font-size: 11px;margin-top: 13px;}
+#main .contents > div .banner ul li a {display: block;;text-decoration: none;}
+#main .contents > div .banner ul li a img {width: 100%;height: auto;}
 
 /* comment  */
 

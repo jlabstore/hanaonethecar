@@ -1,7 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=utf-8" pageEncoding="utf-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ taglib uri="http://www.springframework.org/tags" prefix="spring" %>
-<body class="main">
+<body >
     <div id="wrap">
     <!-- main -->
 <section id="body" class="cardCashback">
@@ -22,10 +22,10 @@
 				<p class="exp">자동차 일시불 결제 시 <br>
 				결재금액의 <br>
 				${autoCashback.cashback3}%~${autoCashback.cashback1}% 캐쉬백!</p>
-				<p class="exp">기간 <br>
+			</div><br>
+				<strong><p class="exp">기간 </strong><br>
 				${autoCashback.start_dt}~${autoCashback.end_dt}
 				</p>
-			</div>
 			<!-- //top -->
 			<!-- info -->
 			<div class="info">
@@ -209,7 +209,7 @@
 
 		</ul><br>
 			<div class="link" style="text-align: center">
-				<a href="#" class="round green"><span>오토캐쉬백 신청하기</span></a>
+				<a href="#" class="round green"  style="width: 100%;"><span>오토캐쉬백 신청하기</span></a>
 			</div>
 
 	</div>

@@ -74,8 +74,8 @@
     <select id="getAutoCashback" resultType="map">
         SELECT 
             goods_id,
-            DATE_FORMAT(start_dt, '%Y-%m-%d') start_dt,
-			DATE_FORMAT(end_dt, '%Y-%m-%d') end_dt,
+            DATE_FORMAT(start_dt, '%Y.%m.%d') start_dt,
+			DATE_FORMAT(end_dt, '%Y.%m.%d') end_dt,
             cashback1,
             cashback2,
             cashback3

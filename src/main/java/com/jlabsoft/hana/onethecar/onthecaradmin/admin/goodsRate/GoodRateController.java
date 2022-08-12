@@ -74,6 +74,12 @@ public class GoodRateController {
         HashMap<String,Object> resultHashMap = new HashMap<String,Object>();
         ApiStatus result = ApiStatus.BAD_REQUEST;
         try{
+            if(param.get("newAddRate") == "" || param.get("newAddRate") == null){
+                param.put("newAddRate", param.get("newAddRate3"));
+            }
+            if(param.get("usedAddRate") == "" || param.get("usedAddRate") == null){
+                param.put("usedAddRate", param.get("usedAddRate3"));
+            }
             param.put("userId",admin.getId());
             goodRateService.setGoodsRate(param);
             result = ApiStatus.OK;
@@ -91,6 +97,10 @@ public class GoodRateController {
         HashMap<String,Object> resultHashMap = new HashMap<String,Object>();
         ApiStatus result = ApiStatus.BAD_REQUEST;
         try{
+            if("ONEQ".equals(param.get("goodsId").toString())){
+                param.put("newAddRate", param.get("newAddRate3"));
+                param.put("usedAddRate", param.get("usedAddRate3"));
+            }
             param.put("userId",admin.getId());
             goodRateService.putGoodsRate(param);
             result = ApiStatus.OK;

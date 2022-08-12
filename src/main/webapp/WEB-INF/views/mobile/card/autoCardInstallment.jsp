@@ -9,7 +9,7 @@
 		padding: 10px 0;
 	}
 </style>
-<body class="main">
+<body>
     <div id="wrap">
     <!-- main -->
 <section id="body" class="autoCardInstallment">
@@ -101,10 +101,13 @@
 			<!-- contact -->
 			<div class="contact">
 				<p class="title">자동차금융 상담센터</p>
-				<p class="exp">평일 09:0 ~ 18:00</p>
+				<p class="exp">평일 09:00 ~ 18:00</p>
 				<a href="tel://18001221">1800-1221</a>
 			</div>
 			<!-- //contact -->
+			<%-- <div class="link" style="text-align: center">
+				<a href="#" class="round green" ><span>상품안내 및 한도 조회</span></a>
+			</div> --%>
 		</div>
 		<!-- //summary -->
 
@@ -143,10 +146,9 @@
 				</div>
 			</li>
 			<!-- //유의사항 -->
-
 		</ul><br>
 			<div class="link" style="text-align: center">
-				<a href="#" class="round green"><span>상품안내 및 한도 조회</span></a>
+				<a href="#" class="round green" style="width: 100%;"><span>상품안내 및 한도 조회</span></a>
 			</div>
 	</div>
 	<!-- //detail -->

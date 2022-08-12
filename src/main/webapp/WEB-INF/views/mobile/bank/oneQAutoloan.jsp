@@ -2,7 +2,7 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ taglib uri="http://www.springframework.org/tags" prefix="spring" %>
 <!DOCTYPE html>
-<body class="main">
+<body>
     <div id="wrap">
         <!-- main -->
 	<section id="body" class="bankOneQ">
@@ -69,7 +69,7 @@
 
 		<!-- additional -->
 		<div class="additional">
-			<p class="comment">[<span id="newBaseRateDt"></span>현재] 기준금리(금융채 6개월) <span id="newCarBaseRate"></span>% + 가산금리 <span id="newAddRate"></span>% - 부수거래 감면금리<span id="newRate"></span>%* - 우대금리 <span id="newRate7"></span>%** <br>
+			<p class="comment">[<span id="newBaseRateDt"></span>현재] 기준금리(금융채 6개월) <span id="newCarBaseRate"></span>% + 가산금리 <span id="newAddRate"></span>% ~ <span id="newAddRate2"></span>%  - 부수거래 감면금리<span id="newRate"></span>%* <br>
 			*부수거래항목(
 				급여이체<span id="newRate1"></span>%, 
 				주택청약종합저축납입<span id="newRate2"></span>%, 
@@ -349,7 +349,7 @@
 
 	<!-- button -->
 	<div class="bottomLink">
-		<a href="#" class="box red"><span>대출 신청 및 약정안내</span></a>
+		<a href="#" class="box red"><span>신청 및 약정안내</span></a>
 	</div>
 	<!-- //button -->
 
@@ -442,6 +442,7 @@
 				$('#newBaseRateDt').text(newBaseRateDt);
                 $('#newCarBaseRate').text(newCarBaseRate);
 				$('#newAddRate').text(newAddRate);
+				$('#newAddRate2').text(newAddRate2);
                 $('#newRate1').text(newRate1);
                 $('#newRate2').text(newRate2);
                 $('#newRate3').text(newRate3);

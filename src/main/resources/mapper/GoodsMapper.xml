@@ -95,7 +95,12 @@
 					#{newRateDt},
 					#{newCarBaseRate},
 					#{newAddRate},
-					#{newAddRate2},
+					<if test="newAddRate2 != ''">
+						#{newAddRate2},
+					</if>
+					<if test="newAddRate2 == ''">
+						0,
+					</if>
 					#{newRate1},
 					#{newRate2},
 					#{newRate3},
@@ -106,7 +111,12 @@
 					#{usedRateDt},
 					#{usedCarBaseRate},
 					#{usedAddRate},
-					#{usedAddRate2},
+					<if test="usedAddRate2 !=''">
+						#{usedAddRate2},
+					</if>
+					<if test="usedAddRate2 ==''">
+						0,
+					</if>
 					#{usedRate1},
 					#{usedRate2},
 					#{usedRate3},
@@ -128,7 +138,12 @@
 			,new_base_rate_dt = #{newRateDt}
 			,new_base_rate = #{newCarBaseRate}
 			,new_add_rate = #{newAddRate}
-			,new_add_rate2 = #{newAddRate2}
+			<if test="newAddRate2 != ''" >
+				,new_add_rate2 = #{newAddRate2}
+			</if>
+			<if test="newAddRate2 == ''">
+				,new_add_rate2 = ''
+			</if>
 			,new_rate1 = #{newRate1}
 			,new_rate2 = #{newRate2}
 			,new_rate3 = #{newRate3}
@@ -139,7 +154,12 @@
 			,used_base_rate_dt = #{usedRateDt}
 			,used_base_rate = #{usedCarBaseRate}
 			,used_add_rate = #{usedAddRate}
-			,used_add_rate2 = #{usedAddRate2}
+			<if test="usedAddRate2 != ''" >
+				,used_add_rate2 = #{newAddRate2}
+			</if>
+			<if test="usedAddRate2 == ''">
+				,used_add_rate2 = ''
+			</if>
 			,used_rate1 = #{usedRate1}
 			,used_rate2 = #{usedRate2}
 			,used_rate3 = #{usedRate3}

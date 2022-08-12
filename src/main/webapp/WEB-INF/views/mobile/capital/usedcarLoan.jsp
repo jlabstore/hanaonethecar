@@ -10,7 +10,7 @@
     padding: 2px 0;
 	}
 </style>
-<body class="main">
+<body>
     <div id="wrap">
     <!-- main -->
 <section id="body" class="capitalUsedcarLoan">
