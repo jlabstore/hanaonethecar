@@ -442,7 +442,6 @@
             "usedRate6" : $('#usedRate6').val(),
             "usedRate7" : $('#usedRate7').val()
         }
-        console.log(formData);
 
         if(!confirm('등록을 완료하시겠습니까?')){
             alert('취소하셨습니다.')

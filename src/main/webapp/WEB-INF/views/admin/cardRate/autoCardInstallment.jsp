@@ -252,7 +252,6 @@
     function setAutoCardInstallment(){
 
         goodsId = $("#goodsName option:selected").val();
-        console.log(goodsId);
         var formData = {
             
             "goodsId": goodsId,

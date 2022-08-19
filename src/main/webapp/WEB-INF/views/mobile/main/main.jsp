@@ -66,7 +66,7 @@
 				<li class="auto_loan">
 					<a href="card/autoLoan">
 						<p class="title">오토론</p>
-						<p class="exp"><strong>하나카드 없이도 빠르고 간편한</strong><br>새차 구입 계획은 저렴한 할부 금리 <br>신차 오토 할부!</p>
+						<p class="exp"><strong>하나카드 없이도 빠르고 간편한</strong><br>신차구입방법!</p>
 						<p class="link">상품 상세 보기</p>
 					</a>
 				</li>
@@ -119,8 +119,8 @@
 				<li class="reference">본 홍보물은 2023년 7월 31일까지 유효합니다.</li>
 				<li class="reference">하나캐피탈 준법심의필 22-1478(2022.07.22~2023.07.21)</li>
 				<li class="reference">하나카드 준법 심의필 000000-000000</li>
-				<li class="reference">하나은행 준법감시인 심의필 제2022-광고-0000호(2022.00.00) <br>
-				CC브랜드220000-0000</li>
+				<li class="reference">하나은행 준법감시인 심의필 제2022-광고-6286호(2022.08.12) <br>
+				CC브랜드220811-0086</li>
 			</ul>
 		</div>
 		<!-- //contents -->
@@ -133,7 +133,12 @@
 	{{#list}}
 			<li>
 				<a href="#">
-					<img src="${imagePath}{{path}}/{{making_nm}}">
+					<img
+						src="${imagePath}{{path}}/{{making_nm}}" 
+						<%-- srcset="${imagePath}{{path}}/s_{{making_nm}} 320w",
+							${imagePath}{{path}}/m_{{making_nm}} 480w,
+							${imagePath}{{path}}/l_{{making_nm}} 800w --%>
+					>
 				</a>
 			</li>
 	{{/list}}
@@ -151,6 +156,7 @@
 	$(document).ready(function(){
 		submitForm();
 		randomTab();
+		$('#classId').addClass('main');
 		$('#header').append("<h2><a href='/m/main'>하나원더카</a></h2>");
 	});
 
@@ -217,6 +223,17 @@
             async: false,
             success: function(data) {
 				result = data;
+				var fcb = result.capitalList[0];
+				var scb = result.capitalList[1];
+				console.log(fcb);
+				console.log(scb);
+				// if(result.capitalList[0] == true){
+				// 	fcb.append("<a href='https://www.hanadreamcar.co.kr/mobile/pages/safeCar/info.html?inflow=onethe '><a>")
+				// }else{
+				// 	scb.append("<a href='https://www.hanadreamcar.co.kr/cs/event/detail.hnc?bbsMngeNo=2022072600000001 '><a>")
+				// }
+				// fcb.append("<a href='https://www.hanadreamcar.co.kr/mobile/pages/safeCar/info.html?inflow=onethe '><a>");
+				// scb.append("<a href='https://www.hanadreamcar.co.kr/cs/event/detail.hnc?bbsMngeNo=2022072600000001 '><a>");
             },
             error: function(data) {
                 alert('문제가 발생했습니다. 관리자에게 문의하세요.');

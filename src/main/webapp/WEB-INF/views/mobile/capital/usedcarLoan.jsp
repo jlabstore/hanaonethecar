@@ -56,7 +56,7 @@
 			<!-- //feature -->
 			<!-- link -->
 			<div class="link">
-				<a href="#" class="round green"><span>한도 조회하기</span></a>
+				<a href="https://m.hanacapital.co.kr/car/info/used-car-loan.hnc?hfgInflow=loanUCar&gostate=N" class="round green"><span>한도 조회하기</span></a>
 			</div>
 			<!-- //link -->
 		</div>
@@ -91,7 +91,7 @@
 					<div class="con">
 						<p class="title">금리</p>
 						<ul class="dotList">
-							<li style="font-weight:bold">고정금리 : 연<span id="lowRate">6.8</span>% ~ <span id="highRate">19.0</span>%</li>
+							<li style="font-weight:bold">고정금리 : 연 <span id="lowRate"></span>% ~ <span id="highRate"></span>%</li>
 							<li style="font-weight:bold">연체이율 : 약정이율 + 3%(법정 최고금리 20% 이내)</li>
 							<li class="reference">금융소비자의 개인신용평점에 따라 대출 한도 및 금리가 차등 적용 됩니다.</li>
 							<li class="reference">대출 취급이 부적정한 경우(연체금 보유, 개인신용평점 낮음) 대출이 제한될 수 있습니다.</li>
@@ -220,9 +220,10 @@
 							<li class="reference">대출취급이 부적정한 경우(연체금 보유, 개인신용평점 낮음) 대출이 제한될 수 있습니다.</li>
 							<li class="reference">담보물건, 담보종류 등에 따라 대출조건이 차등 적용되며 담보물이 부적합할 경우 대출이 제한될 수 있습니다.</li>
 							<li class="reference">금융소비자의 개인신용평점에 따라 대출한도 및 금리가 차등 적용됩니다.</li>
+							<li class="reference">금융소비자는 해당 상품에 대하여 설명을 받을 권리가 있으며, 그 설명을 듣고 충분히 이해한 후 거래하시기 바랍니다.</li>
 							<li class="reference">금리인하요구권 및 대출계약 철회권에 대한 자세한 사항은 하나캐피탈 홈페이지에서 확인하시기 바랍니다.</li>
 							<li class="reference">하나캐피탈 준법심의필 22-1481(2022.07.22 ~ 2023.07.21)</li>
-							<li class="reference">여신금융협회 심의필 제 2022-C1h-00000호 (2022.00.00~2023.00.00)</li>
+							<li class="reference">여신금융협회 심의필 : 제 2022-C1h-06624 (2022.08.02~2023.07.21)</li>
 						</ul>
 					</div>
 				</div>
@@ -235,8 +236,8 @@
 	<!-- //detail -->
 
 	<!-- button -->
-	<div class="bottomLink">
-		<a href="#" class="box red"><span>신청 및 약정안내</span></a>
+	<div class="bottomLink btnFloat">
+		<a href="https://m.hanacapital.co.kr/car/info/used-car-loan.hnc?hfgInflow=loanUCar&gostate=N" class="box red"><span>한도 조회하기</span></a>
 	</div>
 	<!-- //button -->
 

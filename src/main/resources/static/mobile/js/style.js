@@ -61,4 +61,19 @@ $(function() {
 		return false;
 	});
 
+	// float on bottom
+
+	var $btnFloat = $('.btnFloat');
+	$btnFloat.each(function() {
+		var $btnFloatTop = $(this).offset().top + 50;
+		$(window).scroll(function(){
+			var $currentScroll = $(this).scrollTop();
+			if($currentScroll > $btnFloatTop){
+				$btnFloat.addClass('floatOnBottom');
+			}else{
+				$btnFloat.removeClass('floatOnBottom');
+			};
+	});
+	});
+
 });

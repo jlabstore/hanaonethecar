@@ -13,7 +13,7 @@ section#body > a.goBack {position: absolute;left: 0;top: 0;width: 56px;height: 6
 
 /* top contents */
 
-.topContent {position: relative;margin: 0 20px 10px;}
+.topContent {position: relative;margin: 0 20px 10px;z-index: 3;}
 .topContent p.topLogo {position: absolute;right: 17px;top: 13px;z-index: 3;}
 .topContent p.topLogo img {width: auto;height: 19px;}
 
@@ -107,7 +107,7 @@ section#body > a.goBack {position: absolute;left: 0;top: 0;width: 56px;height: 6
 /* bottom link */
 
 .bottomLink {position: relative;margin: -10px 0 -1px;z-index: 2;}
-.bottomLink a.box {display: block;}
+.bottomLink a.box {display: block;  background-color: #00b2a4;}
 
 
 
@@ -142,6 +142,20 @@ button.box { display:inline-block; display: -moz-inline-stack; zoom:1; *display:
 a.box span,
 input.box span,
 button.box span { display:inline-block; display: -moz-inline-stack; zoom:1; *display:inline; background: url('../images/common/icon-arrow-right-white@2x.png') right center no-repeat;background-size: 12px auto;padding-right: 23px; }
+
+/* float */
+
+.btnFloat {}
+.btnFloat.floatOnBottom {position: fixed;left: 0;bottom: 0;width: 100%;height: 58px;line-height: 58px;z-index: 9999;
+	-moz-border-radius: 0;
+	-webkit-border-radius: 0;
+	border-radius: 0;
+	animation:  btnShowUp .4s;
+}
+@keyframes btnShowUp {
+	0%	{transform: translateY(100%);}
+	100%	{transform: translateY(0);}
+}
 
 ul.btnList {display: flex;}
 ul.btnList.left {justify-content: flex-start;}

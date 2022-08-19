@@ -4,11 +4,11 @@
 <!DOCTYPE html>
 <html lang="ko">
         <tiles:insertAttribute name="head"/>
-    <body class="">
-        <div id="">
+    <body id="classId">
+        <div>
             <tiles:insertAttribute name="header"/>
         <!-- main -->
-        <section id="">
+        <section>
             <tiles:insertAttribute name="body"/>
         </section>
         <!-- //main -->

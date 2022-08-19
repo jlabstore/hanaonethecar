@@ -60,7 +60,7 @@
 			<!-- //feature -->
 			<!-- link -->
 			<div class="link">
-				<a href="#" class="round green"><span>한도 조회 하기</span></a>
+				<a href="https://m.hanabank.com/cont/mybranch/0978/03/MYB09780018170/index.html" class="round green"><span>한도 조회 하기</span></a>
 			</div>
 			<!-- //link -->
 		</div>
@@ -220,8 +220,8 @@
 							후취방식 징구를 원칙으로 1개월 이내의 기간을 단위로 징수합니다. </li><br>
 							<li class="reference">본 홍보물은 법령 및 내부통제기준에 따른 절차를 거쳐 제공됩니다.</li>
 							<li class="reference"> 본 홍보물은 2023년 7월 31일까지 유효합니다.</li>
-							<li class="reference">하나은행 준법감시인 심의필 제2022-광고-0000호(2022.00.00)</li>
-							<li class="reference"> CC브랜드220000-0000</li>
+							<li class="reference">하나은행 준법감시인 심의필 제2022-광고-6270 호 (2022.08.12)</li>
+							<li class="reference"> CC브랜드220811-0088</li>
 						</ul>
 						
 					</div>
@@ -236,7 +236,7 @@
 
 	<!-- button -->
 	<div class="bottomLink">
-		<a href="#" class="box red"><span>신청 및 약정안내</span></a>
+		<a href="https://m.hanabank.com/cont/mybranch/0978/03/MYB09780018170/index.html" class="box red"><span>한도 조회 하기</span></a>
 	</div>
 	<!-- //button -->
 	</section>
@@ -257,7 +257,6 @@
             async: false,
             success: function(data) {
 				result = data;        
-				console.log(result);
                 //기준금리일
                 newBaseRateDt = result.list.new_base_rate_dt;
                 //기준금리

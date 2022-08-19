@@ -56,7 +56,7 @@
 			<!-- //feature -->
 			<!-- link -->
 			<div class="link">
-				<a href="#" class="round black"><span>상담 신청하기</span></a>
+				<a href="https://m.hanacapital.co.kr/cs/telephone/application.hnc?hfgInflow=rentNCar" class="round green"><span>상담 신청하기</span></a>
 			</div>
 			<!-- //link -->
 		</div>
@@ -201,7 +201,6 @@
 							<li class="reference">일정기간 렌탈료를 연체할 경우, 모든 렌탈료(원리금)를 변제할 의무가 발생할 수 있습니다. (연체이자 : 년 20%)</li>
 							<li class="reference">렌터카 취급이 부적정한 경우(연체금 보유, 개인신용평점 낮음) 취급이 제한될 수 있습니다.</li>
 							<li class="reference">하나캐피탈 준법심의필 22-1480(2022.07.22 ~ 2023.07.21)</li>
-							<li class="reference">준법심의필 22-000(2022.00.00 ~ 2023.00.00)</li>
 						</ul>
 					</div>
 				</div>
@@ -214,8 +213,8 @@
 	<!-- //detail -->
 
 	<!-- button -->
-	<div class="bottomLink">
-		<a href="#" class="box red"><span>신청 및 약정안내</span></a>
+	<div class="bottomLink btnFloat">
+		<a href="https://m.hanacapital.co.kr/cs/telephone/application.hnc?hfgInflow=rentNCar" class="box red"><span>상담 신청하기</span></a>
 	</div>
 	<!-- //button -->
 

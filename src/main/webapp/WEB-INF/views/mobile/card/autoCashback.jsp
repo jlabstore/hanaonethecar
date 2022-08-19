@@ -20,8 +20,8 @@
 			<div class="top">
 				<h2>오토캐쉬백</h2>
 				<p class="exp">자동차 일시불 결제 시 <br>
-				결재금액의 <br>
-				${autoCashback.cashback3}%~${autoCashback.cashback1}% 캐쉬백!</p>
+				결제금액의 <br>
+				${autoCashback.cashback3}%~${autoCashback.cashback2}% 캐쉬백!</p>
 			</div><br>
 				<strong><p class="exp">기간 </strong><br>
 				${autoCashback.start_dt}~${autoCashback.end_dt}
@@ -30,7 +30,7 @@
 			<!-- info -->
 			<div class="info">
 				<p class="emp"><strong>하나카드로 자동차 일시불 결제 시 </strong><br>
-				<strong class="red">결제 금액의 ${autoCashback.cashback3}%~${autoCashback.cashback1}% 캐쉬백!</strong></p>
+				<strong class="red">결제 금액의 ${autoCashback.cashback3}%~${autoCashback.cashback2}% 캐쉬백!</strong></p>
 				<p class="text">(단, 결제 건 별 300만원 이상 결제 시에 적용)</p>
 			</div>
 			<!-- //info -->
@@ -51,7 +51,7 @@
 							(모바일카드 포함, 법인/선불/가족카드 제외)</li>
 							<li>국산/수입신차/중고차/오토바이 전 차종 신청 가능합니다.</li>
 							<li>캐쉬백은 자동차결제 정상매입 기준으로 지급됩니다. </li>
-							<li>신청채널 및 이용 상품(결재금액/유형)에 따라 별도 캐쉬백율로 운영됩니다.</li>
+							<li>신청채널 및 이용 상품(결제금액/유형)에 따라 별도 캐쉬백율로 운영됩니다.</li>
 						</ul>
 					</div>
 				</div>
@@ -179,7 +179,6 @@
 						·오토캐쉬백 서비스 이용 후 특별한도 기간 내 별도 신청없이 자동차 판매 업종에서 추가로 결제하시면 300만원 이상 결제건 1.0%, 300만원 미만 결제건 0.5% 캐쉬백이 적용됩니다. (단, 300만원 미만 결제건 중 체크방식은 제외) <br>
 						·선입금 방식의 경우, 특별한도는 입금 후 15일간 유지됩니다. <br>
 						·차량 특별한도 이용 시 한도 범위 내에 자동결제가 가능하며 본인 이용한도와 합산하여 사용 불가합니다. <br>
-						·신용방식 신청 시 본인 신용도에 따라 오토캐쉬백 서비스 이용이 제한될 수 있습니다. <br>
 						·모바일카드 결제 시 자동차판매점에서 key-in 결제방식으로 처리됩니다. (단 수입차, 중고차, 오토바이 판매점 일부 제외) <br>
 						·매출취소 시 캐쉬백 대상에서 제외되며 기지급된 캐쉬백은 환급금 지급 전 회수합니다. <br>
 						·카드탈회 및 카드해지 시 캐쉬백 대상에서 제외됩니다. <br>
@@ -201,7 +200,9 @@
 						·금융소비자는 해당 상품 또는 서비스에 대하여 설명을 받을 권리가 있습니다. <br>
 						<strong>·상환능력에 비해 신용카드 사용액이 과도할 경우, 귀하의 신용등급 또는 개인신용평점이 하락 할 수 있습니다. </strong><br>
 						<strong>·신용등급 또는 개인신용평점 하락 시 금융거래와 관련된 불이익이 발생할 수 있습니다. </strong><br>
-						<strong>·일정기간 원리금을 연체할 경우, 모든 원리금을 변제할 의무가 발생할 수 있습니다.</strong></p>
+						<strong>·일정기간 원리금을 연체할 경우, 모든 원리금을 변제할 의무가 발생할 수 있습니다.</strong><br>
+						·준범심의 A-22-1058(2022.08.11 ~ 2023.08.10)
+						</p>
 					</div>
 				</div>
 			</li>
@@ -209,7 +210,7 @@
 
 		</ul><br>
 			<div class="link" style="text-align: center">
-				<a href="#" class="round green"  style="width: 100%;"><span>오토캐쉬백 신청하기</span></a>
+				<a href="m.hanacard.co.kr/MKAMCB4010M.web?from=hfg" class="round green"  style="width: 100%;"><span>오토캐쉬백 신청하기</span></a>
 			</div>
 
 	</div>

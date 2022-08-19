@@ -117,6 +117,9 @@ public class BannerController {
             List<HashMap<String,Object>> getGoodsBanner = bannerService.getGoodsBanner(param);
             if(getGoodsBanner != null){
                 data.put("getGoodsBanner", getGoodsBanner);
+                for(HashMap<String,Object> item : getGoodsBanner) {
+
+                }
             }
         }catch(Exception e){
             e.printStackTrace();
