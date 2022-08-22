@@ -53,8 +53,8 @@
                         <label class="title-label">PC 이미지 등록</label>
                         <div id="draw-list-pc" >
                         </div>
+                        <%-- <input type="text" class="form-control form-control-user" "name=password" placeholder="url"> </div> --%>
                     </div>
-                    <br><br><br><br><br>
                     <%-- 배너 관리 - 모바일 --%>
                     <div class="form-group col-md-12" class="image-item-mo" style="border-top:1px solid gray;"><br>
                         <h5 style="margin-bottom: 0px;">배너 관리 - Mobile<span class="btn btn-outline-info" style="margin-left:10px" onclick="setImageFileItemHtml('mo', null)">추가</span></h5><br>
@@ -157,11 +157,18 @@
         //image file
         if(itemData != null){
             html += '   <span style="padding-left: 20px;"> '+itemData.original_nm+'</span>'
+            // html += '   <span style="padding-left: 20px;"> '+itemData.original_nm+'</span>'
+            html += '   <span style="padding-left: 20px;" placeholder="url 입력해주세요"> '+itemData.url+'</span>'
             html += '   <span class="badge badge-red" id="xBtn" style="margin-left:10px;" onclick="bannerDelBtn(this,'+itemData.idx+')">x</span>'
         }else{
-            html += '   <input type="file" name="'+type+'Files" class="input-file" style="margin-left:20px;" >';
+            // for(var i =  0 ; i < 3 ; i++){
+            //     html += '   <input type="file" name="'+type+'Files" class="input-file" style="margin-left:20px; width:20%" >';
+            // }
+            html += '   <input type="file" name="'+type+'Files" class="input-file" style="margin-left:20px; width:20%" >';
+            html += '   <input placeholder="url 입력해주세요" type="text" id="url_'+type+'" name="url_'+type+'"  class="form-control" style="width:20%; display:inline">';
             html += '   <span class="badge badge-red" id="xBtn" style="margin-left:10px;" onclick="bannerDelBtn(this, null)">x</span>';
         }
+        
 
         html += '</div>';
 
@@ -171,27 +178,37 @@
     //배너 저장
     var saveBanner = function(){
     
-
-
         var formdata = new FormData($("#registForm")[0]);
-        
+
         //신규 이미지 등록건
+
+        // var imgState = [];
         var pcFileSort = [];
+        var pcFileUrl = [];
         $('input[name=pcFiles]').each(function(i,e){
             if($(e)[0].files[0] !== undefined && $(e)[0].files[0].size > 0){
                 $(e).closest('.banner-item').find('#selectSort_pc').val();
+                $(e).closest('.banner-item').find('#url_pc').val();
                 pcFileSort.push($(e).closest('.banner-item').find('#selectSort_pc').val());
+                pcFileUrl.push($(e).closest('.banner-item').find('#url_pc').val());
+                // imgState.push($(e).closest('.banner-item').find('#url_pc').val())
             }
         });
         var moFileSort = [];
+        var moFileUrl = [];
         $('input[name=moFiles]').each(function(i,e){
             if($(e)[0].files[0] !== undefined && $(e)[0].files[0].size > 0){
                 $(e).closest('.banner-item').find('#selectSort_mo').val();
                 moFileSort.push($(e).closest('.banner-item').find('#selectSort_mo').val());
+                moFileUrl.push($(e).closest('.banner-item').find('#url_mo').val());
             }
         });
+
         formdata.append('pcFileSort', pcFileSort);
         formdata.append('moFileSort',moFileSort);
+        formdata.append('pcFileUrl',pcFileUrl);
+        formdata.append('moFileUrl',moFileUrl);
+        // formdata.append('imgState', imgState);
 
         //기존 이미지 정렬 변경건 
         var changeSort = [];
@@ -205,7 +222,6 @@
         //기존 이미지 삭제건 
         formdata.append('delIdxs',delIdxs);
         
-        // if(pcFileSort.length > 0  || moFileSort.length > 0 ){
             $.ajax({
                 type: 'POST',
                 url: '/admin/banner/saveBanner',
@@ -222,10 +238,6 @@
                     alert('문제가 발생했습니다. 관리자에게 문의하세요.');
                 }
             });
-        // }
-        // else{
-        //     alert('배너는 최소 한장이상 필요합니다.');
-        // }
     }
 
     //배너 삭제

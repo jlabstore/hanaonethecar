@@ -56,7 +56,7 @@
 			<!-- //feature -->
 			<!-- link -->
 			<div class="link">
-				<a href="https://m.hanacapital.co.kr/car/info/used-car-loan.hnc?hfgInflow=loanUCar&gostate=N" class="round green"><span>한도 조회하기</span></a>
+				<a href="https://m.hanacapital.co.kr/car/info/used-car-loan.hnc?hfgInflow=loanUCar&gostate=N" class="round green btnFloat"><span>한도 조회하기</span></a>
 			</div>
 			<!-- //link -->
 		</div>
@@ -236,9 +236,9 @@
 	<!-- //detail -->
 
 	<!-- button -->
-	<div class="bottomLink btnFloat">
+	<%-- <div class="bottomLink btnFloat">
 		<a href="https://m.hanacapital.co.kr/car/info/used-car-loan.hnc?hfgInflow=loanUCar&gostate=N" class="box red"><span>한도 조회하기</span></a>
-	</div>
+	</div> --%>
 	<!-- //button -->
 
 </section>

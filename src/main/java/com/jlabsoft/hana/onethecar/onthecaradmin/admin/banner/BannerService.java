@@ -40,7 +40,7 @@ public class BannerService {
      * @param imageType : 이미지 타입 (null 허용)
      * @param param
      */
-    public void setImage(MultipartFile file, ImageType imageType, String sort, String userId){
+    public void setImage(MultipartFile file, ImageType imageType, String sort, String url, String userId){
         String filePath =  imageType != null ? "/" + imageType.getValue() : "" ;
 
         if(!"".equals(file.getOriginalFilename())){
@@ -54,6 +54,8 @@ public class BannerService {
                     imageManage.setPath(filePath);
                     imageManage.setOriginalFileName(fileNames.get(0));
                     imageManage.setMakingFileName(fileNames.get(1));
+                    imageManage.setUrl(url.toString());
+                    // imageManage.setImgState(imgState.toString());
                     imageManage.setDelYn("N");
                     imageManage.setSelectSort(Integer.parseInt(sort));
                     imageManage.setRegId(userId);

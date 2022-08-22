@@ -132,7 +132,7 @@
 <script id="list-card" type="x-tmpl-mustache">
 	{{#list}}
 			<li>
-				<a href="#">
+				<a href="{{url}}">
 					<img
 						src="${imagePath}{{path}}/{{making_nm}}" 
 						<%-- srcset="${imagePath}{{path}}/s_{{making_nm}} 320w",
@@ -146,7 +146,7 @@
 <script id="list-capital-card" type="x-tmpl-mustache">
 	{{#capitalList}}
 			<li>
-				<a href="#">
+				<a href="{{url}}">
 					<img src="${imagePath}{{path}}/{{making_nm}}">
 				</a>
 			</li>
@@ -223,17 +223,6 @@
             async: false,
             success: function(data) {
 				result = data;
-				var fcb = result.capitalList[0];
-				var scb = result.capitalList[1];
-				console.log(fcb);
-				console.log(scb);
-				// if(result.capitalList[0] == true){
-				// 	fcb.append("<a href='https://www.hanadreamcar.co.kr/mobile/pages/safeCar/info.html?inflow=onethe '><a>")
-				// }else{
-				// 	scb.append("<a href='https://www.hanadreamcar.co.kr/cs/event/detail.hnc?bbsMngeNo=2022072600000001 '><a>")
-				// }
-				// fcb.append("<a href='https://www.hanadreamcar.co.kr/mobile/pages/safeCar/info.html?inflow=onethe '><a>");
-				// scb.append("<a href='https://www.hanadreamcar.co.kr/cs/event/detail.hnc?bbsMngeNo=2022072600000001 '><a>");
             },
             error: function(data) {
                 alert('문제가 발생했습니다. 관리자에게 문의하세요.');

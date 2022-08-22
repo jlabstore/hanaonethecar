@@ -59,7 +59,10 @@ public class BannerController {
                                             HttpServletResponse response, 
                                             String[] pcFileSort,
                                             String[] moFileSort,
+                                            String[] pcFileUrl,
+                                            String[] moFileUrl,
                                             String[] changeSort,
+                                            // String[] imgState,
                                             String[] delIdxs,
                                             @AuthenticationPrincipal Admin admin ){
         Map<String,Object> resultHashMap = new HashMap<String,Object>();
@@ -70,14 +73,14 @@ public class BannerController {
             List<MultipartFile> files = multipartReq.getFiles("pcFiles");
             for (int i = 0; i < files.size() ; i++) {   
                 if(pcFileSort.length > i){
-                    bannerService.setImage(files.get(i), ImageType.MAINPC, pcFileSort[i],admin.getId());
+                    bannerService.setImage(files.get(i), ImageType.MAINPC, pcFileSort[i], pcFileUrl[i], admin.getId());
                 }
             }
             //1-2. 모바일 배너
             List<MultipartFile> mfiles = multipartReq.getFiles("moFiles");
             for (int i = 0; i < mfiles.size() ; i++) {   
                 if(moFileSort.length > i){
-                    bannerService.setImage(mfiles.get(i), ImageType.MAINMOBILE, moFileSort[i], admin.getId());
+                    bannerService.setImage(mfiles.get(i), ImageType.MAINMOBILE, moFileSort[i], moFileUrl[i], admin.getId());
                 }
             }
 
@@ -117,9 +120,9 @@ public class BannerController {
             List<HashMap<String,Object>> getGoodsBanner = bannerService.getGoodsBanner(param);
             if(getGoodsBanner != null){
                 data.put("getGoodsBanner", getGoodsBanner);
-                for(HashMap<String,Object> item : getGoodsBanner) {
+                // for(HashMap<String,Object> item : getGoodsBanner) {
 
-                }
+                // }
             }
         }catch(Exception e){
             e.printStackTrace();

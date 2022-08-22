@@ -9,6 +9,7 @@
             path,
 			making_nm,
             original_nm,
+            url,
             del_yn,
             sort
 		FROM 
@@ -28,6 +29,7 @@
             path,
 			making_nm,
             original_nm,
+            url,
             del_yn,
             sort
 		FROM 

@@ -57,7 +57,7 @@
 			<!-- //feature -->
 			<!-- link -->
 			<div class="link">
-				<a href="https://m.hanacapital.co.kr/cs/telephone/application.hnc?hfgInflow=leasNCar" class="round green"><span>상담 신청하기</span></a>
+				<a href="https://m.hanacapital.co.kr/cs/telephone/application.hnc?hfgInflow=leasNCar" class="round btnFloat green"><span>상담 신청하기</span></a>
 			</div>
 			<!-- //link -->
 		</div>
@@ -282,9 +282,9 @@
 	<!-- //detail -->
 
 	<!-- button -->
-	<div class="bottomLink btnFloat">
+	<%-- <div class="bottomLink">
 		<a href="https://m.hanacapital.co.kr/cs/telephone/application.hnc?hfgInflow=leasNCar" class="box red"><span>상담 신청하기</span></a>
-	</div>
+	</div> --%>
 	<!-- //button -->
 
 </section>

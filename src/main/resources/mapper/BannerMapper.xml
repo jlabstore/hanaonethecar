@@ -9,7 +9,9 @@
             , path
             , original_nm
             , making_nm
+            , url
             , sort
+            <!-- , img_state -->
             , del_yn
             , reg_id
             , reg_dt
@@ -28,6 +30,8 @@
                 ,path
                 ,original_nm
                 ,making_nm
+                <!-- ,img_state -->
+                ,url
                 ,del_yn 
                 ,sort
                 ,reg_dt
@@ -39,6 +43,8 @@
                 ,#{path}
                 ,#{originalFileName}
                 ,#{makingFileName}
+                <!-- ,#{imgState} -->
+                ,#{url}
                 ,'N'
                 ,#{selectSort}
                 ,now()
