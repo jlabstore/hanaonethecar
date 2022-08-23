@@ -56,7 +56,7 @@
 			<!-- //feature -->
 			<!-- link -->
 			<div class="link">
-				<a href="https://m.hanacapital.co.kr/cs/telephone/application.hnc?hfgInflow=rentNCar" class="round green btnFloat"><span>상담 신청하기</span></a>
+				<a href="https://m.hanacapital.co.kr/cs/telephone/application.hnc?hfgInflow=rentNCar" class="round green btnFloat" target="_blank"><span>상담 신청하기</span></a>
 			</div>
 			<!-- //link -->
 		</div>

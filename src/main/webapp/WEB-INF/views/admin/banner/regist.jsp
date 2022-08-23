@@ -161,11 +161,11 @@
             html += '   <span style="padding-left: 20px;" placeholder="url 입력해주세요"> '+itemData.url+'</span>'
             html += '   <span class="badge badge-red" id="xBtn" style="margin-left:10px;" onclick="bannerDelBtn(this,'+itemData.idx+')">x</span>'
         }else{
-            // for(var i =  0 ; i < 3 ; i++){
-            //     html += '   <input type="file" name="'+type+'Files" class="input-file" style="margin-left:20px; width:20%" >';
+            // for(var i =  1 ; i < 4 ; i++){
+            //     html += '   <input type="file" name="'+type+'Files'+i+'" class="input-file" style="margin-left:20px; width:20%" >';
             // }
-            html += '   <input type="file" name="'+type+'Files" class="input-file" style="margin-left:20px; width:20%" >';
-            html += '   <input placeholder="url 입력해주세요" type="text" id="url_'+type+'" name="url_'+type+'"  class="form-control" style="width:20%; display:inline">';
+            html += '   <input type="file" multiple name="'+type+'Files" class="input-file" style="margin-left:20px; width:20%" >';
+            html += '   <input placeholder="url 입력해주세요"  type="text" id="url_'+type+'" name="url_'+type+'"  class="form-control" style="width:20%; display:inline">';
             html += '   <span class="badge badge-red" id="xBtn" style="margin-left:10px;" onclick="bannerDelBtn(this, null)">x</span>';
         }
         
@@ -190,8 +190,11 @@
                 $(e).closest('.banner-item').find('#selectSort_pc').val();
                 $(e).closest('.banner-item').find('#url_pc').val();
                 pcFileSort.push($(e).closest('.banner-item').find('#selectSort_pc').val());
-                pcFileUrl.push($(e).closest('.banner-item').find('#url_pc').val());
-                // imgState.push($(e).closest('.banner-item').find('#url_pc').val())
+                if($(e).closest('.banner-item').find('#url_pc').val() != ''){
+                    pcFileUrl.push($(e).closest('.banner-item').find('#url_pc').val());
+                }else{
+                    pcFileUrl.push(" ");
+                }
             }
         });
         var moFileSort = [];
@@ -200,7 +203,11 @@
             if($(e)[0].files[0] !== undefined && $(e)[0].files[0].size > 0){
                 $(e).closest('.banner-item').find('#selectSort_mo').val();
                 moFileSort.push($(e).closest('.banner-item').find('#selectSort_mo').val());
-                moFileUrl.push($(e).closest('.banner-item').find('#url_mo').val());
+                if($(e).closest('.banner-item').find('#url_mo').val() != ''){
+                    moFileUrl.push($(e).closest('.banner-item').find('#url_mo').val());
+                }else{
+                    moFileUrl.push(" ");
+                }
             }
         });
 

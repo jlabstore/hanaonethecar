@@ -118,7 +118,7 @@
 				<li class="reference">본 홍보물은 법령 및 내부통제기준에 따른 절차를 거쳐 제공됩니다.</li>
 				<li class="reference">본 홍보물은 2023년 7월 31일까지 유효합니다.</li>
 				<li class="reference">하나캐피탈 준법심의필 22-1478(2022.07.22~2023.07.21)</li>
-				<li class="reference">하나카드 준법 심의필 000000-000000</li>
+				<li class="reference">하나카드 준법심의 A-22-1090(2022.08.19 ~ 2023.08.18)</li>
 				<li class="reference">하나은행 준법감시인 심의필 제2022-광고-6286호(2022.08.12) <br>
 				CC브랜드220811-0086</li>
 			</ul>
@@ -132,7 +132,7 @@
 <script id="list-card" type="x-tmpl-mustache">
 	{{#list}}
 			<li>
-				<a href="{{url}}">
+				<a href="{{url}}" target="_blank">
 					<img
 						src="${imagePath}{{path}}/{{making_nm}}" 
 						<%-- srcset="${imagePath}{{path}}/s_{{making_nm}} 320w",
@@ -146,7 +146,7 @@
 <script id="list-capital-card" type="x-tmpl-mustache">
 	{{#capitalList}}
 			<li>
-				<a href="{{url}}">
+				<a href="{{url}}" target="_blank">
 					<img src="${imagePath}{{path}}/{{making_nm}}">
 				</a>
 			</li>

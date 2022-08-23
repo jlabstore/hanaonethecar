@@ -79,7 +79,7 @@ public class BannerController {
             //1-2. 모바일 배너
             List<MultipartFile> mfiles = multipartReq.getFiles("moFiles");
             for (int i = 0; i < mfiles.size() ; i++) {   
-                if(moFileSort.length > i){
+                if(moFileSort.length > i && moFileUrl.length > i){
                     bannerService.setImage(mfiles.get(i), ImageType.MAINMOBILE, moFileSort[i], moFileUrl[i], admin.getId());
                 }
             }

@@ -210,9 +210,8 @@
 
 		</ul><br>
 			<div class="link" style="text-align: center">
-				<a href="m.hanacard.co.kr/MKAMCB4010M.web?from=hfg" class="round green"  style="width: 100%;"><span>오토캐쉬백 신청하기</span></a>
+				<a href="https://m.hanacard.co.kr/MKAMCB4010M.web?from=hfg" class="round green"  style="width: 100%;" target="_blank"><span>오토캐쉬백 신청하기</span></a>
 			</div>
-
 	</div>
 	<!-- //detail -->
 

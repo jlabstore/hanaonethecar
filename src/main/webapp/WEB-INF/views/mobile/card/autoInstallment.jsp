@@ -137,7 +137,7 @@
 			<!-- contact -->
 			<div class="contact">
 				<p class="title">자동차금융 상담센터</p>
-				<p class="exp">평일 09:0 ~ 18:00</p>
+				<p class="exp">평일 09:00 ~ 18:00</p>
 				<a href="tel://18001221">1800-1221</a>
 			</div>
 			<!-- //contact -->
@@ -173,7 +173,7 @@
 						· 상환능력에 비해 대출금이 과도할 경우, 귀하의 신용등급 또는 개인신용평점이 하락할 수 있습니다. <br>
 						· 신용등급 또는 개인신용평점 하락 시 금융거래와 관련된 불이익이 발생할 수 있습니다. <br>
 						· 일정기간 원리금을 연체할 경우, 모든 원리금을 변제할 의무가 발생할 수 있습니다. <br>
-						· 여신금융협회 심의필 제 2022-C1h-02420 호 (2022.03.29 ~ 2023.03.28)</p>
+						· 여신금융협회 심의필 제2022-C1h-02420호 (2022.03.29 ~ 2023.03.28)</p>
 					</div>
 				</div>
 			</li>
@@ -181,7 +181,7 @@
 
 		</ul><br>
 			<div class="link" style="text-align: center">
-				<a href="https://m.hanacard.co.kr/MKAMIN0010M.web" class="round green"  style="width: 100%;"><span>상품안내 및 한도 조회</span></a>
+				<a href="https://m.hanacard.co.kr/MKAMIN0010M.web" class="round green"  style="width: 100%;" target="_blank"><span>상품안내 및 한도 조회</span></a>
 			</div>
 
 	</div>

@@ -139,7 +139,7 @@
 						<strong>· 상환능력에 비해 신용카드 사용액이 과도할 경우, 귀하의 신용등급 또는 개인신용평점이 하락할 수 있습니다. </strong><br>
 						<strong>· 신용등급 또는 개인신용평점 하락 시 금융거래와 관련된 불이익이 발생할 수 있습니다. </strong><br>
 						<strong>· 일정기간 원리금을 연체할 경우, 모든 원리금을 변제할 의무가 발생할 수 있습니다. </strong><br>
-						<strong>· 연체이자율(약정이율 +3%)은 손님별,이용상품별로 차등 적용되며, 법정 최고금리(20%)를 초과하지 않습니다.</strong> <br>
+						<strong>· 연체이자율(약정이율+최대3%)은 손님별,이용상품별로 차등 적용되며, 법정 최고금리(20%)를 초과하지 않습니다.</strong> <br>
 						<strong>· ※단, 연체 발생 시점에 약정이용이 없는 경우 아래와 같이 적용함</strong> <br>
 						<strong> &nbsp 일시불 거래 연체시:거래 발생 시점의 최소 기간(2개월) 유이자 할부금리</strong> <br>
 						<strong> &nbsp 무이자 할부 거래 연체시:거래 발생 시점의 동일한 할부 계약기간의 유이자 할부금리</strong> <br>
@@ -150,7 +150,7 @@
 			<!-- //유의사항 -->
 		</ul><br>
 			<div class="link" style="text-align: center">
-				<a href="https://m.hanacard.co.kr/MKAMCI1020M.web" class="round green" style="width: 100%;"><span>상품안내 및 한도 조회</span></a>
+				<a href="https://m.hanacard.co.kr/MKAMCI1020M.web" class="round green" style="width: 100%;" target="_blank"><span>상품안내 및 한도 조회</span></a>
 			</div>
 	</div>
 	<!-- //detail -->
