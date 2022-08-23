@@ -117,11 +117,11 @@
 		// 하나카드, 하나은행, 하나캐피탈 랜덤 이미지
 		var hanaImg = "";
 		if(randomNm[0] == '하나은행'){
-			hanaImg ="<img src ='/mobile/images/intro/intro_bank_img.png'>"
+			hanaImg ="<img src ='/mobile/images/intro/pcmain-bank.png'>"
 		}else if(randomNm[0] == '하나캐피탈'){
-			hanaImg ="<img src ='/mobile/images/intro/intro_capital_img.png'>"	
+			hanaImg ="<img src ='/mobile/images/intro/pcmain-capital.png'>"	
 		}else if(randomNm[0] == '하나카드'){
-			hanaImg ="<img src ='/mobile/images/intro/intro_card_img.png'>"
+			hanaImg ="<img src ='/mobile/images/intro/pcmain-card.png'>"
 		}
 		$('#randomImg').html(hanaImg);
 	}
