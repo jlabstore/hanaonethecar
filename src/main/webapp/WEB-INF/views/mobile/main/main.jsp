@@ -123,7 +123,7 @@
 		<!-- //capital -->
 		</div>
 			<ul class="dotList">
-				<li class="reference">하나은행은 예금자보호법상 부모금융 기관이나 하나캐피탈, 하나카드는 아닙니다.</li>
+				<li class="reference">하나은행은 예금자보호법상 부보금융 기관이나 하나캐피탈, 하나카드는 아닙니다.</li>
 				<li class="reference">하나금융그룹 관계사는 상호 채무를 보증하지 않습니다.</li>
 				<li class="reference">본 홍보물은 법령 및 내부통제기준에 따른 절차를 거쳐 제공됩니다.</li>
 				<li class="reference">본 홍보물은 2023년 7월 31일까지 유효합니다.</li>
