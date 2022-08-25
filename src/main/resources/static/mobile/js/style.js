@@ -64,8 +64,8 @@ $(function() {
 	// float on bottom
 
 	var $btnFloat = $('.btnFloat');
-	$btnFloat.each(function() {
-		var $btnFloatTop = $(this).offset().top + 50;
+	if ($btnFloat.length) {
+		var $btnFloatTop = $btnFloat.offset().top + 50;
 		$(window).scroll(function(){
 			var $currentScroll = $(this).scrollTop();
 			if($currentScroll > $btnFloatTop){
@@ -73,7 +73,23 @@ $(function() {
 			}else{
 				$btnFloat.removeClass('floatOnBottom');
 			};
-	});
-	});
+		});
+	};
+
+	// land on bottom
+
+	var $btnLand = $('.btnLand').addClass('floatOnTop');
+	var $btnLandDist = 267;
+	if ($btnLand.length) {
+		$(window).scroll(function(){
+			var $btnLandTop = $(document).height() - $(window).height() - $btnLandDist;
+			var $currentScroll = $(this).scrollTop();
+			if($currentScroll > $btnLandTop){
+				$btnLand.removeClass('floatOnTop');
+			}else{
+				$btnLand.addClass('floatOnTop');
+			};
+		});
+	};
 
 });

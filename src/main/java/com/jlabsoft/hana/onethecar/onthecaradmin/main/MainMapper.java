@@ -10,4 +10,6 @@ public interface MainMapper {
     
     public List<Map<String, Object>> getMobileImage();
     public List<Map<String, Object>> getMobileCapitalImage();
+    public List<Map<String, Object>> getMobileBankImage();
+    public List<Map<String, Object>> getMobileCardImage();
 }

@@ -19,5 +19,13 @@ public class MainService {
     public List<Map<String,Object>> getMobileCapitalImage(){
         return mainMapper.getMobileCapitalImage();
     }
+
+    public List<Map<String,Object>> getMobileBankImage(){
+        return mainMapper.getMobileBankImage();
+    }
+
+    public List<Map<String,Object>> getMobileCardImage(){
+        return mainMapper.getMobileCardImage();
+    }
     
 }

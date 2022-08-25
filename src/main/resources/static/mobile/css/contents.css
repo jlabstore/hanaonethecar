@@ -52,7 +52,7 @@ section#body > a.goBack {position: absolute;left: 0;top: 0;width: 56px;height: 6
 .topContent > .summary > .feature > ul > li p.point {line-height: 20px;font-size: 14px;color: #00b2a4;font-weight: 800;padding: 3px 0;}
 .topContent > .summary > .feature > ul > li p.exp {line-height: 17px;font-size: 11px;color: #000;margin-top: 2px;}
 .topContent > .summary > .feature > .info {margin-top: 20px;}
-.topContent > .summary > .link {margin-top: 27px;}
+.topContent > .summary > .link {height: 50px;margin-top: 27px;}
 .topContent > .summary > .link a.round {display: block;margin-bottom: 10px;}
 .topContent > .summary > .link a.round:last-child {margin-bottom: 0;}
 
@@ -104,10 +104,14 @@ section#body > a.goBack {position: absolute;left: 0;top: 0;width: 56px;height: 6
 
 .detailContent {margin: 10px 20px 30px;}
 
+.detailContent .link {height: 50px;margin-top: 18px;}
+.detailContent .link a.round {display: block;margin-bottom: 10px;}
+.detailContent .link a.round:last-child {margin-bottom: 0;}
+
 /* bottom link */
 
 .bottomLink {position: relative;margin: -10px 0 -1px;z-index: 2;}
-.bottomLink a.box {display: block;  background-color: #00b2a4;}
+.bottomLink a.box {display: block; background-color: #00b2a4;}
 
 
 
@@ -155,6 +159,15 @@ button.box span { display:inline-block; display: -moz-inline-stack; zoom:1; *dis
 @keyframes btnShowUp {
 	0%	{transform: translateY(100%);}
 	100%	{transform: translateY(0);}
+}
+
+/* land */
+
+.btnLand.floatOnTop {position: fixed;left: 0;bottom: 0;width: 100%;height: 58px;line-height: 58px;z-index: 9999;
+	-moz-border-radius: 0;
+	-webkit-border-radius: 0;
+	border-radius: 0;
+	animation:  btnShowUp .4s;
 }
 
 ul.btnList {display: flex;}

@@ -18,7 +18,7 @@
     <hr class="sidebar-divider">
 
 
-<c:if test="${user.role == 'BANNER' || user.role == 'CAPITAL'}">
+<c:if test="${user.role == 'BANNER' || user.role == 'CAPITAL' || user.role == 'BANK' || user.role == 'CARD'}">
     <li class="nav-item" id="cardNav">
         <a class="nav-link" href="/admin/banner/regist" >
             <i class="fa-image"></i>

@@ -38,6 +38,10 @@
 					</a>
 				</li>
 			</ul>
+			<div class="row banner">
+				<ul id="bankBannerImg">
+				</ul>
+			</div>
 			<ul class="comment">
 				<li>
 				</li>
@@ -78,6 +82,10 @@
 					</a>
 				</li>
 			</ul>
+			<div class="row banner">
+				<ul id="cardBannerImg">
+				</ul>
+			</div>
 		</div>
 		<!-- //card -->
 		<!-- capital -->
@@ -107,18 +115,20 @@
 			</ul>
 			<!-- banner -->
 			<div class="row banner">
-			<ul id="capitalBannerImg">
-			</ul>
-		</div>
+				<ul id="capitalBannerImg">
+				</ul>
+			</div>
 			<!-- //banner -->
 		</div>
 		<!-- //capital -->
 		</div>
 			<ul class="dotList">
+				<li class="reference">하나은행은 예금자보호법상 부모금융 기관이나 하나캐피탈, 하나카드는 아닙니다.</li>
+				<li class="reference">하나금융그룹 관계사는 상호 채무를 보증하지 않습니다.</li>
 				<li class="reference">본 홍보물은 법령 및 내부통제기준에 따른 절차를 거쳐 제공됩니다.</li>
 				<li class="reference">본 홍보물은 2023년 7월 31일까지 유효합니다.</li>
 				<li class="reference">하나캐피탈 준법심의필 22-1478(2022.07.22~2023.07.21)</li>
-				<li class="reference">하나카드 준법심의 A-22-1090(2022.08.19 ~ 2023.08.18)</li>
+				<li class="reference">하나카드 준법심의필 A-22-1090(2022.08.19 ~ 2023.08.18)</li>
 				<li class="reference">하나은행 준법감시인 심의필 제2022-광고-6286호(2022.08.12) <br>
 				CC브랜드220811-0086</li>
 			</ul>
@@ -152,6 +162,24 @@
 			</li>
 	{{/capitalList}}
 </script>
+<script id="list-bank-card" type="x-tmpl-mustache">
+	{{#bankList}}
+			<li>
+				<a href="{{url}}" target="_blank">
+					<img src="${imagePath}{{path}}/{{making_nm}}">
+				</a>
+			</li>
+	{{/bankList}}
+</script>
+<script id="list-card-card" type="x-tmpl-mustache">
+	{{#cardList}}
+			<li>
+				<a href="{{url}}" target="_blank">
+					<img src="${imagePath}{{path}}/{{making_nm}}">
+				</a>
+			</li>
+	{{/cardList}}
+</script>
 <script type="text/javascript">
 	$(document).ready(function(){
 		submitForm();
@@ -164,6 +192,8 @@
 	var submitForm = function() {
         var result = getMainBannerList();
 		var capitalResult = getCapitalBannerList();
+		var bankResult = getBankBannerList();
+		var cardResult = getCardBannerList();
         if(result != null){
             var list = result.list;
             renderList(list);
@@ -186,6 +216,16 @@
 			var capitalList = capitalResult.capitalList;
 			renderCapitalList(capitalList);
 		}
+
+		if(bankResult != null){
+			var bankList = bankResult.bankList;
+			renderBankList(bankList);
+		}
+
+		if(cardResult != null){
+			var cardList = cardResult.cardList;
+			renderCardList(cardList);
+		}
     };
 		
 	var renderList = function(list) {
@@ -199,6 +239,19 @@
         var rendered = Mustache.render(template, {capitalList: capitalList});
         document.getElementById('capitalBannerImg').innerHTML = rendered;
 	}
+
+	var renderBankList = function(bankList){
+		var template = document.getElementById('list-bank-card').innerHTML;
+        var rendered = Mustache.render(template, {bankList: bankList});
+        document.getElementById('bankBannerImg').innerHTML = rendered;
+	}
+
+	var renderCardList = function(cardList){
+		var template = document.getElementById('list-card-card').innerHTML;
+        var rendered = Mustache.render(template, {cardList: cardList});
+        document.getElementById('cardBannerImg').innerHTML = rendered;
+	}
+	
 
     var getMainBannerList = function(){
 		var result = null; 
@@ -221,6 +274,38 @@
         $.ajax({
             type: 'POST',
             url: '/mobile/capital',
+            async: false,
+            success: function(data) {
+				result = data;
+            },
+            error: function(data) {
+                alert('문제가 발생했습니다. 관리자에게 문의하세요.');
+            }
+        });
+		return result;
+    }
+
+	var getBankBannerList = function(){
+		var result = null; 
+        $.ajax({
+            type: 'POST',
+            url: '/mobile/bank',
+            async: false,
+            success: function(data) {
+				result = data;
+            },
+            error: function(data) {
+                alert('문제가 발생했습니다. 관리자에게 문의하세요.');
+            }
+        });
+		return result;
+    }
+
+	var getCardBannerList = function(){
+		var result = null; 
+        $.ajax({
+            type: 'POST',
+            url: '/mobile/card',
             async: false,
             success: function(data) {
 				result = data;

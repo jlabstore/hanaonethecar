@@ -48,15 +48,14 @@
             <div class="card-body">
                 <div class="form-row">
                     <%-- 배너 관리 - PC --%>
-                    <div class="form-group col-md-12">
+                    <%-- <div class="form-group col-md-12">
                         <h5 style="margin-bottom: 0px;">배너 관리 - PC<span class="btn btn-outline-info" style="margin-left:10px" onclick="setImageFileItemHtml('pc', null)">추가</span></h5><br>
                         <label class="title-label">PC 이미지 등록</label>
                         <div id="draw-list-pc" >
                         </div>
-                        <%-- <input type="text" class="form-control form-control-user" "name=password" placeholder="url"> </div> --%>
-                    </div>
+                    </div> --%>
                     <%-- 배너 관리 - 모바일 --%>
-                    <div class="form-group col-md-12" class="image-item-mo" style="border-top:1px solid gray;"><br>
+                    <div class="form-group col-md-12" class="image-item-mo"><br>
                         <h5 style="margin-bottom: 0px;">배너 관리 - Mobile<span class="btn btn-outline-info" style="margin-left:10px" onclick="setImageFileItemHtml('mo', null)">추가</span></h5><br>
                         <label class="title-label">모바일 이미지 등록</label>
                         <div id="draw-list-mo">
@@ -164,7 +163,7 @@
             // for(var i =  1 ; i < 4 ; i++){
             //     html += '   <input type="file" name="'+type+'Files'+i+'" class="input-file" style="margin-left:20px; width:20%" >';
             // }
-            html += '   <input type="file" multiple name="'+type+'Files" class="input-file" style="margin-left:20px; width:20%" >';
+            html += '   <input type="file" name="'+type+'Files" class="input-file" style="margin-left:20px; width:20%" >';
             html += '   <input placeholder="url 입력해주세요"  type="text" id="url_'+type+'" name="url_'+type+'"  class="form-control" style="width:20%; display:inline">';
             html += '   <span class="badge badge-red" id="xBtn" style="margin-left:10px;" onclick="bannerDelBtn(this, null)">x</span>';
         }

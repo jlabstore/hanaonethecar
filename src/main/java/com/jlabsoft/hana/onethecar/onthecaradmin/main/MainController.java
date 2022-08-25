@@ -88,6 +88,46 @@ public class MainController {
         return result; 
     }
 
+    //mobile bank 배너 가져오기
+    /**
+     * @param request
+     * @param response
+     * @return
+     */
+    @RequestMapping(value = "/mobile/bank",method=RequestMethod.POST)
+    @ResponseBody
+    public Map<String,Object> getMobileBankBannerList(HttpServletRequest request, HttpServletResponse response) {
+        Map<String,Object> result = new HashMap<>();
+
+            List<Map<String,Object>> bankList= mainService.getMobileBankImage();
+        
+            result.put("bankList", bankList);
+        
+        result.put("result", ApiStatus.OK);
+        return result; 
+    }
+
+
+    //mobile card 배너 가져오기
+    /**
+     * @param request
+     * @param response
+     * @return
+     */
+    @RequestMapping(value = "/mobile/card",method=RequestMethod.POST)
+    @ResponseBody
+    public Map<String,Object> getMobileCardBannerList(HttpServletRequest request, HttpServletResponse response) {
+        Map<String,Object> result = new HashMap<>();
+
+            List<Map<String,Object>> cardList= mainService.getMobileCardImage();
+        
+            result.put("cardList", cardList);
+        
+        result.put("result", ApiStatus.OK);
+        return result; 
+    }
+
+
     
 
 }

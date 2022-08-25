@@ -41,5 +41,45 @@
         ORDER BY
             sort DESC 
 	</select>
+
+    <select id="getMobileBankImage" resultType="map">
+        SELECT 
+            idx,
+            type,
+            path,
+			making_nm,
+            original_nm,
+            url,
+            del_yn,
+            sort
+		FROM 
+			banner
+		WHERE
+			type = 'MAINMOBILE'
+            and del_yn = 'N'
+            and reg_id = 'hanabank'
+        ORDER BY
+            sort DESC 
+	</select>
+
+    <select id="getMobileCardImage" resultType="map">
+        SELECT 
+            idx,
+            type,
+            path,
+			making_nm,
+            original_nm,
+            url,
+            del_yn,
+            sort
+		FROM 
+			banner
+		WHERE
+			type = 'MAINMOBILE'
+            and del_yn = 'N'
+            and reg_id = 'hanacard'
+        ORDER BY
+            sort DESC 
+	</select>
     
 </mapper>

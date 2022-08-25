@@ -143,14 +143,14 @@
 						<strong>· ※단, 연체 발생 시점에 약정이용이 없는 경우 아래와 같이 적용함</strong> <br>
 						<strong> &nbsp 일시불 거래 연체시:거래 발생 시점의 최소 기간(2개월) 유이자 할부금리</strong> <br>
 						<strong> &nbsp 무이자 할부 거래 연체시:거래 발생 시점의 동일한 할부 계약기간의 유이자 할부금리</strong> <br>
-						· 준법심의 A-22-1053(2022.08.10 ~ 2023.08.09)
+						· 준법심의필 A-22-1053(2022.08.10 ~ 2023.08.09)
 					</div>
 				</div>
 			</li>
 			<!-- //유의사항 -->
 		</ul><br>
-			<div class="link" style="text-align: center">
-				<a href="https://m.hanacard.co.kr/MKAMCI1020M.web" class="round green" style="width: 100%;" target="_blank"><span>상품안내 및 한도 조회</span></a>
+			<div class="link " style="text-align: center">
+				<a href="https://m.hanacard.co.kr/MKAMCI1020M.web" class="round green btnLand" style="width: 100%;" target="_blank"><span>상품안내 및 한도 조회</span></a>
 			</div>
 	</div>
 	<!-- //detail -->

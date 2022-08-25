@@ -61,7 +61,7 @@
 			<!-- //feature -->
 			<!-- link -->
 			<div class="link">
-				<a href="https://m.hanabank.com/cont/mybranch/0978/03/MYB09780016180/index.html" class="round green" target="_blank"><span>한도 조회 하기</span></a>
+				<a href="https://m.hanabank.com/cont/mybranch/0978/03/MYB09780016180/index.html" class="round btnFloat green" target="_blank"><span>한도 조회 하기</span></a>
 			</div>
 			<!-- //link -->
 		</div>
@@ -348,9 +348,9 @@
 	<!-- //detail -->
 
 	<!-- button -->
-	<div class="bottomLink">
-		<a href="https://m.hanabank.com/cont/mybranch/0978/03/MYB09780016180/index.html" class="box red" target="_blank"><span>한도 조회 하기</span></a>
-	</div>
+	<%-- <div class="bottomLink">
+		<a href="https://m.hanabank.com/cont/mybranch/0978/03/MYB09780016180/index.html" class="box red green" target="_blank"><span>한도 조회 하기</span></a>
+	</div> --%>
 	<!-- //button -->
 
 </section>
