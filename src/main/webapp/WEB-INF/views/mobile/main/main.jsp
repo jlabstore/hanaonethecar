@@ -184,7 +184,7 @@
 	$(document).ready(function(){
 		submitForm();
 		randomTab();
-		// checkPcAndMobile();
+		checkPcAndMobile();
 		$('#classId').addClass('main');
 		$('#header').append("<h2><a href='/m/main'>하나원더카</a></h2>");
 	});
@@ -370,8 +370,8 @@
 			if(0 < filterOs.indexOf(navigator.platform.toLowerCase())){				
 					//PC 
 					location.href ="/intro";
-			}	  			    				    			
-		}	
+			} 			    				    			
+		}
 	};
 
 </script>
