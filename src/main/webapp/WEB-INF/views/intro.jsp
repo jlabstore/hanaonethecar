@@ -91,6 +91,7 @@
 <script type="text/javascript">
 	$(document).ready(function(){
 		radomDivImg();
+		checkPcAndMobile();
 	});	
 
 
@@ -126,5 +127,18 @@
 		}
 		$('#randomImg').html(hanaImg);
 	}
+
+	function checkPcAndMobile(){
+		//운영체제 종류 선언
+		var filterOs = "win16|win32|win64|mac|macintel";
+		
+		//PC 및 모바일 접속 체크
+		if ( navigator.platform ) {
+			if ( filterOs.indexOf(navigator.platform.toLowerCase()) < 0 ) {
+				location.href="/m/main";
+			} 
+    	}
+	};
+
 </script>
 </html>

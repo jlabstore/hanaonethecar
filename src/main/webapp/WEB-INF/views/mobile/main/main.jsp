@@ -372,6 +372,7 @@
 					location.href ="/intro";
 			} 			    				    			
 		}
+		
 	};
 
 </script>
