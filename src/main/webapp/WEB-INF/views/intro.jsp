@@ -8,13 +8,13 @@
 <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1">
 <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
 <meta name="author" content="jlab">
-<meta name="keywords" content="키워드">
-<meta name="description" content="사이트 설명">
+<meta name="keywords" content="하나원더카">
+<meta name="description" content="자동차 금융의 모든것, 하나원더카">
 <meta property="og:type" content="website">
 <meta property="og:title" content="하나원더카">
-<meta property="og:description" content="사이트 설명">
-<meta property="og:image" content="/opengraph.jpg">
-<meta property="og:url" content="http://its.ideepop.com">
+<meta property="og:description" content="자동차 금융의 모든것, 하나원더카">
+<meta property="og:image" content="/mobile/images/thumb-hanaonethecar.png">
+<meta property="og:url" content="https://hanaonethecar.com/">
 <meta http-equiv="imagetoolbar" content="no">
 <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
 <title>하나원더카</title>
@@ -55,7 +55,7 @@
 		<!-- qr code -->
 		<div class="qr">
 			<p class="img" ><img src="/mobile/images/intro/qr_code.png" alt="하나 원더카 QR코드"></p>
-			<a href="#">모바일 웹 QR코드</a>
+			<%-- <a href="#">모바일 웹 QR코드</a> --%>
 		</div>
 		<!-- //qr code -->
 		<!-- notify -->
