@@ -9,9 +9,12 @@
             , path
             , original_nm
             , making_nm
+            , original_nm2
+            , making_nm2
+            , original_nm3
+            , making_nm3
             , url
             , sort
-            <!-- , img_state -->
             , del_yn
             , reg_id
             , reg_dt
@@ -30,7 +33,10 @@
                 ,path
                 ,original_nm
                 ,making_nm
-                <!-- ,img_state -->
+                ,original_nm2
+                ,making_nm2
+                ,original_nm3
+                ,making_nm3
                 ,url
                 ,del_yn 
                 ,sort
@@ -43,7 +49,10 @@
                 ,#{path}
                 ,#{originalFileName}
                 ,#{makingFileName}
-                <!-- ,#{imgState} -->
+                ,#{originalFileName2}
+                ,#{makingFileName2}
+                ,#{originalFileName3}
+                ,#{makingFileName3}
                 ,#{url}
                 ,'N'
                 ,#{selectSort}

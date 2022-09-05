@@ -30,6 +30,9 @@
     padding-bottom : 10px;
 }
 </style>
+<%-- <script>
+console.log("bannerType:",'${bannerType}')
+</script> --%>
 <div class="container-fluid" style="min-width: 1000px; margin-left: unset;">
     <div style="
         display: flex;
@@ -68,6 +71,7 @@
 </div>
 <script type="text/javascript">
     var delIdxs = [];
+    var bannerType = '${bannerType}';
     $(document).ready(function(){
     
         // document.getElementById("mainPCFiles").addEventListener("change", e => {
@@ -125,7 +129,7 @@
             },
             complete : function(){
                 if($('[name=banner-item-pc]').length == 0){
-                    setImageFileItemHtml('pc', null);
+                    setImageFileItemHtml('pc', null );
                 }
                 if($('[name=banner-item-mo]').length == 0){
                     setImageFileItemHtml('mo', null);
@@ -155,17 +159,21 @@
 
         //image file
         if(itemData != null){
-            html += '   <span style="padding-left: 20px;"> '+itemData.original_nm+'</span>'
-            // html += '   <span style="padding-left: 20px;"> '+itemData.original_nm+'</span>'
-            html += '   <span style="padding-left: 20px;" placeholder="url 입력해주세요"> '+itemData.url+'</span>'
-            html += '   <span class="badge badge-red" id="xBtn" style="margin-left:10px;" onclick="bannerDelBtn(this,'+itemData.idx+')">x</span>'
+                html += '<span style="padding-left: 20px;"> '+itemData.original_nm+'</span>'
+            if(bannerType == 'BANNER' ){
+                html += '<span style="padding-left: 20px;"> '+itemData.original_nm2+'</span>'
+                html += '<span style="padding-left: 20px;"> '+itemData.original_nm3+'</span>'
+            }
+                html += '<span style="padding-left: 20px;" placeholder="url 입력해주세요"> '+itemData.url+'</span>'
+                html += '<span class="badge badge-red" id="xBtn" style="margin-left:10px;" onclick="bannerDelBtn(this,'+itemData.idx+')">x</span>'
         }else{
-            // for(var i =  1 ; i < 4 ; i++){
-            //     html += '   <input type="file" name="'+type+'Files'+i+'" class="input-file" style="margin-left:20px; width:20%" >';
-            // }
-            html += '   <input type="file" name="'+type+'Files" class="input-file" style="margin-left:20px; width:20%" >';
-            html += '   <input placeholder="url 입력해주세요"  type="text" id="url_'+type+'" name="url_'+type+'"  class="form-control" style="width:20%; display:inline">';
-            html += '   <span class="badge badge-red" id="xBtn" style="margin-left:10px;" onclick="bannerDelBtn(this, null)">x</span>';
+                html += '<input type="file" name="'+type+'Files" class="input-file" style="margin-left:20px; width:20%" >';
+            if(bannerType == 'BANNER' ){
+                html += '<input type="file" name="'+type+'Files2" class="input-file" style="margin-left:20px; width:20%" >';
+                html += '<input type="file" name="'+type+'Files3" class="input-file" style="margin-left:20px; width:20%" >';
+            }
+                html += '   <input placeholder="url 입력해주세요"  type="text" id="url_'+type+'" name="url_'+type+'"  class="form-control" style="width:20%; display:inline">';
+                html += '   <span class="badge badge-red" id="xBtn" style="margin-left:10px;" onclick="bannerDelBtn(this, null)">x</span>';
         }
         
 
@@ -176,26 +184,24 @@
 
     //배너 저장
     var saveBanner = function(){
-    
+
         var formdata = new FormData($("#registForm")[0]);
 
         //신규 이미지 등록건
-
-        // var imgState = [];
-        var pcFileSort = [];
-        var pcFileUrl = [];
-        $('input[name=pcFiles]').each(function(i,e){
-            if($(e)[0].files[0] !== undefined && $(e)[0].files[0].size > 0){
-                $(e).closest('.banner-item').find('#selectSort_pc').val();
-                $(e).closest('.banner-item').find('#url_pc').val();
-                pcFileSort.push($(e).closest('.banner-item').find('#selectSort_pc').val());
-                if($(e).closest('.banner-item').find('#url_pc').val() != ''){
-                    pcFileUrl.push($(e).closest('.banner-item').find('#url_pc').val());
-                }else{
-                    pcFileUrl.push(" ");
-                }
-            }
-        });
+        // var pcFileSort = [];
+        // var pcFileUrl = [];
+        // $('input[name=pcFiles]').each(function(i,e){
+        //     if($(e)[0].files[0] !== undefined && $(e)[0].files[0].size > 0){
+        //         $(e).closest('.banner-item').find('#selectSort_pc').val();
+        //         $(e).closest('.banner-item').find('#url_pc').val();
+        //         pcFileSort.push($(e).closest('.banner-item').find('#selectSort_pc').val());
+        //         if($(e).closest('.banner-item').find('#url_pc').val() != ''){
+        //             pcFileUrl.push($(e).closest('.banner-item').find('#url_pc').val());
+        //         }else{
+        //             pcFileUrl.push(" ");
+        //         }
+        //     }
+        // });
         var moFileSort = [];
         var moFileUrl = [];
         $('input[name=moFiles]').each(function(i,e){
@@ -210,11 +216,10 @@
             }
         });
 
-        formdata.append('pcFileSort', pcFileSort);
+        // formdata.append('pcFileSort', pcFileSort);
+        // formdata.append('pcFileUrl',pcFileUrl);
         formdata.append('moFileSort',moFileSort);
-        formdata.append('pcFileUrl',pcFileUrl);
         formdata.append('moFileUrl',moFileUrl);
-        // formdata.append('imgState', imgState);
 
         //기존 이미지 정렬 변경건 
         var changeSort = [];
@@ -227,23 +232,23 @@
 
         //기존 이미지 삭제건 
         formdata.append('delIdxs',delIdxs);
-        
-            $.ajax({
-                type: 'POST',
-                url: '/admin/banner/saveBanner',
-                enctype: 'multipart/form-data',  
-                processData: false,    
-                contentType: false,  
-                data: formdata,
-                async: false,
-                success: function(data) {
-                    alert("저장되었습니다.");
-                    location.reload();
-                },
-                error:function(data) {
-                    alert('문제가 발생했습니다. 관리자에게 문의하세요.');
-                }
-            });
+
+        $.ajax({
+            type: 'POST',
+            url: '/admin/banner/saveBanner',
+            enctype: 'multipart/form-data',  
+            processData: false,    
+            contentType: false,  
+            data: formdata,
+            async: false,
+            success: function(data) {
+                alert("저장되었습니다.");
+                location.reload();
+            },
+            error:function(data) {
+                alert('문제가 발생했습니다. 관리자에게 문의하세요.');
+            }
+        });
     }
 
     //배너 삭제

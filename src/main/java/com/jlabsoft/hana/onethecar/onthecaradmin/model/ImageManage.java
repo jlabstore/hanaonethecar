@@ -13,8 +13,11 @@ public class ImageManage {
     private String path;
     private String originalFileName;
     private String makingFileName;
+    private String originalFileName2;
+    private String makingFileName2;
+    private String originalFileName3;
+    private String makingFileName3;
     private String url;
-    private String imgState;
     private String delYn;
     private int selectSort;
     private String regId;

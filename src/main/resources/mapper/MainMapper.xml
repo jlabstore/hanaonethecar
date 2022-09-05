@@ -9,6 +9,10 @@
             path,
 			making_nm,
             original_nm,
+            making_nm2,
+            original_nm2,
+            making_nm3,
+            original_nm3,
             url,
             del_yn,
             sort

@@ -145,9 +145,9 @@
 				<a href="{{url}}" target="_blank">
 					<img
 						src="${imagePath}{{path}}/{{making_nm}}" 
-						<%-- srcset="${imagePath}{{path}}/s_{{making_nm}} 320w",
-							${imagePath}{{path}}/m_{{making_nm}} 480w,
-							${imagePath}{{path}}/l_{{making_nm}} 800w --%>
+						srcset="${imagePath}{{path}}/{{making_nm}} 1000w,
+							${imagePath}{{path}}/{{making_nm2}} 2000w,
+							${imagePath}{{path}}/{{making_nm3}} 3000w"
 					>
 				</a>
 			</li>

@@ -1,6 +1,7 @@
 package com.jlabsoft.hana.onethecar.onthecaradmin.admin.banner;
 
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -40,22 +41,42 @@ public class BannerService {
      * @param imageType : 이미지 타입 (null 허용)
      * @param param
      */
-    public void setImage(MultipartFile file, ImageType imageType, String sort, String url, String userId){
+    public void setImage(MultipartFile file, MultipartFile file2, MultipartFile file3, ImageType imageType, String sort, String url, String userId){
         String filePath =  imageType != null ? "/" + imageType.getValue() : "" ;
 
         if(!"".equals(file.getOriginalFilename())){
             try{
 
                 List<String> fileNames = FileUtil.fileUpload(file, fileUploadPath + "/" + filePath);
-
+                List<String> fileNames2 = new ArrayList<>();
+                List<String> fileNames3 = new ArrayList<>();
+                if(file2 != null){
+                    fileNames2 = FileUtil.fileUpload(file2, fileUploadPath + "/" + filePath);
+                }
+                if(file3 != null){
+                    fileNames3 = FileUtil.fileUpload(file3, fileUploadPath + "/" + filePath);
+                }
                 if(fileNames.size() > 0){
                     ImageManage imageManage = new ImageManage();
                     imageManage.setType(imageType != null ? imageType.name() : null);
                     imageManage.setPath(filePath);
                     imageManage.setOriginalFileName(fileNames.get(0));
                     imageManage.setMakingFileName(fileNames.get(1));
+                    if(fileNames2.size() > 0){
+                        imageManage.setOriginalFileName2(fileNames2.get(0));
+                        imageManage.setMakingFileName2(fileNames2.get(1));
+                    }else{
+                        imageManage.setOriginalFileName2("");
+                        imageManage.setMakingFileName2("");
+                    }   
+                    if(fileNames3.size() > 0){
+                        imageManage.setOriginalFileName3(fileNames3.get(0));
+                        imageManage.setMakingFileName3(fileNames3.get(1));
+                    }else{
+                        imageManage.setOriginalFileName3("");
+                        imageManage.setMakingFileName3("");
+                    }   
                     imageManage.setUrl(url.toString());
-                    // imageManage.setImgState(imgState.toString());
                     imageManage.setDelYn("N");
                     imageManage.setSelectSort(Integer.parseInt(sort));
                     imageManage.setRegId(userId);

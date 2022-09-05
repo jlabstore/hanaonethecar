@@ -38,11 +38,15 @@ public class BannerController {
             String views = "";
             if("BANNER".equals(admin.getRole())){
                 views = "메인배너 관리자";
-
             }else if("CAPITAL".equals(admin.getRole())){
                 views = "하나캐피탈";
+            }else if("BANK".equals(admin.getRole())){
+                views = "하나은행";
+            }else if("CARD".equals(admin.getRole())){
+                views = "하나카드";
             }
             mav.addObject("topMenuName", views);
+            mav.addObject("bannerType", admin.getRole());
             mav.addObject("idx", idx);
         }catch(Exception e){
             e.printStackTrace();
@@ -62,7 +66,6 @@ public class BannerController {
                                             String[] pcFileUrl,
                                             String[] moFileUrl,
                                             String[] changeSort,
-                                            // String[] imgState,
                                             String[] delIdxs,
                                             @AuthenticationPrincipal Admin admin ){
         Map<String,Object> resultHashMap = new HashMap<String,Object>();
@@ -70,17 +73,19 @@ public class BannerController {
         try{
             //1. 새로운 이미지 등록 
             //1-1. PC배너
-            List<MultipartFile> files = multipartReq.getFiles("pcFiles");
-            for (int i = 0; i < files.size() ; i++) {   
-                if(pcFileSort.length > i){
-                    bannerService.setImage(files.get(i), ImageType.MAINPC, pcFileSort[i], pcFileUrl[i], admin.getId());
-                }
-            }
+            // List<MultipartFile> files = multipartReq.getFiles("pcFiles");
+            // for (int i = 0; i < files.size() ; i++) {   
+            //     if(pcFileSort.length > i){
+            //         bannerService.setImage(files.get(i), ImageType.MAINPC, pcFileSort[i], pcFileUrl[i], admin.getId());
+            //     }
+            // }
             //1-2. 모바일 배너
             List<MultipartFile> mfiles = multipartReq.getFiles("moFiles");
+            List<MultipartFile> mfiles2 = multipartReq.getFiles("moFiles2");
+            List<MultipartFile> mfiles3 = multipartReq.getFiles("moFiles3");
             for (int i = 0; i < mfiles.size() ; i++) {   
                 if(moFileSort.length > i && moFileUrl.length > i){
-                    bannerService.setImage(mfiles.get(i), ImageType.MAINMOBILE, moFileSort[i], moFileUrl[i], admin.getId());
+                    bannerService.setImage(mfiles.get(i), mfiles2.size() > i ?  mfiles2.get(i) : null, mfiles3.size() > i ? mfiles3.get(i): null, ImageType.MAINMOBILE, moFileSort[i], moFileUrl[i], admin.getId());
                 }
             }
 
@@ -120,9 +125,6 @@ public class BannerController {
             List<HashMap<String,Object>> getGoodsBanner = bannerService.getGoodsBanner(param);
             if(getGoodsBanner != null){
                 data.put("getGoodsBanner", getGoodsBanner);
-                // for(HashMap<String,Object> item : getGoodsBanner) {
-
-                // }
             }
         }catch(Exception e){
             e.printStackTrace();

@@ -34,9 +34,6 @@
 <section id="intro">
 
 	<!-- mobile img -->
-	<%-- <div class="mobile">
-		<p class="img"><img src="/mobile/images/intro/mobile_img.png" alt="하나원더카 모바일"></p>
-	</div> --%>
 	<div class="mobile" id="radomDivImg">
 		<p class="img"  id="randomImg" ><img  src="/mobile/images/intro/mobile_img.png" alt="하나원더카 모바일"></p>
 	</div>
@@ -55,7 +52,7 @@
 		<!-- qr code -->
 		<div class="qr">
 			<p class="img" ><img src="/mobile/images/intro/qr_code.png" alt="하나 원더카 QR코드"></p>
-			<%-- <a href="#">모바일 웹 QR코드</a> --%>
+			<a>모바일 웹 QR코드</a>
 		</div>
 		<!-- //qr code -->
 		<!-- notify -->
@@ -137,7 +134,7 @@
 			if ( filterOs.indexOf(navigator.platform.toLowerCase()) < 0 ) {
 				location.href="/m/main";
 			} 
-    	}
+		}
 	};
 
 </script>
