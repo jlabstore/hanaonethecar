@@ -5,15 +5,12 @@
 <!doctype html>
 <html>
 <head>
-<%-- 구글 애널리틱스 코드 --%>
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-ZVPF4G60ZP"></script> 
-<script> 
-	window.dataLayer = window.dataLayer || []; 
-	function gtag(){
-			dataLayer.push(arguments);
-		} gtag('js', new Date()); 
-		gtag('config', 'G-ZVPF4G60ZP'); 
+<!-- Google Tag Manager -->
+<script>
+	(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start': new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0], j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})
+	(window,document,'script','dataLayer','GTM-58JV3WD');
 </script>
+<!-- End Google Tag Manager -->
 <%-- 구글/네이버 검색도구 인증코드 --%>
 <meta name="naver-site-verification" content="9b4d19f2757570f95d15ce859c28142dfb1cb3a3" />
 <meta name="google-site-verification" content="IiYZPIny8e0azp4FCSEwpIoDbVMm8_udYkKO9jmD9GE" />
@@ -40,6 +37,9 @@
 <script src="/mobile/js/jquery.flexslider-min.js"></script>
 <script src="/mobile/js/style.js"></script>
 </head>
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-58JV3WD" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
 <body class="intro">
 
 <div id="wrap">

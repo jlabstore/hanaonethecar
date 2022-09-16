@@ -234,13 +234,6 @@
 
 	</div>
 	<!-- //detail -->
-
-	<!-- button -->
-	<%-- <div class="bottomLink btnFloat">
-		<a href="https://m.hanacapital.co.kr/car/info/used-car-loan.hnc?hfgInflow=loanUCar&gostate=N" class="box red"><span>한도 조회하기</span></a>
-	</div> --%>
-	<!-- //button -->
-
 </section>
     <!-- //main -->
     </div>

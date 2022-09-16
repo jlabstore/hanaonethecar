@@ -1,13 +1,10 @@
 <%@ page language="java" contentType="text/html; charset=utf-8" pageEncoding="utf-8"%>
-<%-- 구글 애널리틱스 코드 --%>
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-ZVPF4G60ZP"></script> 
-<script> window.dataLayer = window.dataLayer || []; 
-    function gtag(){
-        dataLayer.push(arguments);
-    } 
-    gtag('js', new Date()); gtag('config', 'G-ZVPF4G60ZP'); 
+<!-- Google Tag Manager -->
+<script>
+	(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start': new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0], j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})
+	(window,document,'script','dataLayer','GTM-58JV3WD');
 </script>
-<%-- 구글/네이버 검색도구 인증코드 --%>
+<!-- End Google Tag Manager -->
 <meta name="naver-site-verification" content="9b4d19f2757570f95d15ce859c28142dfb1cb3a3" />
 <meta name="google-site-verification" content="IiYZPIny8e0azp4FCSEwpIoDbVMm8_udYkKO9jmD9GE" />
 

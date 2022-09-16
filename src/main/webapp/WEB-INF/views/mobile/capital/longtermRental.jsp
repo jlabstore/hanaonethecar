@@ -211,18 +211,7 @@
 
 	</div>
 	<!-- //detail -->
-
-	<!-- button -->
-	<%-- <div class="bottomLink btnFloat">
-		<a href="https://m.hanacapital.co.kr/cs/telephone/application.hnc?hfgInflow=rentNCar" class="box red"><span>상담 신청하기</span></a>
-	</div> --%>
-	<!-- //button -->
-
 </section>
-
-
-
-
 
     <!-- //main -->
     </div>

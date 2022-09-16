@@ -81,13 +81,6 @@
 				</div>
 				<!-- //금리 -->
 			</div>
-			<!-- //category -->
-			<!-- link -->
-			<%-- <div class="link">
-				<a href="#" class="round green"><span>한도 조회 하기</span></a>
-			</div> --%>
-			<!-- //link -->
-			<!-- process -->
 			<div class="process">
 				<p class="title">빠르고 간편한 내 차 구매 프로세스</p>
 				<ul>
@@ -104,10 +97,6 @@
 				<p class="exp">평일 09:00 ~ 18:00</p>
 				<a href="tel://18001221">1800-1221</a>
 			</div>
-			<!-- //contact -->
-			<%-- <div class="link" style="text-align: center">
-				<a href="#" class="round green" ><span>상품안내 및 한도 조회</span></a>
-			</div> --%>
 		</div>
 		<!-- //summary -->
 

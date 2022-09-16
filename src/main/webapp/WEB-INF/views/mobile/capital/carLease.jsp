@@ -280,13 +280,6 @@
 
 	</div>
 	<!-- //detail -->
-
-	<!-- button -->
-	<%-- <div class="bottomLink">
-		<a href="https://m.hanacapital.co.kr/cs/telephone/application.hnc?hfgInflow=leasNCar" class="box red"><span>상담 신청하기</span></a>
-	</div> --%>
-	<!-- //button -->
-
 </section>
     <!-- //main -->
     </div>

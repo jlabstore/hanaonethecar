@@ -233,12 +233,6 @@
 
 	</div>
 	<!-- //detail -->
-
-	<!-- button -->
-	<%-- <div class="bottomLink">
-		<a href="https://m.hanabank.com/cont/mybranch/0978/03/MYB09780018170/index.html" class="box red" target="_blank"><span>한도 조회 하기</span></a>
-	</div> --%>
-	<!-- //button -->
 	</section>
     <!-- //main -->
     </div>
