@@ -67,13 +67,13 @@
 						<p class="link">상품 상세 보기</p>
 					</a>
 				</li>
-				<li class="auto_loan">
+				<%-- <li class="auto_loan">
 					<a href="card/autoLoan">
 						<p class="title">오토론</p>
 						<p class="exp"><strong>하나카드 없이도 빠르고 간편한</strong><br>신차구입방법!</p>
 						<p class="link">상품 상세 보기</p>
 					</a>
-				</li>
+				</li> --%>
 				<li class="auto_cashback">
 					<a href="card/autoCashback">
 						<p class="title">오토캐쉬백</p>
@@ -184,7 +184,7 @@
 	$(document).ready(function(){
 		submitForm();
 		randomTab();
-		checkPcAndMobile();
+		//checkPcAndMobile();
 		$('#classId').addClass('main');
 		$('#header').append("<h2><a href='/m/main'>하나원더카</a></h2>");
 	});

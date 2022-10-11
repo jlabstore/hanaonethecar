@@ -61,7 +61,7 @@
 			<!-- //feature -->
 			<!-- link -->
 			<div class="link">
-				<a href="https://m.hanabank.com/cont/mybranch/0978/03/MYB09780016180/index.html" class="round btnFloat green" target="_blank"><span>한도 조회 하기</span></a>
+				<a href="https://m.hanabank.com/cont/mybranch/0978/03/MYB09780016180/index.html" class="bankOneQ round btnFloat green " target="_blank"><span>한도 조회 하기</span></a>
 			</div>
 			<!-- //link -->
 		</div>

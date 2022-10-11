@@ -68,13 +68,11 @@
 								<td class="title" id="month5">${autocardInstallment.month5}개월</td>
 								<td class="title" id="month6">${autocardInstallment.month6}개월</td>
 								<td class="title" id="month7">${autocardInstallment.month7}개월</td>
-								<%-- <td class="title" id="month8">${autocardInstallment.month8}개월</td> --%>
 							</tr>
 							<tr>
 								<td class="rateEmp" id="rate5">${autocardInstallment.rate5}%</td>
 								<td class="rateEmp" id="rate6">${autocardInstallment.rate6}%</td>
 								<td class="rateEmp" id="rate7">${autocardInstallment.rate7}%</td>
-								<%-- <td class="rateEmp" id="rate8">${autocardInstallment.rate8}%</td> --%>
 							</tr>
 						</table>
 					</div>
@@ -139,7 +137,7 @@
 			<!-- //유의사항 -->
 		</ul><br>
 			<div class="link " style="text-align: center">
-				<a href="https://m.hanacard.co.kr/MKAMCI1020M.web" class="round green btnLand" style="width: 100%;" target="_blank"><span>상품안내 및 한도 조회</span></a>
+				<a href="https://m.hanacard.co.kr/MKAMCI1020M.web" class="cardCardInstallment round green btnLand" style="width: 100%;" target="_blank"><span>상품안내 및 한도 조회</span></a>
 			</div>
 	</div>
 	<!-- //detail -->

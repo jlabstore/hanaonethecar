@@ -14,7 +14,6 @@
             type = #{type}
     </select>
 
-
 	<!-- 오토캐쉬백 -->
     <select id="getCashBackDetail" resultType="HashMap" parameterType="HashMap">
         SELECT

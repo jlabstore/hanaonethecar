@@ -109,7 +109,7 @@
 
 		</ul><br>
 			<div class="link" style="text-align: center">
-				<a href="https://m.hanacard.co.kr/MKAMLO0010M.web" class="round green btnLand"  style="width: 100%;" target="_blank"><span>상품안내 및 한도 조회</span></a>
+				<a href="https://m.hanacard.co.kr/MKAMLO0010M.web" class="cardAutoLoan round green btnLand"  style="width: 100%;" target="_blank"><span>상품안내 및 한도 조회</span></a>
 			</div>
 	</div>
 </section>

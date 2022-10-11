@@ -56,7 +56,7 @@
 			<!-- //feature -->
 			<!-- link -->
 			<div class="link">
-				<a href="https://m.hanacapital.co.kr/car/info/used-car-loan.hnc?hfgInflow=loanUCar&gostate=N" class="round green btnFloat" target="_blank"><span>한도 조회하기</span></a>
+				<a href="https://m.hanacapital.co.kr/car/info/used-car-loan.hnc?hfgInflow=loanUCar&gostate=N" class="capitalUsedCar round green btnFloat" target="_blank"><span>한도 조회하기</span></a>
 			</div>
 			<!-- //link -->
 		</div>

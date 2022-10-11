@@ -53,14 +53,13 @@
 						<p class="icon"><img src="/mobile/images/common/icon-sellcar@2x.png" alt="무료 보험 혜택"></p>
 						<p class="title">무료 보험 혜택</p>
 						<p class="con">교통사고 재해보험<br>가입!</p>
-						<%-- <p class="exp">대상차량 : 전기차, 전기수소차,하이브리드 차량</p> --%>
 					</li>
 				</ul>
 			</div>
 			<!-- //feature -->
 			<!-- link -->
 			<div class="link">
-				<a href="https://m.hanabank.com/cont/mybranch/0978/03/MYB09780018170/index.html" class="round btnFloat green" target="_blank"><span>한도 조회 하기</span></a>
+				<a href="https://m.hanabank.com/cont/mybranch/0978/03/MYB09780018170/index.html" class="bankEv round btnFloat green" target="_blank"><span>한도 조회 하기</span></a>
 			</div>
 			<!-- //link -->
 		</div>

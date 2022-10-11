@@ -5,6 +5,11 @@
 	(window,document,'script','dataLayer','GTM-58JV3WD');
 </script>
 <!-- End Google Tag Manager -->
+<!-- Google tag (gtag.js) --> 
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-ZVPF4G60ZP"></script> 
+<script> 
+	window.dataLayer = window.dataLayer || []; function gtag(){dataLayer.push(arguments);} gtag('js', new Date()); gtag('config', 'G-ZVPF4G60ZP'); 
+</script>
 <meta name="naver-site-verification" content="9b4d19f2757570f95d15ce859c28142dfb1cb3a3" />
 <meta name="google-site-verification" content="IiYZPIny8e0azp4FCSEwpIoDbVMm8_udYkKO9jmD9GE" />
 
