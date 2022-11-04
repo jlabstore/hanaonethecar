@@ -29,7 +29,9 @@
         SELECT 
             goods_id,
             low_rate,
-            high_rate
+            high_rate,
+            low_redemption_period,
+            high_redemption_period
 		FROM 
 			capital_rate
 		WHERE

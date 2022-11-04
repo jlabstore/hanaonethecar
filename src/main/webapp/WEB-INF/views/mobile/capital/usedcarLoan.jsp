@@ -49,7 +49,7 @@
 					<li>
 						<p class="icon"><img src="/mobile/images/common/icon-duration@2x.png" alt="상환기간"></p>
 						<p class="title">상환기간</p>
-						<p class="con">3~60개월</p>
+						<span class="con" id="lowRedemptionPeriod">24</span><span class="con">~<span><span id="highRedemptionPeriod" class="con">60</span><span class="con">개월</span>
 					</li>
 				</ul>
 			</div>
@@ -254,10 +254,14 @@
 				var temp = data.list != null ? true : false;
 				var lowRate = temp ? data.list.low_rate : "";
 				var highRate = temp ? data.list.high_rate : "";
+				var lowRedemptionPeriod = temp ? data.list.low_redemption_period : "";
+				var highRedemptionPeriod = temp ? data.list.high_redemption_period : "";
 
 				$('#lowRateb').text(lowRate);
 				$('#lowRate').text(lowRate);
 				$('#highRate').text(highRate); 
+				$('#lowRedemptionPeriod').text(lowRedemptionPeriod); 
+				$('#highRedemptionPeriod').text(highRedemptionPeriod); 
             },
             error: function(data) {
                 alert('문제가 발생했습니다. 관리자에게 문의하세요.');

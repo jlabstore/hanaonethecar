@@ -79,7 +79,7 @@
 				<div class="cashback">
 					<div class="type">
 						<div class="top">
-							<p class="sub">더블 캐쉬백 혜택</p>
+							<p class="sub">추가 캐쉬백 혜택</p>
 							<p class="title">캐쉬백형</p>
 						</div>
 						<div class="con">

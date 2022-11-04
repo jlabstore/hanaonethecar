@@ -57,6 +57,7 @@
         align-items: flex-end;
     ">
         <h4 style="margin-bottom: 0px;">금리 관리</h4>
+        <div hidden>${data.goods_id}</div> 
         <div>
             <button type="button" id="setCapitalRateBtn" class="btn btn-outline-primary " onclick="setCapitalRate()">등록</button>
             <button type="button" id="putCapitalRateBtn" class="btn btn-outline-primary " onclick="putCapitalRate()">수정</button>
@@ -90,7 +91,31 @@
                     </td>
                 </tr>
             </tbody>
-    </table>
+    </table></br>
+    <%-- <c:if test="${data.detailCapitalRate.goods_id == 'USEDCAR'}"> --%>
+        <table class="table" style="display=none" id="redemptionPeriod" >
+            <thead class="thead-dark">
+                <tr>
+                    <th scope="row"></th>
+                    <th scope="col" style="text-align:center">상환기간</th>
+                </tr>
+            </thead>
+                <tbody>
+                    <tr>
+                        <th scope="row" style="text-align:center">최저</th>
+                        <td style="text-align:-webkit-center">
+                            <input class="form-control" id="lowRedemptionPeriod" type="text" maxlength="3" style="width:20%; display:inline-block" onkeyup="this.value=this.value.replace(/[^0-9]/g,'');"><span class="spacing">개월</span>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th scope="row" style="text-align:center">최고</th>
+                        <td style="text-align:-webkit-center">
+                            <input class="form-control" id="highRedemptionPeriod" type="text" maxlength="3" style="width:20%; display:inline-block" onkeyup="this.value=this.value.replace(/[^0-9]/g,'');"><span class="spacing">개월</span>
+                        </td>
+                    </tr>
+                </tbody>
+        </table>
+    <%-- </c:if> --%>
 </div>
 <script type='text/javascript'> 
     $(window).ready(function(){
@@ -111,6 +136,11 @@
 
     //상세 
     function detailCapitalRate(){
+
+        // if($("#goodsName").val() == 'USEDCAR'){
+        //     $('#redemptionPeriod').show();
+        // }
+
         var goodsId = $("#goodsName").val();
         $.ajax({
             type: "POST",
@@ -120,6 +150,7 @@
             contentType: "application/x-www-form-urlencoded; charset=UTF-8",
             async: false,
             success : function(data){
+                console.log(data)
                 dataFormatingFun(data)
                 if(data.detailCapitalRate != null){
                     //수정
@@ -129,6 +160,12 @@
                     //등록
                     $("#setCapitalRateBtn").show();
                     $("#putCapitalRateBtn").hide();
+                }
+
+                if(data.detailCapitalRate.goods_id == 'USEDCAR'){
+                    $('#redemptionPeriod').show();
+                }else{
+                    $('#redemptionPeriod').hide();
                 }
             },error : function(date){
                 alert('문제가 발생했습니다. 관리자에게 문의하세요.');
@@ -140,9 +177,16 @@
         var temp = data.detailCapitalRate != null ? true : false;
         var lowRate = temp ? data.detailCapitalRate.low_rate : "";
         var highRate = temp ? data.detailCapitalRate.high_rate : "";
+        var lowRedemptionPeriod = temp ? data.detailCapitalRate.low_redemption_period : "";
+        var highRedemptionPeriod = temp ? data.detailCapitalRate.high_redemption_period : "";
         
+
+        // $("#redemptionPeriod").
+
         $("#lowRate").val(lowRate);
         $("#highRate").val(highRate);
+        $("#lowRedemptionPeriod").val(lowRedemptionPeriod);
+        $("#highRedemptionPeriod").val(highRedemptionPeriod);
     }
 
      //금리 등록시 유효성 체크 후 저장 
@@ -167,7 +211,9 @@
             
             "goodsId": goodsId,
             "lowRate" : $('#lowRate').val(),
-            "highRate" : $('#highRate').val()
+            "highRate" : $('#highRate').val(),
+            "lowRedemptionPeriod" : $('#lowRedemptionPeriod').val(),
+            "highRedemptionPeriod" : $('#highRedemptionPeriod').val(),
         }
 
         if(!confirm('등록을 완료하시겠습니까?')){
@@ -198,7 +244,9 @@
         var formData = {
             "goodsId": goodsId,
             "lowRate" : $('#lowRate').val(),
-            "highRate" : $('#highRate').val()
+            "highRate" : $('#highRate').val(),
+            "lowRedemptionPeriod" : $('#lowRedemptionPeriod').val(),
+            "highRedemptionPeriod" : $('#highRedemptionPeriod').val(),
         }
 
         if(!confirm('수정을 완료하시겠습니까?')){

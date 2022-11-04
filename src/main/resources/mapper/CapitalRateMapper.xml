@@ -19,7 +19,9 @@
         SELECT
 			goods_id,
 			low_rate,
-			high_rate
+			high_rate,
+			low_redemption_period,
+			high_redemption_period
         FROM
             capital_rate
         WHERE 
@@ -34,6 +36,8 @@
 					goods_id,
 					low_rate,
 					high_rate,
+					low_redemption_period,
+					high_redemption_period,
 					reg_id,
 					reg_dt
 				)
@@ -42,6 +46,8 @@
 					#{goodsId},
                     #{lowRate},
 					#{highRate},
+					#{lowRedemptionPeriod},
+					#{highRedemptionPeriod},
 					#{userId},
 					now()
 				)
@@ -55,6 +61,8 @@
 			goods_id = #{goodsId}
 			,low_rate = #{lowRate}
 			,high_rate = #{highRate}
+			,low_redemption_period = #{lowRedemptionPeriod}
+			,high_redemption_period = #{highRedemptionPeriod}
 			,upd_id = #{userId}
 			,upd_dt = now()
 		where
