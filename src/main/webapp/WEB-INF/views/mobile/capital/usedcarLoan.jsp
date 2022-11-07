@@ -100,7 +100,7 @@
 					<div class="con">
 						<p class="title">상환 기간</p>
 						<ul class="dotList">
-							<li>최소 3개월 ~ 최대 60개월까지</li>
+							<li>최소 <span id="lowRedemptionPeriodS"></span>개월 ~ 최대 <span id="highRedemptionPeriodS"></span>개월까지</li>
 						</ul>
 					</div>
 					<div class="con">
@@ -262,6 +262,8 @@
 				$('#highRate').text(highRate); 
 				$('#lowRedemptionPeriod').text(lowRedemptionPeriod); 
 				$('#highRedemptionPeriod').text(highRedemptionPeriod); 
+				$('#lowRedemptionPeriodS').text(lowRedemptionPeriod); 
+				$('#highRedemptionPeriodS').text(highRedemptionPeriod); 
             },
             error: function(data) {
                 alert('문제가 발생했습니다. 관리자에게 문의하세요.');
