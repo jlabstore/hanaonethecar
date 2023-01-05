@@ -23,9 +23,9 @@
 				결제금액의 <br>
 				${autoCashback.cashback3}%~${autoCashback.cashback2}% 캐쉬백!</p>
 			</div><br>
-				<strong><p class="exp">기간 </strong><br>
+				<%-- <strong><p class="exp">기간 </strong><br>
 				${autoCashback.start_dt}~${autoCashback.end_dt}
-				</p>
+				</p> --%>
 			<!-- //top -->
 			<!-- info -->
 			<div class="info">

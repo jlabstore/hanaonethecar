@@ -17,8 +17,10 @@
 			<!-- top -->
 			<div class="top">
 				<h2>EV오토론</h2>
-				<p class="exp">#친환경차구매혜택 <br>
-				#추가한도500만원</p>
+				<p class="exp">
+				#친환경차구매혜택 <br>
+				<%-- #추가한도500만원 --%>
+				</p>
 			</div>
 			<!-- //top -->
 			<!-- info -->
@@ -44,16 +46,16 @@
 			<!-- feature -->
 			<div class="feature">
 				<ul>
-					<li>
+					<li style="text-align: center;">
 						<p class="icon"><img src="/mobile/images/common/icon-coin@2x.png" alt="대출 한도"></p>
 						<p class="title">대출 한도</p>
-						<p class="con">최대<br> 6천 500만원</p>
+						<p class="con">최대 6천만원</p>
 					</li>
-					<li>
+					<%-- <li>
 						<p class="icon"><img src="/mobile/images/common/icon-sellcar@2x.png" alt="무료 보험 혜택"></p>
 						<p class="title">무료 보험 혜택</p>
 						<p class="con">교통사고 재해보험<br>가입!</p>
-					</li>
+					</li> --%>
 				</ul>
 			</div>
 			<!-- //feature -->
@@ -114,7 +116,7 @@
 						<p class="title">대출한도</p>
 						<ul class="limit">
 							<li>
-								<p class="range">최대 <strong>6천 500만원</strong></p>
+								<p class="range">최대 <strong>6천만원</strong></p>
 								<p class="title">신차구입/신차대환자금</p>
 							</li>
 						</ul>
