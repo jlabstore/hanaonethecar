@@ -9,9 +9,9 @@ import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.PropertySource;
 import org.springframework.core.env.Environment;
 
-@WebListener
-@Configuration
-@PropertySource({"classpath:application-${spring.profiles.active}.properties"})
+// @WebListener
+// @Configuration
+// @PropertySource({"classpath:application-${spring.profiles.active}.properties"})
 public class SSHContextListener implements ServletContextListener{
     
     private SSHConnector sshConnector;
@@ -20,20 +20,20 @@ public class SSHContextListener implements ServletContextListener{
     Environment environment;
 	@Override
 	public void contextInitialized(ServletContextEvent sce) {
-		try {
-            String env = environment.getProperty("active.env");
-            if("DEV".equals(env)){
-                sshConnector = new SSHConnector(environment.getProperty("ssh.url"), environment.getProperty("ssh.username"), environment.getProperty("ssh.password")); 
-            }
-		} catch (Exception e) {
-			e.printStackTrace();
-		}
+		// try {
+        //     String env = environment.getProperty("active.env");
+        //     if("DEV".equals(env)){
+        //         sshConnector = new SSHConnector(environment.getProperty("ssh.url"), environment.getProperty("ssh.username"), environment.getProperty("ssh.password")); 
+        //     }
+		// } catch (Exception e) {
+		// 	e.printStackTrace();
+		// }
 	}
 
 	@Override
 	public void contextDestroyed(ServletContextEvent sce) {
-		if(sshConnector != null){
-			sshConnector.close();
-		}
+		// if(sshConnector != null){
+		// 	sshConnector.close();
+		// }
 	}
 }
