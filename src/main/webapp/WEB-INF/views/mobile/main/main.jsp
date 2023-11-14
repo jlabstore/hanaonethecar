@@ -94,14 +94,14 @@
 				<li class="car_lease">
 					<a href="javascript:void(0);" onClick="checkTimeHref('capital/carLease')" >
 						<p class="title">자동차리스</p>
-						<p class="exp">다양한 혜택, 편리한 내차 이용 <br>새 차 <strong>구매 비용은 줄이고</strong> <br><strong>차량 유지 관리는 더 쉽게!</strong></p>
+						<p class="exp">다양한 혜택, 편리한 자동차 이용 <br>새 차 <strong>구매 비용은 줄이고</strong> <br><strong>차량 유지 관리는 더 쉽게!</strong></p>
 						<p class="link">상품 상세 보기</p>
 					</a>
 				</li>
 				<li class="longterm_rental">
 					<a href="javascript:void(0);" onClick="checkTimeHref('capital/longtermRental')" >
 						<p class="title">장기렌터카</p>
-						<p class="exp">비용, 보험 걱정 없는 내 차 이용 <br><strong>차량유지 및 관리에 필요한</strong> <br><strong>다양한 혜택까지!</strong></p>
+						<p class="exp">부담은 줄이고, 편리함은 늘리고 <br><strong>차량유지 및 관리에 필요한</strong> <br><strong>다양한 혜택까지!</strong></p>
 						<p class="link">상품 상세 보기</p>
 					</a>
 				</li>
@@ -123,14 +123,14 @@
 		<!-- //capital -->
 		</div>
 			<ul class="dotList">
-				<li class="reference">하나은행은 예금자보호법상 부보금융 기관이나 하나캐피탈, 하나카드는 아닙니다.</li>
+				<li class="reference">하나은행은 예금자보호법상 부보금융기관이나 하나캐피탈, 하나카드는 부보금융기관이 아닙니다</li>
 				<li class="reference">하나금융그룹 관계사는 상호 채무를 보증하지 않습니다.</li>
 				<li class="reference">본 홍보물은 법령 및 내부통제기준에 따른 절차를 거쳐 제공됩니다.</li>
-				<li class="reference">본 홍보물은 2023년 7월 31일까지 유효합니다.</li>
-				<li class="reference">하나캐피탈 준법심의필 22-1478(2022.07.22~2023.07.21)</li>
-				<li class="reference">하나카드 준법심의필 A-22-1090(2022.08.19 ~ 2023.08.18)</li>
-				<li class="reference">하나은행 준법감시인 심의필 제2022-광고-6286호(2022.08.12) <br>
-				CC브랜드220811-0086</li>
+				<li class="reference">본 홍보물은 2024년 9월 30일까지 유효합니다.</li>
+				<li class="reference">하나캐피탈 준법심의필 23-314 (2023.09.12 ~ 2024.09.11)</li>
+				<li class="reference">하나카드 준법 심의필 A-23-1695(2023.09.13 ~ 2024.09.12)</li>
+				<li class="reference">준법감시인 심의필 제2023-광고-06829호(2023.10.05)<br>
+					CC브랜드220811-0086</li>
 			</ul>
 		</div>
 		<!-- //contents -->

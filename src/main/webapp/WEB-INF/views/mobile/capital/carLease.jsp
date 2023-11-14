@@ -19,7 +19,7 @@
 			<!-- top -->
 			<div class="top">
 				<h2>자동차리스</h2>
-				<p class="exp">#편리한_내차 <br>
+				<p class="exp">#편리한_자동차 이용 <br>
 				#다양한 혜택</p>
 			</div>
 			<!-- //top -->
@@ -85,29 +85,20 @@
 					</div>
 					<div class="con" >
 						<p class="title">금리</p>
-						<ul class="dotList" style= "font-weight :bold">
+						<ul class="dotList">
 							<li>금융리스 : <br>
-							최저 연 <span id="lowRate"></span>% ~ 최고 연 <span id="highRate"></span>% <br>
-							(금융 소비자의 개인신용평점에 따라 차등 적용)</li>
+							연 <span id="lowRate"></span>% ~<span id="highRate"></span>% <br>
+							(금융소비자의 개인신용평점에 따라 차등 적용)</li>
 							<li>연체 이자율 : <br>
 								<ul class="numList">
 									<li>
-										<p class="num">1)</p>
-										<div class="info">금융리스 <br>
-										- 유이자 : 약정이율 + 3% <br>
-										- 무이자 : 상사약정금리 + 3%(법정 최고 금리 20% 이내) <br>
-										<br>
-										단, 연체 발생 시점에 약정금리가 없는 경우는 <br>
-										아래의 사항을 적용함. <br>
-										<br>
-										약정 금리는 상법상 상사법정이율과 상호금융 <br>
-										가계자금대출금리* 중 높은 금리 적용 <br>
-										<br>
-										* 한국은행에서 매월 발표하는 가장 최근의 <br>
-										비은행 금융기관 가중평균 대출 금리</div>
+										<p class="num">-</p>
+										<div class="info">금융리스 : 약정이율 + 3%<br>
+										(법정최고 금리 연 20% 이내)
+										</div>
 									</li>
 									<li>
-										<p class="num">2)</p>
+										<p class="num">-</p>
 										<div class="info">운용리스 연 20% </div>
 									</li>
 								</ul>
@@ -263,13 +254,14 @@
 							<li class="reference emp">상환능력에 비해 대출금이 과도할 경우 귀하의 신용등급 또는 개인신용평점이 하락할 수 있습니다.</li>
 							<li class="reference emp">개인신용평점 하락 시 금융거래와 관련된 불이익이 발생할 수 있습니다.</li>
 							<li class="reference emp">일정기간 원리금을 연체할 경우, 모든 원리금을 변제할 의무가 발생할 수 있습니다.</li>
-							<li class="reference">대출취급이 부적정한 경우(연체금 보유, 개인신용평점 낮음) 대출이 제한될 수 있습니다.</li>
+							<li class="reference">리스취급이 부적정한 경우(연체금 보유, 개인신용평점 낮음)대출이 제한될 수 있습니다.</li>
 							<li class="reference">담보물건, 담보종류 등에 따라 대출조건이 차등 적용되며 담보물이 부적합할 경우 대출이 제한될 수 있습니다.</li>
-							<li class="reference">금융소비자의 개인신용평점에 따라 대출한도 및 금리가 차등 적용됩니다.</li>
+							<li class="reference">금융소비자의 신용등급 또는 개인신용평점에 따라 대출한도 및 금리가 차등 적용됩니다</li>
 							<li class="reference">금융소비자는 해당상품에 대하여 설명을 받을 권리가 있으며, 그 설명을 듣고 내용을 충분히 이해한 후 거래하시기 바랍니다.</li>
 							<li class="reference">금리인하요구권 및 대출계약 철회권에 대한 자세한 사항은 하나캐피탈 홈페이지에서 확인하시기 바랍니다.</li>
-							<li class="reference">하나캐피탈 준법심의필 22-1479(2022.07.22 ~ 2023.07.21)</li>
-							<li class="reference">여신금융협회 심의필 제 2022-C1h-06623 (2022.08.02~2023.07.21)</li>
+							<li class="reference">하나캐피탈 준법심의필 23-315 (2023.09.12 ~ 2024.09.11)</li>
+							<li class="reference">여신금융협회 심의필 제 2023-C1h-10554호<br>
+								(2023.09.12 ~ 2024.09.11)</li>
 						</ul>
 					</div>
 				</div>

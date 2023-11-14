@@ -35,11 +35,11 @@
 				<p class="title">대출 금리</p>
 				<ul>
 					<li>
-						<p class="range">최저</p>
+						<p class="range" style="color: black;">최저</p>
 						<p class="rate">연<span id="lowRate"></span>%~</p>
 					</li>
 					<li>
-						<p class="range">최고</p>
+						<p class="range" style="color: black;">최고</p>
 						<p class="rate">연<span id="highRate"></span>%</p>
 					</li>
 				</ul>
@@ -48,16 +48,16 @@
 			<!-- feature -->
 			<div class="feature">
 				<ul>
-					<li>
+					<li style="text-align: center;">
 						<p class="icon"><img src="/mobile/images/common/icon-coin@2x.png" alt="대출 한도"></p>
 						<p class="title">대출 한도</p>
 						<p class="con">최대 6천만원</p>
 					</li>
-					<li>
+					<!-- <li>
 						<p class="icon"><img src="/mobile/images/common/icon-sellcar@2x.png" alt="내차걱정 NoNo!"></p>
 						<p class="title">무료 보험 혜택</p>
 						<p class="con">교통사고 재해보험<br>가입!</p>
-					</li>
+					</li> -->
 				</ul>
 			</div>
 			<!-- //feature -->
@@ -71,14 +71,13 @@
 
 		<!-- additional -->
 		<div class="additional">
-			<p class="comment">[<span id="newBaseRateDt"></span>현재] 기준금리(금융채 6개월) <span id="newCarBaseRate"></span>% + 가산금리 <span id="newAddRate"></span>% ~ <span id="newAddRate2"></span>%  - 부수거래 감면금리<span id="newRate"></span>%* <br>
-			*부수거래항목(
-				급여이체<span id="newRate1"></span>%, 
-				주택청약종합저축납입<span id="newRate2"></span>%, 
-				제휴카드결제<span id="newRate3"></span>%, 
-				적금상품납입<span id="newRate6"></span>%, 
-				하나원큐이체<span id="newRate5"></span>%, 
-				기타자동이체<span id="newRate4"></span>%)
+			<p class="comment">[<span id="newBaseRateDt"></span>현재] 기준금리(금융채 6개월) <span id="newCarBaseRate"></span>% + <br>가산금리 <span id="newAddRate"></span>0% ~ <span id="newAddRate2"></span>0%  - 부수거래 감면금리<span id="newRate"></span>%* <br> 
+			*부수거래항목 :
+				급여이체(<span id="newRate1"></span>%)+ 
+				주택청약종합저축 월 5만원 납입 또는 적금상품 월 10만원 납입(<span id="newRate2"></span>%)+ 
+				[기본]제휴카드 월 30만원이상 결제(<span id="newRate3"></span>%)+ 
+				[추가]제휴카드 월 70만원 결제<span></span>(0.1%)
+			</p>
 		</div>
 		<!-- //additional -->
 
@@ -204,6 +203,21 @@
 						</ul>
 					</div>
 					<div class="con">
+						<p class="title">대출계약철회권</p>
+						<ul class="dotList">
+							<li>대출금 수령일로부터 14일(기간의 말일이 휴일인 경우 다음 영업일)까지 은행에 서면, 전화, 컴퓨터 통신으로 철회의사를 표시하고 원금, 이자 및 부대비용을 전액 반환한 경우 대출계약을 철회할 수 있습니다.</li>
+							<li>대출계약 철회권 남용 시 불이익: 당행에서 최근 1개월 내에 2회 이상 대출계약을 철회하는 경우, 신규대출·만기연장 거절, 대출한도 축소, 금리우대 제한 등 불이익이 발생할 수 있습니다.</li>
+						</ul>
+					</div>
+					<div class="con">
+						<p class="title">위법계약해지권</p>
+						<ul class="dotList">
+							<li>은행이 「금융소비자 보호에 관한 법률」에서 정하는 적합성원칙, 적정성원칙 및 설명의무를 위반하였거나, 불공정영업행위 혹은 부당권유행위를 하여 대출계약을 체결한 경우, '법 위반사실을 안 날'부터<br>
+								 1년(계약체결일로부터 5년 이내의 범위에 있어야 합니다.) 이내에 해당 계약의 해지를 요구할 수 있습니다.</li>
+							<li>은행은 해지를 요구받은 날부터 10일 이내에 고객에게 수락여부를 통지하며, 거절할 때에는 그 사유를 함께 통지합니다.</li>
+						</ul>
+					</div>
+					<div class="con">
 						<p class="title">유의사항</p>
 						<ul class="dotList">
 							<li>손님의 신용도 또는 부채현황에 따라 대출한도 또는 대출금리가 차등 적용될 수 있으며 대출취급이 제한될 수도 있습니다.</li>
@@ -236,11 +250,11 @@
 							<%-- <p class="rate">연 3.894%~연 4.894% </p> --%>
 							<ul>
 								<li>
-									<p class="range">최저</p>
+									<p class="range" style="color: black;">최저</p>
 									<p class="rate">연<span id="lowRate2"></span>%~</p>
 								</li>
 								<li>
-									<p class="range">최고</p>
+									<p class="range" style="color: black;">최고</p>
 									<p class="rate">연<span id="highRate2"></span>%</p>
 								</li>
 							</ul>
@@ -256,7 +270,7 @@
 							</tr>
 							<tr>
 								<td class="title">가산금리</td>
-								<td class="rate"><span id="newAddRateD"></span>% ~<span id="newAddRateD2"></span>%</td>
+								<td class="rate"><span id="newAddRateD"></span>0% ~<span id="newAddRateD2"></span>0%</td>
 							</tr>
 							<tr>
 								<td class="title">부수거래 감면금리</td>
@@ -265,20 +279,21 @@
 						</table>
 						<ul class="dotList">
 							<li class="reference">최저금리 기준: <br>
-							2022.08.10 현재, 내부신용등급(ASS) 1등급, 대출기간 1년, 부수거래 감면금리 적용시</li>
+							2023.09.25 현재, 내부신용등급(ASS) 1등급, 대출기간 1년, 부수거래 감면금리 적용시
+							</li>
 							<li class="reference">최고금리 기준: <br>
-							2022.08.10 현재, 내부신용등급(ASS) 11등급, 대출기간 3년 초과, 부수거래 감면금리 미적용시</li>
+							2023.09.25 현재, 내부신용등급(ASS) 11등급, 대출기간 3년 초과, 부수거래 감면금리 미적용시
+							</li>
 						</ul>
 					</div>
 					<div class="con">
 						<p class="title">부수거래 항목</p>
 						<ul class="dotList">
 							<li>급여이체 <strong><span id="usedRate1D"></span>%</strong></li>
-							<li>주택청약동합저축납입 <strong><span id="usedRate2D"></span>%</strong></li>
-							<li>제휴카드결제 <strong><span id="usedRate3D"></span>%</strong></li>
-							<li>기타자동이체 <strong><span id="usedRate4D"></span>%</strong></li>
-							<li>하나원큐이체 <strong><span id="usedRate5D"></span>%</strong></li>
-							<li>적금상품납입 <strong><span id="usedRate6D"></span>%</strong></li>
+							<li>주택청약동합저축 월 5만원 납입<br>
+								또는 적극상품 월 10만원 납입<strong><span id="usedRate2D"></span>%</strong></li>
+							<li>[기본]제휴카드 월 30만원 이상 결제<strong><span id="usedRate3D"></span>%</strong></li>
+							<li>[추가]제휴카드 월 70만원 결제<strong><span></span>0.1%</strong></li>
 						</ul>
 					</div>
 					<div class="con">
@@ -296,12 +311,21 @@
 							후취방식 징구를 원칙으로 1개월 이내의 기간을 단위로 징수합니다. </li>
 						</ul>
 					</div>
+					<div class="con">
+						<ul class="dotList">
+							<li class="reference">금융소비자는 해당 상품 또는 서비스에 대하여 설명받을 권리가 있습니다.</li>
+							<li class="reference">본 홍보물은 법령 및 내부통제기준에 따른 절차를 거쳐 제공됩니다.</li>
+							<li class="reference">본 홍보물은 2024년 9월 30일까지 유효합니다.</li>
+							<li class="reference">준법감시인 심의필 제2023-광고-06830호(2023.10.05)</li>
+							<li class="reference">CC브랜드220811-0087</li>
+						</ul>
+					</div>
 				</div>
 			</li>
 			<!-- //대출금리 -->
 
-			<!-- 교통사고재해보험 안내 -->
-			<li>
+			<!-- 교통사고재해보험 안내 2023-10-16 삭제 -->
+			<!-- <li>
 				<div class="bar">
 					<p class="title">교통사고재해보험 안내</p>
 				</div>
@@ -341,7 +365,7 @@
 						</ul>
 					</div>
 				</div>
-			</li>
+			</li> -->
 			<!-- //교통사고재해보험 안내 -->
 
 		</ul>
@@ -372,9 +396,11 @@
 				//기준금리
                 newCarBaseRate = result.list.new_base_rate;
 				//최저 가산금리
-                newAddRate = result.list.new_add_rate;
+                newAddRate = result.list.new_add_rate
+				var testDate = newAddRate;
 				//최고 가산금리
 				newAddRate2 = result.list.new_add_rate2;
+				
 
 				//부수거래 감면 금리 
                 newRate1 = result.list.new_rate1;
@@ -389,7 +415,7 @@
 
 				//부수거래 감면 금리 총합
                 var newRateDF = newRate1 + newRate2 + newRate3 + newRate4 + newRate5 + newRate6;
-                var newRate = newRateDF ? (newRateDF.toFixed(3)) : "";
+                var newRate = newRateDF ? (newRateDF.toFixed(1)) : "";
 				
 				//최저금리
                 var lowRateDF = newCarBaseRate + newAddRate - newRate;

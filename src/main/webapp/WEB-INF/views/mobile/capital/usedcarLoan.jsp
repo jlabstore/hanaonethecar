@@ -41,15 +41,15 @@
 			<!-- feature -->
 			<div class="feature">
 				<ul>
-					<li>
+					<li style="white-space: nowrap;">
 						<p class="icon"><img src="/mobile/images/common/icon-coin@2x.png" alt="최저 금리"></p>
 						<p class="title">최저 금리</p>
-						<span class="con">연</span><span class="con" id="lowRateb">연2.2</span><span class="con">%</span>
+						<span class="con">연</span><span class="con" id="lowRateb"></span><span class="con">%</span><span class="con">~</span><span class="con" id="highRateb"></span><span class="con">%</span>
 					</li>
-					<li>
+					<li style="white-space: nowrap;">
 						<p class="icon"><img src="/mobile/images/common/icon-duration@2x.png" alt="상환기간"></p>
 						<p class="title">상환기간</p>
-						<span class="con" id="lowRedemptionPeriod">24</span><span class="con">~<span><span id="highRedemptionPeriod" class="con">60</span><span class="con">개월</span>
+						<span class="con" id="lowRedemptionPeriod">24</span><span class="con">개월</span><span class="con">~<span><span id="highRedemptionPeriod" class="con">60</span><span class="con">개월</span>
 					</li>
 				</ul>
 			</div>
@@ -80,6 +80,9 @@
 						<p class="title">대상</p>
 						<ul class="dotList">
 							<li>개인(사업자) 및 법인 사업자</li>
+							<li class="reference">사업자 또는 법인일 경우 전화상담 신청이 필요합니다.<br>
+								[하나캐피탈 고객센터 : 1800-1110]
+							 </li>
 						</ul>
 					</div>
 					<div class="con">
@@ -91,8 +94,8 @@
 					<div class="con">
 						<p class="title">금리</p>
 						<ul class="dotList">
-							<li style="font-weight:bold">고정금리 : 연 <span id="lowRate"></span>% ~ <span id="highRate"></span>%</li>
-							<li style="font-weight:bold">연체이율 : 약정이율 + 3%(법정 최고금리 20% 이내)</li>
+							<li>고정금리 : 연 <span id="lowRate"></span> % ~ <span id="highRate"></span>%</li>
+							<li>연체이율 : 약정이율 + 3%(법정 최고금리 20% 이내)</li>
 							<li class="reference">금융소비자의 개인신용평점에 따라 대출 한도 및 금리가 차등 적용 됩니다.</li>
 							<li class="reference">대출 취급이 부적정한 경우(연체금 보유, 개인신용평점 낮음) 대출이 제한될 수 있습니다.</li>
 						</ul>
@@ -131,7 +134,7 @@
 						<p class="title">저당 설정</p>
 						<ul class="dotList">
 							<li>대출금액의 10%, 30% 50%</li>
-							<li class="reference">근저당설정은 고객신용도에 따라 차등 적용됩니다.</li>
+							<li class="reference">근저당설정은 개인신용평점에 따라 차등 적용됩니다.</li>
 							<li class="reference">설정비용은 당사가 부담하며 설정해지 비용은 금융소비자가 부담합니다.</li>
 						</ul>
 					</div>
@@ -196,7 +199,7 @@
 								<span class="num">4</span>
 								<div class="info">
 									<p class="title">대출금 지급</p>
-									<p class="text">본인 계좌 또는 조건 충조기 제휴점에 지급합니다.</p>
+									<p class="text">본인 계좌 또는 조건 충족시 제휴점에 지급합니다.</p>
 								</div>
 							</li>
 						</ul>
@@ -219,11 +222,11 @@
 							<li class="reference emp">일정기간 원리금을 연체할 경우, 모든 원리금을 변제할 의무가 발생할 수 있습니다.</li>
 							<li class="reference">대출취급이 부적정한 경우(연체금 보유, 개인신용평점 낮음) 대출이 제한될 수 있습니다.</li>
 							<li class="reference">담보물건, 담보종류 등에 따라 대출조건이 차등 적용되며 담보물이 부적합할 경우 대출이 제한될 수 있습니다.</li>
-							<li class="reference">금융소비자의 개인신용평점에 따라 대출한도 및 금리가 차등 적용됩니다.</li>
-							<li class="reference">금융소비자는 해당 상품에 대하여 설명을 받을 권리가 있으며, 그 설명을 듣고 충분히 이해한 후 거래하시기 바랍니다.</li>
+							<li class="reference">금융소비자의 신용등급 또는 개인신용평점에 따라 대출 한도 및 금리가 차등 적용됩니다.</li>
 							<li class="reference">금리인하요구권 및 대출계약 철회권에 대한 자세한 사항은 하나캐피탈 홈페이지에서 확인하시기 바랍니다.</li>
-							<li class="reference">하나캐피탈 준법심의필 22-1481(2022.07.22 ~ 2023.07.21)</li>
-							<li class="reference">여신금융협회 심의필 : 제 2022-C1h-06624 (2022.08.02~2023.07.21)</li>
+							<li class="reference">하나캐피탈 준법심의필 23-215 (2023.07.13 ~ 2024.04.30)</li>
+							<li class="reference">여신금융협회 심의필 제 2023-C1h-08582<br>
+								 (2023.07.22 ~ 2024.04.30)</li>
 						</ul>
 					</div>
 				</div>
@@ -259,6 +262,7 @@
 
 				$('#lowRateb').text(lowRate);
 				$('#lowRate').text(lowRate);
+				$('#highRateb').text(highRate); 
 				$('#highRate').text(highRate); 
 				$('#lowRedemptionPeriod').text(lowRedemptionPeriod); 
 				$('#highRedemptionPeriod').text(highRedemptionPeriod); 

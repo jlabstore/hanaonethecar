@@ -19,8 +19,8 @@
 			<!-- top -->
 			<div class="top">
 				<h2>장기렌터카</h2>
-				<p class="exp">#비용걱정NO! <br>
-				#보험걱정NO!</p>
+				<p class="exp">#부담은 줄이고<br>
+				#편리함은 늘리고</p>
 			</div>
 			<!-- //top -->
 			<!-- feature -->
@@ -95,7 +95,7 @@
 						</ul>
 					</div>
 					<div class="con">
-						<p class="title">렌탈료 포함 내역</p>
+						<p class="title">렌트료 포함 내역</p>
 						<ul class="dotList">
 							<li>취득세, 보험료, 자동차세, 정비료 <br>
 							(단, 정비료는 계약 상품에 따라 포함 안될 수 있음)</li>
@@ -104,20 +104,20 @@
 					<div class="con">
 						<p class="title">정비 상품</p>
 						<ul class="dotList">
-							<li>Special 또는 Self (운행 패턴에 따라 손님 선택)</li>
+							<li>Special 또는 Self (운행 패턴에 따라 고객 선택)</li>
 						</ul>
 					</div>
 					<div class="con">
 						<p class="title">만기시 처리</p>
 						<ul class="dotList">
-							<li>손님의 의사에 따라 반환, 구매, 연장 가능</li>
+							<li>계약 종료 후 고객의 의향에 따라 반환, 구매, 연장 가능</li>
 						</ul>
 					</div>
 					<div class="con">
 						<p class="title">중도 해지 수수료</p>
 						<ul class="dotList">
-							<li>중도해지수수료율 = 잔여렌탈료 × 해지위약금률</li>
-							<li class="reference">잔여렌탈료 = 월 렌탈료 ×(미청구잔여개월수-1개월) + 해지시점 당월 잔여 렌탈료</li>
+							<li>중도해지수수료율 = 잔여렌트료X해지위약금률</li>
+							<li class="reference">잔여 렌트료='월렌트료'X(미청구 잔여개월수-1개월) <br>+해지시점 당월 잔여렌트료</li>
 							<li class="reference">위약금률</li>
 						</ul>
 						<table class="tblBasic center">
@@ -200,7 +200,7 @@
 							<li class="reference">렌터카 계약을 체결하기 전에 상품 설명서와 약관을 확인하시기 바랍니다.</li>
 							<li class="reference">일정기간 렌탈료를 연체할 경우, 모든 렌탈료(원리금)를 변제할 의무가 발생할 수 있습니다. (연체이자 : 년 20%)</li>
 							<li class="reference">렌터카 취급이 부적정한 경우(연체금 보유, 개인신용평점 낮음) 취급이 제한될 수 있습니다.</li>
-							<li class="reference">하나캐피탈 준법심의필 22-1480(2022.07.22 ~ 2023.07.21)</li>
+							<li class="reference" style="color: red;">하나캐피탈 준법심의필 23-316 (2023.09.12 ~ 2024.09.11)</li>
 						</ul>
 					</div>
 				</div>
