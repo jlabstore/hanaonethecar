@@ -34,3 +34,5 @@
 <script src="/mobile/js/jquery-1.8.3.min.js"></script>
 <script src="/mobile/js/jquery.flexslider-min.js"></script>
 <script src="/mobile/js/style.js"></script>
+<script src="/mobile/js/jquery.colorbox-min.js"></script>
+<link rel="stylesheet" type="text/css" href="/mobile/css/colorbox.css" />

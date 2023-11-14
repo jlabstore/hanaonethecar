@@ -404,3 +404,70 @@ section#body.capitalCarLease .topContent > .summary {background-image: url('../i
 section#body.capitalLongtermRental .topContent > .summary {background-image: url('../images/capital/longterm_rental_img@2x.png');background-position: right 10px top 33px;background-size: 156px auto;background-repeat: no-repeat;}
 
 section#body.capitalUsedcarLoan .topContent > .summary {background-image: url('../images/capital/usedcar_loan_img@2x.png');background-position: right 10px top 33px;background-size: 156px auto;background-repeat: no-repeat;}
+
+/* ==============================================
+    popup 
+   ============================================== */
+
+#inline_content {
+    /* padding: 0 30px 32px 30px; */
+	width: 90vw;
+	padding-bottom: 5%;
+
+}
+#inline_content .pop_head {
+	min-height: 53px;
+}
+#inline_content .pop_close {
+    display: inline-block;
+    float: right;
+    margin: 25px 25px 0 0;
+    text-indent: -9999px;
+    background: url("../images/common/popup_close.png");
+    background-size: 13px;
+    width: 13px;
+    height: 13px;
+}
+#inline_content .pop_tit {
+    padding: 0 30px 0 30px;
+    margin-bottom: 37px;
+    font-size: 21px;
+    font-weight: 800;
+    text-align: center;
+    line-height: normal;
+    /* border-bottom: 1px solid #e2e2e2; */
+}
+#inline_content .pop_tit strong {
+    color: #009fa3;
+}
+
+#inline_content .pop_dash {
+    border-top: 1px solid #e2e2e2;
+	margin-bottom: 51px;
+}
+
+#inline_content p {
+    text-align: center;
+    font-size: 14px;
+    color: #000;
+    line-height: 1.71;
+	padding: 0 30px 0 30px;
+}
+#inline_content .date {
+    padding: 22px 0 25px 0;
+    font-size: 17px;
+    font-weight: 700;
+    line-height: 1.65;
+}
+.highlight {
+    background-color: #d9f1f1; /
+}
+#cboxContent {
+    border-radius: 15px; /* 원하는 둥근 모서리 크기 지정 */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* 그림자 추가 */
+	height: auto;
+}
+#cboxOverlay {
+    background: rgba(0, 0, 0, 0.8) !important; /* 검은색 배경에 80% 불투명도 적용 */
+	background-image: none;
+}

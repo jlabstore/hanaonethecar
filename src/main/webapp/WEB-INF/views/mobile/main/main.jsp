@@ -25,14 +25,14 @@
 		<div id="bank" class="active">
 			<ul class="content">
 				<li class="oneQ_autoloan">
-					<a href="bank/oneQAutoloan">
+					<a href="javascript:void(0);" onClick="checkTimeHref('bank/oneQAutoloan')">
 						<p class="title">원큐오토론</p>
 						<p class="exp">신용한도 차감없는 1금융권 자동차 <br>대출! <strong>최장 10년 상환!</strong> 3년후부터 <br><strong>중도상환 수수료 없이!</strong></p>
 						<p class="link">상품 상세 보기</p>
 					</a>
 				</li>
 				<li class="ev_autoloan">
-					<a href="bank/evAutoloan">
+					<a href="javascript:void(0);" onClick="checkTimeHref('bank/evAutoloan')" >
 						<p class="title">EV오토론</p><p class="exp"><strong>친환경차 구매 시 혜택받는</strong> <br>착한 자동차 대출!<br><strong>추가한도 500만원</strong>까지!</p>
 						<p class="link">상품 상세 보기</p>
 					</a>
@@ -52,7 +52,7 @@
 		<div id="card">
 			<ul class="content">
 				<li class="auto_card_installment">
-					<a href="card/autoCardInstallment">
+					<a href="javascript:void(0);" onClick="checkTimeHref('card/autoCardInstallment')">
 						<p class="title">오토카드할부</p>
 						<p class="exp">이제는 간편하게 카드할부로! <br>
 						<strong>대출기록, 중도상환수수료 걱정 없는</strong> <br>
@@ -61,21 +61,21 @@
 					</a>
 				</li>
 				<li class="auto_installment">
-					<a href="card/autoInstallment">
+					<a href="javascript:void(0);" onClick="checkTimeHref('card/autoInstallment')" >
 						<p class="title">오토할부</p>
 						<p class="exp"><strong>하나카드로 빠르고 간편하게</strong><br>새차 구입 계획은 저렴한 할부 금리 <br>신차 오토 할부로 이용해보세요</p>
 						<p class="link">상품 상세 보기</p>
 					</a>
 				</li>
 				<li class="auto_loan">
-					<a href="card/autoLoan">
+					<a href="javascript:void(0);" onClick="checkTimeHref('card/autoLoan')" >
 						<p class="title">오토론</p>
 						<p class="exp"><strong>하나카드 없이도 빠르고 간편한</strong><br>신차구입방법!</p>
 						<p class="link">상품 상세 보기</p>
 					</a>
 				</li>
 				<li class="auto_cashback">
-					<a href="card/autoCashback">
+					<a href="javascript:void(0);" onClick="checkTimeHref('card/autoCashback')"  >
 						<p class="title">오토캐쉬백</p>
 						<p class="exp">자동차 일시불 결제 시 결제 금액의 <br><strong>1.0%~1.5% 캐쉬백</strong> 받는 서비스! <br>(단, 결제 건 별 300만원 이상 결제 시)</p>
 						<p class="link">상품 상세 보기</p>
@@ -92,21 +92,21 @@
 		<div id="capital">
 			<ul class="content">
 				<li class="car_lease">
-					<a href="capital/carLease">
+					<a href="javascript:void(0);" onClick="checkTimeHref('capital/carLease')" >
 						<p class="title">자동차리스</p>
 						<p class="exp">다양한 혜택, 편리한 내차 이용 <br>새 차 <strong>구매 비용은 줄이고</strong> <br><strong>차량 유지 관리는 더 쉽게!</strong></p>
 						<p class="link">상품 상세 보기</p>
 					</a>
 				</li>
 				<li class="longterm_rental">
-					<a href="capital/longtermRental">
+					<a href="javascript:void(0);" onClick="checkTimeHref('capital/longtermRental')" >
 						<p class="title">장기렌터카</p>
 						<p class="exp">비용, 보험 걱정 없는 내 차 이용 <br><strong>차량유지 및 관리에 필요한</strong> <br><strong>다양한 혜택까지!</strong></p>
 						<p class="link">상품 상세 보기</p>
 					</a>
 				</li>
 				<li class="usedcar_loan">
-					<a href="capital/usedcarLoan">
+					<a href="javascript:void(0);" onClick="checkTimeHref('capital/usedcarLoan')" >
 						<p class="title">중고차 오토론</p>
 						<p class="exp">스마트한 중고차 구입! <br><strong>중고차가 필요한 나에게</strong> <br><strong>편리하고 저렴하게!</strong></p>
 						<p class="link">상품 상세 보기</p>
@@ -136,6 +136,24 @@
 		<!-- //contents -->
 	</section>
     <!-- //main -->
+	<a class="inline" href="#inline_content" style="display:none"></a>
+	<div id="popup" style="display:none;">
+	<div id="inline_content" >
+		<div class="pop_head">
+			<a href="javascript:void(0);" class="pop_close" onClick="popClose()">close</a>
+		</div>
+		<p class="pop_tit">서비스 안정화를 위한<br/>
+		<strong>시스템 점검 안내</strong></p>
+		<p class="pop_dash"></p>
+		<p>하나카드의 원활한 서비스 이용을 위하여</p>
+		<p class="date"><span class="highlight">2023년 11월 18일 00시 ~ 18시까지<br/>
+		시스템 점검을 진행할 예정입니다.</span></p>
+		<p>
+		점검 기간동안 하나카드 서비스를 일시적으로<br/>
+		이용하실 수가 없습니다. 빠른 시간 내 안정적인<br/>
+		서비스를 제공할 수 있도록 노력하겠습니다.</p>
+	</div>
+	</div>
     </div>
 </body>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/mustache.js/4.0.1/mustache.min.js"></script>
@@ -360,11 +378,36 @@
 
 	}
 
+	var scrollStop = function(){
+		$('#wrap').on('scroll touchmove mousewheel',function(e){
+			e.preventDefault();
+			e.stopPropagation();
+			return false;
+		})
+	}
+
+	var scrollStart = function(){
+		$('#wrap').off('scroll touchmove mousewheel')
+	}
+
+	var checkTimeHref = function(value ,time){
+		var now = time != undefined ? new Date(time) : new Date();
+		var startDt = new Date('2023-11-18 00:00:00.000');
+		var endDt = new Date('2023-11-18 18:00:00.000');
+		if(now >= startDt && now <= endDt){
+			$(".inline").colorbox({ open:true, inline:true ,spped: 0, transition:'none'});
+		}else{
+			window.location.href = value
+		}
+	}
+
+	var popClose = function(){
+		$('.inline').colorbox.close();
+	}
 	
 	function checkPcAndMobile(){
 		//운영체제 종류 선언
 		var filterOs = "win16|win32|win64|mac|macintel";
-		
 		//PC 및 모바일 접속 체크
 		if(navigator.platform){
 			if(0 < filterOs.indexOf(navigator.platform.toLowerCase())){				
