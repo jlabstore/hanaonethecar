@@ -21,7 +21,8 @@
 				<h2>오토캐쉬백</h2>
 				<p class="exp">자동차 일시불 결제 시 <br>
 				결제금액의 <br>
-				${autoCashback.cashback3}%~${autoCashback.cashback2}% 캐쉬백!</p>
+				<%-- ${autoCashback.cashback3}%~${autoCashback.cashback2}% 캐쉬백!</p> --%>
+				1.3% 캐쉬백!</p>
 			</div><br>
 				<%-- <strong><p class="exp">기간 </strong><br>
 				${autoCashback.start_dt}~${autoCashback.end_dt}
@@ -30,7 +31,9 @@
 			<!-- info -->
 			<div class="info">
 				<p class="emp"><strong>하나카드로 자동차 일시불 결제 시 </strong><br>
-				<strong class="red">결제 금액의 ${autoCashback.cashback3}%~${autoCashback.cashback2}% 캐쉬백!</strong></p>
+				<%-- <strong class="red">결제 금액의 ${autoCashback.cashback3}%~${autoCashback.cashback2}% 캐쉬백!</strong> --%>
+				<strong class="red">결제 금액의 1.3% 캐쉬백!</strong>
+				</p>
 				<p class="text">(단, 결제 건 별 300만원 이상 결제 시에 적용)</p>
 			</div>
 			<!-- //info -->
@@ -41,13 +44,14 @@
 					<div class="type">
 						<div class="top">
 							<p class="sub">캐쉬백 서비스</p>
-							<p class="title">${autoCashback.cashback3}%~${autoCashback.cashback2}% <br>
+							<%-- <p class="title">${autoCashback.cashback3}%~${autoCashback.cashback2}% <br> --%>
+							<p class="title">1.3% <br>
 							<span>최대 500만원</span></p>
 						</div>
 					</div>
 					<div class="info">
 						<ul class="dotList green">
-							<li>대상:하나 신용/체크카드 회원 <br>
+							<li>대상:하나 신용카드 회원 <br>
 							(모바일카드 포함, 법인/선불/가족카드 제외)</li>
 							<li>국산/수입신차/중고차/오토바이 전 차종 신청 가능합니다.</li>
 							<li>캐쉬백은 자동차결제 정상매입 기준으로 지급됩니다. </li>
@@ -83,13 +87,17 @@
 								<p class="title">캐쉬백 지급</p>
 								<div class="interest">
 									<ul class="divide">
-										<li>
+										<%-- <li>
 											<p class="rate green">${autoCashback.cashback1}%</p>
 											<p class="text">300 ~3,000만원 미만 </p>
 										</li>
 										<li>
 											<p class="rate">${autoCashback.cashback2}%</p>
 											<p class="text">3,000만원 이상</p>
+										</li> --%>
+										<li>
+											<p class="rate green">1.3%</p>
+											<p class="text">300 만원 이상 </p>
 										</li>
 									</ul>
 								</div>
@@ -111,7 +119,7 @@
 					<!-- //선입금 방식 -->
 
 					<!-- 체크카드 방식 -->
-					<li>
+					<%-- <li>
 						<div class="bar">
 							<p class="title">체크카드 방식</p>
 						</div>
@@ -149,7 +157,7 @@
 								</ul>
 							</div>
 						</div>
-					</li>
+					</li> --%>
 					<!-- //체크카드 방식 -->
 
 				</ul>
