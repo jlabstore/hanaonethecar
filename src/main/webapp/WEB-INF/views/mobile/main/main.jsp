@@ -76,8 +76,8 @@
 				</li>
 				<li class="auto_cashback">
 					<a href="javascript:void(0);" onClick="checkTimeHref('card/autoCashback')"  >
-						<p class="title">오토캐쉬백</p>
-						<p class="exp">자동차 일시불 결제 시 결제 금액의 <br><strong>1.3% 캐쉬백</strong> 받는 서비스! <br>(단, 결제 건 별 300만원 이상 결제 시)</p>
+						<p class="title">오토캐시백</p>
+						<p class="exp">자동차 일시불 결제 시 결제 금액의 <br><strong>1.3% 캐시백</strong> 받는 서비스! <br>(단, 결제 건 별 300만원 이상 결제 시)</p>
 						<p class="link">상품 상세 보기</p>
 					</a>
 				</li>

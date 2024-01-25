@@ -6,7 +6,7 @@
     <!-- main -->
 <section id="body" class="cardCashback">
 
-	<h1>오토캐쉬백</h1>
+	<h1>오토캐시백</h1>
 	<a href="/m/main" class="goBack">Back</a>
 
 	<!-- top content -->
@@ -18,11 +18,11 @@
 		<div class="summary">
 			<!-- top -->
 			<div class="top">
-				<h2>오토캐쉬백</h2>
+				<h2>오토캐시백</h2>
 				<p class="exp">자동차 일시불 결제 시 <br>
 				결제금액의 <br>
-				<%-- ${autoCashback.cashback3}%~${autoCashback.cashback2}% 캐쉬백!</p> --%>
-				1.3% 캐쉬백!</p>
+				<%-- ${autoCashback.cashback3}%~${autoCashback.cashback2}% 캐시백!</p> --%>
+				1.3% 캐시백!</p>
 			</div><br>
 				<%-- <strong><p class="exp">기간 </strong><br>
 				${autoCashback.start_dt}~${autoCashback.end_dt}
@@ -31,19 +31,19 @@
 			<!-- info -->
 			<div class="info">
 				<p class="emp"><strong>하나카드로 자동차 일시불 결제 시 </strong><br>
-				<%-- <strong class="red">결제 금액의 ${autoCashback.cashback3}%~${autoCashback.cashback2}% 캐쉬백!</strong> --%>
-				<strong class="red">결제 금액의 1.3% 캐쉬백!</strong>
+				<%-- <strong class="red">결제 금액의 ${autoCashback.cashback3}%~${autoCashback.cashback2}% 캐시백!</strong> --%>
+				<strong class="red">결제 금액의 1.3% 캐시백!</strong>
 				</p>
 				<p class="text">(단, 결제 건 별 300만원 이상 결제 시에 적용)</p>
 			</div>
 			<!-- //info -->
 			<!-- category -->
 			<div class="category">
-				<!-- 캐쉬백 서비스 -->
+				<!-- 캐시백 서비스 -->
 				<div class="cashback">
 					<div class="type">
 						<div class="top">
-							<p class="sub">캐쉬백 서비스</p>
+							<p class="sub">캐시백 서비스</p>
 							<%-- <p class="title">${autoCashback.cashback3}%~${autoCashback.cashback2}% <br> --%>
 							<p class="title">1.3% <br>
 							<span>최대 500만원</span></p>
@@ -53,11 +53,11 @@
 						<ul class="dotList green">
 							<li>대상:하나 개인신용카드 고객 <br>
 							(단,토스제휴,가족카드 제외)</li>
-							<li>국산/수입신차/중고차/오토바이 전 차종 신청 가능합니다.</li>
+							<li>국산/수입신차/중고차 전 차종 신청 가능합니다.</li>
 						</ul>
 					</div>
 				</div>
-				<!-- //캐쉬백 서비스 -->
+				<!-- //캐시백 서비스 -->
 			</div>
 			<!-- //category -->
 			<!-- method -->
@@ -74,7 +74,7 @@
 								<p class="title">신청방법</p>
 								<div class="roundBox">
 									<ul class="stepList">
-										<li><span class="step">Step 1</span><span class="title">신청</span>오토캐쉬백(선입금 방식)</li>
+										<li><span class="step">Step 1</span><span class="title">신청</span>오토캐시백(선입금 방식)</li>
 										<li><span class="step">Step 2</span><span class="title">가상계좌 부여</span>손님(개인)</li>
 										<li><span class="step">Step 3</span><span class="title">특별한도 상향</span>입금(신청)한 금액만큼</li>
 										<li><span class="step">Step 4</span><span class="title">일시불 결제</span>신용카드</li>
@@ -82,7 +82,7 @@
 								</div>
 							</div>
 							<div class="con">
-								<p class="title">캐쉬백 지급</p>
+								<p class="title">캐시백 지급</p>
 								<div class="interest">
 									<ul class="divide">
 										<%-- <li>
@@ -107,7 +107,7 @@
 							<div class="con">
 								<p class="title">이용안내</p>
 								<ul class="dotList">
-									<li>캐쉬백은 자동차결제 정상매입 기준으로 지급됩니다.</li>
+									<li>캐시백은 자동차결제 정상매입 기준으로 지급됩니다.</li>
 									<li>선입금 방식의 경우, 특별한도는 입금 후 +15일간 유지됩니다.</li>
 									<li>차량 특별한도는 한도 범위 내에서 자동차 결제가 가능하나 본인 이용한도와 합산하여 사용불가합니다.</li>
 								</ul>
@@ -126,14 +126,14 @@
 								<p class="title">신청방법</p>
 								<div class="roundBox">
 									<ul class="stepList">
-										<li><span class="step">Step 1</span><span class="title">신청</span>오토캐쉬백(체크카드 방식)</li>
+										<li><span class="step">Step 1</span><span class="title">신청</span>오토캐시백(체크카드 방식)</li>
 										<li><span class="step">Step 2</span><span class="title">신청금액 입금</span>연동계좌에 신청금액 입금</li>
 										<li><span class="step">Step 3</span><span class="title">체크카드 결제</span></li>
 									</ul>
 								</div>
 							</div>
 							<div class="con">
-								<p class="title">캐쉬백 지급</p>
+								<p class="title">캐시백 지급</p>
 								<div class="interest">
 									<ul class="divide">
 										<li>
@@ -217,7 +217,7 @@
 
 		</ul><br>
 			<div class="link" style="text-align: center">
-				<a href="https://m.hanacard.co.kr/MKAMCB4010M.web?from=hfg" class="cardCashBack round green btnLand"  style="width: 100%;" target="_blank"><span>오토캐쉬백 신청하기</span></a>
+				<a href="https://m.hanacard.co.kr/MKAMCB4010M.web?from=hfg" class="cardCashBack round green btnLand"  style="width: 100%;" target="_blank"><span>오토캐시백 신청하기</span></a>
 			</div>
 	</div>
 	<!-- //detail -->
