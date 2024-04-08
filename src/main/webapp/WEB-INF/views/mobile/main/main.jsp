@@ -114,10 +114,10 @@
 				</li>
 			</ul>
 			<!-- banner -->
-			<%-- <div class="row banner">
+			<!--<div class="row banner">
 				<ul id="capitalBannerImg">
 				</ul>
-			</div> --%>
+			</div> -->
 			<!-- //banner -->
 		</div>
 		<!-- //capital -->
@@ -254,8 +254,8 @@
 
 	var renderCapitalList = function(capitalList){
 		var template = document.getElementById('list-capital-card').innerHTML;
-        var rendered = Mustache.render(template, {capitalList: capitalList});
-        document.getElementById('capitalBannerImg').innerHTML = rendered;
+        // var rendered = Mustache.render(template, {capitalList: capitalList});
+        // document.getElementById('capitalBannerImg').innerHTML = rendered;
 	}
 
 	var renderBankList = function(bankList){
@@ -410,10 +410,10 @@
 		var filterOs = "win16|win32|win64|mac|macintel";
 		//PC 및 모바일 접속 체크
 		if(navigator.platform){
-			if(0 < filterOs.indexOf(navigator.platform.toLowerCase())){				
-					//PC 
-					location.href ="/intro";
-			} 			    				    			
+			// if(0 < filterOs.indexOf(navigator.platform.toLowerCase())){				
+			// 		//PC 
+			// 		location.href ="/intro";
+			// } 			    				    			
 		}
 		
 	};
