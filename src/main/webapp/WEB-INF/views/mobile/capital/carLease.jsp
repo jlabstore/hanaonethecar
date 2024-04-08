@@ -57,7 +57,7 @@
 			<!-- //feature -->
 			<!-- link -->
 			<div class="link">
-				<a href="https://m.hanacapital.co.kr/cs/telephone/application.hnc?hfgInflow=leasNCar" class="capitalCarLease round btnFloat green" target="_blank"><span>상담 신청하기</span></a>
+				<a href="https://m.hanacapital.co.kr/untc/cuct/phlo/cuctPhlo01P" class="capitalCarLease round btnFloat green" target="_blank"><span>상담 신청하기</span></a>
 			</div>
 			<!-- //link -->
 		</div>
@@ -86,11 +86,11 @@
 					<div class="con" >
 						<p class="title">금리</p>
 						<ul class="dotList">
-							<li>금융리스 : <br>
+							<li style="font-weight:bold">금융리스 : <br>
 							연 <span id="lowRate"></span>% ~<span id="highRate"></span>% <br>
 							(금융소비자의 개인신용평점에 따라 차등 적용)</li>
-							<li>연체 이자율 : <br>
-								<ul class="numList">
+							<li style="font-weight:bold" >연체 이자율 : <br>
+								<ul class="numList" style="font-weight:bold">
 									<li>
 										<p class="num">-</p>
 										<div class="info">금융리스 : 약정이율 + 3%<br>
@@ -135,8 +135,10 @@
 							<li>
 								<p class="num">1.</p>
 								<div class="info"><span class="remark">주1)</span> 중도해지손해배상금 <br>
-								미회수원금 X 중도해지손해배상금률 <br>
-								- 미회수원금 X 최고요율(80)% X (잔여기간 월수/리스기간 전체월수)</div>
+								미회수원금 X 중도해지손해배상금률 ( 최 40%) <br>
+								※ 경과 개월별 차등 인하<br>
+								<a href="/mobile/pdf/중도해지손해배상금.pdf" target="_blank" class="underline" style="font-size: 10px;">※ 중도해지손해배상금 세부내역</a>
+							</div>
 							</li>
 							<li>
 								<p class="num">2.</p>
@@ -169,8 +171,8 @@
 						<p class="title">승계 수수료</p>
 						<ul class="dotList">
 							<li>운용리스, 금융리스 <br>
-							미회수원금의 1%(승계수수료 최고 요율) X (잔여기간 월수/리스기간 전체 월수) <br>
-							(min : 500,000원, max : 900,000원) <br>
+								미회수원금의 1% X (  잔여기간 월수/  리스기간 전체월수) <br>
+								(min : 500,000 원, max : 900,000 원) <br>
 							※ 단, 금융리스의 경우 대부업법에서 정하는 최고이자율을 초과하지 않는 범위로 합니다.</li>
 						</ul>
 					</div>
@@ -259,9 +261,9 @@
 							<li class="reference">금융소비자의 신용등급 또는 개인신용평점에 따라 대출한도 및 금리가 차등 적용됩니다</li>
 							<li class="reference">금융소비자는 해당상품에 대하여 설명을 받을 권리가 있으며, 그 설명을 듣고 내용을 충분히 이해한 후 거래하시기 바랍니다.</li>
 							<li class="reference">금리인하요구권 및 대출계약 철회권에 대한 자세한 사항은 하나캐피탈 홈페이지에서 확인하시기 바랍니다.</li>
-							<li class="reference">하나캐피탈 준법심의필 23-315 (2023.09.12 ~ 2024.09.11)</li>
-							<li class="reference">여신금융협회 심의필 제 2023-C1h-10554호<br>
-								(2023.09.12 ~ 2024.09.11)</li>
+							<li class="reference">하나캐피탈준법심의필 24-32(2024.03.11~2025.03.10)</li>
+							<li class="reference">여신금융협회 심의필 제 2024-C1h-03324 호<br>
+								(2024.03.11~2025.03.10)</li>
 						</ul>
 					</div>
 				</div>

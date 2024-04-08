@@ -114,10 +114,10 @@
 				</li>
 			</ul>
 			<!-- banner -->
-			<div class="row banner">
+			<%-- <div class="row banner">
 				<ul id="capitalBannerImg">
 				</ul>
-			</div>
+			</div> --%>
 			<!-- //banner -->
 		</div>
 		<!-- //capital -->
