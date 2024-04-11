@@ -87,7 +87,7 @@
 						<p class="title">금리</p>
 						<ul class="dotList">
 							<li style="font-weight:bold">금융리스 : <br>
-							연 <span id="lowRate"></span>% ~<span id="highRate"></span>% <br>
+							연 <span id="lowRate">6.2</span>% ~<span id="highRate">7.8</span>% <br>
 							(금융소비자의 개인신용평점에 따라 차등 적용)</li>
 							<li style="font-weight:bold" >연체 이자율 : <br>
 								<ul class="numList" style="font-weight:bold">
@@ -135,7 +135,7 @@
 							<li>
 								<p class="num">1.</p>
 								<div class="info"><span class="remark">주1)</span> 중도해지손해배상금 <br>
-								미회수원금 X 중도해지손해배상금률 ( 최 40%) <br>
+								미회수원금 X 중도해지손해배상금률 (최고 40%) <br>
 								※ 경과 개월별 차등 인하<br>
 								<a href="/mobile/pdf/중도해지손해배상금.pdf" target="_blank" class="underline" style="font-size: 10px;">※ 중도해지손해배상금 세부내역</a>
 							</div>
@@ -280,28 +280,28 @@
 </body>
 <script type="text/javascript">
 	$(document).ready(function(){
-        getCarLease();
+        // getCarLease();
 	});
 
 
-    var getCarLease = function(){
-		var result = null; 
-        $.ajax({
-            type: 'POST',
-            url: '/m/getCarLease',
-            async: false,
-            success: function(data) {
-				var temp = data.list != null ? true : false;
-				var lowRate = temp ? data.list.low_rate : "";
-				var highRate = temp ? data.list.high_rate : "";
+    // var getCarLease = function(){
+	// 	var result = null; 
+    //     $.ajax({
+    //         type: 'POST',
+    //         url: '/m/getCarLease',
+    //         async: false,
+    //         success: function(data) {
+	// 			var temp = data.list != null ? true : false;
+	// 			var lowRate = temp ? data.list.low_rate : "";
+	// 			var highRate = temp ? data.list.high_rate : "";
 
-				$('#lowRate').text(lowRate);
-				$('#highRate').text(highRate);
-            },
-            error: function(data) {
-                alert('문제가 발생했습니다. 관리자에게 문의하세요.');
-            }
-        });
-		return result;
-    }
+	// 			$('#lowRate').text('6.2');
+	// 			$('#highRate').text('7.8');
+    //         },
+    //         error: function(data) {
+    //             alert('문제가 발생했습니다. 관리자에게 문의하세요.');
+    //         }
+    //     });
+	// 	return result;
+    // }
 </script>
