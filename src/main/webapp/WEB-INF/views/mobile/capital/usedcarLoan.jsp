@@ -43,7 +43,7 @@
 				<ul>
 					<li style="white-space: nowrap;">
 						<p class="icon"><img src="/mobile/images/common/icon-coin@2x.png" alt="최저 금리"></p>
-						<p class="title">최저 금리</p>
+						<p class="title">금리</p>
 						<span class="con">연</span><span class="con" id="lowRateb"></span><span class="con">%</span><span class="con">~</span><span class="con" id="highRateb"></span><span class="con">%</span>
 					</li>
 					<li style="white-space: nowrap;">
@@ -94,8 +94,8 @@
 					<div class="con">
 						<p class="title">금리</p>
 						<ul class="dotList">
-							<li>고정금리 : 연 <span id="lowRate"></span> % ~ <span id="highRate"></span>%</li>
-							<li>연체이율 : 약정이율 + 3%(법정 최고금리 20% 이내)</li>
+							<li style="font-weight:bold">고정금리 : 연 <span id="lowRate"></span> % ~ <span id="highRate"></span>%</li>
+							<li style="font-weight:bold">연체이율 : 약정이율 + 3%(법정 최고금리 20% 이내)</li>
 							<li class="reference">금융소비자의 개인신용평점에 따라 대출 한도 및 금리가 차등 적용 됩니다.</li>
 							<li class="reference">대출 취급이 부적정한 경우(연체금 보유, 개인신용평점 낮음) 대출이 제한될 수 있습니다.</li>
 						</ul>
@@ -199,7 +199,7 @@
 								<span class="num">4</span>
 								<div class="info">
 									<p class="title">대출금 지급</p>
-									<p class="text">본인 계좌 또는 조건 충족시 제휴점에 지급합니다.</p>
+									<p class="text">고객 본인 계좌에 지급합니다.</p>
 								</div>
 							</li>
 						</ul>
@@ -222,11 +222,13 @@
 							<li class="reference emp">일정기간 원리금을 연체할 경우, 모든 원리금을 변제할 의무가 발생할 수 있습니다.</li>
 							<li class="reference">대출취급이 부적정한 경우(연체금 보유, 개인신용평점 낮음) 대출이 제한될 수 있습니다.</li>
 							<li class="reference">담보물건, 담보종류 등에 따라 대출조건이 차등 적용되며 담보물이 부적합할 경우 대출이 제한될 수 있습니다.</li>
+							<li class="reference">금융소비자는 해당 상품에 대하여 설명을 받을 권리가 있으며, 그 설명을 듣고 내용을 충분히 이해한 후 거래하시기 바랍니다.</li>
 							<li class="reference">금융소비자의 신용등급 또는 개인신용평점에 따라 대출 한도 및 금리가 차등 적용됩니다.</li>
 							<li class="reference">금리인하요구권 및 대출계약 철회권에 대한 자세한 사항은 하나캐피탈 홈페이지에서 확인하시기 바랍니다.</li>
-							<li class="reference">하나캐피탈 준법심의필 23-215 (2023.07.13 ~ 2024.04.30)</li>
-							<li class="reference">여신금융협회 심의필 제 2023-C1h-08582<br>
-								 (2023.07.22 ~ 2024.04.30)</li>
+							<li class="reference">하나캐피탈 준법심의필 24-49 (2024.05.01~2025.04.30)</li>
+							<li class="reference">여신금융협회 심의필 제 2024-C1h-04524<br>
+								(2024.05.01~2025.04.30)
+							</li>
 						</ul>
 					</div>
 				</div>
