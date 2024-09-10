@@ -336,23 +336,25 @@ body.sideMenu #side .gnb {
 body.intro {height: 100%;background-color: #f4f7f8;}
 body.intro #wrap {display: flex;flex-direction: column;height: 100%;}
 
-#intro {flex: 1 1 0;display: flex;justify-content: center;margin-top: 146px;}
-#intro .mobile {flex: 0 0 auto;width: 366px;}
+#intro {flex: 1 1 0;display: flex;justify-content: center;}
+#intro .mobile {flex: 0 0 auto;width: 366px; margin-top: 151px ;}
 
-#intro .contents {flex: 0 0 auto;width: 518px;padding-top: 22px;margin-left: 140px;}
-#intro .contents h1 {height: 116px;text-indent: -9999px;background: url('../images/intro/logo.png') left top no-repeat;background-size: auto 116px;}
-#intro .contents .slogan {line-height: 40px;font-size: 24px;color: #231815;font-weight: 800;margin-top: 32px;}
+#intro .contents {flex: 0 0 auto;width: 531px;padding-top: 22px;margin-left: 140px; margin-top: 76.5px;}
+#intro .contents h1 {height: 115.8px;text-indent: -9999px;background: url('../images/intro/logo.png') left top no-repeat;background-size: auto 116px;}
+#intro .contents .slogan {line-height: 40px;font-size: 24px;color: #231815;font-weight: 800;margin-top: 31.5px;}
 #intro .contents .slogan p.main {color: #009fa3;}
 #intro .contents .slogan p.main strong {background-color: #d9f1f1;font-weight: 800;}
 #intro .contents .slogan p.sub {}
-#intro .contents .qr {margin-top: 75px;}
+#intro .contents .qr {margin-top: 35px;}
 #intro .contents .qr p.img {margin-left: -14px;}
-#intro .contents .qr a {display:inline-block; display: -moz-inline-stack; zoom:1; *display:inline;line-height: 19px;font-size: 14px;color: #ee4467;font-weight: 800;text-decoration: none;border-bottom: 2px solid #ee4467;}
-#intro .contents p.notify {line-height: 18px;font-size: 10px;color: #888;margin-top: 123px;}
+#intro .contents .qr a {display:inline-block; display: -moz-inline-stack; zoom:1; *display:inline; line-height: 19px;font-size: 14px;color: #ee4467;font-weight: 800;text-decoration: none;border-bottom: 2px solid #ee4467;}
+#intro .contents p.notify {line-height: 18px;font-size: 10px;color: #888;margin-top: 47px;}
+#intro .contents p.card-notify {ine-height: 18px;font-size: 10px;color: #888;margin-top: 26.5px;} 
+#intro .contents p.card-notify span {line-height: 18px;font-size: 10px;color: #000;}
 
 /* footer */
 
-#pcFooter {flex: 0 0 0;display: flex;justify-content: center;width: 100%;border-top: 1px solid #e7eaeb;padding: 26px 0 28px;margin-top: 136px;}
+#pcFooter {flex: 0 0 0;display: flex;justify-content: center;width: 100%;border-top: 1px solid #e7eaeb;padding: 26px 0 28px;margin-top: 105px;}
 #pcFooter h1 {flex: 0 0 auto;width: 131px;height: 26px;text-indent: -9999px;background: url('../images/intro/logo_hanagroup.png') left center no-repeat;background-size: 131px auto;}
 #pcFooter ul.info {flex: 0 0 auto;flex-wrap: wrap;margin-top: 2px;margin-left: 44px;}
 #pcFooter ul.info li {position: relative;display: inline;line-height: 22px;font-size: 12px;color: #333;padding-left: 9px;margin-left: 6px;}
@@ -367,19 +369,20 @@ body.intro #wrap {display: flex;flex-direction: column;height: 100%;}
 
 	/* layout */
 
-	#intro {margin-top: 78px;}
-	#intro .mobile {width: 313px;}
+	#intro {margin-top: 33px;}
+	#intro .mobile {width: 313px; margin-top: 75px;}
 	#intro .mobile p.img img { width: 100%; height: auto; }
 
-	#intro .contents {width: 487px;padding-top: 11px;margin-left: 100px;}
+	#intro .contents {width: 514px;padding-top: 11px;margin-left: 100px; margin-top: 35px;}
 	#intro .contents h1 {}
-	#intro .contents .slogan {margin-top: 34px;}
-	#intro .contents .qr {margin-top: 46px;}
-	#intro .contents p.notify {margin-top: 60px;}
+	#intro .contents .slogan {margin-top: 17px;}
+	#intro .contents .qr {margin-top: 18px;}
+	#intro .contents p.notify {margin-top: 23px;}
+	#intro .contents p.card-notify {margin-top: 13.5px;} 
 
 	/* footer */
 
-	#pcFooter {margin-top: 66px;}
+	#pcFooter {margin-top: 35px;}
 	#pcFooter ul.info {width: calc(900px - 131px - 44px); }
 
 }
