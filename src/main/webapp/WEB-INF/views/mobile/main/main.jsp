@@ -123,13 +123,12 @@
 		<!-- //capital -->
 		</div>
 			<ul class="dotList">
-				<li class="reference">하나은행은 예금자보호법상 부보금융기관이나 하나캐피탈, 하나카드는 부보금융기관이 아닙니다</li>
+				<li class="reference">하나은행은 예금자보호법상 부보금융 기관이나 하나캐피탈, 하나카드는 부보금융기관이 아닙니다.</li>
 				<li class="reference">하나금융그룹 관계사는 상호 채무를 보증하지 않습니다.</li>
 				<li class="reference">본 홍보물은 법령 및 내부통제기준에 따른 절차를 거쳐 제공됩니다.</li>
 				<li class="reference">본 홍보물은 2025년 8월 31일까지 유효합니다.</li>
 				<li class="reference">하나캐피탈 준법심의필 24-112(2024.09.09 ~ 2025.09.08)</li>
-				<li class="reference">준법감시인 심의필 제2023-광고-06829호(2023.10.05)<br>
-					CC브랜드220811-0086</li>
+				<li class="reference">하나은행 준법감시인 심의필 제2024-광고-08019호(2023.09.23) / CC브랜드240919-0190</li>
 			</ul>
 		</div>
 		<!-- //contents -->

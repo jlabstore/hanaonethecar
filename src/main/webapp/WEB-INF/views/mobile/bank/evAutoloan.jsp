@@ -16,7 +16,7 @@
 		<div class="summary">
 			<!-- top -->
 			<div class="top">
-				<h2>EV오토론</h2>
+				<h2><em style="color:#dc231e;">EV</em>오토론</h2>
 				<p class="exp">
 				#친환경차구매혜택 <br>
 				<%-- #추가한도500만원 --%>
@@ -69,7 +69,7 @@
 
 		<!-- additional -->
 		<div class="additional">
-			<p class="comment">[<span id="newBaseRateDt"></span>(현재)] 기준금리(금융채 6개월)<span id="newCarBaseRate"></span>% + <br>가산금리 <span id="newAddRate"></span>0% - 부수거래 감면금리 <span id="newRate"></span>%* <br>
+			<p class="comment">[<span id="newBaseRateDt"></span>(현재)] 기준금리(금융채 6개월)<span id="newCarBaseRate"></span>% + <br>가산금리 <span id="newAddRate"></span>% ~ 3.776% - 부수거래 감면금리 <span id="newRate"></span>%* <br>
 				*부수거래항목 :
 				급여이체(<span id="newRate1"></span>%)+ 
 				주택청약종합저축 월 5만원 납입 또는 적금상품 월 10만원 납입(<span id="newRate2"></span>%)+ 
@@ -157,16 +157,31 @@
 						</ul>
 						<table class="horizon">
 							<tr>
-								<td class="title">5천만원 이하</td>
-								<td class="cost">비과세</td>
+								<td rowspan="2" class="title"></td>
+								<td rowspan="2" class="title">인지세</td>
+								<td colspan="2" class="title">인지세 부담</td>
 							</tr>
 							<tr>
-								<td class="title">5천만원 초과 1억원 이하</td>
-								<td class="cost">70,000 (손님부담 35,000)</td>
+								<td class="title">손님부담</td>
+								<td class="title">은행부담</td>
+							</tr>
+							<tr>
+								<td class="title">5천만원 이하</td>
+								<td class="cost">비과세</td>
+								<td class="cost">없음</td>
+								<td class="cost">없음</td>
+							</tr>
+							<tr>
+								<td class="title">5천만원 초과 <br/>~ 1억원 이하</td>
+								<td class="cost">70,000</td>
+								<td class="cost">35,000</td>
+								<td class="cost">35,000</td>
 							</tr>
 							<tr>
 								<td class="title">1억원 초과</td>
-								<td class="cost">150,000 (손님부담 75,000)</td>
+								<td class="cost">150,000</td>
+								<td class="cost">75,000</td>
+								<td class="cost">75,000</td>
 							</tr>
 						</table>
 					</div>
@@ -233,9 +248,9 @@
 						</table>
 						<ul class="dotList">
 							<li class="reference">최저금리 기준: <br>
-							2023.09.25 현재, 내부신용등급(ASS) 1등급, 대출기간 1년, 부수거래 감면금리 적용시</li>
+							2024.09.12 현재, 내부신용등급(ASS) 1등급, 대출기간 1년, 부수거래 감면금리 적용시</li>
 							<li class="reference">최고금리 기준: <br>
-								2023.09.25 현재, 내부신용등급(ASS) 12등급, 대출기간 10년, 부수거래 감면금리 미적용시</li>
+								2024.09.12 현재, 내부신용등급(ASS) 12등급, 대출기간 10년, 부수거래 감면금리 미적용시</li>
 						</ul>
 					</div>
 					<div class="con">
@@ -257,8 +272,8 @@
 				<div class="con">
 						<ul class="dotList">
 							<li class="reference">이자 산정방법: 최저이율(기준금리 + 가산금리(ASS1등급) - 부수거래감면금리 ) / 최고이율(기준금리 + 가산금리(ASS11등급))</li>
-							<li class="reference">가산금리는 신용등급, 대출기간, 대출금액 등에 따라 차등 적용됩니다.</li>
-							<li class="reference">부수거래 항목별 감면금리: 대출 실행시 선택한 부수거래 항목의 감면금리가 적용되며, 이후에는 선택하지 않은 항목을 포함하여 모든 항목에 대해서 매월 감면조건을 충적하는 경우 1개월 단위로 금리가 감면되고, 매월 조건을 충족하지 않을 경우 감면 받은 금리가 자동으로 인상됩니다.</li>
+							<li class="reference">가산금리는 내부신용등급, 대출신청조건, 대출신청일, 대내외 정책 등에 따라 달라질 수 있습니다.</li>
+							<li class="reference">부수거래 항목별 감면금리: 대출 실행시 선택한 부수거래 항목의 감면금리가 적용되며, 이후에는 선택하지 않은 항목을 포함하여 모든 항목에 대해서 매월 감면조건을 충적하는 경우 1개월 단위로 금리가 감면되고, 매월 조건을 충족하지 않을 경우 감면 받은 금리가 자동으로 인상됩니다. 항목별 감면조건 세부기준은 추가약정서(가계대출 금리감면용) 및  대출금리산정내역서를 참조해 주시기 바랍니다.</li>
 							<li class="reference">대부업 등의 등록 및 금융이용자 보호에 관한 법률에 따른 법정 최고 금리는 연 20%입니다.</li>
 							<li class="reference">연체이자율[대출이자율+연체가산이자율(연3%)]: <br>
 							최고 연 15%입니다. <br>
@@ -273,6 +288,7 @@
 						<ul class="dotList">
 							<li>손님의 신용도 또는 부채현황에 따라 대출한도 또는 대출금리가 차등 적용될 수 있으며 대출취급이 제한될 수도 있습니다.</li>
 							<li>상기 대출금리는 기준일 현재의 적용금리이며 기준금리 변동 시 금리가 변경될 수 있고 최저금리는 부수거래 약정을 통해 최대로 감면받을 경우의 금리이므로 부수거래 조건 미충족시 개인별 대출금리는 달라질 수 있습니다.</li>
+							<li>가산금리는 내부신용등급, 대출신청조건, 대출신청일, 대내외 정책 등에 따라 달라질 수 있습니다.</li>
 							<li>대출 원리금 납부지연 또는 미납발생 시 연체이자 부과, 신용등급 하락, 재산압류 및 경매등의 조치가 취해질 수 있으므로 유의바랍니다.</li>
 							<li>신차구입 및 중고차구입 대출의 경우 대출자의 이름으로 차량이 최초등록(신차) 또는 이전등록(중고차) 되어야 하며 대출실행일로 부터 5영업일 이내 은행으로 자동차등록원부 등을 제출해야 합니다.</li>
 							<li>신차대환 및 중고차대환 대출의 경우 대출실행일 다음날까지 은행으로 완제영수증 등을 제출해야 합니다.</li>
@@ -289,9 +305,9 @@
 						<ul class="dotList">
 							<li class="reference">금융소비자는 해당 상품 또는 서비스에 대하여 설명받을 권리가 있습니다.</li>
 							<li class="reference">본 홍보물은 법령 및 내부통제기준에 따른 절차를 거쳐 제공됩니다.</li>
-							<li class="reference">본 홍보물은 2024년 9월 30일까지 유효합니다.</li>
-							<li class="reference">준법감시인 심의필 제2023-광고-06830호(2023.10.05)</li>
-							<li class="reference">CC브랜드220811-0087</li>
+							<li class="reference">본 홍보물은 2025년 8월 31일까지 유효합니다.</li>
+							<li class="reference">하나은행 준법감시인  제2024-광고-08017호(2023.09.23)</li>
+							<li class="reference">CC브랜드240919-0190</li>
 						</ul>
 					</div>
 				</div>
@@ -349,7 +365,8 @@
                 var lowRate = lowRateDF ? (lowRateDF.toFixed(3)) : "";
                 //최고금리
                 var highRateDF = newCarBaseRate + newAddRate;
-                var highRate = highRateDF ? (highRateDF.toFixed(3)) : "";
+                // var highRate = highRateDF ? (highRateDF.toFixed(3)) : "";
+				var highRate = '7.192'
 
                 $('#lowRate').text(lowRate);
                 $('#highRate').text(highRate);

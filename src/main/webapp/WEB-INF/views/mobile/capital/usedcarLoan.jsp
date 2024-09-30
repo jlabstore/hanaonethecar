@@ -5,7 +5,7 @@
 	.topContent > .summary > .feature > ul > li span.con {
     line-height: 26px;
     font-size: 16px;
-    color: #00b2a4;
+    color: #009178;
     font-weight: 800;
     padding: 2px 0;
 	}
@@ -145,20 +145,37 @@
 						</ul>
 						<table class="horizon">
 							<tr>
+								<td rowspan="2" class="title"></td>
+								<td rowspan="2" class="title">인지세</td>
+								<td colspan="2" class="title">인지세 부담</td>
+							</tr>
+							<tr>
+								<td class="title">손님부담</td>
+								<td class="title">은행부담</td>
+							</tr>
+							<tr>
 								<td class="title">5천만원 이하</td>
-								<td class="cost light">비과세</td>
+								<td class="cost">비과세</td>
+								<td class="cost">없음</td>
+								<td class="cost">없음</td>
 							</tr>
 							<tr>
-								<td class="title">5천만원 초과 1억원 이하</td>
-								<td class="cost light">70,000 (손님부담 35,000)</td>
+								<td class="title">5천만원 초과 <br/> ~ 1억원 이하</td>
+								<td class="cost">70,000</td>
+								<td class="cost">35,000</td>
+								<td class="cost">35,000</td>
 							</tr>
 							<tr>
-								<td class="title">1억원 초과 10억원 이하</td>
-								<td class="cost light">150,000 (손님부담 75,000)</td>
+								<td class="title">1억원 초과 <br/> ~ 10억원 이하</td>
+								<td class="cost">150,000</td>
+								<td class="cost">75,000</td>
+								<td class="cost">75,000</td>
 							</tr>
 							<tr>
 								<td class="title">10억원 초과</td>
-								<td class="cost light">350,000 (손님부담 175,000)</td>
+								<td class="cost light">350,000</td>
+								<td class="cost">175,000</td>
+								<td class="cost">175,000</td>
 							</tr>
 						</table>
 					</div>

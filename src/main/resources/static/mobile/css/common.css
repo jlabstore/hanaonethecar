@@ -185,7 +185,7 @@ body.sideMenu #side .gnb {
 .gnb > ul {}
 .gnb > ul > li {margin-bottom: 15px;}
 .gnb > ul > li:last-child {margin-bottom: 0;}
-.gnb > ul > li > a {display: block;height: 46px;line-height: 45px;font-size: 14px;color: #009fa3;font-weight: 800;text-decoration: none;border-bottom: 1px solid #9b9d9d;padding: 0 2px;}
+.gnb > ul > li > a {display: block;height: 46px;line-height: 45px;font-size: 14px;color: #009178;font-weight: 800;text-decoration: none;border-bottom: 1px solid #9b9d9d;padding: 0 2px;}
 .gnb > ul > li > a span {}
 .gnb > ul > li > ul {}
 .gnb > ul > li > ul > li {}
@@ -287,10 +287,10 @@ body.sideMenu #side .gnb {
 	box-shadow: 0px 0px 20px rgba(0,0,0,.06);
 }
 #main .contents > div ul.content li a {position: relative;display: block;height: 100%;text-decoration: none;padding: 28px 30px;}
-#main .contents > div ul.content li p.title {line-height: 22px;font-size: 16px;color: #009fa3;font-weight: 800;}
+#main .contents > div ul.content li p.title {line-height: 22px;font-size: 16px;color: #009178;font-weight: 800;}
 #main .contents > div ul.content li p.exp {line-height: 16px;font-size: 11px;color: #333;margin-top: 9px;}
 #main .contents > div ul.content li p.exp strong {font-weight: normal;background-color: #d9f1f1;}
-#main .contents > div ul.content li p.link {display:inline-block; display: -moz-inline-stack; zoom:1; *display:inline;line-height: 17px;font-size: 12px;color: #ee4467;font-weight: 800;border-bottom: 2px solid #ee4467;margin-top: 15px;}
+#main .contents > div ul.content li p.link {display:inline-block; display: -moz-inline-stack; zoom:1; *display:inline; line-height: 17px;font-size: 12px;color: #dc231e;font-weight: 800;border-bottom: 2px solid #dc231e;margin-top: 15px;}
 
 /* bank */
 
@@ -342,14 +342,14 @@ body.intro #wrap {display: flex;flex-direction: column;height: 100%;}
 #intro .contents {flex: 0 0 auto;width: 531px;padding-top: 22px;margin-left: 140px; margin-top: 76.5px;}
 #intro .contents h1 {height: 115.8px;text-indent: -9999px;background: url('../images/intro/logo.png') left top no-repeat;background-size: auto 116px;}
 #intro .contents .slogan {line-height: 40px;font-size: 24px;color: #231815;font-weight: 800;margin-top: 31.5px;}
-#intro .contents .slogan p.main {color: #009fa3;}
+#intro .contents .slogan p.main {color: #009178;}
 #intro .contents .slogan p.main strong {background-color: #d9f1f1;font-weight: 800;}
 #intro .contents .slogan p.sub {}
 #intro .contents .qr {margin-top: 35px;}
 #intro .contents .qr p.img {margin-left: -14px;}
-#intro .contents .qr a {display:inline-block; display: -moz-inline-stack; zoom:1; *display:inline; line-height: 19px;font-size: 14px;color: #ee4467;font-weight: 800;text-decoration: none;border-bottom: 2px solid #ee4467;}
+#intro .contents .qr a {display:inline-block; display: -moz-inline-stack; zoom:1; *display:inline; line-height: 19px;font-size: 14px;color: #dc231e;font-weight: 800;text-decoration: none;border-bottom: 2px solid #dc231e;}
 #intro .contents p.notify {line-height: 18px;font-size: 10px;color: #888;margin-top: 47px;}
-#intro .contents p.card-notify {ine-height: 18px;font-size: 10px;color: #888;margin-top: 26.5px;} 
+#intro .contents p.card-notify {line-height: 18px;font-size: 10px;color: #888;margin-top: 26.5px;} 
 #intro .contents p.card-notify span {line-height: 18px;font-size: 10px;color: #000;}
 
 /* footer */
