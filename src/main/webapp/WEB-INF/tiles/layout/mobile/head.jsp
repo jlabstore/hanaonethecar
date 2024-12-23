@@ -23,6 +23,8 @@
 <meta property="og:description" content="자동차 금융의 모든것, 하나원더카">
 <meta property="og:image" content="/mobile/images/thumb-hanaonethecar.png">
 <meta property="og:url" content="https://hanaonethecar.com/">
+<meta name="naver-site-verification" content="9b4d19f2757570f95d15ce859c28142dfb1cb3a3" />
+<meta name="google-site-verification" content="IiYZPIny8e0azp4FCSEwpIoDbVMm8_udYkKO9jmD9GE" />
 <meta http-equiv="imagetoolbar" content="no">
 <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
 <title>하나원더카</title>
