@@ -87,7 +87,7 @@
 						<p class="title">금리</p>
 						<ul class="dotList">
 							<li style="font-weight:bold">금융리스 : <br>
-							연 <span id="lowRate">6.2</span>% ~<span id="highRate">7.8</span>% <br>
+							연 <span id="lowRate">5.4</span>% ~<span id="highRate">6.9</span>% <br>
 							(금융소비자의 개인신용평점에 따라 차등 적용)</li>
 							<li style="font-weight:bold" >연체 이자율 : <br>
 								<ul class="numList" style="font-weight:bold">
@@ -176,6 +176,12 @@
 							※ 단, 금융리스의 경우 대부업법에서 정하는 최고이자율을 초과하지 않는 범위로 합니다.</li>
 						</ul>
 					</div>
+          <div class="con">
+						<p class="title">반환지연금</p>
+						<ul class="dotList">
+							<li>[일 리스료 + (일 리스료 X 반환지원금율 100%)] X 경과일수</li>
+						</ul>
+					</div>
 					<div class="con">
 						<p class="title">기타 비용</p>
 						<ul class="dotList">
@@ -190,9 +196,9 @@
 					<div class="con">
 						<p class="title">기타</p>
 						<ul class="dotList">
-							<li>만기시 차량을 매입하실 경우 손님의 명의로 이전하는데 필요한 취득세 등의 제세공과금이 발생할 수 있으며, 이는 손님이 부담하셔야 합니다. <br>
-							운용리스의 경우, 만기 차량 반납시 사고이력 또는 약정주행거리 초과에 따라 별도의 감가비용이 추가로 발생 할 수 있습니다. <br>
-							차량 반납시 유의사항을 꼭 확인하여 주시기 바랍니다.</li>
+							<li>만기시 차량을 매입하실 경우 손님의 명의로 이전하는데 필요한 취득세 등의 제세공과금이 발생할 수 있으며, 이는 손님이 부담하셔야 합니다.</li>
+							<li>운용리스의 경우, 만기 차량 반납시 사고이력 또는 약정주행거리 초과에 따라 별도의 감가비용이 추가로 발생 할 수 있습니다.</li>
+							<li>차량 반납시 유의사항을 꼭 확인하여 주시기 바랍니다.</li>
 						</ul>
 					</div>
 					<div class="con">
@@ -258,12 +264,11 @@
 							<li class="reference emp">일정기간 원리금을 연체할 경우, 모든 원리금을 변제할 의무가 발생할 수 있습니다.</li>
 							<li class="reference">리스취급이 부적정한 경우(연체금 보유, 개인신용평점 낮음)대출이 제한될 수 있습니다.</li>
 							<li class="reference">담보물건, 담보종류 등에 따라 대출조건이 차등 적용되며 담보물이 부적합할 경우 대출이 제한될 수 있습니다.</li>
-							<li class="reference">금융소비자의 신용등급 또는 개인신용평점에 따라 대출한도 및 금리가 차등 적용됩니다</li>
+							<li class="reference">금융소비자의 개인신용평점에 따라 대출한도 및 금리가 차등 적용됩니다</li>
 							<li class="reference">금융소비자는 해당상품에 대하여 설명을 받을 권리가 있으며, 그 설명을 듣고 내용을 충분히 이해한 후 거래하시기 바랍니다.</li>
 							<li class="reference">금리인하요구권 및 대출계약 철회권에 대한 자세한 사항은 하나캐피탈 홈페이지에서 확인하시기 바랍니다.</li>
-							<li class="reference">하나캐피탈준법심의필 24-32(2024.03.11~2025.03.10)</li>
-							<li class="reference">여신금융협회 심의필 제 2024-C1h-03324 호<br>
-								(2024.03.11~2025.03.10)</li>
+							<li class="reference">하나캐피탈준법심의필 25-57(2025.03.06~2026.03.05)</li>
+							<li class="reference">여신금융협회 심의필 제 2025-C1h-03025호<br/>(2025.03.06~2026.03.05)</li>
 						</ul>
 					</div>
 				</div>
